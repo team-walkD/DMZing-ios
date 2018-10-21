@@ -325,8 +325,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = T5Y35W5FL6;
+				DEVELOPMENT_TEAM = Y4XABUQ539;
 				INFOPLIST_FILE = DMZing/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hi.com.DMZing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -340,8 +341,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = T5Y35W5FL6;
+				DEVELOPMENT_TEAM = Y4XABUQ539;
 				INFOPLIST_FILE = DMZing/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hi.com.DMZing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
