@@ -36,7 +36,7 @@ extension MyCourseVC : UITableViewDelegate, UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MyCourseTVCell.reuseIdentifier) as! MyCourseTVCell
-       cell.configure(row: indexPath.row)
+    
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

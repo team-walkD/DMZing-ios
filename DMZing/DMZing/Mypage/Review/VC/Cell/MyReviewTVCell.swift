@@ -9,19 +9,12 @@
 import UIKit
 
 class MyReviewTVCell: UITableViewCell {
-    @IBOutlet weak var topBackground: UIView!
-    @IBOutlet weak var bottomBackground: UIView!
+   
     @IBOutlet weak var dateLbl: UILabel!
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var typeImgView: UIImageView!
     
-    func configure(row : Int){
-        if row == 0 {
-            topBackground.backgroundColor = ColorChip.shared().lightBlue
-        } else {
-            topBackground.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9647058824, blue: 0.9725490196, alpha: 1)
-        }
-    }
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
