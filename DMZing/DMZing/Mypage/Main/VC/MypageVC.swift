@@ -39,7 +39,10 @@ class MypageVC: UIViewController {
         }
     }
     @IBAction func pointAction(_ sender: Any) {
-        print("tap point")
+        let mypageStoryboard = Storyboard.shared().mypageStoryboard
+        if let myDPPointVC = mypageStoryboard.instantiateViewController(withIdentifier:MyDPPointVC.reuseIdentifier) as? MyDPPointVC {
+            self.navigationController?.pushViewController(myDPPointVC, animated: true)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
