@@ -1,5 +1,5 @@
 //
-//  MyCourseVC.swift
+//  MyReviewVC.swift
 //  DMZing
 //
 //  Created by 강수진 on 2018. 10. 24..
@@ -8,16 +8,16 @@
 
 import UIKit
 
-class MyCourseVC: UIViewController {
+class MyReviewVC: UIViewController {
+
     @IBOutlet weak var tableView: UITableView!
-   
-   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
         setupNavBar()
     }
-  
+    
     func setupTableView(){
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -26,23 +26,21 @@ class MyCourseVC: UIViewController {
     
     func setupNavBar(){
         navigationController?.navigationBar.barTintColor = ColorChip.shared().lightBlue
+        //navigationController?.navigationBar.isTranslucent = false
     }
-    
-   
 }
 
-extension MyCourseVC : UITableViewDelegate, UITableViewDataSource{
+extension MyReviewVC : UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 20
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: MyCourseTVCell.reuseIdentifier) as! MyCourseTVCell
-       cell.configure(row: indexPath.row)
+        let cell = tableView.dequeueReusableCell(withIdentifier: MyReviewTVCell.reuseIdentifier) as! MyReviewTVCell
+        cell.configure(row: indexPath.row)
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       
+        
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
-

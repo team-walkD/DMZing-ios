@@ -33,7 +33,10 @@ class MypageVC: UIViewController {
         }
     }
     @IBAction func reviewAction(_ sender: Any) {
-        print("tap review")
+        let mypageStoryboard = Storyboard.shared().mypageStoryboard
+        if let myReviewVC = mypageStoryboard.instantiateViewController(withIdentifier:MyReviewVC.reuseIdentifier) as? MyReviewVC {
+            self.navigationController?.pushViewController(myReviewVC, animated: true)
+        }
     }
     @IBAction func pointAction(_ sender: Any) {
         print("tap point")
@@ -57,8 +60,8 @@ class MypageVC: UIViewController {
     
     func setupNavBar(){
         navigationController?.navigationBar.isTranslucent = false
-        navigationController?.navigationBar.barTintColor = .white
         navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.barTintColor = .white
     }
     
 }
