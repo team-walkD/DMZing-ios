@@ -26,6 +26,17 @@ class MypageVC: UIViewController {
     @IBAction func mailMoreAction(_ sender: Any) {
     }
     
+    @IBAction func courseAction(_ sender: Any) {
+        print("tap course")
+    }
+    @IBAction func reviewAction(_ sender: Any) {
+        print("tap review")
+    }
+    @IBAction func pointAction(_ sender: Any) {
+        print("tap point")
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
