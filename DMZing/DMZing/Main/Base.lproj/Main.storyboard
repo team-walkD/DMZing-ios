@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sad-6A-qml">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sad-6A-qml">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,18 +13,106 @@
         <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MainViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" id="BYZ-38-t0r" customClass="MainViewController" customModule="DMZing" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_map_icon" translatesAutoresizingMaskIntoConstraints="NO" id="sMK-bP-h4w">
+                                <rect key="frame" x="38" y="128" width="27" height="23"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="다른 맵을 통해 다양한 미션을 수행해보세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pjT-JN-7dd">
+                                <rect key="frame" x="38" y="173" width="189" height="14"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="11"/>
+                                <color key="textColor" red="0.10980392160000001" green="0.2156862745" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9Bt-AU-AdM">
+                                <rect key="frame" x="80" y="119" width="295" height="41"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="t2s-hS-dvs">
+                                    <size key="itemSize" width="118" height="41"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="ThemeCollectionViewCell" reuseIdentifier="ThemeCollectionViewCell" id="cSn-g7-WSg" customClass="ThemeCollectionViewCell" customModule="DMZing" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="118" height="41"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="118" height="41"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EJJ-Ww-1bV">
+                                                    <rect key="frame" x="0.0" y="0.0" width="118" height="41"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="voH-8c-Dbf">
+                                                            <rect key="frame" x="43" y="12" width="32" height="16"/>
+                                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="13"/>
+                                                            <color key="textColor" red="0.10980392160000001" green="0.2156862745" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="voH-8c-Dbf" firstAttribute="centerY" secondItem="EJJ-Ww-1bV" secondAttribute="centerY" id="1fU-Zn-zcX"/>
+                                                        <constraint firstItem="voH-8c-Dbf" firstAttribute="centerX" secondItem="EJJ-Ww-1bV" secondAttribute="centerX" id="ub4-D8-ZYQ"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="EJJ-Ww-1bV" secondAttribute="bottom" id="0Mk-P0-MhG"/>
+                                            <constraint firstItem="EJJ-Ww-1bV" firstAttribute="height" secondItem="cSn-g7-WSg" secondAttribute="height" id="FuG-Jm-05O"/>
+                                            <constraint firstAttribute="trailing" secondItem="EJJ-Ww-1bV" secondAttribute="trailing" id="NOA-6L-qzu"/>
+                                            <constraint firstItem="EJJ-Ww-1bV" firstAttribute="leading" secondItem="cSn-g7-WSg" secondAttribute="leading" id="S7X-wY-IZ1"/>
+                                            <constraint firstItem="EJJ-Ww-1bV" firstAttribute="width" secondItem="cSn-g7-WSg" secondAttribute="width" id="Tw6-Sh-G97"/>
+                                            <constraint firstItem="EJJ-Ww-1bV" firstAttribute="top" secondItem="cSn-g7-WSg" secondAttribute="top" id="zbJ-Ob-hNu"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="backView" destination="EJJ-Ww-1bV" id="j56-sn-sYh"/>
+                                            <outlet property="titleLabel" destination="voH-8c-Dbf" id="NxA-I8-wlX"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QEy-in-jqO">
+                                <rect key="frame" x="0.0" y="332" width="375" height="397"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.77254901960784317" green="0.86274509803921573" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="pjT-JN-7dd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="38" id="2KW-7C-b19"/>
+                            <constraint firstItem="pjT-JN-7dd" firstAttribute="top" secondItem="9Bt-AU-AdM" secondAttribute="bottom" constant="13" id="2SY-4t-Ys3"/>
+                            <constraint firstItem="QEy-in-jqO" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="3QV-IA-nXd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9Bt-AU-AdM" secondAttribute="trailing" id="OT0-by-goO"/>
+                            <constraint firstItem="QEy-in-jqO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ssl-fk-LpD"/>
+                            <constraint firstItem="sMK-bP-h4w" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="38" id="apG-pI-szn"/>
+                            <constraint firstItem="9Bt-AU-AdM" firstAttribute="leading" secondItem="sMK-bP-h4w" secondAttribute="trailing" constant="15" id="eAf-rJ-fEb"/>
+                            <constraint firstItem="QEy-in-jqO" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="iTq-Mq-nam"/>
+                            <constraint firstItem="QEy-in-jqO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="244" id="lTp-xj-xbv"/>
+                            <constraint firstItem="sMK-bP-h4w" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="oor-IN-Z3A"/>
+                            <constraint firstItem="9Bt-AU-AdM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="31" id="swJ-Jl-Tn8"/>
+                            <constraint firstItem="9Bt-AU-AdM" firstAttribute="centerY" secondItem="sMK-bP-h4w" secondAttribute="centerY" id="t0H-Yt-Gql"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pjT-JN-7dd" secondAttribute="trailing" constant="148" id="v6z-re-aql"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="BSv-e3-Eik"/>
+                    <navigationItem key="navigationItem" id="BSv-e3-Eik">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="9jM-cX-VJz"/>
+                        <barButtonItem key="rightBarButtonItem" image="walk_d_icon" id="Y9Y-C2-bfv">
+                            <color key="tintColor" red="0.10980392156862745" green="0.21568627450980393" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="themeCollectionView" destination="9Bt-AU-AdM" id="oY5-uk-ErQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="950" y="-653"/>
+            <point key="canvasLocation" x="949.60000000000002" y="-653.20197044334975"/>
         </scene>
         <!--Course-->
         <scene sceneID="XW6-rX-Vdf">
@@ -52,7 +140,7 @@
         <scene sceneID="5mW-6b-Q86">
             <objects>
                 <navigationController id="Jgd-8u-WyB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="코스" id="ZDV-ZB-Lg5"/>
+                    <tabBarItem key="tabBarItem" title="코스" image="tab_map_icon" selectedImage="tab_map_fill_icon" id="ZDV-ZB-Lg5"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yVe-Rr-H6X">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -69,7 +157,7 @@
         <scene sceneID="2px-qg-4An">
             <objects>
                 <navigationController id="iBh-U1-rgB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="커뮤니티" id="YuI-IQ-Ca8"/>
+                    <tabBarItem key="tabBarItem" title="커뮤니티" image="tab_review_icon" selectedImage="tab_review_fill_icon" id="YuI-IQ-Ca8"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ah0-P4-6Qt">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -86,7 +174,7 @@
         <scene sceneID="Dfc-6S-goP">
             <objects>
                 <navigationController id="c8m-bj-goi" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="마이" id="BXN-oz-Yx0"/>
+                    <tabBarItem key="tabBarItem" title="마이" image="tab_my_icon" selectedImage="tab_my_fill_icon" id="BXN-oz-Yx0"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hk9-St-QiL">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -114,7 +202,7 @@
         <scene sceneID="Skj-BT-78p">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JOB-9H-nzf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="홈" id="cum-nv-bUK"/>
+                    <tabBarItem key="tabBarItem" title="홈" image="tab_home_icon" selectedImage="tab_home_fill_icon" id="cum-nv-bUK"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Au3-Uw-JNV">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -135,8 +223,10 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="sad-6A-qml" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GwH-XM-Fy8">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="JOB-9H-nzf" kind="relationship" relationship="viewControllers" id="Eqd-ei-4g7"/>
@@ -150,4 +240,16 @@
             <point key="canvasLocation" x="-770" y="430"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="home_map_icon" width="27" height="23"/>
+        <image name="tab_home_fill_icon" width="26" height="24"/>
+        <image name="tab_home_icon" width="26" height="24"/>
+        <image name="tab_map_fill_icon" width="25" height="21"/>
+        <image name="tab_map_icon" width="25" height="21"/>
+        <image name="tab_my_fill_icon" width="25" height="25"/>
+        <image name="tab_my_icon" width="25" height="25"/>
+        <image name="tab_review_fill_icon" width="19" height="24"/>
+        <image name="tab_review_icon" width="19" height="24"/>
+        <image name="walk_d_icon" width="25" height="25"/>
+    </resources>
 </document>
