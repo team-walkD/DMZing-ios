@@ -32,6 +32,7 @@
 		3BB0501C217CAE1E0096BF4D /* SampleVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB0501B217CAE1E0096BF4D /* SampleVO.swift */; };
 		3BD63A052180B873007F5972 /* MyPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD63A042180B873007F5972 /* MyPostVC.swift */; };
 		3BD63A072180B88B007F5972 /* MyPostCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD63A062180B88B007F5972 /* MyPostCVCell.swift */; };
+		3BD63A202185E308007F5972 /* MainCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD63A1F2185E308007F5972 /* MainCVCell.swift */; };
 		893E8C9EAF51BF82E1979921 /* Pods_DMZing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03429F00E6D01CE48BFFF5D1 /* Pods_DMZing.framework */; };
 		CC31AC5C217C8D3200A02388 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC31AC5B217C8D3200A02388 /* AppDelegate.swift */; };
 		CC31AC5E217C8D3200A02388 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC31AC5D217C8D3200A02388 /* MainViewController.swift */; };
@@ -72,6 +73,7 @@
 		3BB0501B217CAE1E0096BF4D /* SampleVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleVO.swift; sourceTree = "<group>"; };
 		3BD63A042180B873007F5972 /* MyPostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostVC.swift; sourceTree = "<group>"; };
 		3BD63A062180B88B007F5972 /* MyPostCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostCVCell.swift; sourceTree = "<group>"; };
+		3BD63A1F2185E308007F5972 /* MainCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCVCell.swift; sourceTree = "<group>"; };
 		BEE318596B099D3958535472 /* Pods-DMZing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DMZing.release.xcconfig"; path = "Pods/Target Support Files/Pods-DMZing/Pods-DMZing.release.xcconfig"; sourceTree = "<group>"; };
 		CBAA91FB15653A30BF8D6E25 /* Pods-DMZing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DMZing.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DMZing/Pods-DMZing.debug.xcconfig"; sourceTree = "<group>"; };
 		CC31AC58217C8D3200A02388 /* DMZing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DMZing.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -302,6 +304,7 @@
 				CC31AC5F217C8D3200A02388 /* Main.storyboard */,
 				CC31AC5D217C8D3200A02388 /* MainViewController.swift */,
 				CC3D43BB2185A9F8003171C0 /* ThemeCollectionViewCell.swift */,
+				3BD63A1F2185E308007F5972 /* MainCVCell.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -505,6 +508,7 @@
 				3B872CD52180B40900498F97 /* MyDPPointTVCell.swift in Sources */,
 				CC3D43BC2185A9F8003171C0 /* ThemeCollectionViewCell.swift in Sources */,
 				3BB05009217CA9D20096BF4D /* ColorChip.swift in Sources */,
+				3BD63A202185E308007F5972 /* MainCVCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
