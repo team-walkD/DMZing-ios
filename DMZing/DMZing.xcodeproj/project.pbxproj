@@ -43,6 +43,12 @@
 		CC31AC74217C92AF00A02388 /* Community.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC31AC73217C92AF00A02388 /* Community.storyboard */; };
 		CC31AC76217C92BD00A02388 /* Mypage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC31AC75217C92BD00A02388 /* Mypage.storyboard */; };
 		CC3D43BC2185A9F8003171C0 /* ThemeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3D43BB2185A9F8003171C0 /* ThemeCollectionViewCell.swift */; };
+		CCB3CC9C218AF97A0033B9F9 /* Sign.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCB3CC9B218AF97A0033B9F9 /* Sign.storyboard */; };
+		CCB3CC9E218AF9D40033B9F9 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB3CC9D218AF9D40033B9F9 /* SignInViewController.swift */; };
+		CCB3CCA0218B01430033B9F9 /* SignUp1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB3CC9F218B01430033B9F9 /* SignUp1ViewController.swift */; };
+		CCB3CCA2218B035B0033B9F9 /* SignUp2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB3CCA1218B035B0033B9F9 /* SignUp2ViewController.swift */; };
+		CCB3CCA4218B041B0033B9F9 /* SignUp3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB3CCA3218B041B0033B9F9 /* SignUp3ViewController.swift */; };
+		CCB3CCA6218B061A0033B9F9 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB3CCA5218B061A0033B9F9 /* InitialViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +93,12 @@
 		CC31AC73217C92AF00A02388 /* Community.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Community.storyboard; sourceTree = "<group>"; };
 		CC31AC75217C92BD00A02388 /* Mypage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mypage.storyboard; sourceTree = "<group>"; };
 		CC3D43BB2185A9F8003171C0 /* ThemeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCollectionViewCell.swift; sourceTree = "<group>"; };
+		CCB3CC9B218AF97A0033B9F9 /* Sign.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sign.storyboard; sourceTree = "<group>"; };
+		CCB3CC9D218AF9D40033B9F9 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		CCB3CC9F218B01430033B9F9 /* SignUp1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp1ViewController.swift; sourceTree = "<group>"; };
+		CCB3CCA1218B035B0033B9F9 /* SignUp2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp2ViewController.swift; sourceTree = "<group>"; };
+		CCB3CCA3218B041B0033B9F9 /* SignUp3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp3ViewController.swift; sourceTree = "<group>"; };
+		CCB3CCA5218B061A0033B9F9 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		FA082A16820F4FD6F8F63662 /* Pods-DMZing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DMZing.debug.xcconfig"; path = "Target Support Files/Pods-DMZing/Pods-DMZing.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -283,6 +295,7 @@
 		CC31AC5A217C8D3200A02388 /* DMZing */ = {
 			isa = PBXGroup;
 			children = (
+				CCB3CC9A218AF95B0033B9F9 /* Sign */,
 				3BB05012217CAD330096BF4D /* SampleService */,
 				3BB05007217CA9C70096BF4D /* Singleton */,
 				3BB04FFE217CA63F0096BF4D /* Utility */,
@@ -337,6 +350,19 @@
 				3B872CD12180B3DF00498F97 /* DPPoint */,
 			);
 			path = Mypage;
+			sourceTree = "<group>";
+		};
+		CCB3CC9A218AF95B0033B9F9 /* Sign */ = {
+			isa = PBXGroup;
+			children = (
+				CCB3CC9B218AF97A0033B9F9 /* Sign.storyboard */,
+				CCB3CC9D218AF9D40033B9F9 /* SignInViewController.swift */,
+				CCB3CC9F218B01430033B9F9 /* SignUp1ViewController.swift */,
+				CCB3CCA1218B035B0033B9F9 /* SignUp2ViewController.swift */,
+				CCB3CCA3218B041B0033B9F9 /* SignUp3ViewController.swift */,
+				CCB3CCA5218B061A0033B9F9 /* InitialViewController.swift */,
+			);
+			path = Sign;
 			sourceTree = "<group>";
 		};
 		E102DB78A86903CD5A39D3A8 /* Frameworks */ = {
@@ -419,6 +445,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCB3CC9C218AF97A0033B9F9 /* Sign.storyboard in Resources */,
 				CC31AC66217C8D3600A02388 /* LaunchScreen.storyboard in Resources */,
 				CC31AC76217C92BD00A02388 /* Mypage.storyboard in Resources */,
 				CC31AC72217C929000A02388 /* Course.storyboard in Resources */,
@@ -487,8 +514,11 @@
 				3BD63A052180B873007F5972 /* MyPostVC.swift in Sources */,
 				3B872CC421809C1700498F97 /* MyCourseTVCell.swift in Sources */,
 				3B872CD72180B41800498F97 /* MyDPPointVC.swift in Sources */,
+				CCB3CCA6218B061A0033B9F9 /* InitialViewController.swift in Sources */,
 				CC31AC5E217C8D3200A02388 /* MainViewController.swift in Sources */,
+				CCB3CC9E218AF9D40033B9F9 /* SignInViewController.swift in Sources */,
 				3BB05004217CA6650096BF4D /* PostableService.swift in Sources */,
+				CCB3CCA0218B01430033B9F9 /* SignUp1ViewController.swift in Sources */,
 				3BB05002217CA65D0096BF4D /* GettableService.swift in Sources */,
 				3BB05011217CAC910096BF4D /* HttpResCode.swift in Sources */,
 				3B872CBC2180943D00498F97 /* CustomView.swift in Sources */,
@@ -507,6 +537,8 @@
 				CC31AC5C217C8D3200A02388 /* AppDelegate.swift in Sources */,
 				3B872CD52180B40900498F97 /* MyDPPointTVCell.swift in Sources */,
 				CC3D43BC2185A9F8003171C0 /* ThemeCollectionViewCell.swift in Sources */,
+				CCB3CCA4218B041B0033B9F9 /* SignUp3ViewController.swift in Sources */,
+				CCB3CCA2218B035B0033B9F9 /* SignUp2ViewController.swift in Sources */,
 				3BB05009217CA9D20096BF4D /* ColorChip.swift in Sources */,
 				3BD63A202185E308007F5972 /* MainCVCell.swift in Sources */,
 			);
@@ -653,7 +685,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Y4XABUQ539;
+				DEVELOPMENT_TEAM = T5Y35W5FL6;
 				INFOPLIST_FILE = DMZing/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -670,7 +702,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Y4XABUQ539;
+				DEVELOPMENT_TEAM = T5Y35W5FL6;
 				INFOPLIST_FILE = DMZing/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
