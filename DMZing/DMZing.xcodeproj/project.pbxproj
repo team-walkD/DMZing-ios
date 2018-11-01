@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B800572218B1F160003EA5C /* PhotoReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B800571218B1F160003EA5C /* PhotoReviewVC.swift */; };
+		3B80057C218B1FFA0003EA5C /* ReviewDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B80057B218B1FFA0003EA5C /* ReviewDetailVC.swift */; };
+		3B80057E218B206E0003EA5C /* ArticleReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B80057D218B206E0003EA5C /* ArticleReviewVC.swift */; };
+		3B800580218B213F0003EA5C /* PhotoReviewCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B80057F218B213F0003EA5C /* PhotoReviewCVCell.swift */; };
+		3B800582218B21560003EA5C /* PhotoReviewCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B800581218B21560003EA5C /* PhotoReviewCVCell.xib */; };
+		3B800584218B26D50003EA5C /* RoundShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B800583218B26D50003EA5C /* RoundShadowView.swift */; };
+		3B800588218B2AC40003EA5C /* ReviewDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B800587218B2AC40003EA5C /* ReviewDetailHeaderView.swift */; };
+		3B80058A218B2D9E0003EA5C /* ReviewDetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B800589218B2D9E0003EA5C /* ReviewDetailHeaderView.xib */; };
+		3B80058F218B54F10003EA5C /* ReviewMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B80058E218B54F10003EA5C /* ReviewMainVC.swift */; };
+		3B800591218B55790003EA5C /* ArticleReviewCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B800590218B55790003EA5C /* ArticleReviewCVCell.swift */; };
+		3B800593218B56BC0003EA5C /* ArticleReviewCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B800592218B56BC0003EA5C /* ArticleReviewCVCell.xib */; };
+		3B800595218B73650003EA5C /* ReviewMainCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B800594218B73650003EA5C /* ReviewMainCVCell.swift */; };
+		3B800598218B81080003EA5C /* PhotoReviewPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B800597218B81080003EA5C /* PhotoReviewPopupView.swift */; };
+		3B80059A218B81340003EA5C /* PhotoReviewPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B800599218B81340003EA5C /* PhotoReviewPopupView.xib */; };
 		3B872CB72180902700498F97 /* MypageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B872CB62180902700498F97 /* MypageVC.swift */; };
 		3B872CBA2180905000498F97 /* MyPageTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B872CB92180905000498F97 /* MyPageTVCell.swift */; };
 		3B872CBC2180943D00498F97 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B872CBB2180943D00498F97 /* CustomView.swift */; };
@@ -54,6 +68,20 @@
 /* Begin PBXFileReference section */
 		03429F00E6D01CE48BFFF5D1 /* Pods_DMZing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DMZing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		31A78C13C32CCDE3112EE612 /* Pods-DMZing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DMZing.release.xcconfig"; path = "Target Support Files/Pods-DMZing/Pods-DMZing.release.xcconfig"; sourceTree = "<group>"; };
+		3B800571218B1F160003EA5C /* PhotoReviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoReviewVC.swift; sourceTree = "<group>"; };
+		3B80057B218B1FFA0003EA5C /* ReviewDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewDetailVC.swift; sourceTree = "<group>"; };
+		3B80057D218B206E0003EA5C /* ArticleReviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleReviewVC.swift; sourceTree = "<group>"; };
+		3B80057F218B213F0003EA5C /* PhotoReviewCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoReviewCVCell.swift; sourceTree = "<group>"; };
+		3B800581218B21560003EA5C /* PhotoReviewCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoReviewCVCell.xib; sourceTree = "<group>"; };
+		3B800583218B26D50003EA5C /* RoundShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundShadowView.swift; sourceTree = "<group>"; };
+		3B800587218B2AC40003EA5C /* ReviewDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewDetailHeaderView.swift; sourceTree = "<group>"; };
+		3B800589218B2D9E0003EA5C /* ReviewDetailHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewDetailHeaderView.xib; sourceTree = "<group>"; };
+		3B80058E218B54F10003EA5C /* ReviewMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewMainVC.swift; sourceTree = "<group>"; };
+		3B800590218B55790003EA5C /* ArticleReviewCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleReviewCVCell.swift; sourceTree = "<group>"; };
+		3B800592218B56BC0003EA5C /* ArticleReviewCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleReviewCVCell.xib; sourceTree = "<group>"; };
+		3B800594218B73650003EA5C /* ReviewMainCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewMainCVCell.swift; sourceTree = "<group>"; };
+		3B800597218B81080003EA5C /* PhotoReviewPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoReviewPopupView.swift; sourceTree = "<group>"; };
+		3B800599218B81340003EA5C /* PhotoReviewPopupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoReviewPopupView.xib; sourceTree = "<group>"; };
 		3B872CB62180902700498F97 /* MypageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageVC.swift; sourceTree = "<group>"; };
 		3B872CB92180905000498F97 /* MyPageTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageTVCell.swift; sourceTree = "<group>"; };
 		3B872CBB2180943D00498F97 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
@@ -114,6 +142,67 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B800570218B1EFA0003EA5C /* ReviewMain */ = {
+			isa = PBXGroup;
+			children = (
+				3B80058E218B54F10003EA5C /* ReviewMainVC.swift */,
+				3B800594218B73650003EA5C /* ReviewMainCVCell.swift */,
+			);
+			path = ReviewMain;
+			sourceTree = "<group>";
+		};
+		3B800577218B1FBD0003EA5C /* ReviewDetail */ = {
+			isa = PBXGroup;
+			children = (
+				3B800583218B26D50003EA5C /* RoundShadowView.swift */,
+				3B80057B218B1FFA0003EA5C /* ReviewDetailVC.swift */,
+				3B800587218B2AC40003EA5C /* ReviewDetailHeaderView.swift */,
+				3B800589218B2D9E0003EA5C /* ReviewDetailHeaderView.xib */,
+				3B80058C218B360B0003EA5C /* Photo */,
+				3B80058B218B360A0003EA5C /* Article */,
+			);
+			path = ReviewDetail;
+			sourceTree = "<group>";
+		};
+		3B80058B218B360A0003EA5C /* Article */ = {
+			isa = PBXGroup;
+			children = (
+				3B80057D218B206E0003EA5C /* ArticleReviewVC.swift */,
+				3B800590218B55790003EA5C /* ArticleReviewCVCell.swift */,
+				3B800592218B56BC0003EA5C /* ArticleReviewCVCell.xib */,
+			);
+			path = Article;
+			sourceTree = "<group>";
+		};
+		3B80058C218B360B0003EA5C /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+				3B800571218B1F160003EA5C /* PhotoReviewVC.swift */,
+				3B80057F218B213F0003EA5C /* PhotoReviewCVCell.swift */,
+				3B800581218B21560003EA5C /* PhotoReviewCVCell.xib */,
+				3B800596218B80D00003EA5C /* Popup */,
+			);
+			path = Photo;
+			sourceTree = "<group>";
+		};
+		3B80058D218B48DB0003EA5C /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				3B800570218B1EFA0003EA5C /* ReviewMain */,
+				3B800577218B1FBD0003EA5C /* ReviewDetail */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		3B800596218B80D00003EA5C /* Popup */ = {
+			isa = PBXGroup;
+			children = (
+				3B800597218B81080003EA5C /* PhotoReviewPopupView.swift */,
+				3B800599218B81340003EA5C /* PhotoReviewPopupView.xib */,
+			);
+			path = Popup;
+			sourceTree = "<group>";
+		};
 		3B872CB52180901500498F97 /* VC */ = {
 			isa = PBXGroup;
 			children = (
@@ -334,6 +423,7 @@
 			isa = PBXGroup;
 			children = (
 				CC31AC73217C92AF00A02388 /* Community.storyboard */,
+				3B80058D218B48DB0003EA5C /* VC */,
 			);
 			path = Community;
 			sourceTree = "<group>";
@@ -445,9 +535,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B80059A218B81340003EA5C /* PhotoReviewPopupView.xib in Resources */,
+				3B80058A218B2D9E0003EA5C /* ReviewDetailHeaderView.xib in Resources */,
 				CCB3CC9C218AF97A0033B9F9 /* Sign.storyboard in Resources */,
 				CC31AC66217C8D3600A02388 /* LaunchScreen.storyboard in Resources */,
 				CC31AC76217C92BD00A02388 /* Mypage.storyboard in Resources */,
+				3B800582218B21560003EA5C /* PhotoReviewCVCell.xib in Resources */,
+				3B800593218B56BC0003EA5C /* ArticleReviewCVCell.xib in Resources */,
 				CC31AC72217C929000A02388 /* Course.storyboard in Resources */,
 				CC31AC63217C8D3600A02388 /* Assets.xcassets in Resources */,
 				CC31AC74217C92AF00A02388 /* Community.storyboard in Resources */,
@@ -464,9 +558,10 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-DMZing/Pods-DMZing-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-DMZing/Pods-DMZing-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/LTScrollView/LTScrollView.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
@@ -474,12 +569,13 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LTScrollView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DMZing/Pods-DMZing-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DMZing/Pods-DMZing-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F5BF7C7DFFE6288E27244881 /* [CP] Check Pods Manifest.lock */ = {
@@ -508,9 +604,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B872CB72180902700498F97 /* MypageVC.swift in Sources */,
+				3B800595218B73650003EA5C /* ReviewMainCVCell.swift in Sources */,
 				3BB0501C217CAE1E0096BF4D /* SampleVO.swift in Sources */,
 				3B872CCE2180B10A00498F97 /* MyReviewVC.swift in Sources */,
+				3B80057C218B1FFA0003EA5C /* ReviewDetailVC.swift in Sources */,
 				3BB05006217CA66F0096BF4D /* PostableWithPhoto.swift in Sources */,
+				3B80057E218B206E0003EA5C /* ArticleReviewVC.swift in Sources */,
 				3BD63A052180B873007F5972 /* MyPostVC.swift in Sources */,
 				3B872CC421809C1700498F97 /* MyCourseTVCell.swift in Sources */,
 				3B872CD72180B41800498F97 /* MyDPPointVC.swift in Sources */,
@@ -524,22 +623,29 @@
 				3B872CBC2180943D00498F97 /* CustomView.swift in Sources */,
 				3B872CD02180B12100498F97 /* MyReviewTVCell.swift in Sources */,
 				3BB0500B217CAA410096BF4D /* Storyboard.swift in Sources */,
+				3B800591218B55790003EA5C /* ArticleReviewCVCell.swift in Sources */,
 				3BB0500D217CAA890096BF4D /* NetworkConfiguration.swift in Sources */,
 				3BB0500F217CAAFC0096BF4D /* APIService.swift in Sources */,
 				3B872CC121809A5500498F97 /* MyCourseVC.swift in Sources */,
 				3BB05014217CAD6C0096BF4D /* Font.swift in Sources */,
+				3B800588218B2AC40003EA5C /* ReviewDetailHeaderView.swift in Sources */,
 				3BB05018217CADEF0096BF4D /* PostSampleService.swift in Sources */,
+				3B800584218B26D50003EA5C /* RoundShadowView.swift in Sources */,
 				3BD63A072180B88B007F5972 /* MyPostCVCell.swift in Sources */,
 				3BB05016217CADE80096BF4D /* GetSampleService.swift in Sources */,
+				3B800580218B213F0003EA5C /* PhotoReviewCVCell.swift in Sources */,
 				3BB0501A217CADFA0096BF4D /* PhotoSampleService.swift in Sources */,
+				3B800598218B81080003EA5C /* PhotoReviewPopupView.swift in Sources */,
 				3B872CBA2180905000498F97 /* MyPageTVCell.swift in Sources */,
 				3BB05000217CA6540096BF4D /* Extensions.swift in Sources */,
 				CC31AC5C217C8D3200A02388 /* AppDelegate.swift in Sources */,
 				3B872CD52180B40900498F97 /* MyDPPointTVCell.swift in Sources */,
+				3B80058F218B54F10003EA5C /* ReviewMainVC.swift in Sources */,
 				CC3D43BC2185A9F8003171C0 /* ThemeCollectionViewCell.swift in Sources */,
 				CCB3CCA4218B041B0033B9F9 /* SignUp3ViewController.swift in Sources */,
 				CCB3CCA2218B035B0033B9F9 /* SignUp2ViewController.swift in Sources */,
 				3BB05009217CA9D20096BF4D /* ColorChip.swift in Sources */,
+				3B800572218B1F160003EA5C /* PhotoReviewVC.swift in Sources */,
 				3BD63A202185E308007F5972 /* MainCVCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

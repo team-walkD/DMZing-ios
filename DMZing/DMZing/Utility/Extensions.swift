@@ -25,8 +25,8 @@ extension NSObject {
 extension UIViewController {
     
     //백버튼
-    func setBackBtn(color : UIColor? = ColorChip.shared().barbuttonColor){
-        let backBTN = UIBarButtonItem(image: UIImage(named: "category_detail_left_arrow"),
+    func setBackBtn(color : UIColor? = ColorChip.shared().deepBlue){
+        let backBTN = UIBarButtonItem(image: UIImage(named: "back_white_btn"),
                                       style: .plain,
                                       target: self,
                                       action: #selector(self.pop))
@@ -188,25 +188,16 @@ extension UICollectionViewCell {
     }
     
     
-    func setImgWithKF(url : String, imgView : UIImageView, defaultImg : UIImage){
-        if let url = URL(string: url){
-            imgView.kf.setImage(with: url)
-        } else {
-            imgView.image = defaultImg
-        }
-    }
-    
 }
 
-extension UITableViewCell {
-    func setImgWithKF(url : String, imgView : UIImageView, defaultImg : UIImage){
+extension UIImageView {
+    func setImgWithKF(url : String, defaultImg : UIImage){
         if let url = URL(string: url){
-            imgView.kf.setImage(with: url)
+            self.kf.setImage(with: url)
         } else {
-            imgView.image = defaultImg
+            self.image = defaultImg
         }
     }
-    
 }
 
 
@@ -230,5 +221,33 @@ extension UILabel {
         attributedString.addAttribute(NSAttributedStringKey.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attributedString.length))
         
         self.attributedText = attributedString
+    }
+}
+
+
+/*---------------------CALayer---------------------------*/
+extension CALayer {
+    func applySketchShadow(
+        color: UIColor = .black,
+        alpha: Float = 0.5,
+        x: CGFloat = 0,
+        y: CGFloat = 0,
+        blur: CGFloat = 4,
+        spread: CGFloat = 0,
+        shadowRadius_ : CGFloat? = 4
+        )
+    {
+        shadowColor = color.cgColor
+        shadowOpacity = alpha
+        shadowOffset = CGSize(width: x, height: y)
+        //원래는 이거였음 shadowRadius = blur / 2.0
+        shadowRadius = shadowRadius_ ?? blur / 2.0
+        if spread == 0 {
+            shadowPath = nil
+        } else {
+            let dx = -spread
+            let rect = bounds.insetBy(dx: dx, dy: dx)
+            shadowPath = UIBezierPath(rect: rect).cgPath
+        }
     }
 }

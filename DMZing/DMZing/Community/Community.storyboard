@@ -1,30 +1,210 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vfj-EH-4gP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2ia-2N-0UQ">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="AppleSDGothicNeo.ttc">
+            <string>AppleSDGothicNeo-Bold</string>
+            <string>AppleSDGothicNeo-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Review MainVC-->
+        <scene sceneID="BID-0c-EWJ">
+            <objects>
+                <viewController storyboardIdentifier="ReviewMainVC" id="2ia-2N-0UQ" customClass="ReviewMainVC" customModule="DMZing" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="M3C-lO-XVD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Obe-qR-aEq">
+                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
+                                <color key="backgroundColor" red="0.95294117647058818" green="0.96078431372549022" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Kl8-cE-RM9">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="50" height="304"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="29" minY="47" maxX="29" maxY="47"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ReviewMainCVCell" id="s4h-Rz-iTf" customClass="ReviewMainCVCell" customModule="DMZing" customModuleProvider="target">
+                                        <rect key="frame" x="29" y="351" width="143" height="143"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="143" height="143"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AyW-bt-d9F">
+                                                    <rect key="frame" x="0.0" y="0.0" width="143" height="143"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3qS-UB-bCR">
+                                                            <rect key="frame" x="0.0" y="0.0" width="143" height="143"/>
+                                                        </imageView>
+                                                        <view alpha="0.39000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f89-Zr-ZXg">
+                                                            <rect key="frame" x="0.0" y="0.0" width="143" height="143"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </view>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="데이트 맵" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nDq-ad-08j">
+                                                            <rect key="frame" x="41" y="61.000000000000007" width="59.666666666666657" height="19.333333333333336"/>
+                                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="16"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="f89-Zr-ZXg" secondAttribute="bottom" id="INk-SU-1mi"/>
+                                                        <constraint firstAttribute="trailing" secondItem="3qS-UB-bCR" secondAttribute="trailing" id="PuN-Pe-WIf"/>
+                                                        <constraint firstItem="f89-Zr-ZXg" firstAttribute="leading" secondItem="AyW-bt-d9F" secondAttribute="leading" id="Qne-P0-udq"/>
+                                                        <constraint firstAttribute="bottom" secondItem="3qS-UB-bCR" secondAttribute="bottom" id="a2K-nt-wDB"/>
+                                                        <constraint firstItem="3qS-UB-bCR" firstAttribute="top" secondItem="AyW-bt-d9F" secondAttribute="top" id="aeo-Jc-xb8"/>
+                                                        <constraint firstItem="nDq-ad-08j" firstAttribute="centerY" secondItem="AyW-bt-d9F" secondAttribute="centerY" id="dRa-FW-yg4"/>
+                                                        <constraint firstItem="f89-Zr-ZXg" firstAttribute="top" secondItem="AyW-bt-d9F" secondAttribute="top" id="eAd-Cf-DfP"/>
+                                                        <constraint firstAttribute="trailing" secondItem="f89-Zr-ZXg" secondAttribute="trailing" id="mf8-r0-kmh"/>
+                                                        <constraint firstItem="3qS-UB-bCR" firstAttribute="leading" secondItem="AyW-bt-d9F" secondAttribute="leading" id="xoq-GU-1Hs"/>
+                                                        <constraint firstItem="nDq-ad-08j" firstAttribute="centerX" secondItem="AyW-bt-d9F" secondAttribute="centerX" id="yIQ-Tk-6qi"/>
+                                                    </constraints>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IOn-Mn-u3V">
+                                                    <rect key="frame" x="111" y="0.0" width="32" height="32"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="05" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="peb-zz-gtM">
+                                                            <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="16"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.42745098039215684" green="0.6588235294117647" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstItem="peb-zz-gtM" firstAttribute="leading" secondItem="IOn-Mn-u3V" secondAttribute="leading" id="Nwh-Hq-wVA"/>
+                                                        <constraint firstItem="peb-zz-gtM" firstAttribute="top" secondItem="IOn-Mn-u3V" secondAttribute="top" id="Rm7-A3-Fr5"/>
+                                                        <constraint firstAttribute="width" constant="32" id="ZNn-Ks-fmD"/>
+                                                        <constraint firstAttribute="bottom" secondItem="peb-zz-gtM" secondAttribute="bottom" id="cgV-1y-65B"/>
+                                                        <constraint firstAttribute="height" constant="32" id="gAh-Yq-A7U"/>
+                                                        <constraint firstAttribute="trailing" secondItem="peb-zz-gtM" secondAttribute="trailing" id="ubg-pX-Cp9"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="AyW-bt-d9F" secondAttribute="trailing" id="3JZ-UX-hSw"/>
+                                            <constraint firstItem="AyW-bt-d9F" firstAttribute="top" secondItem="s4h-Rz-iTf" secondAttribute="top" id="YHf-t6-bPy"/>
+                                            <constraint firstItem="IOn-Mn-u3V" firstAttribute="top" secondItem="s4h-Rz-iTf" secondAttribute="top" id="bH7-yq-9vE"/>
+                                            <constraint firstAttribute="bottom" secondItem="AyW-bt-d9F" secondAttribute="bottom" id="hfy-J7-B7b"/>
+                                            <constraint firstItem="AyW-bt-d9F" firstAttribute="leading" secondItem="s4h-Rz-iTf" secondAttribute="leading" id="tcm-l2-Cf5"/>
+                                            <constraint firstAttribute="trailing" secondItem="IOn-Mn-u3V" secondAttribute="trailing" id="xwS-7k-RQY"/>
+                                        </constraints>
+                                        <size key="customSize" width="143" height="143"/>
+                                        <connections>
+                                            <outlet property="backView" destination="AyW-bt-d9F" id="aWY-9a-Qyx"/>
+                                            <outlet property="blueView" destination="IOn-Mn-u3V" id="aND-PU-9NM"/>
+                                            <outlet property="cntLbl" destination="peb-zz-gtM" id="h2E-54-eUN"/>
+                                            <outlet property="mainImgView" destination="3qS-UB-bCR" id="gWu-11-NY5"/>
+                                            <outlet property="titleLbl" destination="nDq-ad-08j" id="PRU-nk-CuO"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ReviewMainHeaderView" id="aia-6E-pMO">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="304"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DMZ를 다녀온" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6v-gK-NvG">
+                                            <rect key="frame" x="38" y="125.33333333333331" width="139.66666666666666" height="29"/>
+                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="24"/>
+                                            <color key="textColor" red="0.10980392160000001" green="0.2156862745" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카테고리를 선택하면  해당 코스의 소셜 리뷰/ 후기를 볼 수 있어요." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QFp-cy-2fY">
+                                            <rect key="frame" x="38" y="226.33333333333334" width="274" height="38.666666666666657"/>
+                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
+                                            <color key="textColor" red="0.10980392160000001" green="0.2156862745" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사람들과 만나보세요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q1d-MW-YGc">
+                                            <rect key="frame" x="37.999999999999986" y="159.33333333333334" width="199.66666666666663" height="29"/>
+                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="24"/>
+                                            <color key="textColor" red="0.10980392160000001" green="0.2156862745" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.7725490196" green="0.86274509799999999" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="QFp-cy-2fY" firstAttribute="leading" secondItem="aia-6E-pMO" secondAttribute="leading" constant="38" id="AZy-sg-vUI"/>
+                                        <constraint firstItem="q1d-MW-YGc" firstAttribute="leading" secondItem="QFp-cy-2fY" secondAttribute="leading" id="EV6-tS-1Vp"/>
+                                        <constraint firstItem="A6v-gK-NvG" firstAttribute="leading" secondItem="q1d-MW-YGc" secondAttribute="leading" id="WEB-ai-7E4"/>
+                                        <constraint firstItem="q1d-MW-YGc" firstAttribute="top" secondItem="A6v-gK-NvG" secondAttribute="bottom" constant="5" id="atO-cz-98v"/>
+                                        <constraint firstItem="QFp-cy-2fY" firstAttribute="top" secondItem="q1d-MW-YGc" secondAttribute="bottom" constant="38" id="huh-3o-l5S"/>
+                                        <constraint firstAttribute="bottom" secondItem="QFp-cy-2fY" secondAttribute="bottom" constant="39" id="lka-UT-yve"/>
+                                    </constraints>
+                                </collectionReusableView>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xLg-fK-0SC" firstAttribute="bottom" secondItem="Obe-qR-aEq" secondAttribute="bottom" id="68j-4I-LWy"/>
+                            <constraint firstItem="xLg-fK-0SC" firstAttribute="trailing" secondItem="Obe-qR-aEq" secondAttribute="trailing" id="8EY-07-SXa"/>
+                            <constraint firstItem="Obe-qR-aEq" firstAttribute="top" secondItem="xLg-fK-0SC" secondAttribute="top" id="HMe-lt-CnG"/>
+                            <constraint firstItem="Obe-qR-aEq" firstAttribute="leading" secondItem="xLg-fK-0SC" secondAttribute="leading" id="sxz-LD-6Bx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xLg-fK-0SC"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="uLY-L0-FTd">
+                        <rightBarButtonItems>
+                            <barButtonItem image="review_write_icon" id="y0a-9q-p6i">
+                                <color key="tintColor" red="0.10980392160000001" green="0.2156862745" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </barButtonItem>
+                            <barButtonItem image="walk_d_icon" id="iUf-jh-YY6">
+                                <color key="tintColor" red="0.10980392160000001" green="0.2156862745" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="collectionView" destination="Obe-qR-aEq" id="Iv4-4E-8bp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ilc-2Q-I6A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-188" y="148.52216748768473"/>
+        </scene>
+        <!--Review DetailVC-->
         <scene sceneID="5nN-nM-Qnt">
             <objects>
-                <viewController id="vfj-EH-4gP" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ReviewDetailVC" id="vfj-EH-4gP" customClass="ReviewDetailVC" customModule="DMZing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xJp-vf-ndP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.70588235290000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="m8b-Mv-3Yw"/>
                     </view>
-                    <navigationItem key="navigationItem" id="2eZ-W8-Fre"/>
+                    <navigationItem key="navigationItem" id="2YQ-zZ-IQa">
+                        <rightBarButtonItems>
+                            <barButtonItem image="review_write_icon" id="GVV-ox-LC0">
+                                <color key="tintColor" red="0.10980392160000001" green="0.2156862745" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </barButtonItem>
+                            <barButtonItem image="walk_d_icon" id="x48-hI-MsK">
+                                <color key="tintColor" red="0.10980392160000001" green="0.2156862745" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0mI-EK-9Qg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="428" y="165.96701649175412"/>
+            <point key="canvasLocation" x="526" y="149"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="review_write_icon" width="23" height="24"/>
+        <image name="walk_d_icon" width="25" height="25"/>
+    </resources>
 </document>
