@@ -1,27 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sad-6A-qml">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sad-6A-qml">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="AppleSDGothicNeo.ttc">
-            <string>AppleSDGothicNeo-Bold</string>
-            <string>AppleSDGothicNeo-Regular</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="MainViewController" id="BYZ-38-t0r" customClass="MainViewController" customModule="DMZing" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_map_icon" translatesAutoresizingMaskIntoConstraints="NO" id="sMK-bP-h4w">
@@ -84,41 +78,41 @@
                                 </cells>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QEy-in-jqO">
-                                <rect key="frame" x="0.0" y="332" width="375" height="785"/>
+                                <rect key="frame" x="0.0" y="332" width="375" height="397"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Oa5-6S-kqo">
-                                <rect key="frame" x="0.0" y="224" width="375" height="893"/>
+                                <rect key="frame" x="0.0" y="224" width="375" height="505"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="oG9-Cb-DsK">
-                                    <size key="itemSize" width="280" height="440"/>
+                                    <size key="itemSize" width="325" height="506"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="26" minY="0.0" maxX="26" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MainCVCell" id="GAX-dm-0gi" customClass="MainCVCell" customModule="DMZing" customModuleProvider="target">
-                                        <rect key="frame" x="26" y="165" width="325" height="563"/>
+                                        <rect key="frame" x="26" y="-0.66666666666666663" width="325" height="506"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="325" height="563"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="325" height="506"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ccc" translatesAutoresizingMaskIntoConstraints="NO" id="Dfe-pg-ddD">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ccc" translatesAutoresizingMaskIntoConstraints="NO" id="Dfe-pg-ddD">
                                                     <rect key="frame" x="0.0" y="0.0" width="325" height="168"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="178" id="hQi-FL-HZV"/>
+                                                        <constraint firstAttribute="height" constant="168" id="dtJ-KD-XqD"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="Dfe-pg-ddD" firstAttribute="leading" secondItem="GAX-dm-0gi" secondAttribute="leading" id="LTS-sV-Epd"/>
-                                            <constraint firstAttribute="trailing" secondItem="Dfe-pg-ddD" secondAttribute="trailing" id="dx8-h6-UQt"/>
-                                            <constraint firstItem="Dfe-pg-ddD" firstAttribute="top" secondItem="GAX-dm-0gi" secondAttribute="top" id="szL-Lk-UPf"/>
+                                            <constraint firstItem="Dfe-pg-ddD" firstAttribute="top" secondItem="GAX-dm-0gi" secondAttribute="top" id="for-QE-WJI"/>
+                                            <constraint firstItem="Dfe-pg-ddD" firstAttribute="leading" secondItem="GAX-dm-0gi" secondAttribute="leading" id="rwx-ks-XId"/>
+                                            <constraint firstAttribute="trailing" secondItem="Dfe-pg-ddD" secondAttribute="trailing" id="ska-gZ-K5D"/>
                                         </constraints>
-                                        <size key="customSize" width="325" height="563"/>
+                                        <size key="customSize" width="325" height="506"/>
                                         <connections>
                                             <outlet property="titleImgView" destination="Dfe-pg-ddD" id="nbg-pc-bze"/>
                                         </connections>
@@ -154,7 +148,6 @@
                             <color key="tintColor" red="0.10980392156862745" green="0.21568627450980393" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                     </navigationItem>
-                    <size key="freeformSize" width="375" height="1200"/>
                     <connections>
                         <outlet property="mainCollectionView" destination="Oa5-6S-kqo" id="9fp-HV-GeW"/>
                         <outlet property="themeCollectionView" destination="9Bt-AU-AdM" id="oY5-uk-ErQ"/>

@@ -86,7 +86,7 @@ extension MainViewController : UICollectionViewDelegate,UICollectionViewDataSour
         if collectionView == self.themeCollectionView {
             return CGSize(width: 118, height: 41)
         } else {
-           return CGSize(width: 325, height: 563)
+           return CGSize(width: 325, height: 506)
         }
        
     }
