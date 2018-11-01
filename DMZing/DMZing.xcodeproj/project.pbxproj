@@ -19,6 +19,8 @@
 		3B800591218B55790003EA5C /* ArticleReviewCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B800590218B55790003EA5C /* ArticleReviewCVCell.swift */; };
 		3B800593218B56BC0003EA5C /* ArticleReviewCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B800592218B56BC0003EA5C /* ArticleReviewCVCell.xib */; };
 		3B800595218B73650003EA5C /* ReviewMainCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B800594218B73650003EA5C /* ReviewMainCVCell.swift */; };
+		3B800598218B81080003EA5C /* PhotoReviewPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B800597218B81080003EA5C /* PhotoReviewPopupView.swift */; };
+		3B80059A218B81340003EA5C /* PhotoReviewPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B800599218B81340003EA5C /* PhotoReviewPopupView.xib */; };
 		3B872CB72180902700498F97 /* MypageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B872CB62180902700498F97 /* MypageVC.swift */; };
 		3B872CBA2180905000498F97 /* MyPageTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B872CB92180905000498F97 /* MyPageTVCell.swift */; };
 		3B872CBC2180943D00498F97 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B872CBB2180943D00498F97 /* CustomView.swift */; };
@@ -78,6 +80,8 @@
 		3B800590218B55790003EA5C /* ArticleReviewCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleReviewCVCell.swift; sourceTree = "<group>"; };
 		3B800592218B56BC0003EA5C /* ArticleReviewCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleReviewCVCell.xib; sourceTree = "<group>"; };
 		3B800594218B73650003EA5C /* ReviewMainCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewMainCVCell.swift; sourceTree = "<group>"; };
+		3B800597218B81080003EA5C /* PhotoReviewPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoReviewPopupView.swift; sourceTree = "<group>"; };
+		3B800599218B81340003EA5C /* PhotoReviewPopupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoReviewPopupView.xib; sourceTree = "<group>"; };
 		3B872CB62180902700498F97 /* MypageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageVC.swift; sourceTree = "<group>"; };
 		3B872CB92180905000498F97 /* MyPageTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageTVCell.swift; sourceTree = "<group>"; };
 		3B872CBB2180943D00498F97 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
@@ -176,6 +180,7 @@
 				3B800571218B1F160003EA5C /* PhotoReviewVC.swift */,
 				3B80057F218B213F0003EA5C /* PhotoReviewCVCell.swift */,
 				3B800581218B21560003EA5C /* PhotoReviewCVCell.xib */,
+				3B800596218B80D00003EA5C /* Popup */,
 			);
 			path = Photo;
 			sourceTree = "<group>";
@@ -187,6 +192,15 @@
 				3B800577218B1FBD0003EA5C /* ReviewDetail */,
 			);
 			path = VC;
+			sourceTree = "<group>";
+		};
+		3B800596218B80D00003EA5C /* Popup */ = {
+			isa = PBXGroup;
+			children = (
+				3B800597218B81080003EA5C /* PhotoReviewPopupView.swift */,
+				3B800599218B81340003EA5C /* PhotoReviewPopupView.xib */,
+			);
+			path = Popup;
 			sourceTree = "<group>";
 		};
 		3B872CB52180901500498F97 /* VC */ = {
@@ -521,6 +535,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B80059A218B81340003EA5C /* PhotoReviewPopupView.xib in Resources */,
 				3B80058A218B2D9E0003EA5C /* ReviewDetailHeaderView.xib in Resources */,
 				CCB3CC9C218AF97A0033B9F9 /* Sign.storyboard in Resources */,
 				CC31AC66217C8D3600A02388 /* LaunchScreen.storyboard in Resources */,
@@ -620,6 +635,7 @@
 				3BB05016217CADE80096BF4D /* GetSampleService.swift in Sources */,
 				3B800580218B213F0003EA5C /* PhotoReviewCVCell.swift in Sources */,
 				3BB0501A217CADFA0096BF4D /* PhotoSampleService.swift in Sources */,
+				3B800598218B81080003EA5C /* PhotoReviewPopupView.swift in Sources */,
 				3B872CBA2180905000498F97 /* MyPageTVCell.swift in Sources */,
 				3BB05000217CA6540096BF4D /* Extensions.swift in Sources */,
 				CC31AC5C217C8D3200A02388 /* AppDelegate.swift in Sources */,

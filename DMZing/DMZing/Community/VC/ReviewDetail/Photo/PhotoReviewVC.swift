@@ -8,6 +8,7 @@
 
 import UIKit
 import LTScrollView
+import SnapKit
 
 struct SamplePhotoReviewStruct {
     let date : String
@@ -23,6 +24,14 @@ class PhotoReviewVC : UIViewController, LTTableViewProtocal, APIService  {
             self.collectionView.reloadData()
         }
     }
+    private lazy var popupView : PhotoReviewPopupView = {
+        
+        let popView = PhotoReviewPopupView.instanceFromNib()
+        popView.cancleBtn.addTarget(self, action: #selector(popupCancleAction), for: .touchUpInside)
+        return popView
+    }()
+    
+  
     
     private lazy var collectionView: UICollectionView = {
         let statusBarH = UIApplication.shared.statusBarFrame.size.height
@@ -46,6 +55,10 @@ class PhotoReviewVC : UIViewController, LTTableViewProtocal, APIService  {
         collectionView.delegate = delegate
         collectionView.dataSource = dataSource
         return collectionView
+    }
+    
+    @objc func popupCancleAction(){
+        self.popupView.removeFromSuperview()
     }
     
     override func viewDidLoad() {
@@ -79,7 +92,6 @@ class PhotoReviewVC : UIViewController, LTTableViewProtocal, APIService  {
 //CollectionView Delegate, Datasource
 extension PhotoReviewVC : UICollectionViewDelegate, UICollectionViewDataSource  {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
@@ -92,16 +104,17 @@ extension PhotoReviewVC : UICollectionViewDelegate, UICollectionViewDataSource  
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoReviewCVCell.reuseIdentifier, for: indexPath) as! PhotoReviewCVCell
-        
-        //configure로
         cell.configure(data: photoReviewArr[indexPath.row])
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        UIApplication.shared.keyWindow!.addSubview(popupView)
+        popupView.mainImgView.setImgWithKF(url: photoReviewArr[indexPath.row].imgUrl, defaultImg: #imageLiteral(resourceName: "ccc"))
+        popupView.snp.makeConstraints { (make) in
+            make.top.bottom.leading.trailing.equalToSuperview()
+        }
     }
-    
 }
 
 
