@@ -10,8 +10,8 @@ import UIKit
 class Storyboard {
     
     let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-    let categoryStoryboard = UIStoryboard(name: "Course", bundle: nil)
-    let mapStoryboard = UIStoryboard(name: "Community", bundle: nil)
+    let mapStoryboard = UIStoryboard(name: "Course", bundle: nil)
+    let reviewStoryboard = UIStoryboard(name: "Community", bundle: nil)
     let mypageStoryboard = UIStoryboard(name: "Mypage", bundle: nil)
     
     struct StaticInstance {
