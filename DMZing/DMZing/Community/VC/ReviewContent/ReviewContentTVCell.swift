@@ -22,6 +22,9 @@ class ReviewContentTVCell: UITableViewCell {
             collectionView.reloadData()
         }
     }
+    var finalOffset : CGFloat = 0
+    var startOffset  : CGFloat = 0
+    var currentIdx = 0
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -72,4 +75,39 @@ extension ReviewContentTVCell: UICollectionViewDelegateFlowLayout {
          return CGSize(width: size, height: size)
     }
     
+}
+
+//MARK: - 컬렉션 뷰 드래깅
+extension ReviewContentTVCell : UIScrollViewDelegate {
+    /**
+     현재 메인셀의 인덱스를 구하는 함수
+     */
+    private func indexOfMajorCell(direction : Direction) -> Int {
+        var index = 0
+        switch direction {
+        case .right :
+            index = currentIdx + 1
+        case .left :
+            index = currentIdx - 1
+        }
+        let numberOfItems = collectionView.numberOfItems(inSection: 0)
+        let safeIndex = max(0, min(numberOfItems - 1, index))
+        currentIdx = safeIndex
+        return safeIndex
+    }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        startOffset = collectionView.contentOffset.x
+    }
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        
+        finalOffset = collectionView.contentOffset.x
+        //stop scrollview sliding
+        targetContentOffset.pointee = scrollView.contentOffset
+        let majorIdx = finalOffset > startOffset ? indexOfMajorCell(direction: .right) : indexOfMajorCell(direction: .left)
+        let indexPath = IndexPath(row: majorIdx, section: 0)
+        self.pageControl.currentPage = majorIdx
+        collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+    }
 }
