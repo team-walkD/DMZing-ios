@@ -21,6 +21,10 @@
 		3B800595218B73650003EA5C /* ReviewMainCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B800594218B73650003EA5C /* ReviewMainCVCell.swift */; };
 		3B800598218B81080003EA5C /* PhotoReviewPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B800597218B81080003EA5C /* PhotoReviewPopupView.swift */; };
 		3B80059A218B81340003EA5C /* PhotoReviewPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B800599218B81340003EA5C /* PhotoReviewPopupView.xib */; };
+		3B8364EE219425FB000BD706 /* WriteEntryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8364ED219425FB000BD706 /* WriteEntryVC.swift */; };
+		3B8364F2219461EE000BD706 /* ReviewContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8364F1219461EE000BD706 /* ReviewContentVC.swift */; };
+		3B8364F421946279000BD706 /* ReviewContentTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8364F321946279000BD706 /* ReviewContentTVCell.swift */; };
+		3B8364F7219490BF000BD706 /* ReviewContentCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8364F6219490BF000BD706 /* ReviewContentCVCell.swift */; };
 		3B872CB72180902700498F97 /* MypageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B872CB62180902700498F97 /* MypageVC.swift */; };
 		3B872CBA2180905000498F97 /* MyPageTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B872CB92180905000498F97 /* MyPageTVCell.swift */; };
 		3B872CBC2180943D00498F97 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B872CBB2180943D00498F97 /* CustomView.swift */; };
@@ -82,6 +86,10 @@
 		3B800594218B73650003EA5C /* ReviewMainCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewMainCVCell.swift; sourceTree = "<group>"; };
 		3B800597218B81080003EA5C /* PhotoReviewPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoReviewPopupView.swift; sourceTree = "<group>"; };
 		3B800599218B81340003EA5C /* PhotoReviewPopupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoReviewPopupView.xib; sourceTree = "<group>"; };
+		3B8364ED219425FB000BD706 /* WriteEntryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteEntryVC.swift; sourceTree = "<group>"; };
+		3B8364F1219461EE000BD706 /* ReviewContentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewContentVC.swift; sourceTree = "<group>"; };
+		3B8364F321946279000BD706 /* ReviewContentTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewContentTVCell.swift; sourceTree = "<group>"; };
+		3B8364F6219490BF000BD706 /* ReviewContentCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewContentCVCell.swift; sourceTree = "<group>"; };
 		3B872CB62180902700498F97 /* MypageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageVC.swift; sourceTree = "<group>"; };
 		3B872CB92180905000498F97 /* MyPageTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageTVCell.swift; sourceTree = "<group>"; };
 		3B872CBB2180943D00498F97 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
@@ -188,6 +196,8 @@
 		3B80058D218B48DB0003EA5C /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				3B8364F0219461D9000BD706 /* ReviewContent */,
+				3B8364EC219425D8000BD706 /* WriteEntry */,
 				3B800570218B1EFA0003EA5C /* ReviewMain */,
 				3B800577218B1FBD0003EA5C /* ReviewDetail */,
 			);
@@ -201,6 +211,24 @@
 				3B800599218B81340003EA5C /* PhotoReviewPopupView.xib */,
 			);
 			path = Popup;
+			sourceTree = "<group>";
+		};
+		3B8364EC219425D8000BD706 /* WriteEntry */ = {
+			isa = PBXGroup;
+			children = (
+				3B8364ED219425FB000BD706 /* WriteEntryVC.swift */,
+			);
+			path = WriteEntry;
+			sourceTree = "<group>";
+		};
+		3B8364F0219461D9000BD706 /* ReviewContent */ = {
+			isa = PBXGroup;
+			children = (
+				3B8364F1219461EE000BD706 /* ReviewContentVC.swift */,
+				3B8364F321946279000BD706 /* ReviewContentTVCell.swift */,
+				3B8364F6219490BF000BD706 /* ReviewContentCVCell.swift */,
+			);
+			path = ReviewContent;
 			sourceTree = "<group>";
 		};
 		3B872CB52180901500498F97 /* VC */ = {
@@ -605,6 +633,7 @@
 			files = (
 				3B872CB72180902700498F97 /* MypageVC.swift in Sources */,
 				3B800595218B73650003EA5C /* ReviewMainCVCell.swift in Sources */,
+				3B8364F421946279000BD706 /* ReviewContentTVCell.swift in Sources */,
 				3BB0501C217CAE1E0096BF4D /* SampleVO.swift in Sources */,
 				3B872CCE2180B10A00498F97 /* MyReviewVC.swift in Sources */,
 				3B80057C218B1FFA0003EA5C /* ReviewDetailVC.swift in Sources */,
@@ -612,6 +641,7 @@
 				3B80057E218B206E0003EA5C /* ArticleReviewVC.swift in Sources */,
 				3BD63A052180B873007F5972 /* MyPostVC.swift in Sources */,
 				3B872CC421809C1700498F97 /* MyCourseTVCell.swift in Sources */,
+				3B8364F7219490BF000BD706 /* ReviewContentCVCell.swift in Sources */,
 				3B872CD72180B41800498F97 /* MyDPPointVC.swift in Sources */,
 				CCB3CCA6218B061A0033B9F9 /* InitialViewController.swift in Sources */,
 				CC31AC5E217C8D3200A02388 /* MainViewController.swift in Sources */,
@@ -626,6 +656,7 @@
 				3B800591218B55790003EA5C /* ArticleReviewCVCell.swift in Sources */,
 				3BB0500D217CAA890096BF4D /* NetworkConfiguration.swift in Sources */,
 				3BB0500F217CAAFC0096BF4D /* APIService.swift in Sources */,
+				3B8364EE219425FB000BD706 /* WriteEntryVC.swift in Sources */,
 				3B872CC121809A5500498F97 /* MyCourseVC.swift in Sources */,
 				3BB05014217CAD6C0096BF4D /* Font.swift in Sources */,
 				3B800588218B2AC40003EA5C /* ReviewDetailHeaderView.swift in Sources */,
@@ -638,6 +669,7 @@
 				3B800598218B81080003EA5C /* PhotoReviewPopupView.swift in Sources */,
 				3B872CBA2180905000498F97 /* MyPageTVCell.swift in Sources */,
 				3BB05000217CA6540096BF4D /* Extensions.swift in Sources */,
+				3B8364F2219461EE000BD706 /* ReviewContentVC.swift in Sources */,
 				CC31AC5C217C8D3200A02388 /* AppDelegate.swift in Sources */,
 				3B872CD52180B40900498F97 /* MyDPPointTVCell.swift in Sources */,
 				3B80058F218B54F10003EA5C /* ReviewMainVC.swift in Sources */,
@@ -791,7 +823,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = Y4XABUQ539;
 				INFOPLIST_FILE = DMZing/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -808,7 +840,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = Y4XABUQ539;
 				INFOPLIST_FILE = DMZing/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
