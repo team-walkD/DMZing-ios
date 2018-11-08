@@ -198,10 +198,10 @@
 		3B80058D218B48DB0003EA5C /* VC */ = {
 			isa = PBXGroup;
 			children = (
-				3B8364F0219461D9000BD706 /* ReviewContent */,
-				3B8364EC219425D8000BD706 /* WriteEntry */,
 				3B800570218B1EFA0003EA5C /* ReviewMain */,
 				3B800577218B1FBD0003EA5C /* ReviewDetail */,
+				3B8364EC219425D8000BD706 /* WriteEntry */,
+				3B8364F0219461D9000BD706 /* ReviewContent */,
 			);
 			path = VC;
 			sourceTree = "<group>";

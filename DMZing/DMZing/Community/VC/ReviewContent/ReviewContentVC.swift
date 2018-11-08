@@ -27,12 +27,24 @@ class ReviewContentVC: UIViewController, UIGestureRecognizerDelegate{
     @IBOutlet weak var heartCntLbl: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .clear
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
         makeLayout()
         setBackBtn(color: .white)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
+        self.navigationController?.navigationBar.isTranslucent = false
     }
     
 }
@@ -78,10 +90,7 @@ extension ReviewContentVC {
         makeConstraint()
         startDateView.makeViewBorder(width: 0.5, color: .white)
         endDateView.makeViewBorder(width: 0.5, color: .white)
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController?.view.backgroundColor = .clear
+        
     }
     
     
