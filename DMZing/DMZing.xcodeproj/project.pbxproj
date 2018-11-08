@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B6697B121949DBA008789E3 /* WriteEntryTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6697B021949DBA008789E3 /* WriteEntryTVCell.swift */; };
 		3B800572218B1F160003EA5C /* PhotoReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B800571218B1F160003EA5C /* PhotoReviewVC.swift */; };
 		3B80057C218B1FFA0003EA5C /* ReviewDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B80057B218B1FFA0003EA5C /* ReviewDetailVC.swift */; };
 		3B80057E218B206E0003EA5C /* ArticleReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B80057D218B206E0003EA5C /* ArticleReviewVC.swift */; };
@@ -72,6 +73,7 @@
 /* Begin PBXFileReference section */
 		03429F00E6D01CE48BFFF5D1 /* Pods_DMZing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DMZing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		31A78C13C32CCDE3112EE612 /* Pods-DMZing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DMZing.release.xcconfig"; path = "Target Support Files/Pods-DMZing/Pods-DMZing.release.xcconfig"; sourceTree = "<group>"; };
+		3B6697B021949DBA008789E3 /* WriteEntryTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteEntryTVCell.swift; sourceTree = "<group>"; };
 		3B800571218B1F160003EA5C /* PhotoReviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoReviewVC.swift; sourceTree = "<group>"; };
 		3B80057B218B1FFA0003EA5C /* ReviewDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewDetailVC.swift; sourceTree = "<group>"; };
 		3B80057D218B206E0003EA5C /* ArticleReviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleReviewVC.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				3B8364ED219425FB000BD706 /* WriteEntryVC.swift */,
+				3B6697B021949DBA008789E3 /* WriteEntryTVCell.swift */,
 			);
 			path = WriteEntry;
 			sourceTree = "<group>";
@@ -663,6 +666,7 @@
 				3BB05018217CADEF0096BF4D /* PostSampleService.swift in Sources */,
 				3B800584218B26D50003EA5C /* RoundShadowView.swift in Sources */,
 				3BD63A072180B88B007F5972 /* MyPostCVCell.swift in Sources */,
+				3B6697B121949DBA008789E3 /* WriteEntryTVCell.swift in Sources */,
 				3BB05016217CADE80096BF4D /* GetSampleService.swift in Sources */,
 				3B800580218B213F0003EA5C /* PhotoReviewCVCell.swift in Sources */,
 				3BB0501A217CADFA0096BF4D /* PhotoSampleService.swift in Sources */,

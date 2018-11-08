@@ -10,7 +10,7 @@ import UIKit
 
 class ReviewContentVC: UIViewController, UIGestureRecognizerDelegate{
     private let glt_iphoneX = (UIScreen.main.bounds.height == 812.0)
-   
+    
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var topImgView: UIImageView!
     @IBOutlet weak var topBlackView: UIView!
@@ -33,19 +33,6 @@ class ReviewContentVC: UIViewController, UIGestureRecognizerDelegate{
         tableView.delegate = self
         makeLayout()
         setBackBtn(color: .white)
-    }
-    
-    func makeLayout(){
-        let H : CGFloat = glt_iphoneX ? 359/812*812 : 359/812*667
-        let rect = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: H)
-        topView.frame = rect
-        makeConstraint()
-        startDateView.makeViewBorder(width: 0.5, color: .white)
-        endDateView.makeViewBorder(width: 0.5, color: .white)
-         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController?.view.backgroundColor = .clear
     }
     
 }
@@ -79,6 +66,24 @@ extension ReviewContentVC : UITableViewDelegate, UITableViewDataSource{
         
         
     }
+    
+}
+
+extension ReviewContentVC {
+    
+    func makeLayout(){
+        let H : CGFloat = glt_iphoneX ? 359/812*812 : 359/812*667
+        let rect = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: H)
+        topView.frame = rect
+        makeConstraint()
+        startDateView.makeViewBorder(width: 0.5, color: .white)
+        endDateView.makeViewBorder(width: 0.5, color: .white)
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .clear
+    }
+    
     
     func makeConstraint(){
         topImgView.snp.makeConstraints { (make) in
@@ -155,7 +160,8 @@ extension ReviewContentVC : UITableViewDelegate, UITableViewDataSource{
             make.top.equalTo(topBlackView.snp.bottom)
             make.leading.trailing.bottom.equalToSuperview()
         }
-       
+        
     }
+    
 }
 

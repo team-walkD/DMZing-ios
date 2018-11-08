@@ -95,7 +95,11 @@ extension ArticleReviewVC : UICollectionViewDelegate, UICollectionViewDataSource
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let reviewStoryboard = Storyboard.shared().reviewStoryboard
         
+        if let reviewContentVC = reviewStoryboard.instantiateViewController(withIdentifier:ReviewContentVC.reuseIdentifier) as? ReviewContentVC {
+            self.navigationController?.pushViewController(reviewContentVC, animated: true)
+        }
     }
     
 }
