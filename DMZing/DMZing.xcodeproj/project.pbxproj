@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+
+		22F3025D2195515F00152700 /* MainMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F3025C2195515F00152700 /* MainMapViewController.swift */; };
+		22F3025F2195518B00152700 /* MainMapCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F3025E2195518B00152700 /* MainMapCollectionViewCell.swift */; };
+
 		3B6697B121949DBA008789E3 /* WriteEntryTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6697B021949DBA008789E3 /* WriteEntryTVCell.swift */; };
+
 		3B800572218B1F160003EA5C /* PhotoReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B800571218B1F160003EA5C /* PhotoReviewVC.swift */; };
 		3B80057C218B1FFA0003EA5C /* ReviewDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B80057B218B1FFA0003EA5C /* ReviewDetailVC.swift */; };
 		3B80057E218B206E0003EA5C /* ArticleReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B80057D218B206E0003EA5C /* ArticleReviewVC.swift */; };
@@ -72,6 +77,8 @@
 
 /* Begin PBXFileReference section */
 		03429F00E6D01CE48BFFF5D1 /* Pods_DMZing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DMZing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		22F3025C2195515F00152700 /* MainMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapViewController.swift; sourceTree = "<group>"; };
+		22F3025E2195518B00152700 /* MainMapCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapCollectionViewCell.swift; sourceTree = "<group>"; };
 		31A78C13C32CCDE3112EE612 /* Pods-DMZing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DMZing.release.xcconfig"; path = "Target Support Files/Pods-DMZing/Pods-DMZing.release.xcconfig"; sourceTree = "<group>"; };
 		3B6697B021949DBA008789E3 /* WriteEntryTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteEntryTVCell.swift; sourceTree = "<group>"; };
 		3B800571218B1F160003EA5C /* PhotoReviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoReviewVC.swift; sourceTree = "<group>"; };
@@ -152,6 +159,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		22F3025A2195512C00152700 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				22F3025C2195515F00152700 /* MainMapViewController.swift */,
+				22F3025E2195518B00152700 /* MainMapCollectionViewCell.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		22F3025B2195513B00152700 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				CC31AC71217C929000A02388 /* Course.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
 		3B800570218B1EFA0003EA5C /* ReviewMain */ = {
 			isa = PBXGroup;
 			children = (
@@ -445,7 +469,8 @@
 		CC31AC6E217C922A00A02388 /* Course */ = {
 			isa = PBXGroup;
 			children = (
-				CC31AC71217C929000A02388 /* Course.storyboard */,
+				22F3025B2195513B00152700 /* Storyboard */,
+				22F3025A2195512C00152700 /* ViewController */,
 			);
 			path = Course;
 			sourceTree = "<group>";
@@ -643,6 +668,7 @@
 				3BB05006217CA66F0096BF4D /* PostableWithPhoto.swift in Sources */,
 				3B80057E218B206E0003EA5C /* ArticleReviewVC.swift in Sources */,
 				3BD63A052180B873007F5972 /* MyPostVC.swift in Sources */,
+				22F3025F2195518B00152700 /* MainMapCollectionViewCell.swift in Sources */,
 				3B872CC421809C1700498F97 /* MyCourseTVCell.swift in Sources */,
 				3B8364F7219490BF000BD706 /* ReviewContentCVCell.swift in Sources */,
 				3B872CD72180B41800498F97 /* MyDPPointVC.swift in Sources */,
@@ -661,6 +687,7 @@
 				3BB0500F217CAAFC0096BF4D /* APIService.swift in Sources */,
 				3B8364EE219425FB000BD706 /* WriteEntryVC.swift in Sources */,
 				3B872CC121809A5500498F97 /* MyCourseVC.swift in Sources */,
+				22F3025D2195515F00152700 /* MainMapViewController.swift in Sources */,
 				3BB05014217CAD6C0096BF4D /* Font.swift in Sources */,
 				3B800588218B2AC40003EA5C /* ReviewDetailHeaderView.swift in Sources */,
 				3BB05018217CADEF0096BF4D /* PostSampleService.swift in Sources */,
