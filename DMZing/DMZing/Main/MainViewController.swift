@@ -11,6 +11,8 @@ enum Direction {
     case right
     case left
 }
+
+
 class MainViewController: UIViewController {
 
     @IBOutlet weak var themeCollectionView: UICollectionView!
@@ -18,6 +20,8 @@ class MainViewController: UIViewController {
     var finalOffset : CGFloat = 0
     var startOffset  : CGFloat = 0
     var currentIdx = 0
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,10 +29,12 @@ class MainViewController: UIViewController {
         themeCollectionView.dataSource = self
         mainCollectionView.delegate = self
         mainCollectionView.dataSource = self
-
+       
 
         setupNavBar()
         
+        
+        //themeCollectionView.selectItem(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: UICollectionViewScrollPosition.centeredVertically)
     }
     
     
@@ -61,7 +67,7 @@ extension MainViewController : UICollectionViewDelegate,UICollectionViewDataSour
             let cell = self.themeCollectionView.dequeueReusableCell(withReuseIdentifier: "ThemeCollectionViewCell", for: indexPath) as! ThemeCollectionViewCell
             
             cell.titleLabel.text = "theme\(indexPath.row)"
-            cell.backView.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+            
             
             return cell
         } else {
@@ -74,7 +80,13 @@ extension MainViewController : UICollectionViewDelegate,UICollectionViewDataSour
 
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.row)
+        
+        if(collectionView == themeCollectionView){
+            print(indexPath.row)
+        
+            collectionView.reloadData()
+        }
+        
         
 //        let selectedCell = self.themeCollectionView.cellForItem(at: indexPath) as! ThemeCollectionViewCell
 //        selectedCell.backView.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
