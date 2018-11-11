@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -467,10 +469,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lh8-00-Ie3">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lh8-00-Ie3">
                                 <rect key="frame" x="61" y="634" width="252" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.42745098040000001" green="0.6588235294" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="lh8-00-Ie3" secondAttribute="height" multiplier="84:13" id="6g6-Hj-GUa"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="16"/>
                                 <state key="normal" title="로그인 / 회원가입">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -479,10 +483,12 @@
                                     <segue destination="KMs-Ld-0to" kind="presentation" id="zC9-L9-fC8"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bjI-ee-7UY">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bjI-ee-7UY">
                                 <rect key="frame" x="61" y="681" width="252" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.42745098040000001" green="0.6588235294" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="bjI-ee-7UY" secondAttribute="height" multiplier="84:13" id="Gmg-wn-tIS"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="16"/>
                                 <state key="normal" title="둘러보기">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -491,12 +497,27 @@
                                     <segue destination="CwL-Ux-W10" kind="presentation" id="dDw-n9-jn9"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="walk_d_icon" translatesAutoresizingMaskIntoConstraints="NO" id="3Lc-eg-4Rh">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="walk_d_icon" translatesAutoresizingMaskIntoConstraints="NO" id="3Lc-eg-4Rh">
                                 <rect key="frame" x="112" y="168" width="150" height="150"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="3Lc-eg-4Rh" secondAttribute="height" multiplier="1:1" id="zex-gd-orT"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="bjI-ee-7UY" firstAttribute="width" secondItem="ACm-XH-0uu" secondAttribute="width" multiplier="252:375" id="0ON-tZ-Ecy"/>
+                            <constraint firstItem="UqC-l1-ypZ" firstAttribute="trailing" secondItem="3Lc-eg-4Rh" secondAttribute="trailing" constant="113" id="91l-d8-hG3"/>
+                            <constraint firstItem="3Lc-eg-4Rh" firstAttribute="width" secondItem="ACm-XH-0uu" secondAttribute="width" multiplier="150:375" id="9V9-jw-PW7"/>
+                            <constraint firstItem="3Lc-eg-4Rh" firstAttribute="top" secondItem="UqC-l1-ypZ" secondAttribute="top" constant="124" id="A4u-GW-MTL"/>
+                            <constraint firstItem="lh8-00-Ie3" firstAttribute="width" secondItem="ACm-XH-0uu" secondAttribute="width" multiplier="252:375" id="BMP-Qz-NQT"/>
+                            <constraint firstItem="UqC-l1-ypZ" firstAttribute="bottom" secondItem="bjI-ee-7UY" secondAttribute="bottom" constant="58" id="EHN-S5-AE4"/>
+                            <constraint firstItem="lh8-00-Ie3" firstAttribute="centerX" secondItem="bjI-ee-7UY" secondAttribute="centerX" id="H8a-sd-yxL"/>
+                            <constraint firstItem="UqC-l1-ypZ" firstAttribute="trailing" secondItem="bjI-ee-7UY" secondAttribute="trailing" constant="62" id="bM1-bS-yzw"/>
+                            <constraint firstItem="3Lc-eg-4Rh" firstAttribute="leading" secondItem="UqC-l1-ypZ" secondAttribute="leading" constant="112" id="ba9-na-has"/>
+                            <constraint firstItem="bjI-ee-7UY" firstAttribute="leading" secondItem="UqC-l1-ypZ" secondAttribute="leading" constant="61" id="d6O-yw-frw"/>
+                            <constraint firstItem="bjI-ee-7UY" firstAttribute="top" secondItem="lh8-00-Ie3" secondAttribute="bottom" constant="8" id="jqr-ae-YeE"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="UqC-l1-ypZ"/>
                     </view>
                 </viewController>
