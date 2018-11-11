@@ -8,8 +8,8 @@
 
 import UIKit
 
-class WriteArticleReviewVC: UIViewController, APIService {
-    
+class WriteArticleReviewVC: UIViewController, APIService, Gallery {
+    var homeController: UIViewController?
     @IBOutlet weak var dayLbl: UILabel!
     @IBOutlet weak var dateLbl: UILabel!
     @IBOutlet weak var titleTxt: UITextField!
@@ -20,18 +20,17 @@ class WriteArticleReviewVC: UIViewController, APIService {
     var day = 0
     let defaultTxtMsg = "내용을 입력하세요"
     var keyboardDismissGesture : UITapGestureRecognizer?
-   // var imageData : [Data?] = []
     var imageArr : [String] = [] {
         didSet {
             collectionView.reloadData()
         }
     }
     var selectedPhotoIdx = 0
-    
-    let imagePicker : UIImagePickerController = UIImagePickerController()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setKeyboardSetting()
+        homeController = self
         collectionView.delegate = self
         collectionView.dataSource = self
         contentTxtView.delegate = self
@@ -147,12 +146,6 @@ extension WriteArticleReviewVC : UITextViewDelegate{
 extension WriteArticleReviewVC : UIImagePickerControllerDelegate,
 UINavigationControllerDelegate  {
     
-    // imagePickerDelegate
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        //사용자 취소
-        self.dismiss(animated: true)
-    }
-    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
         //크롭한 이미지
@@ -168,18 +161,6 @@ UINavigationControllerDelegate  {
         self.dismiss(animated: true)
     }
     
-    // Method
-    func openGallery() {
-        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-            self.imagePicker.sourceType = .photoLibrary
-            self.imagePicker.delegate = self
-            //false 로 되어있으면 이미지 자르지 않고 오리지널로 들어감
-            //이거 true로 하면 crop 가능
-            self.imagePicker.allowsEditing = true
-            
-            self.present(self.imagePicker, animated: true, completion: nil)
-        }
-    }
     
 }
 

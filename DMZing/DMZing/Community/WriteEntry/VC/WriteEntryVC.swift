@@ -8,10 +8,10 @@
 
 import UIKit
 
-class WriteEntryVC: UIViewController {
+class WriteEntryVC: UIViewController, Gallery {
+    var homeController: UIViewController?
     
     let datePickerView = UIDatePicker()
-    let imagePicker : UIImagePickerController = UIImagePickerController()
     var keyboardDismissGesture: UITapGestureRecognizer?
     var rowCount = 0 {
         didSet {
@@ -35,7 +35,6 @@ class WriteEntryVC: UIViewController {
         if let navi = self.parent as? UINavigationController {
             navi.dismiss(animated: true, completion: nil)
         }
-       
     }
     
     @IBOutlet weak var bgImgView: UIImageView!
@@ -61,6 +60,7 @@ class WriteEntryVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        homeController = self
         initDatePicker()
         setKeyboardSetting()
         setUpTableView()
@@ -161,40 +161,18 @@ extension WriteEntryVC {
 }
 
 //MARK: - 앨범 열기 위함
-extension WriteEntryVC : UIImagePickerControllerDelegate,
-UINavigationControllerDelegate  {
-    
-    // imagePickerDelegate
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        //사용자 취소
-        self.dismiss(animated: true)
-    }
-    
+extension WriteEntryVC {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        
+
         //크롭한 이미지
         if let editedImage: UIImage = info[UIImagePickerControllerEditedImage] as? UIImage {
             imageData = UIImageJPEGRepresentation(editedImage, 0.1)
         } else if let originalImage: UIImage = info[UIImagePickerControllerOriginalImage] as? UIImage{
             imageData = UIImageJPEGRepresentation(originalImage, 0.1)
         }
-        
+
         self.dismiss(animated: true)
     }
-    
-    // Method
-    func openGallery() {
-        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-            self.imagePicker.sourceType = .photoLibrary
-            self.imagePicker.delegate = self
-            //false 로 되어있으면 이미지 자르지 않고 오리지널로 들어감
-            //이거 true로 하면 crop 가능
-            self.imagePicker.allowsEditing = true
-            
-            self.present(self.imagePicker, animated: true, completion: nil)
-        }
-    }
-    
 }
 
 //MARK: - 키보드 대응
