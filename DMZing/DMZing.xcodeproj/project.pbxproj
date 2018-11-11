@@ -12,6 +12,8 @@
 		3B6697B92195A266008789E3 /* WriteArticleCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6697B82195A266008789E3 /* WriteArticleCVCell.swift */; };
 		3B6697BF21980410008789E3 /* MypageMainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6697BE21980410008789E3 /* MypageMainService.swift */; };
 		3B6697C121980437008789E3 /* MypageMainVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6697C021980437008789E3 /* MypageMainVO.swift */; };
+		3B6697C521980BB2008789E3 /* MypageReviewVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6697C421980BB2008789E3 /* MypageReviewVO.swift */; };
+		3B6697C721980BE6008789E3 /* MypageReviewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6697C621980BE6008789E3 /* MypageReviewService.swift */; };
 		3B800572218B1F160003EA5C /* PhotoReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B800571218B1F160003EA5C /* PhotoReviewVC.swift */; };
 		3B80057C218B1FFA0003EA5C /* ReviewDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B80057B218B1FFA0003EA5C /* ReviewDetailVC.swift */; };
 		3B80057E218B206E0003EA5C /* ArticleReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B80057D218B206E0003EA5C /* ArticleReviewVC.swift */; };
@@ -82,6 +84,8 @@
 		3B6697B82195A266008789E3 /* WriteArticleCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteArticleCVCell.swift; sourceTree = "<group>"; };
 		3B6697BE21980410008789E3 /* MypageMainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageMainService.swift; sourceTree = "<group>"; };
 		3B6697C021980437008789E3 /* MypageMainVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageMainVO.swift; sourceTree = "<group>"; };
+		3B6697C421980BB2008789E3 /* MypageReviewVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageReviewVO.swift; sourceTree = "<group>"; };
+		3B6697C621980BE6008789E3 /* MypageReviewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageReviewService.swift; sourceTree = "<group>"; };
 		3B800571218B1F160003EA5C /* PhotoReviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoReviewVC.swift; sourceTree = "<group>"; };
 		3B80057B218B1FFA0003EA5C /* ReviewDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewDetailVC.swift; sourceTree = "<group>"; };
 		3B80057D218B206E0003EA5C /* ArticleReviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleReviewVC.swift; sourceTree = "<group>"; };
@@ -181,6 +185,22 @@
 			isa = PBXGroup;
 			children = (
 				3B6697BE21980410008789E3 /* MypageMainService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		3B6697C221980BA0008789E3 /* VO */ = {
+			isa = PBXGroup;
+			children = (
+				3B6697C421980BB2008789E3 /* MypageReviewVO.swift */,
+			);
+			path = VO;
+			sourceTree = "<group>";
+		};
+		3B6697C321980BA2008789E3 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				3B6697C621980BE6008789E3 /* MypageReviewService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -323,6 +343,8 @@
 		3B872CC92180B0DD00498F97 /* Review */ = {
 			isa = PBXGroup;
 			children = (
+				3B6697C321980BA2008789E3 /* Service */,
+				3B6697C221980BA0008789E3 /* VO */,
 				3B872CCB2180B0E700498F97 /* VC */,
 			);
 			path = Review;
@@ -672,6 +694,7 @@
 			files = (
 				3B872CB72180902700498F97 /* MypageVC.swift in Sources */,
 				3B800595218B73650003EA5C /* ReviewMainCVCell.swift in Sources */,
+				3B6697C721980BE6008789E3 /* MypageReviewService.swift in Sources */,
 				3B6697B92195A266008789E3 /* WriteArticleCVCell.swift in Sources */,
 				3B8364F421946279000BD706 /* ReviewContentTVCell.swift in Sources */,
 				3BB0501C217CAE1E0096BF4D /* SampleVO.swift in Sources */,
@@ -717,6 +740,7 @@
 				CC31AC5C217C8D3200A02388 /* AppDelegate.swift in Sources */,
 				3B872CD52180B40900498F97 /* MyDPPointTVCell.swift in Sources */,
 				3B80058F218B54F10003EA5C /* ReviewMainVC.swift in Sources */,
+				3B6697C521980BB2008789E3 /* MypageReviewVO.swift in Sources */,
 				CC3D43BC2185A9F8003171C0 /* ThemeCollectionViewCell.swift in Sources */,
 				CCB3CCA4218B041B0033B9F9 /* SignUp3ViewController.swift in Sources */,
 				CCB3CCA2218B035B0033B9F9 /* SignUp2ViewController.swift in Sources */,
