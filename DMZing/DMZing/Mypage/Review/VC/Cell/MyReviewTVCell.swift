@@ -14,11 +14,6 @@ class MyReviewTVCell: UITableViewCell {
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var typeImgView: UIImageView!
     
-    func configure(data : MypageReviewVOData){
-        dateLbl.text = data.createdAt.timeStampToDate()
-        titleLbl.text = data.title
-        typeImgView.setImgWithKF(url: data.thumbnailURL, defaultImg: #imageLiteral(resourceName: "ccc"))
-    }
     
     
     override func awakeFromNib() {

@@ -8,14 +8,13 @@
 
 import UIKit
 
-class MypageVC: UIViewController, APIService {
+class MypageVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var profileImgView: UIImageView!
     @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var emailLbl: UILabel!
-    @IBOutlet weak var courseCntLbl:
-    UILabel!
+    @IBOutlet weak var courseCntLbl: UILabel!
     @IBOutlet weak var reviewCntLbl: UILabel!
     @IBOutlet weak var pointCntLbl: UILabel!
     let cellTitleArr = ["FnQ", "설정 및 관리"]
@@ -58,7 +57,6 @@ class MypageVC: UIViewController, APIService {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-        getMainData(url: url("users/info"))
     }
     
     func setupTableView(){
@@ -91,27 +89,5 @@ extension MypageVC : UITableViewDelegate, UITableViewDataSource{
             //설정 및 관리로 이동
         }
         tableView.deselectRow(at: indexPath, animated: true)
-    }
-}
-
-extension MypageVC {
-    func getMainData(url : String){
-        MypageMainService.shareInstance.getMainData(url: url,completion: { [weak self] (result) in
-            guard let `self` = self else { return }
-            switch result {
-            case .networkSuccess(let data):
-                let mainData = data as? MypageMainVO
-                self.nameLbl.text = mainData?.nick
-                self.pointCntLbl.text = mainData?.dp.description
-                self.reviewCntLbl.text = mainData?.reviewCount.description
-                self.courseCntLbl.text = mainData?.courseCount.description
-                self.emailLbl.text = mainData?.email
-            case .networkFail :
-                self.networkSimpleAlert()
-            default :
-                self.simpleAlert(title: "오류", message: "다시 시도해주세요")
-                break
-            }
-        })
     }
 }
