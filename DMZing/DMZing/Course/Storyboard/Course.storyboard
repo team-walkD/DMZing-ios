@@ -8,6 +8,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -55,7 +56,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dMH-ZI-h1p">
                                 <rect key="frame" x="0.0" y="535" width="375" height="243"/>
                                 <subviews>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Rw4-G8-Pfg">
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Rw4-G8-Pfg">
                                         <rect key="frame" x="0.0" y="-110" width="375" height="344"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -131,7 +132,6 @@
                                                     <constraint firstItem="nyU-B8-SQP" firstAttribute="leading" secondItem="3ao-fs-zkj" secondAttribute="leading" id="k24-u5-No5"/>
                                                     <constraint firstItem="8a4-34-vbA" firstAttribute="top" secondItem="3ao-fs-zkj" secondAttribute="top" id="kbZ-8C-oGu"/>
                                                     <constraint firstItem="8a4-34-vbA" firstAttribute="leading" secondItem="3ao-fs-zkj" secondAttribute="leading" id="whu-RD-dWs"/>
-                                                    <constraint firstItem="8a4-34-vbA" firstAttribute="centerX" secondItem="3ao-fs-zkj" secondAttribute="centerX" id="zDF-Ej-Ywi"/>
                                                 </constraints>
                                                 <connections>
                                                     <outlet property="backView" destination="8a4-34-vbA" id="Lie-6m-uuU"/>
@@ -289,6 +289,71 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S6A-O5-SeJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2673" y="-161"/>
+        </scene>
+        <!--Place Info View Controller-->
+        <scene sceneID="Osy-7G-Iqq">
+            <objects>
+                <viewController storyboardIdentifier="PlaceInfoViewController" id="KTZ-2R-sbc" customClass="PlaceInfoViewController" customModule="DMZing" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GPJ-4r-LDZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ccc" translatesAutoresizingMaskIntoConstraints="NO" id="rQ0-L6-SYl">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="338"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cE5-ai-rfW">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="338"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jGd-HX-3Yc">
+                                <rect key="frame" x="38" y="182" width="16" height="20"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="평화 전망대" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbX-f4-H1q">
+                                <rect key="frame" x="38" y="207" width="111" height="29"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DUJ-LK-jjZ">
+                                <rect key="frame" x="24" y="258" width="327" height="306"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="DUJ-LK-jjZ" secondAttribute="height" multiplier="327:306" id="wzG-5V-Gq1"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.95703250169754028" green="0.96454721689224243" blue="0.97255092859268188" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="cE5-ai-rfW" firstAttribute="height" secondItem="GPJ-4r-LDZ" secondAttribute="height" multiplier="338:812" id="DlC-30-87D"/>
+                            <constraint firstItem="rQ0-L6-SYl" firstAttribute="height" secondItem="GPJ-4r-LDZ" secondAttribute="height" multiplier="338:812" id="Fhq-xt-sRk"/>
+                            <constraint firstItem="rQ0-L6-SYl" firstAttribute="leading" secondItem="YTg-HU-UQ4" secondAttribute="leading" id="I1S-FB-uDi"/>
+                            <constraint firstItem="YTg-HU-UQ4" firstAttribute="trailing" secondItem="rQ0-L6-SYl" secondAttribute="trailing" id="LK1-x0-fiB"/>
+                            <constraint firstItem="cE5-ai-rfW" firstAttribute="top" secondItem="GPJ-4r-LDZ" secondAttribute="top" id="QZw-5L-133"/>
+                            <constraint firstItem="YTg-HU-UQ4" firstAttribute="trailing" secondItem="DUJ-LK-jjZ" secondAttribute="trailing" constant="24" id="SZb-uy-qsg"/>
+                            <constraint firstItem="dbX-f4-H1q" firstAttribute="top" secondItem="jGd-HX-3Yc" secondAttribute="bottom" constant="5" id="UfQ-qd-92z"/>
+                            <constraint firstItem="DUJ-LK-jjZ" firstAttribute="leading" secondItem="YTg-HU-UQ4" secondAttribute="leading" constant="24" id="fme-Cz-kRo"/>
+                            <constraint firstItem="dbX-f4-H1q" firstAttribute="leading" secondItem="jGd-HX-3Yc" secondAttribute="leading" id="fy0-4c-riJ"/>
+                            <constraint firstItem="cE5-ai-rfW" firstAttribute="leading" secondItem="YTg-HU-UQ4" secondAttribute="leading" id="g6a-0I-iD6"/>
+                            <constraint firstItem="DUJ-LK-jjZ" firstAttribute="centerY" secondItem="YTg-HU-UQ4" secondAttribute="centerY" id="noA-8Q-3Hq"/>
+                            <constraint firstItem="DUJ-LK-jjZ" firstAttribute="top" secondItem="dbX-f4-H1q" secondAttribute="bottom" constant="22" id="sZs-X1-oXs"/>
+                            <constraint firstItem="jGd-HX-3Yc" firstAttribute="leading" secondItem="YTg-HU-UQ4" secondAttribute="leading" constant="38" id="uwQ-ad-gpw"/>
+                            <constraint firstItem="YTg-HU-UQ4" firstAttribute="trailing" secondItem="cE5-ai-rfW" secondAttribute="trailing" id="yVi-pO-1KA"/>
+                            <constraint firstItem="rQ0-L6-SYl" firstAttribute="top" secondItem="GPJ-4r-LDZ" secondAttribute="top" id="zq6-oP-Ie3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="YTg-HU-UQ4"/>
+                    </view>
+                    <connections>
+                        <outlet property="backView" destination="DUJ-LK-jjZ" id="5PC-hV-uMD"/>
+                        <outlet property="numberLabel" destination="jGd-HX-3Yc" id="XjR-79-gmF"/>
+                        <outlet property="placeLabel" destination="dbX-f4-H1q" id="F7w-Ub-W8G"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LB8-vt-Wfq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2672.8000000000002" y="570.44334975369463"/>
         </scene>
     </scenes>
     <resources>

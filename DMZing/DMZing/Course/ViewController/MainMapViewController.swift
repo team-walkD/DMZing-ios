@@ -10,6 +10,11 @@ import UIKit
 
 class MainMapViewController: UIViewController {
     
+    enum Direction {
+        case right
+        case left
+    }
+    
     @IBOutlet weak var mapCollectionView: UICollectionView!
     @IBOutlet weak var mapImageView: UIImageView!
     
@@ -25,7 +30,7 @@ class MainMapViewController: UIViewController {
         mapCollectionView.dataSource = self
         
     }
-    
+
 }
 
 //MARK: - CollectionView Method
@@ -46,19 +51,8 @@ extension MainMapViewController: UICollectionViewDelegate, UICollectionViewDataS
         
         return cell
     }
-
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-
-        let cellWidth: CGFloat = 327
-
-        let numberOfCells = floor(view.frame.size.width / cellWidth)
-        let edgeInsets = (view.frame.size.width - (numberOfCells * cellWidth)) / (numberOfCells + 1)
-
-        return UIEdgeInsetsMake(0, edgeInsets, 0, edgeInsets)
-    }
 }
-
 
 //MARK: - CollectionView drag
 extension MainMapViewController : UIScrollViewDelegate {
