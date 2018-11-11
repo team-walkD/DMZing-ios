@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -170,18 +171,129 @@
                     <navigationItem key="navigationItem" id="zzq-pH-RXM">
                         <barButtonItem key="rightBarButtonItem" image="walk_d_icon" width="24" id="Dbx-CI-81V">
                             <color key="tintColor" red="0.13560259342193604" green="0.21441143751144409" blue="0.27451848983764648" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <segue destination="Tfk-Ck-SVf" kind="show" id="U5n-3c-ZkK"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="mapCollectionView" destination="Rw4-G8-Pfg" id="RgN-LJ-OF9"/>
+                        <outlet property="mapImageView" destination="ZVN-uD-So3" id="qHo-K0-VUV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gGB-1e-ljd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1890.4000000000001" y="-161.08374384236453"/>
         </scene>
+        <!--Map Cover View Controller-->
+        <scene sceneID="SAo-dE-FfD">
+            <objects>
+                <viewController storyboardIdentifier="MapCoverViewController" hidesBottomBarWhenPushed="YES" id="Tfk-Ck-SVf" customClass="MapCoverViewController" customModule="DMZing" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Zwj-AM-bOl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ccc" translatesAutoresizingMaskIntoConstraints="NO" id="epj-YU-2Gn">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tjm-CD-HHZ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사진 찍기 좋은 핫스팟" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TS8-1T-bwx">
+                                <rect key="frame" x="119.00000000000001" y="133.66666666666666" width="137.33333333333337" height="19.333333333333343"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="보러가기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y48-Zw-c1v">
+                                <rect key="frame" x="159.33333333333334" y="636.66666666666663" width="55.666666666666657" height="19.333333333333371"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="데이트하기 좋은 코스" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pAp-Dh-Uql">
+                                <rect key="frame" x="87.333333333333329" y="158" width="199.66666666666669" height="29"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lTr-5O-Csn">
+                                <rect key="frame" x="187" y="208" width="1" height="117"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="1" id="pCE-zV-D5k"/>
+                                    <constraint firstAttribute="width" secondItem="lTr-5O-Csn" secondAttribute="height" multiplier="1:117" id="zqU-cv-WJT"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FKP-N7-vHV">
+                                <rect key="frame" x="166" y="667" width="42" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="FKP-N7-vHV" secondAttribute="height" multiplier="1:1" id="BgU-xx-OvE"/>
+                                    <constraint firstAttribute="width" constant="42" id="tcT-aR-Ndg"/>
+                                </constraints>
+                                <state key="normal" image="map_more_down_btn"/>
+                                <connections>
+                                    <action selector="detailAction:" destination="Tfk-Ck-SVf" eventType="touchUpInside" id="ONi-ix-YQN"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eFV-Uo-xE0">
+                                <rect key="frame" x="108.33333333333333" y="337.33333333333331" width="158.33333333333337" height="21.666666666666686"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="120" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1I-Xk-86R">
+                                        <rect key="frame" x="0.0" y="0.33333333333331439" width="28.333333333333332" height="21.666666666666668"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="명이 PICK한 그 곳" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndW-KR-mZa">
+                                        <rect key="frame" x="28.333333333333329" y="0.33333333333331439" width="130" height="21.666666666666668"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="FKP-N7-vHV" firstAttribute="top" secondItem="Tjm-CD-HHZ" secondAttribute="bottom" constant="-145.5" id="2Li-yo-dy9"/>
+                            <constraint firstItem="FKP-N7-vHV" firstAttribute="centerX" secondItem="Y48-Zw-c1v" secondAttribute="centerX" id="76S-xC-2df"/>
+                            <constraint firstItem="hKe-G4-amf" firstAttribute="trailing" secondItem="Tjm-CD-HHZ" secondAttribute="trailing" id="FEN-3D-vbi"/>
+                            <constraint firstItem="hKe-G4-amf" firstAttribute="trailing" secondItem="epj-YU-2Gn" secondAttribute="trailing" id="IXI-Q4-UGL"/>
+                            <constraint firstItem="Tjm-CD-HHZ" firstAttribute="top" secondItem="Zwj-AM-bOl" secondAttribute="top" id="K4D-0Y-4Jw"/>
+                            <constraint firstItem="pAp-Dh-Uql" firstAttribute="centerX" secondItem="TS8-1T-bwx" secondAttribute="centerX" id="LlC-al-3Xd"/>
+                            <constraint firstAttribute="bottom" secondItem="Tjm-CD-HHZ" secondAttribute="bottom" id="Pgw-Hg-WEc"/>
+                            <constraint firstAttribute="bottom" secondItem="epj-YU-2Gn" secondAttribute="bottom" id="TEH-Ra-ooj"/>
+                            <constraint firstItem="Tjm-CD-HHZ" firstAttribute="top" secondItem="TS8-1T-bwx" secondAttribute="bottom" constant="-153" id="XKn-rx-jNk"/>
+                            <constraint firstItem="FKP-N7-vHV" firstAttribute="top" secondItem="Y48-Zw-c1v" secondAttribute="bottom" constant="10.5" id="YKy-gF-SFP"/>
+                            <constraint firstItem="epj-YU-2Gn" firstAttribute="leading" secondItem="hKe-G4-amf" secondAttribute="leading" id="Zmu-l5-Rv3"/>
+                            <constraint firstItem="Tjm-CD-HHZ" firstAttribute="leading" secondItem="hKe-G4-amf" secondAttribute="leading" id="gV8-Ro-7fq"/>
+                            <constraint firstItem="TS8-1T-bwx" firstAttribute="centerX" secondItem="Tjm-CD-HHZ" secondAttribute="centerX" id="hwU-k8-7wN"/>
+                            <constraint firstItem="epj-YU-2Gn" firstAttribute="top" secondItem="Zwj-AM-bOl" secondAttribute="top" id="jY4-yG-M0N"/>
+                            <constraint firstItem="lTr-5O-Csn" firstAttribute="centerX" secondItem="pAp-Dh-Uql" secondAttribute="centerX" id="oVM-aL-yfW"/>
+                            <constraint firstItem="eFV-Uo-xE0" firstAttribute="centerX" secondItem="lTr-5O-Csn" secondAttribute="centerX" id="pfV-hh-FIG"/>
+                            <constraint firstItem="eFV-Uo-xE0" firstAttribute="firstBaseline" secondItem="lTr-5O-Csn" secondAttribute="baseline" constant="28.5" id="qW3-Oh-lY0"/>
+                            <constraint firstItem="Y48-Zw-c1v" firstAttribute="centerX" secondItem="lTr-5O-Csn" secondAttribute="centerX" id="wc3-3D-h7r"/>
+                            <constraint firstItem="lTr-5O-Csn" firstAttribute="top" secondItem="pAp-Dh-Uql" secondAttribute="bottom" constant="20.5" id="zEP-0s-4RB"/>
+                            <constraint firstItem="pAp-Dh-Uql" firstAttribute="top" secondItem="TS8-1T-bwx" secondAttribute="bottom" constant="5" id="zF4-m7-QWB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hKe-G4-amf"/>
+                    </view>
+                    <connections>
+                        <outlet property="largeLabel" destination="pAp-Dh-Uql" id="tqf-Rb-R3o"/>
+                        <outlet property="pickLabel" destination="h1I-Xk-86R" id="SxS-Mw-f98"/>
+                        <outlet property="smallLabel" destination="TS8-1T-bwx" id="rHY-iN-tHc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S6A-O5-SeJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2673" y="-161"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="ccc" width="99" height="99"/>
+        <image name="map_more_down_btn" width="42" height="42"/>
         <image name="map_more_right_btn" width="60" height="60"/>
         <image name="walk_d_icon" width="25" height="25"/>
     </resources>
