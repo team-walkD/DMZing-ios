@@ -12,6 +12,7 @@ class WriteEntryVC: UIViewController, Gallery {
     var homeController: UIViewController?
     
     let datePickerView = UIDatePicker()
+    let imagePicker : UIImagePickerController = UIImagePickerController()
     var keyboardDismissGesture: UITapGestureRecognizer?
     var rowCount = 0 {
         didSet {
@@ -124,8 +125,9 @@ extension WriteEntryVC {
         bar.sizeToFit()
         let doneButton = UIBarButtonItem(title: "확인", style: .done
             , target: self, action: selector)
+         let flexibleButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
         doneButton.tag = (textField == startTxt) ? 0 : 1
-        bar.setItems([doneButton], animated: true)
+        bar.setItems([flexibleButton, doneButton], animated: true)
         textField.inputAccessoryView = bar
         textField.inputView = inputView as? UIControl
         textField.layer.borderColor = UIColor.white.cgColor
@@ -161,7 +163,9 @@ extension WriteEntryVC {
 }
 
 //MARK: - 앨범 열기 위함
-extension WriteEntryVC {
+extension WriteEntryVC{
+
+
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
 
         //크롭한 이미지
@@ -173,6 +177,7 @@ extension WriteEntryVC {
 
         self.dismiss(animated: true)
     }
+
 }
 
 //MARK: - 키보드 대응
