@@ -8,9 +8,10 @@
 
 import UIKit
 
-class MainMapViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class MainMapViewController: UIViewController {
     
     @IBOutlet weak var mapCollectionView: UICollectionView!
+    @IBOutlet weak var mapImageView: UIImageView!
     
     var finalOffset : CGFloat = 0
     var startOffset  : CGFloat = 0
@@ -25,7 +26,11 @@ class MainMapViewController: UIViewController, UICollectionViewDelegate, UIColle
         
     }
     
-    //MARK: - CollectionView Method
+}
+
+//MARK: - CollectionView Method
+extension MainMapViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 4
     }
@@ -41,15 +46,11 @@ class MainMapViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         return cell
     }
-    
-    
-}
 
-extension MainMapViewController: UICollectionViewDelegateFlowLayout {
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
 
-        let cellWidth: CGFloat =  327// Your cell width
+        let cellWidth: CGFloat = 327
 
         let numberOfCells = floor(view.frame.size.width / cellWidth)
         let edgeInsets = (view.frame.size.width - (numberOfCells * cellWidth)) / (numberOfCells + 1)
@@ -59,7 +60,7 @@ extension MainMapViewController: UICollectionViewDelegateFlowLayout {
 }
 
 
-//MARK: - 컬렉션 뷰 드래깅
+//MARK: - CollectionView drag
 extension MainMapViewController : UIScrollViewDelegate {
     /**
      현재 메인셀의 인덱스를 구하는 함수
