@@ -110,7 +110,7 @@ extension ReviewContentVC {
             make.centerX.equalToSuperview()
             let statusBarH = UIApplication.shared.statusBarFrame.size.height
             let Y: CGFloat = statusBarH + 44
-            make.centerY.equalTo(topImgView).offset(Y)
+            make.centerY.equalToSuperview().offset(Y)
             make.width.equalTo(25)
             make.height.equalTo(0.5)
         }
