@@ -36,10 +36,13 @@ extension PostableService {
         var headers: HTTPHeaders?
         
         if userToken != "-1" {
-            headers = [
-                "authorization" : userToken
-            ]
+//            headers = [
+//                "authorization" : userToken
+//            ]
         }
+        headers = [
+            "jwt" : "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdXRob3JpdHkiOiJVU0VSIiwiaXNzIjoiZG16aW5nIiwiZXhwIjoxNTQyMTc4MjM1LCJlbWFpbCI6ImFrc2d1ckBuYXZlci5jb20ifQ.j8W_SA9qHCk7l1AZIqf5BZUHo6shs8Fxq7VKUfIUH2o"
+        ]
 
         Alamofire.request(encodedUrl, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers).responseData(){
             res in
