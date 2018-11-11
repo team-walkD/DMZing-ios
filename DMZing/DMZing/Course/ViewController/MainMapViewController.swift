@@ -12,6 +12,10 @@ class MainMapViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     @IBOutlet weak var mapCollectionView: UICollectionView!
     
+    var finalOffset : CGFloat = 0
+    var startOffset  : CGFloat = 0
+    var currentIdx = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,15 +42,67 @@ class MainMapViewController: UIViewController, UICollectionViewDelegate, UIColle
         return cell
     }
     
+    
 }
 
-//extension MainMapViewController: UICollectionViewDelegateFlowLayout {
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: 375, height: (344/375)*collectionView.frame.width)
-//    }
-//}
+extension MainMapViewController: UICollectionViewDelegateFlowLayout {
 
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+
+        let cellWidth: CGFloat =  327// Your cell width
+
+        let numberOfCells = floor(view.frame.size.width / cellWidth)
+        let edgeInsets = (view.frame.size.width - (numberOfCells * cellWidth)) / (numberOfCells + 1)
+
+        return UIEdgeInsetsMake(0, edgeInsets, 0, edgeInsets)
+    }
+}
+
+
+//MARK: - 컬렉션 뷰 드래깅
+extension MainMapViewController : UIScrollViewDelegate {
+    /**
+     현재 메인셀의 인덱스를 구하는 함수
+     */
+    private func indexOfMajorCell(direction : Direction) -> Int {
+        var index = 0
+        switch direction {
+        case .right :
+            index = currentIdx + 1
+        case .left :
+            index = currentIdx - 1
+        }
+        let numberOfItems = mapCollectionView.numberOfItems(inSection: 0)
+        let safeIndex = max(0, min(numberOfItems - 1, index))
+        currentIdx = safeIndex
+        return safeIndex
+    }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        startOffset = mapCollectionView.contentOffset.x
+    }
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        
+        finalOffset = mapCollectionView.contentOffset.x
+        //stop scrollview sliding
+        targetContentOffset.pointee = scrollView.contentOffset
+        
+        if finalOffset > startOffset {
+            //뒤로 넘기기
+            let majorIdx = indexOfMajorCell(direction: .right)
+            let indexPath = IndexPath(row: majorIdx, section: 0)
+            mapCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        } else if finalOffset < startOffset {
+            //앞으로 가기
+            let majorIdx = indexOfMajorCell(direction: .left)
+            let indexPath = IndexPath(row: majorIdx, section: 0)
+            mapCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        } else {
+            print("둘다 아님")
+        }
+    }
+}
 
 
 
