@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WriteEntryVC: UIViewController, Gallery {
+class WriteEntryVC: UIViewController, Gallery{
     var homeController: UIViewController?
     
     let datePickerView = UIDatePicker()
@@ -18,6 +18,7 @@ class WriteEntryVC: UIViewController, Gallery {
         didSet {
             tableView.isHidden = !(rowCount > 0)
             tableView.reloadData()
+            articleArr = Array.init(repeatElement(ArticleStruct(), count: rowCount))
         }
     }
     var imageData : Data? {
@@ -30,9 +31,11 @@ class WriteEntryVC: UIViewController, Gallery {
         }
     }
     
-   
+    var articleArr : [ArticleStruct] = []
+    
+    
     @IBAction func dismissAction(_ sender: Any) {
-       
+        
         if let navi = self.parent as? UINavigationController {
             navi.dismiss(animated: true, completion: nil)
         }
@@ -65,6 +68,7 @@ class WriteEntryVC: UIViewController, Gallery {
         initDatePicker()
         setKeyboardSetting()
         setUpTableView()
+        doneBtn.addTarget(self, action: #selector(doneAction), for: .touchUpInside)
         titleTxt.attributedPlaceholder = NSAttributedString(string: "제목을 입력해주세요", attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
     }
     override func viewWillDisappear(_ animated: Bool) {
@@ -79,7 +83,24 @@ class WriteEntryVC: UIViewController, Gallery {
         tableView.isHidden = true
     }
     
-    
+    @objc func doneAction(){
+        let writtenArticle = articleArr.filter { (item) in
+            return item.day != 0
+        }
+        print(writtenArticle)
+    }
+    @objc func isBtnValid(){
+        //완료 버튼 활성화
+        if (articleArr.filter { (item) in
+            return item.day != 0
+        }).count > 0 {
+            doneBtn.isEnabled = true
+            doneBtn.backgroundColor = ColorChip.shared().middleBlue
+        } else {
+            doneBtn.isEnabled = false
+            doneBtn.backgroundColor = #colorLiteral(red: 0.8666666667, green: 0.8666666667, blue: 0.8666666667, alpha: 1)
+        }
+    }
 }
 
 
@@ -90,7 +111,7 @@ extension WriteEntryVC : UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: WriteEntryTVCell.reuseIdentifier) as! WriteEntryTVCell
-        cell.configure(data: (indexPath.row+1).description)
+        cell.configure(data: (indexPath.row+1).description, isEmpty : articleArr[indexPath.row].day == 0)
         return cell
     }
     
@@ -98,8 +119,25 @@ extension WriteEntryVC : UITableViewDelegate, UITableViewDataSource{
         let reviewStoryboard = Storyboard.shared().reviewStoryboard
         
         if let writeArticleReviewVC = reviewStoryboard.instantiateViewController(withIdentifier:WriteArticleReviewVC.reuseIdentifier) as? WriteArticleReviewVC {
+            
+            writeArticleReviewVC.writeArticleHandler = {(article : ArticleStruct)  in
+                self.articleArr[article.day-1] = article
+                let cell = self.tableView.cellForRow(at: IndexPath(row : article.day-1, section : 0)) as! WriteEntryTVCell
+                cell.configure(data: (article.day).description, isEmpty : self.articleArr[article.day-1].day == 0)
+                self.isBtnValid()
+            }
+            writeArticleReviewVC.selectedArticle = articleArr[indexPath.row]
+            writeArticleReviewVC.selectedDay = indexPath.row+1
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy.MM.dd"
+            guard let date = dateFormatter.date(from: startTxt.text!) else {
+                fatalError("포맷과 맞지 않아 데이터 변환이 실패했습니다")
+            }
+            datePickerView.date = date
+            let strDate = dateFormatter.string(from: date.addingTimeInterval(TimeInterval(60*60*24*indexPath.row+1)))
+            writeArticleReviewVC.selectedDate = strDate
             self.navigationController?.pushViewController(writeArticleReviewVC, animated: true)
-            writeArticleReviewVC.day = indexPath.row+1
         }
         
         tableView.deselectRow(at: indexPath, animated: true)
@@ -109,6 +147,15 @@ extension WriteEntryVC : UITableViewDelegate, UITableViewDataSource{
 
 //DatePicker
 extension WriteEntryVC {
+//    let dateFormatter = DateFormatter()
+//    //이 포매터의 포맷은 어떨지 설정.
+//    //y는 year, m은 month, d는 day 의미
+//    dateFormatter.dateFormat = "yyyy.MM.dd"
+//    //내 생일을 date 형식으로 변환 후에 datePickerView.date 에 할당
+//    guard let date = dateFormatter.date(from: "1996.04.03") else {
+//    fatalError("포맷과 맞지 않아 데이터 변환이 실패했습니다")
+//    }
+//    datePickerView.date = date
     func initDatePicker(){
         datePickerView.datePickerMode = .date
         let dateFormatter = DateFormatter()
@@ -125,7 +172,7 @@ extension WriteEntryVC {
         bar.sizeToFit()
         let doneButton = UIBarButtonItem(title: "확인", style: .done
             , target: self, action: selector)
-         let flexibleButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+        let flexibleButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
         doneButton.tag = (textField == startTxt) ? 0 : 1
         bar.setItems([flexibleButton, doneButton], animated: true)
         textField.inputAccessoryView = bar
@@ -139,7 +186,7 @@ extension WriteEntryVC {
         dateformatter.dateFormat = "yyyy.MM.dd"
         let date = dateformatter.string(from: datePickerView.date)
         if sender.tag ==  0 {
-           startTxt.text = date
+            startTxt.text = date
         }else {
             endTxt.text = date
         }
@@ -164,20 +211,20 @@ extension WriteEntryVC {
 
 //MARK: - 앨범 열기 위함
 extension WriteEntryVC{
-
-
+    
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-
+        
         //크롭한 이미지
         if let editedImage: UIImage = info[UIImagePickerControllerEditedImage] as? UIImage {
             imageData = UIImageJPEGRepresentation(editedImage, 0.1)
         } else if let originalImage: UIImage = info[UIImagePickerControllerOriginalImage] as? UIImage{
             imageData = UIImageJPEGRepresentation(originalImage, 0.1)
         }
-
+        
         self.dismiss(animated: true)
     }
-
+    
 }
 
 //MARK: - 키보드 대응
@@ -189,7 +236,7 @@ extension WriteEntryVC {
     
     @objc func keyboardWillShow(_ notification: Notification) {
         adjustKeyboardDismissGesture(isKeyboardVisible: true)
-    
+        
     }
     
     @objc func keyboardWillHide(_ notification: Notification) {

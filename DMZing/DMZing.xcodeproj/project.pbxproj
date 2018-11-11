@@ -50,6 +50,7 @@
 		3B872CD52180B40900498F97 /* MyDPPointTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B872CD42180B40900498F97 /* MyDPPointTVCell.swift */; };
 		3B872CD72180B41800498F97 /* MyDPPointVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B872CD62180B41800498F97 /* MyDPPointVC.swift */; };
 		3BA7ED352198933B00BAC493 /* Gallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA7ED342198933B00BAC493 /* Gallery.swift */; };
+		3BA7ED392198AC2E00BAC493 /* ArticleStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA7ED382198AC2E00BAC493 /* ArticleStruct.swift */; };
 		3BB05000217CA6540096BF4D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB04FFF217CA6540096BF4D /* Extensions.swift */; };
 		3BB05002217CA65D0096BF4D /* GettableService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB05001217CA65D0096BF4D /* GettableService.swift */; };
 		3BB05004217CA6650096BF4D /* PostableService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB05003217CA6650096BF4D /* PostableService.swift */; };
@@ -131,6 +132,7 @@
 		3B872CD42180B40900498F97 /* MyDPPointTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDPPointTVCell.swift; sourceTree = "<group>"; };
 		3B872CD62180B41800498F97 /* MyDPPointVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDPPointVC.swift; sourceTree = "<group>"; };
 		3BA7ED342198933B00BAC493 /* Gallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gallery.swift; sourceTree = "<group>"; };
+		3BA7ED382198AC2E00BAC493 /* ArticleStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleStruct.swift; sourceTree = "<group>"; };
 		3BB04FFF217CA6540096BF4D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		3BB05001217CA65D0096BF4D /* GettableService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GettableService.swift; sourceTree = "<group>"; };
 		3BB05003217CA6650096BF4D /* PostableService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostableService.swift; sourceTree = "<group>"; };
@@ -236,9 +238,9 @@
 		3B6697C82198242D008789E3 /* WriteArticleReview */ = {
 			isa = PBXGroup;
 			children = (
-				3B6697D3219825B5008789E3 /* Service */,
-				3B6697D2219825AF008789E3 /* VO */,
 				3B6697CF2198243E008789E3 /* VC */,
+				3B6697D2219825AF008789E3 /* VO */,
+				3B6697D3219825B5008789E3 /* Service */,
 			);
 			path = WriteArticleReview;
 			sourceTree = "<group>";
@@ -329,6 +331,7 @@
 			isa = PBXGroup;
 			children = (
 				3B6697D82198275F008789E3 /* PostImageVO.swift */,
+				3BA7ED382198AC2E00BAC493 /* ArticleStruct.swift */,
 			);
 			path = VO;
 			sourceTree = "<group>";
@@ -813,6 +816,7 @@
 				CCB3CC9E218AF9D40033B9F9 /* SignInViewController.swift in Sources */,
 				3BB05004217CA6650096BF4D /* PostableService.swift in Sources */,
 				CCB3CCA0218B01430033B9F9 /* SignUp1ViewController.swift in Sources */,
+				3BA7ED392198AC2E00BAC493 /* ArticleStruct.swift in Sources */,
 				3B6697B721959405008789E3 /* WriteArticleReviewVC.swift in Sources */,
 				3BB05002217CA65D0096BF4D /* GettableService.swift in Sources */,
 				3BB05011217CAC910096BF4D /* HttpResCode.swift in Sources */,

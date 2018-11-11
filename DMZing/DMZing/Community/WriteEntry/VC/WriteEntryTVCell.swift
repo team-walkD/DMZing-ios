@@ -13,8 +13,9 @@ class WriteEntryTVCell: UITableViewCell {
     @IBOutlet weak var outerView: RoundShadowView!
     
     @IBOutlet weak var dayLbl: UILabel!
-    func configure(data : String){
+    func configure(data : String, isEmpty : Bool){
         dayLbl.text = "DAY "+data
+        dayLbl.textColor = isEmpty ? .gray : ColorChip.shared().deepBlue
     }
     override func awakeFromNib() {
         super.awakeFromNib()

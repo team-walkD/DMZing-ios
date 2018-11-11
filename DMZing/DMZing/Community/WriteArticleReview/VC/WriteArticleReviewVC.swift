@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WriteArticleReviewVC: UIViewController, APIService, Gallery {
+class WriteArticleReviewVC: UIViewController, APIService, Gallery, UIGestureRecognizerDelegate  {
     var homeController: UIViewController?
     @IBOutlet weak var dayLbl: UILabel!
     @IBOutlet weak var dateLbl: UILabel!
@@ -17,7 +17,9 @@ class WriteArticleReviewVC: UIViewController, APIService, Gallery {
     @IBOutlet weak var contentCntLbl: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var doneBtn: UIButton!
-    var day = 0
+    var selectedDay = 0
+    var selectedDate = ""
+    var selectedArticle : ArticleStruct?
     let defaultTxtMsg = "내용을 입력하세요"
     var keyboardDismissGesture : UITapGestureRecognizer?
     var imageArr : [String] = [] {
@@ -26,19 +28,46 @@ class WriteArticleReviewVC: UIViewController, APIService, Gallery {
         }
     }
     var selectedPhotoIdx = 0
-
+    var writeArticleHandler : ((_ article : ArticleStruct)->Void)?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setKeyboardSetting()
+        setBackBtn()
         homeController = self
         collectionView.delegate = self
         collectionView.dataSource = self
         contentTxtView.delegate = self
         imageArr = ["","","","",""]
         titleTxt.addTarget(self, action: #selector(isValid), for: .editingChanged)
+        doneBtn.addTarget(self, action: #selector(doneAction), for: .touchUpInside)
+        setFirstArticle(article: selectedArticle!)
+    }
+    
+    @objc func doneAction(){
+        let article = ArticleStruct(day: selectedDay, title: titleTxt.text!, content: contentTxtView.text, imageArr: imageArr.filter({ (item) in
+            return item != ""
+        }))
+        writeArticleHandler!(article)
+        self.pop()
+    }
+    
+    func setFirstArticle(article : ArticleStruct){
+        dayLbl.text = "DAY "+selectedDay.description
+        dateLbl.text = selectedDate
+        //이전에 쓴 이력이 없다는 것
+        if article.day == 0 {return}
+        titleTxt.text = article.title
+        contentTxtView.text = article.content
+        contentTxtView.textColor = ColorChip.shared().deepBlue
+        for i in 0..<article.imageArr.count {
+            imageArr[i] = article.imageArr[i]
+        }
+        isValid()
     }
 }
 
+//collectionView
 extension WriteArticleReviewVC :  UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return imageArr.count
@@ -103,7 +132,7 @@ extension WriteArticleReviewVC : UITextViewDelegate{
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.text == defaultTxtMsg {
             textView.text = nil
-            textView.textColor = UIColor.black
+            textView.textColor = ColorChip.shared().deepBlue
         }
     }
     
@@ -122,9 +151,9 @@ extension WriteArticleReviewVC : UITextViewDelegate{
             contentCntLbl.text = "0"
         }
         guard let contentTxt = textView.text else {return}
-        if(contentTxt.count > 300) {
+        if(contentTxt.count > 3000) {
             self.simpleAlert(title: "오류", message: "3000글자 초과")
-            contentTxtView.text = String(describing: contentTxt.prefix(299))
+            contentTxtView.text = String(describing: contentTxt.prefix(2999))
             contentCntLbl.text = contentTxtView.text.count.description
             isValid()
         }
@@ -157,13 +186,11 @@ UINavigationControllerDelegate  {
             addImage(url: url("reviews/images"), image: image)
            
         }
-        
         self.dismiss(animated: true)
     }
-    
-    
 }
 
+//통신
 extension WriteArticleReviewVC {
     func addImage(url : String, image : Data?){
         let params : [String : Any] = [:]
