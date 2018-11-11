@@ -14,6 +14,10 @@
 		3B6697C121980437008789E3 /* MypageMainVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6697C021980437008789E3 /* MypageMainVO.swift */; };
 		3B6697C521980BB2008789E3 /* MypageReviewVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6697C421980BB2008789E3 /* MypageReviewVO.swift */; };
 		3B6697C721980BE6008789E3 /* MypageReviewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6697C621980BE6008789E3 /* MypageReviewService.swift */; };
+		3B6697D5219825D0008789E3 /* PostImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6697D4219825D0008789E3 /* PostImageService.swift */; };
+		3B6697D7219825DB008789E3 /* PostArticleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6697D6219825DB008789E3 /* PostArticleService.swift */; };
+		3B6697D92198275F008789E3 /* PostImageVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6697D82198275F008789E3 /* PostImageVO.swift */; };
+		3B6697DC21985C5D008789E3 /* WritePhotoReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6697DB21985C5D008789E3 /* WritePhotoReviewVC.swift */; };
 		3B800572218B1F160003EA5C /* PhotoReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B800571218B1F160003EA5C /* PhotoReviewVC.swift */; };
 		3B80057C218B1FFA0003EA5C /* ReviewDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B80057B218B1FFA0003EA5C /* ReviewDetailVC.swift */; };
 		3B80057E218B206E0003EA5C /* ArticleReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B80057D218B206E0003EA5C /* ArticleReviewVC.swift */; };
@@ -86,6 +90,10 @@
 		3B6697C021980437008789E3 /* MypageMainVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageMainVO.swift; sourceTree = "<group>"; };
 		3B6697C421980BB2008789E3 /* MypageReviewVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageReviewVO.swift; sourceTree = "<group>"; };
 		3B6697C621980BE6008789E3 /* MypageReviewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageReviewService.swift; sourceTree = "<group>"; };
+		3B6697D4219825D0008789E3 /* PostImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostImageService.swift; sourceTree = "<group>"; };
+		3B6697D6219825DB008789E3 /* PostArticleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostArticleService.swift; sourceTree = "<group>"; };
+		3B6697D82198275F008789E3 /* PostImageVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostImageVO.swift; sourceTree = "<group>"; };
+		3B6697DB21985C5D008789E3 /* WritePhotoReviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritePhotoReviewVC.swift; sourceTree = "<group>"; };
 		3B800571218B1F160003EA5C /* PhotoReviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoReviewVC.swift; sourceTree = "<group>"; };
 		3B80057B218B1FFA0003EA5C /* ReviewDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewDetailVC.swift; sourceTree = "<group>"; };
 		3B80057D218B206E0003EA5C /* ArticleReviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleReviewVC.swift; sourceTree = "<group>"; };
@@ -164,15 +172,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3B6697B5219593E6008789E3 /* WriteArticleReview */ = {
-			isa = PBXGroup;
-			children = (
-				3B6697B621959405008789E3 /* WriteArticleReviewVC.swift */,
-				3B6697B82195A266008789E3 /* WriteArticleCVCell.swift */,
-			);
-			path = WriteArticleReview;
-			sourceTree = "<group>";
-		};
 		3B6697BC219803FD008789E3 /* VO */ = {
 			isa = PBXGroup;
 			children = (
@@ -205,16 +204,50 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
-		3B800570218B1EFA0003EA5C /* ReviewMain */ = {
+		3B6697C82198242D008789E3 /* WriteArticleReview */ = {
 			isa = PBXGroup;
 			children = (
-				3B80058E218B54F10003EA5C /* ReviewMainVC.swift */,
-				3B800594218B73650003EA5C /* ReviewMainCVCell.swift */,
+				3B6697D3219825B5008789E3 /* Service */,
+				3B6697D2219825AF008789E3 /* VO */,
+				3B6697CF2198243E008789E3 /* VC */,
+			);
+			path = WriteArticleReview;
+			sourceTree = "<group>";
+		};
+		3B6697C92198242F008789E3 /* ReviewMain */ = {
+			isa = PBXGroup;
+			children = (
+				3B6697CE2198243D008789E3 /* VC */,
 			);
 			path = ReviewMain;
 			sourceTree = "<group>";
 		};
-		3B800577218B1FBD0003EA5C /* ReviewDetail */ = {
+		3B6697CA21982434008789E3 /* ReviewDetail */ = {
+			isa = PBXGroup;
+			children = (
+				3B6697CD2198243B008789E3 /* VC */,
+			);
+			path = ReviewDetail;
+			sourceTree = "<group>";
+		};
+		3B6697CB21982436008789E3 /* WriteEntry */ = {
+			isa = PBXGroup;
+			children = (
+				3B6697CC2198243A008789E3 /* VC */,
+			);
+			path = WriteEntry;
+			sourceTree = "<group>";
+		};
+		3B6697CC2198243A008789E3 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				3B8364ED219425FB000BD706 /* WriteEntryVC.swift */,
+				3B6697B021949DBA008789E3 /* WriteEntryTVCell.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		3B6697CD2198243B008789E3 /* VC */ = {
 			isa = PBXGroup;
 			children = (
 				3B800583218B26D50003EA5C /* RoundShadowView.swift */,
@@ -224,7 +257,68 @@
 				3B80058C218B360B0003EA5C /* Photo */,
 				3B80058B218B360A0003EA5C /* Article */,
 			);
-			path = ReviewDetail;
+			path = VC;
+			sourceTree = "<group>";
+		};
+		3B6697CE2198243D008789E3 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				3B80058E218B54F10003EA5C /* ReviewMainVC.swift */,
+				3B800594218B73650003EA5C /* ReviewMainCVCell.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		3B6697CF2198243E008789E3 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				3B6697B621959405008789E3 /* WriteArticleReviewVC.swift */,
+				3B6697B82195A266008789E3 /* WriteArticleCVCell.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		3B6697D0219824BB008789E3 /* ReviewContent */ = {
+			isa = PBXGroup;
+			children = (
+				3B6697D1219824CA008789E3 /* VC */,
+			);
+			path = ReviewContent;
+			sourceTree = "<group>";
+		};
+		3B6697D1219824CA008789E3 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				3B8364F1219461EE000BD706 /* ReviewContentVC.swift */,
+				3B8364F321946279000BD706 /* ReviewContentTVCell.swift */,
+				3B8364F6219490BF000BD706 /* ReviewContentCVCell.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		3B6697D2219825AF008789E3 /* VO */ = {
+			isa = PBXGroup;
+			children = (
+				3B6697D82198275F008789E3 /* PostImageVO.swift */,
+			);
+			path = VO;
+			sourceTree = "<group>";
+		};
+		3B6697D3219825B5008789E3 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				3B6697D4219825D0008789E3 /* PostImageService.swift */,
+				3B6697D6219825DB008789E3 /* PostArticleService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		3B6697DA21985C44008789E3 /* WritePhotoReview */ = {
+			isa = PBXGroup;
+			children = (
+				3B6697DB21985C5D008789E3 /* WritePhotoReviewVC.swift */,
+			);
+			path = WritePhotoReview;
 			sourceTree = "<group>";
 		};
 		3B80058B218B360A0003EA5C /* Article */ = {
@@ -248,18 +342,6 @@
 			path = Photo;
 			sourceTree = "<group>";
 		};
-		3B80058D218B48DB0003EA5C /* VC */ = {
-			isa = PBXGroup;
-			children = (
-				3B6697B5219593E6008789E3 /* WriteArticleReview */,
-				3B800570218B1EFA0003EA5C /* ReviewMain */,
-				3B800577218B1FBD0003EA5C /* ReviewDetail */,
-				3B8364EC219425D8000BD706 /* WriteEntry */,
-				3B8364F0219461D9000BD706 /* ReviewContent */,
-			);
-			path = VC;
-			sourceTree = "<group>";
-		};
 		3B800596218B80D00003EA5C /* Popup */ = {
 			isa = PBXGroup;
 			children = (
@@ -267,25 +349,6 @@
 				3B800599218B81340003EA5C /* PhotoReviewPopupView.xib */,
 			);
 			path = Popup;
-			sourceTree = "<group>";
-		};
-		3B8364EC219425D8000BD706 /* WriteEntry */ = {
-			isa = PBXGroup;
-			children = (
-				3B8364ED219425FB000BD706 /* WriteEntryVC.swift */,
-				3B6697B021949DBA008789E3 /* WriteEntryTVCell.swift */,
-			);
-			path = WriteEntry;
-			sourceTree = "<group>";
-		};
-		3B8364F0219461D9000BD706 /* ReviewContent */ = {
-			isa = PBXGroup;
-			children = (
-				3B8364F1219461EE000BD706 /* ReviewContentVC.swift */,
-				3B8364F321946279000BD706 /* ReviewContentTVCell.swift */,
-				3B8364F6219490BF000BD706 /* ReviewContentCVCell.swift */,
-			);
-			path = ReviewContent;
 			sourceTree = "<group>";
 		};
 		3B872CB52180901500498F97 /* VC */ = {
@@ -512,7 +575,12 @@
 			isa = PBXGroup;
 			children = (
 				CC31AC73217C92AF00A02388 /* Community.storyboard */,
-				3B80058D218B48DB0003EA5C /* VC */,
+				3B6697C92198242F008789E3 /* ReviewMain */,
+				3B6697CA21982434008789E3 /* ReviewDetail */,
+				3B6697D0219824BB008789E3 /* ReviewContent */,
+				3B6697CB21982436008789E3 /* WriteEntry */,
+				3B6697C82198242D008789E3 /* WriteArticleReview */,
+				3B6697DA21985C44008789E3 /* WritePhotoReview */,
 			);
 			path = Community;
 			sourceTree = "<group>";
@@ -695,12 +763,14 @@
 				3B872CB72180902700498F97 /* MypageVC.swift in Sources */,
 				3B800595218B73650003EA5C /* ReviewMainCVCell.swift in Sources */,
 				3B6697C721980BE6008789E3 /* MypageReviewService.swift in Sources */,
+				3B6697D5219825D0008789E3 /* PostImageService.swift in Sources */,
 				3B6697B92195A266008789E3 /* WriteArticleCVCell.swift in Sources */,
 				3B8364F421946279000BD706 /* ReviewContentTVCell.swift in Sources */,
 				3BB0501C217CAE1E0096BF4D /* SampleVO.swift in Sources */,
 				3B872CCE2180B10A00498F97 /* MyReviewVC.swift in Sources */,
 				3B80057C218B1FFA0003EA5C /* ReviewDetailVC.swift in Sources */,
 				3BB05006217CA66F0096BF4D /* PostableWithPhoto.swift in Sources */,
+				3B6697DC21985C5D008789E3 /* WritePhotoReviewVC.swift in Sources */,
 				3B80057E218B206E0003EA5C /* ArticleReviewVC.swift in Sources */,
 				3BD63A052180B873007F5972 /* MyPostVC.swift in Sources */,
 				3B872CC421809C1700498F97 /* MyCourseTVCell.swift in Sources */,
@@ -734,6 +804,7 @@
 				3B800580218B213F0003EA5C /* PhotoReviewCVCell.swift in Sources */,
 				3BB0501A217CADFA0096BF4D /* PhotoSampleService.swift in Sources */,
 				3B800598218B81080003EA5C /* PhotoReviewPopupView.swift in Sources */,
+				3B6697D7219825DB008789E3 /* PostArticleService.swift in Sources */,
 				3B872CBA2180905000498F97 /* MyPageTVCell.swift in Sources */,
 				3BB05000217CA6540096BF4D /* Extensions.swift in Sources */,
 				3B8364F2219461EE000BD706 /* ReviewContentVC.swift in Sources */,
@@ -742,6 +813,7 @@
 				3B80058F218B54F10003EA5C /* ReviewMainVC.swift in Sources */,
 				3B6697C521980BB2008789E3 /* MypageReviewVO.swift in Sources */,
 				CC3D43BC2185A9F8003171C0 /* ThemeCollectionViewCell.swift in Sources */,
+				3B6697D92198275F008789E3 /* PostImageVO.swift in Sources */,
 				CCB3CCA4218B041B0033B9F9 /* SignUp3ViewController.swift in Sources */,
 				CCB3CCA2218B035B0033B9F9 /* SignUp2ViewController.swift in Sources */,
 				3BB05009217CA9D20096BF4D /* ColorChip.swift in Sources */,
@@ -891,7 +963,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Y4XABUQ539;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = DMZing/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -908,7 +980,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Y4XABUQ539;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = DMZing/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
