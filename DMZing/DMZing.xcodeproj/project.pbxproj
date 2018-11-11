@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		3B6697B121949DBA008789E3 /* WriteEntryTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6697B021949DBA008789E3 /* WriteEntryTVCell.swift */; };
+		3B6697B721959405008789E3 /* WriteArticleReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6697B621959405008789E3 /* WriteArticleReviewVC.swift */; };
+		3B6697B92195A266008789E3 /* WriteArticleCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6697B82195A266008789E3 /* WriteArticleCVCell.swift */; };
+		3B6697BF21980410008789E3 /* MypageMainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6697BE21980410008789E3 /* MypageMainService.swift */; };
+		3B6697C121980437008789E3 /* MypageMainVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6697C021980437008789E3 /* MypageMainVO.swift */; };
 		3B800572218B1F160003EA5C /* PhotoReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B800571218B1F160003EA5C /* PhotoReviewVC.swift */; };
 		3B80057C218B1FFA0003EA5C /* ReviewDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B80057B218B1FFA0003EA5C /* ReviewDetailVC.swift */; };
 		3B80057E218B206E0003EA5C /* ArticleReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B80057D218B206E0003EA5C /* ArticleReviewVC.swift */; };
@@ -74,6 +78,10 @@
 		03429F00E6D01CE48BFFF5D1 /* Pods_DMZing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DMZing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		31A78C13C32CCDE3112EE612 /* Pods-DMZing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DMZing.release.xcconfig"; path = "Target Support Files/Pods-DMZing/Pods-DMZing.release.xcconfig"; sourceTree = "<group>"; };
 		3B6697B021949DBA008789E3 /* WriteEntryTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteEntryTVCell.swift; sourceTree = "<group>"; };
+		3B6697B621959405008789E3 /* WriteArticleReviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteArticleReviewVC.swift; sourceTree = "<group>"; };
+		3B6697B82195A266008789E3 /* WriteArticleCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteArticleCVCell.swift; sourceTree = "<group>"; };
+		3B6697BE21980410008789E3 /* MypageMainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageMainService.swift; sourceTree = "<group>"; };
+		3B6697C021980437008789E3 /* MypageMainVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageMainVO.swift; sourceTree = "<group>"; };
 		3B800571218B1F160003EA5C /* PhotoReviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoReviewVC.swift; sourceTree = "<group>"; };
 		3B80057B218B1FFA0003EA5C /* ReviewDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewDetailVC.swift; sourceTree = "<group>"; };
 		3B80057D218B206E0003EA5C /* ArticleReviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleReviewVC.swift; sourceTree = "<group>"; };
@@ -152,6 +160,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B6697B5219593E6008789E3 /* WriteArticleReview */ = {
+			isa = PBXGroup;
+			children = (
+				3B6697B621959405008789E3 /* WriteArticleReviewVC.swift */,
+				3B6697B82195A266008789E3 /* WriteArticleCVCell.swift */,
+			);
+			path = WriteArticleReview;
+			sourceTree = "<group>";
+		};
+		3B6697BC219803FD008789E3 /* VO */ = {
+			isa = PBXGroup;
+			children = (
+				3B6697C021980437008789E3 /* MypageMainVO.swift */,
+			);
+			path = VO;
+			sourceTree = "<group>";
+		};
+		3B6697BD21980401008789E3 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				3B6697BE21980410008789E3 /* MypageMainService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		3B800570218B1EFA0003EA5C /* ReviewMain */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +231,7 @@
 		3B80058D218B48DB0003EA5C /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				3B6697B5219593E6008789E3 /* WriteArticleReview */,
 				3B800570218B1EFA0003EA5C /* ReviewMain */,
 				3B800577218B1FBD0003EA5C /* ReviewDetail */,
 				3B8364EC219425D8000BD706 /* WriteEntry */,
@@ -254,6 +288,8 @@
 		3B872CBD21809A0B00498F97 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				3B6697BD21980401008789E3 /* Service */,
+				3B6697BC219803FD008789E3 /* VO */,
 				3B872CB52180901500498F97 /* VC */,
 			);
 			path = Main;
@@ -636,6 +672,7 @@
 			files = (
 				3B872CB72180902700498F97 /* MypageVC.swift in Sources */,
 				3B800595218B73650003EA5C /* ReviewMainCVCell.swift in Sources */,
+				3B6697B92195A266008789E3 /* WriteArticleCVCell.swift in Sources */,
 				3B8364F421946279000BD706 /* ReviewContentTVCell.swift in Sources */,
 				3BB0501C217CAE1E0096BF4D /* SampleVO.swift in Sources */,
 				3B872CCE2180B10A00498F97 /* MyReviewVC.swift in Sources */,
@@ -648,9 +685,11 @@
 				3B872CD72180B41800498F97 /* MyDPPointVC.swift in Sources */,
 				CCB3CCA6218B061A0033B9F9 /* InitialViewController.swift in Sources */,
 				CC31AC5E217C8D3200A02388 /* MainViewController.swift in Sources */,
+				3B6697C121980437008789E3 /* MypageMainVO.swift in Sources */,
 				CCB3CC9E218AF9D40033B9F9 /* SignInViewController.swift in Sources */,
 				3BB05004217CA6650096BF4D /* PostableService.swift in Sources */,
 				CCB3CCA0218B01430033B9F9 /* SignUp1ViewController.swift in Sources */,
+				3B6697B721959405008789E3 /* WriteArticleReviewVC.swift in Sources */,
 				3BB05002217CA65D0096BF4D /* GettableService.swift in Sources */,
 				3BB05011217CAC910096BF4D /* HttpResCode.swift in Sources */,
 				3B872CBC2180943D00498F97 /* CustomView.swift in Sources */,
@@ -667,6 +706,7 @@
 				3B800584218B26D50003EA5C /* RoundShadowView.swift in Sources */,
 				3BD63A072180B88B007F5972 /* MyPostCVCell.swift in Sources */,
 				3B6697B121949DBA008789E3 /* WriteEntryTVCell.swift in Sources */,
+				3B6697BF21980410008789E3 /* MypageMainService.swift in Sources */,
 				3BB05016217CADE80096BF4D /* GetSampleService.swift in Sources */,
 				3B800580218B213F0003EA5C /* PhotoReviewCVCell.swift in Sources */,
 				3BB0501A217CADFA0096BF4D /* PhotoSampleService.swift in Sources */,
@@ -827,7 +867,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = Y4XABUQ539;
 				INFOPLIST_FILE = DMZing/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -844,7 +884,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = Y4XABUQ539;
 				INFOPLIST_FILE = DMZing/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

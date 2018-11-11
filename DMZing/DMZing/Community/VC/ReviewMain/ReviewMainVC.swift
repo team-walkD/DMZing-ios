@@ -44,10 +44,11 @@ class ReviewMainVC: UIViewController {
     
     @IBAction func writeAction(_ sender: Any) {
         let reviewStoryboard = Storyboard.shared().reviewStoryboard
-  
-        if let writeEntryVC = reviewStoryboard.instantiateViewController(withIdentifier:WriteEntryVC.reuseIdentifier) as? WriteEntryVC {
-                self.present(writeEntryVC, animated: true, completion: nil)
-        }
+ 
+        let writeEntryVC = reviewStoryboard.instantiateViewController(withIdentifier:"reviewNavi")
+        
+        self.present(writeEntryVC, animated: true, completion: nil)
+        
     }
 }
 

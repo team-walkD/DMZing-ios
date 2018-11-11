@@ -78,6 +78,12 @@ extension WriteEntryVC : UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let reviewStoryboard = Storyboard.shared().reviewStoryboard
+        
+        if let writeArticleReviewVC = reviewStoryboard.instantiateViewController(withIdentifier:WriteArticleReviewVC.reuseIdentifier) as? WriteArticleReviewVC {
+            self.navigationController?.pushViewController(writeArticleReviewVC, animated: true)
+            
+        }
         
         tableView.deselectRow(at: indexPath, animated: true)
     }
