@@ -15,6 +15,7 @@ class ReviewDetailVC: UIViewController, APIService, UIGestureRecognizerDelegate 
     
     let photoReviewVC = PhotoReviewVC()
     let articleReviewVC = ArticleReviewVC()
+    private var selectedIdx = 0
     
    /* var myBoardData : [MyPageVODataBoard]  = [] {
         didSet {
@@ -91,6 +92,20 @@ class ReviewDetailVC: UIViewController, APIService, UIGestureRecognizerDelegate 
         advancedManagerConfig()
         setBackBtn()
     }
+    
+    @IBAction func writeAction(_ sender: Any) {
+         let reviewStoryboard = Storyboard.shared().reviewStoryboard
+        if selectedIdx == 0 {
+            let writePhotoReviewVC = reviewStoryboard.instantiateViewController(withIdentifier:WritePhotoReviewVC.reuseIdentifier)
+            
+            self.present(writePhotoReviewVC, animated: true, completion: nil)
+        } else {
+            let writeEntryVC = reviewStoryboard.instantiateViewController(withIdentifier:"reviewNavi")
+            
+            self.present(writeEntryVC, animated: true, completion: nil)
+        }
+       
+    }
 
     
     deinit {
@@ -105,7 +120,7 @@ extension ReviewDetailVC : LTAdvancedScrollViewDelegate {
     private func advancedManagerConfig() {
         //MARK: 选中事件
         advancedManager.advancedDidSelectIndexHandle = {
-            print("현재 인덱스는 -> \($0)")
+            self.selectedIdx = $0
         }
         
     }

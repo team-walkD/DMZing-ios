@@ -31,8 +31,13 @@ class WriteEntryVC: UIViewController {
     
    
     @IBAction func dismissAction(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+       
+        if let navi = self.parent as? UINavigationController {
+            navi.dismiss(animated: true, completion: nil)
+        }
+       
     }
+    
     @IBOutlet weak var bgImgView: UIImageView!
     @IBOutlet weak var titleTxt: UITextField!
     @IBOutlet weak var startTxt: UITextField!
@@ -47,12 +52,23 @@ class WriteEntryVC: UIViewController {
         openGallery()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .clear
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initDatePicker()
         setKeyboardSetting()
         setUpTableView()
         titleTxt.attributedPlaceholder = NSAttributedString(string: "제목을 입력해주세요", attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
+        self.navigationController?.navigationBar.isTranslucent = false
     }
     
     func setUpTableView(){
@@ -78,6 +94,12 @@ extension WriteEntryVC : UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let reviewStoryboard = Storyboard.shared().reviewStoryboard
+        
+        if let writeArticleReviewVC = reviewStoryboard.instantiateViewController(withIdentifier:WriteArticleReviewVC.reuseIdentifier) as? WriteArticleReviewVC {
+            self.navigationController?.pushViewController(writeArticleReviewVC, animated: true)
+            writeArticleReviewVC.day = indexPath.row+1
+        }
         
         tableView.deselectRow(at: indexPath, animated: true)
     }

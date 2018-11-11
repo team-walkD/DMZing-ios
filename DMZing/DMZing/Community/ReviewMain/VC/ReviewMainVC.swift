@@ -42,13 +42,6 @@ class ReviewMainVC: UIViewController {
         reviewMainArr.append(contentsOf: [a,b,c,d,e])
     }
     
-    @IBAction func writeAction(_ sender: Any) {
-        let reviewStoryboard = Storyboard.shared().reviewStoryboard
-  
-        if let writeEntryVC = reviewStoryboard.instantiateViewController(withIdentifier:WriteEntryVC.reuseIdentifier) as? WriteEntryVC {
-                self.present(writeEntryVC, animated: true, completion: nil)
-        }
-    }
 }
 
 extension ReviewMainVC :  UICollectionViewDelegate, UICollectionViewDataSource{
