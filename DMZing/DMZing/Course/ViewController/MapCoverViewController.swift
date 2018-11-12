@@ -56,7 +56,7 @@ class MapCoverViewController: UIViewController {
     
     //MARK: 보러가기 액션
     @IBAction func detailAction(_ sender: UIButton) {
-        let infoVC = UIStoryboard(name: "Course", bundle: nil).instantiateViewController(withIdentifier: "PlaceInfoViewController") as! PlaceInfoViewController
+        let infoVC = UIStoryboard(name: "Course", bundle: nil).instantiateViewController(withIdentifier: "CourseDetailViewController") as! CourseDetailViewController
         
         self.navigationController?.pushViewController(infoVC, animated: true)
         
