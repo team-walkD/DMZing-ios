@@ -158,6 +158,9 @@ extension WriteEntryVC {
 //    datePickerView.date = date
     func initDatePicker(){
         datePickerView.datePickerMode = .date
+
+        let loc = Locale(identifier: "ko_KR")
+        self.datePickerView.locale = loc
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy.MM.dd"
         datePickerView.date = Date()
