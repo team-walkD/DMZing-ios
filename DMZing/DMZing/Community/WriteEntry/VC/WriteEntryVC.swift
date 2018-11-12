@@ -147,15 +147,7 @@ extension WriteEntryVC : UITableViewDelegate, UITableViewDataSource{
 
 //DatePicker
 extension WriteEntryVC {
-//    let dateFormatter = DateFormatter()
-//    //이 포매터의 포맷은 어떨지 설정.
-//    //y는 year, m은 month, d는 day 의미
-//    dateFormatter.dateFormat = "yyyy.MM.dd"
-//    //내 생일을 date 형식으로 변환 후에 datePickerView.date 에 할당
-//    guard let date = dateFormatter.date(from: "1996.04.03") else {
-//    fatalError("포맷과 맞지 않아 데이터 변환이 실패했습니다")
-//    }
-//    datePickerView.date = date
+
     func initDatePicker(){
         datePickerView.datePickerMode = .date
 
