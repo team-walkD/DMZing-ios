@@ -11,26 +11,41 @@ import UIKit
 class WritePhotoReviewVC: UIViewController, APIService {
     let datePickerView = UIDatePicker()
     @IBOutlet weak var dateTxt: UITextField!
-    
+    @IBOutlet weak var titleLbl: UILabel!
     @IBAction func dismissAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
-        
-        
     }
     
     @IBAction func touchImgAction(_ sender: Any) {
         self.openGallery()
     }
     @IBOutlet weak var myImgView: UIImageView!
-    
     @IBOutlet weak var doneBtn: UIButton!
+    var imgUrl : String?
+    var selectedCourse : (courseId : Int, courseName : String) = (1, "")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        titleLbl.text = selectedCourse.courseName
+        doneBtn.addTarget(self, action: #selector(doneAction), for: .touchUpInside)
         initDatePicker()
-        // Do any additional setup after loading the view.
     }
     
-    
+    @objc func doneAction(){
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy.MM.dd"
+        guard let date = dateFormatter.date(from: dateTxt.text!) else {
+            fatalError("포맷과 맞지 않아 데이터 변환이 실패했습니다")
+        }
+        guard let imageUrl_ = imgUrl else {return}
+        let params : [String : Any] = [
+            "imageUrl": imageUrl_,
+            "startAt": date.timeIntervalSince1970,
+            "placeName": selectedCourse.courseName,
+            "courseId": selectedCourse.courseId
+        ]
+        writeImgReview(url: url("reviews/photo"), params: params)
+    }
 }
 //MARK: - 앨범 열기 위함
 extension WritePhotoReviewVC : UIImagePickerControllerDelegate,
@@ -105,6 +120,24 @@ extension WritePhotoReviewVC {
 
 //통신
 extension WritePhotoReviewVC {
+    func writeImgReview(url : String, params : [String : Any]){
+        WritePhotoReviewService.shareInstance.writePhotoReview(url: url, params: params, completion: { [weak self] (result) in
+            guard let `self` = self else { return }
+            switch result {
+            case .networkSuccess(_):
+                self.simpleAlertwithHandler(title: "성공", message: "리뷰를 등록했습니다", okHandler: { (_) in
+                    self.dismiss(animated: true, completion: nil)
+                })
+                break
+            case .networkFail :
+                self.networkSimpleAlert()
+            default :
+                self.simpleAlert(title: "오류", message: "다시 시도해주세요")
+                break
+            }
+        })
+    }
+    
     func addImage(url : String, image : Data?){
         let params : [String : Any] = [:]
         var images : [String : Data]?
@@ -122,6 +155,7 @@ extension WritePhotoReviewVC {
                 let data = data as? PostImageVO
                 if let img = data?.image {
                     self.myImgView.setImgWithKF(url: img, defaultImg: #imageLiteral(resourceName: "ccc"))
+                    self.imgUrl = img
                     self.doneBtn.isEnabled = true
                     self.doneBtn.backgroundColor = ColorChip.shared().middleBlue
                 }

@@ -656,16 +656,24 @@ tOyVmOuLpC4LCuyerOuvuCDsl4bsnYQg6rKDIOqwmeuLpOqzoOunjCDsg53qsIHtlojripTrjbAg7IOd
                                             <constraint firstAttribute="height" constant="44" id="15s-HC-v5e"/>
                                             <constraint firstAttribute="width" secondItem="m7k-vs-xlM" secondAttribute="height" multiplier="1:1" id="o7J-rY-Spe"/>
                                         </constraints>
-                                        <state key="normal" image="x_btn"/>
+                                        <state key="normal" title="버튼"/>
                                         <connections>
                                             <action selector="dismissAction:" destination="zlm-Jk-b9X" eventType="touchUpInside" id="GbV-17-gmb"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="리뷰" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdT-OG-NCK">
+                                        <rect key="frame" x="173.33333333333334" y="56" width="29.666666666666657" height="20"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="17"/>
+                                        <color key="textColor" red="0.10980392160000001" green="0.2156862745" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.7725490196" green="0.86274509799999999" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="vdT-OG-NCK" firstAttribute="centerY" secondItem="m7k-vs-xlM" secondAttribute="centerY" id="2sH-Lb-MU7"/>
                                     <constraint firstAttribute="trailing" secondItem="m7k-vs-xlM" secondAttribute="trailing" constant="29" id="5bw-hB-uV8"/>
                                     <constraint firstAttribute="bottom" secondItem="m7k-vs-xlM" secondAttribute="bottom" id="XoE-bP-lkj"/>
+                                    <constraint firstItem="vdT-OG-NCK" firstAttribute="centerX" secondItem="gtu-wh-rIh" secondAttribute="centerX" id="dkK-nT-WG2"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QH8-0u-EKP">
@@ -738,6 +746,7 @@ tOyVmOuLpC4LCuyerOuvuCDsl4bsnYQg6rKDIOqwmeuLpOqzoOunjCDsg53qsIHtlojripTrjbAg7IOd
                         <outlet property="dateTxt" destination="k9V-Bc-hQb" id="cSD-Bq-Z2q"/>
                         <outlet property="doneBtn" destination="KCf-7G-gDC" id="anu-g9-Mdi"/>
                         <outlet property="myImgView" destination="bTD-pP-E6w" id="S7w-Za-y1h"/>
+                        <outlet property="titleLbl" destination="vdT-OG-NCK" id="hRR-bH-tYQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dwi-MB-Ztf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -764,13 +773,13 @@ tOyVmOuLpC4LCuyerOuvuCDsl4bsnYQg6rKDIOqwmeuLpOqzoOunjCDsg53qsIHtlojripTrjbAg7IOd
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="425"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.55000000000000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uxd-ja-W1Z">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uxd-ja-W1Z">
                                 <rect key="frame" x="298" y="56" width="48" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="Hh2-QP-mdH"/>
                                     <constraint firstAttribute="height" constant="48" id="fAH-mq-ZVZ"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="버튼"/>
                                 <connections>
                                     <action selector="dismissAction:" destination="Mjv-y5-hZR" eventType="touchUpInside" id="3Fg-r8-O4o"/>
                                 </connections>
@@ -1033,6 +1042,5 @@ tOyVmOuLpC4LCuyerOuvuCDsl4bsnYQg6rKDIOqwmeuLpOqzoOunjCDsg53qsIHtlojripTrjbAg7IOd
         <image name="reviewHeartShadowBtn" width="71" height="71"/>
         <image name="review_write_icon" width="23" height="24"/>
         <image name="walk_d_icon" width="25" height="25"/>
-        <image name="x_btn" width="48" height="48"/>
     </resources>
 </document>
