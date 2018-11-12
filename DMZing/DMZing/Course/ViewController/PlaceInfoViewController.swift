@@ -22,7 +22,7 @@ class PlaceInfoViewController: UIViewController {
         setRightBarButtonItem()
         
         backView.makeRounded(cornerRadius: 10)
-        backView.dropShadow(color: #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1), opacity: 0.5, offSet: CGSize(width: -0.5, height: 0.5), radius: 10, scale: true)
+        backView.dropShadow(color: #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1), opacity: 0.3, offSet: CGSize(width: -0.5, height: 0.5), radius: 10, scale: true)
 
     }
     
