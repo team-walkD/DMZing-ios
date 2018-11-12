@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WriteArticleReviewVC: UIViewController, APIService, Gallery, UIGestureRecognizerDelegate  {
+class WriteArticleReviewVC: UIViewController, APIService, UIGestureRecognizerDelegate  {
     var homeController: UIViewController?
     @IBOutlet weak var dayLbl: UILabel!
     @IBOutlet weak var dateLbl: UILabel!
@@ -85,7 +85,7 @@ extension WriteArticleReviewVC :  UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedPhotoIdx = indexPath.row
-        openGallery()
+        //openGallery()
     }
   
 }
