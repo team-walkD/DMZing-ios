@@ -15,18 +15,19 @@ class ReviewDetailVC: UIViewController, APIService, UIGestureRecognizerDelegate 
     
     let photoReviewVC = PhotoReviewVC()
     let articleReviewVC = ArticleReviewVC()
-    private var selectedIdx = 0
+    private var selectedIdx = 0 //어떤 맵이 선택 되었는지
+    private var spotArr = ["섬진강 유역", "평화 전망대"]//맵 선택에 따른 스팟 어레이
     
-   /* var myBoardData : [MyPageVODataBoard]  = [] {
-        didSet {
-            myFeedVC.myBoardData = myBoardData
-        }
-    }
-    var myScrapData : [MyPageVODataScrap]  = [] {
-        didSet {
-            myScrapVC.myScrapData = myScrapData
-        }
-    }*/
+    /* var myBoardData : [MyPageVODataBoard]  = [] {
+     didSet {
+     myFeedVC.myBoardData = myBoardData
+     }
+     }
+     var myScrapData : [MyPageVODataScrap]  = [] {
+     didSet {
+     myScrapVC.myScrapData = myScrapData
+     }
+     }*/
     
     private lazy var viewControllers: [UIViewController] = {
         return [photoReviewVC, articleReviewVC]
@@ -73,17 +74,17 @@ class ReviewDetailVC: UIViewController, APIService, UIGestureRecognizerDelegate 
         /* 设置代理 监听滚动 */
         advancedManager.delegate = self
         /* 设置悬停位置 */
-            //   advancedManager.hoverY = 64
+        //   advancedManager.hoverY = 64
         
         /* 点击切换滚动过程动画 */
         //       advancedManager.isClickScrollAnimation = true
-            
+        
         /* 代码设置滚动到第几个位置 */
         //        advancedManager.scrollToIndex(index: viewControllers.count - 1)
         
         return advancedManager
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
@@ -93,20 +94,38 @@ class ReviewDetailVC: UIViewController, APIService, UIGestureRecognizerDelegate 
         setBackBtn()
     }
     
-    @IBAction func writeAction(_ sender: Any) {
-         let reviewStoryboard = Storyboard.shared().reviewStoryboard
-        if selectedIdx == 0 {
-            let writePhotoReviewVC = reviewStoryboard.instantiateViewController(withIdentifier:WritePhotoReviewVC.reuseIdentifier)
-            
+    func selectCoursePopup(){
+        let title = "어떤 맵의 사진리뷰를 작성하시나요?"
+        let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
+        spotArr.forEach { (item) in
+            alert.addAction(UIAlertAction(title: item, style: .default, handler: goToWriteVC))
+        }
+        alert.addAction(UIAlertAction(title: "취소", style: .cancel, handler: nil))
+        self.present(alert, animated: true)
+    }
+    
+     func goToWriteVC(sender : UIAlertAction){
+        let reviewStoryboard = Storyboard.shared().reviewStoryboard
+        if let writePhotoReviewVC = reviewStoryboard.instantiateViewController(withIdentifier:WritePhotoReviewVC.reuseIdentifier) as? WritePhotoReviewVC {
+            writePhotoReviewVC.selectedCourse = sender.title!
             self.present(writePhotoReviewVC, animated: true, completion: nil)
+        }
+    }
+    
+    @IBAction func writeAction(_ sender: Any) {
+       
+        if selectedIdx == 0 {
+            selectCoursePopup()
+          
         } else {
+             let reviewStoryboard = Storyboard.shared().reviewStoryboard
             let writeEntryVC = reviewStoryboard.instantiateViewController(withIdentifier:"reviewNavi")
             
             self.present(writeEntryVC, animated: true, completion: nil)
         }
-       
+        
     }
-
+    
     
     deinit {
         print("LTAdvancedManagerDemo < --> deinit")
