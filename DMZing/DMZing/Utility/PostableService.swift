@@ -36,37 +36,38 @@ extension PostableService {
         var headers: HTTPHeaders?
         
         if userToken != "-1" {
-//            headers = [
-//                "authorization" : userToken
-//            ]
+            //            headers = [
+            //                "authorization" : userToken
+            //            ]
         }
         headers = [
             "jwt" : "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdXRob3JpdHkiOiJVU0VSIiwiaXNzIjoiZG16aW5nIiwiZXhwIjoxNTQyMTc4MjM1LCJlbWFpbCI6ImFrc2d1ckBuYXZlci5jb20ifQ.j8W_SA9qHCk7l1AZIqf5BZUHo6shs8Fxq7VKUfIUH2o"
         ]
-
+        
         Alamofire.request(encodedUrl, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers).responseData(){
             res in
             switch res.result {
             case .success:
                 print(encodedUrl)
                 print("networking Post Here")
-                print(JSON(res.result))
                 if let value = res.result.value {
+                    let resCode = self.gino(res.response?.statusCode)
+                    print(resCode)
                     print(JSON(value))
+                    
+                    if JSON(value) == JSON.null {
+                        let result : networkResult = (resCode, DefaultVO()) as! (resCode: Int, resResult: Self.NetworkData)
+                        completion(.success(result))
+                        break
+                    }
+                    
                     let decoder = JSONDecoder()
-                    
-                    
                     do {
-                        
-                        let resCode = self.gino(res.response?.statusCode)
                         let data = try decoder.decode(NetworkData.self, from: value)
                         
                         let result : networkResult = (resCode, data)
                         completion(.success(result))
-                        
-                        
                     }catch{
-                        
                         completion(.error("error post"))
                     }
                 }
