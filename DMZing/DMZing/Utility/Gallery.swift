@@ -25,7 +25,8 @@ extension Gallery {
     
         // Method
         func openGallery() {
-            if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            let available = UIImagePickerController.isSourceTypeAvailable(.photoLibrary)
+            if (available) {
                 let imagePicker = UIImagePickerController()
                 imagePicker.sourceType = .photoLibrary
                imagePicker.delegate = self

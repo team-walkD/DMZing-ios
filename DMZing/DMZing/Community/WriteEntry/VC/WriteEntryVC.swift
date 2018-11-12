@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WriteEntryVC: UIViewController, Gallery{
+class WriteEntryVC: UIViewController{
     var homeController: UIViewController?
     
     let datePickerView = UIDatePicker()
@@ -52,7 +52,7 @@ class WriteEntryVC: UIViewController, Gallery{
     
     @IBOutlet weak var tableViewBgView: UIView!
     @IBAction func selectThumbnailAction(_ sender: Any) {
-        openGallery()
+        //openGallery()
     }
     
     override func viewWillAppear(_ animated: Bool) {
