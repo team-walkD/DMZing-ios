@@ -78,6 +78,7 @@ extension ArticleReviewVC : UICollectionViewDelegate, UICollectionViewDataSource
         let reviewStoryboard = Storyboard.shared().reviewStoryboard
         
         if let reviewContentVC = reviewStoryboard.instantiateViewController(withIdentifier:ReviewContentVC.reuseIdentifier) as? ReviewContentVC {
+            reviewContentVC.selectedRId = articleReviewArr[indexPath.row].id
             self.navigationController?.pushViewController(reviewContentVC, animated: true)
         }
     }

@@ -107,7 +107,7 @@ extension PhotoReviewVC : UICollectionViewDelegate, UICollectionViewDataSource  
         guard photoReviewData.count > 0 else {return}
         
         let lastItemIdx = photoReviewData.count-1
-        let itemIdx = photoReviewData[lastItemIdx].id ?? 0
+        let itemIdx = photoReviewData[lastItemIdx].id
         if indexPath.row == lastItemIdx {
             DispatchQueue.global(qos: .userInitiated).async { [weak self] in
                 guard let `self` = self else { return }
