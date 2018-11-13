@@ -48,10 +48,14 @@
                 <constraint firstItem="eoN-0C-1h1" firstAttribute="leading" secondItem="DSQ-Qo-VXl" secondAttribute="leading" constant="37" id="N8q-Cs-BlS"/>
                 <constraint firstItem="DSQ-Qo-VXl" firstAttribute="bottom" secondItem="eoN-0C-1h1" secondAttribute="bottom" constant="31" id="WAs-4H-j9j"/>
                 <constraint firstItem="eg2-sj-9qS" firstAttribute="centerY" secondItem="fIZ-Wg-9Yh" secondAttribute="centerY" id="YYs-gM-S7y"/>
+                <constraint firstItem="DSQ-Qo-VXl" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="eg2-sj-9qS" secondAttribute="trailing" constant="35" id="cJl-g4-ywJ"/>
                 <constraint firstItem="eoN-0C-1h1" firstAttribute="top" secondItem="fIZ-Wg-9Yh" secondAttribute="bottom" constant="5" id="js1-tY-ECi"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="DSQ-Qo-VXl"/>
+            <connections>
+                <outlet property="titleLbl" destination="fIZ-Wg-9Yh" id="b8w-Uf-4Cj"/>
+            </connections>
             <point key="canvasLocation" x="141.5" y="274.5"/>
         </view>
     </objects>

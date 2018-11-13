@@ -25,6 +25,10 @@
 		3B6697DC21985C5D008789E3 /* WritePhotoReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6697DB21985C5D008789E3 /* WritePhotoReviewVC.swift */; };
 		3B79937D2199CFD100DBF5B2 /* WritePhotoReviewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B79937C2199CFD100DBF5B2 /* WritePhotoReviewService.swift */; };
 		3B79937F2199D09700DBF5B2 /* DefaultVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B79937E2199D09700DBF5B2 /* DefaultVO.swift */; };
+		3B7993832199E65800DBF5B2 /* GetPhotoReviewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7993822199E65800DBF5B2 /* GetPhotoReviewService.swift */; };
+		3B7993862199E6B400DBF5B2 /* PhotoReviewVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7993852199E6B400DBF5B2 /* PhotoReviewVO.swift */; };
+		3B79938A219A9EDF00DBF5B2 /* GetReviewMainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B799389219A9EDF00DBF5B2 /* GetReviewMainService.swift */; };
+		3B79938D219A9EEA00DBF5B2 /* ReviewMainVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B79938C219A9EEA00DBF5B2 /* ReviewMainVO.swift */; };
 		3B800572218B1F160003EA5C /* PhotoReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B800571218B1F160003EA5C /* PhotoReviewVC.swift */; };
 		3B80057C218B1FFA0003EA5C /* ReviewDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B80057B218B1FFA0003EA5C /* ReviewDetailVC.swift */; };
 		3B80057E218B206E0003EA5C /* ArticleReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B80057D218B206E0003EA5C /* ArticleReviewVC.swift */; };
@@ -110,6 +114,10 @@
 		3B6697DB21985C5D008789E3 /* WritePhotoReviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritePhotoReviewVC.swift; sourceTree = "<group>"; };
 		3B79937C2199CFD100DBF5B2 /* WritePhotoReviewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritePhotoReviewService.swift; sourceTree = "<group>"; };
 		3B79937E2199D09700DBF5B2 /* DefaultVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultVO.swift; sourceTree = "<group>"; };
+		3B7993822199E65800DBF5B2 /* GetPhotoReviewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPhotoReviewService.swift; sourceTree = "<group>"; };
+		3B7993852199E6B400DBF5B2 /* PhotoReviewVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoReviewVO.swift; sourceTree = "<group>"; };
+		3B799389219A9EDF00DBF5B2 /* GetReviewMainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReviewMainService.swift; sourceTree = "<group>"; };
+		3B79938C219A9EEA00DBF5B2 /* ReviewMainVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewMainVO.swift; sourceTree = "<group>"; };
 		3B800571218B1F160003EA5C /* PhotoReviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoReviewVC.swift; sourceTree = "<group>"; };
 		3B80057B218B1FFA0003EA5C /* ReviewDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewDetailVC.swift; sourceTree = "<group>"; };
 		3B80057D218B206E0003EA5C /* ArticleReviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleReviewVC.swift; sourceTree = "<group>"; };
@@ -255,6 +263,8 @@
 		3B6697C92198242F008789E3 /* ReviewMain */ = {
 			isa = PBXGroup;
 			children = (
+				3B799388219A9ECD00DBF5B2 /* VO */,
+				3B799387219A9ECB00DBF5B2 /* Service */,
 				3B6697CE2198243D008789E3 /* VC */,
 			);
 			path = ReviewMain;
@@ -263,6 +273,8 @@
 		3B6697CA21982434008789E3 /* ReviewDetail */ = {
 			isa = PBXGroup;
 			children = (
+				3B7993812199E64D00DBF5B2 /* VO */,
+				3B7993802199E64700DBF5B2 /* Service */,
 				3B6697CD2198243B008789E3 /* VC */,
 			);
 			path = ReviewDetail;
@@ -374,6 +386,38 @@
 			isa = PBXGroup;
 			children = (
 				3B79937E2199D09700DBF5B2 /* DefaultVO.swift */,
+			);
+			path = VO;
+			sourceTree = "<group>";
+		};
+		3B7993802199E64700DBF5B2 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				3B7993822199E65800DBF5B2 /* GetPhotoReviewService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		3B7993812199E64D00DBF5B2 /* VO */ = {
+			isa = PBXGroup;
+			children = (
+				3B7993852199E6B400DBF5B2 /* PhotoReviewVO.swift */,
+			);
+			path = VO;
+			sourceTree = "<group>";
+		};
+		3B799387219A9ECB00DBF5B2 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				3B799389219A9EDF00DBF5B2 /* GetReviewMainService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		3B799388219A9ECD00DBF5B2 /* VO */ = {
+			isa = PBXGroup;
+			children = (
+				3B79938C219A9EEA00DBF5B2 /* ReviewMainVO.swift */,
 			);
 			path = VO;
 			sourceTree = "<group>";
@@ -845,6 +889,8 @@
 				3BA7ED392198AC2E00BAC493 /* ArticleStruct.swift in Sources */,
 				3B6697B721959405008789E3 /* WriteArticleReviewVC.swift in Sources */,
 				3BB05002217CA65D0096BF4D /* GettableService.swift in Sources */,
+				3B7993832199E65800DBF5B2 /* GetPhotoReviewService.swift in Sources */,
+				3B7993862199E6B400DBF5B2 /* PhotoReviewVO.swift in Sources */,
 				3BB05011217CAC910096BF4D /* HttpResCode.swift in Sources */,
 				3B872CBC2180943D00498F97 /* CustomView.swift in Sources */,
 				3B872CD02180B12100498F97 /* MyReviewTVCell.swift in Sources */,
@@ -858,6 +904,7 @@
 				22F3025D2195515F00152700 /* MainMapViewController.swift in Sources */,
 				222EEC6C2198364D00FB15C6 /* PlaceInfoViewController.swift in Sources */,
 				3BB05014217CAD6C0096BF4D /* Font.swift in Sources */,
+				3B79938D219A9EEA00DBF5B2 /* ReviewMainVO.swift in Sources */,
 				3B800588218B2AC40003EA5C /* ReviewDetailHeaderView.swift in Sources */,
 				222EEC6A219828C800FB15C6 /* MapCoverViewController.swift in Sources */,
 				222EEC6E2199BFE500FB15C6 /* CourseDetailViewController.swift in Sources */,
@@ -874,6 +921,7 @@
 				3B872CBA2180905000498F97 /* MyPageTVCell.swift in Sources */,
 				3BB05000217CA6540096BF4D /* Extensions.swift in Sources */,
 				3B8364F2219461EE000BD706 /* ReviewContentVC.swift in Sources */,
+				3B79938A219A9EDF00DBF5B2 /* GetReviewMainService.swift in Sources */,
 				CC31AC5C217C8D3200A02388 /* AppDelegate.swift in Sources */,
 				3B872CD52180B40900498F97 /* MyDPPointTVCell.swift in Sources */,
 				3B80058F218B54F10003EA5C /* ReviewMainVC.swift in Sources */,
@@ -1031,7 +1079,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = Y4XABUQ539;
 				INFOPLIST_FILE = DMZing/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1048,7 +1096,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = Y4XABUQ539;
 				INFOPLIST_FILE = DMZing/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

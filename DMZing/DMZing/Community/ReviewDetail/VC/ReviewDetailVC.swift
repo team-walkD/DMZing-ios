@@ -15,9 +15,9 @@ class ReviewDetailVC: UIViewController, APIService, UIGestureRecognizerDelegate 
     
     let photoReviewVC = PhotoReviewVC()
     let articleReviewVC = ArticleReviewVC()
-    private var selectedIdx = 0 //어떤 유형의 리뷰가 선택 되었는지 (사진 / 글)
-    private var selectedMapId = 0 //어떤 맵이 선택되었는지
-    private var spotArr : [(courseIdx : Int, courseName : String)] = [(0, "섬진강 유역"), (1, "평화 전망대")]//맵 선택에 따른 스팟 어레이
+    var selectedIdx = 0 //어떤 유형의 리뷰가 선택 되었는지 (사진 / 글)
+    var selectedMap : MapType? //어떤 맵이 선택되었는지
+    var spotArr : [(courseIdx : Int, courseName : String)] = [(0, "섬진강 유역"), (1, "평화 전망대")]//맵 선택에 따른 스팟 어레이
     
     /* var myBoardData : [MyPageVODataBoard]  = [] {
      didSet {
@@ -31,6 +31,7 @@ class ReviewDetailVC: UIViewController, APIService, UIGestureRecognizerDelegate 
      }*/
     
     private lazy var viewControllers: [UIViewController] = {
+        photoReviewVC.selectedMap = selectedMap
         return [photoReviewVC, articleReviewVC]
     }()
     
@@ -42,6 +43,8 @@ class ReviewDetailVC: UIViewController, APIService, UIGestureRecognizerDelegate 
     private lazy var headerView : UIView = {
         let headerView = ReviewDetailHeaderView.instanceFromNib()
         headerView.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 167)
+        guard let selectedMap_ = selectedMap else {return headerView}
+        headerView.titleLbl.text = "\(selectedMap_.rawValue)하기 좋은 코스"
         return headerView
     }()
     

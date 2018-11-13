@@ -10,6 +10,7 @@ import UIKit
 
 class ReviewDetailHeaderView: UIView {
     
+    @IBOutlet weak var titleLbl: UILabel!
     class func instanceFromNib() -> ReviewDetailHeaderView {
 
         return UINib(nibName: ReviewDetailHeaderView.reuseIdentifier, bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! ReviewDetailHeaderView
