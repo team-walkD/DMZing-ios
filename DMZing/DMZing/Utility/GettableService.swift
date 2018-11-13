@@ -10,6 +10,8 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
+let sampleJWT = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdXRob3JpdHkiOiJVU0VSIiwiaXNzIjoiZG16aW5nIiwiZXhwIjoxNTQyMjk3ODQ0LCJlbWFpbCI6ImV4YW1wbGVAZ21haWwuY29tIn0.-SOb_kqVQOmhHnZhNYLgqZxpj6caipNRkTppY3zx-yM"
+
 protocol GettableService {
     associatedtype NetworkData : Codable
     typealias networkResult = (resCode : Int, resResult : NetworkData)
@@ -41,7 +43,7 @@ extension GettableService {
         }
         
         headers = [
-                    "jwt" : "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdXRob3JpdHkiOiJVU0VSIiwiaXNzIjoiZG16aW5nIiwiZXhwIjoxNTQyMTc4MjM1LCJlbWFpbCI6ImFrc2d1ckBuYXZlci5jb20ifQ.j8W_SA9qHCk7l1AZIqf5BZUHo6shs8Fxq7VKUfIUH2o"
+                    "jwt" : sampleJWT
                 ]
         
         

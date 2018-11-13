@@ -16,12 +16,12 @@ class PhotoReviewCVCell: UICollectionViewCell {
     @IBOutlet weak var firstTagLbl: UILabel!
     @IBOutlet weak var secondTagLbl: UILabel!
     
-    func configure(data : SamplePhotoReviewStruct){
-        dateLbl.text = data.date
-        titleLbl.text = data.title
-        firstTagLbl.text = data.tag[0]
-        secondTagLbl.text = data.tag[1]
-        mainImgView.setImgWithKF(url: data.imgUrl, defaultImg: #imageLiteral(resourceName: "ccc"))
+    func configure(data : PhotoReviewVOData){
+        dateLbl.text = data.startAt.timeStampToDate()
+        titleLbl.text = data.placeName
+       // firstTagLbl.text = data.tag[0]
+       // secondTagLbl.text = data.tag[1]
+        mainImgView.setImgWithKF(url: data.imageURL, defaultImg: #imageLiteral(resourceName: "ccc"))
     }
     
     override func awakeFromNib() {

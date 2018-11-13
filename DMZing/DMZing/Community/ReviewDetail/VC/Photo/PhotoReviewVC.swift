@@ -10,16 +10,12 @@ import UIKit
 import LTScrollView
 import SnapKit
 
-struct SamplePhotoReviewStruct {
-    let date : String
-    let title : String
-    let tag : [String]
-    let imgUrl : String
-}
 private let glt_iphoneX = (UIScreen.main.bounds.height == 812.0)
 class PhotoReviewVC : UIViewController, LTTableViewProtocal, APIService  {
-    
-    var photoReviewArr : [SamplePhotoReviewStruct]  = [] {
+
+    var selectedMap : MapType?
+    var pId = 0
+    var photoReviewData : [PhotoReviewVOData] = [] {
         didSet {
             self.collectionView.reloadData()
         }
@@ -31,20 +27,18 @@ class PhotoReviewVC : UIViewController, LTTableViewProtocal, APIService  {
         return popView
     }()
     
-  
-    
     private lazy var collectionView: UICollectionView = {
         let statusBarH = UIApplication.shared.statusBarFrame.size.height
         let Y: CGFloat = statusBarH + 44
         let H: CGFloat = glt_iphoneX ? (view.bounds.height - Y - 34) : view.bounds.height - Y
-      //  let H: CGFloat = glt_iphoneX ? (view.bounds.height - 64 - 24 - 34) : view.bounds.height  - 20
+        //  let H: CGFloat = glt_iphoneX ? (view.bounds.height - 64 - 24 - 34) : view.bounds.height  - 20
         
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: 159, height: 237)
         layout.minimumLineSpacing = 20
         layout.minimumInteritemSpacing = 11
         layout.sectionInset = UIEdgeInsetsMake(29, 22, 29, 22)
-       
+        
         let collectionView = collectionViewConfig(CGRect(x: 0, y: 0, width: view.bounds.width, height: H), layout, self, self)
         return collectionView
     }()
@@ -68,24 +62,17 @@ class PhotoReviewVC : UIViewController, LTTableViewProtocal, APIService  {
         view.addSubview(collectionView)
         glt_scrollView = collectionView
         
-//        if #available(iOS 11.0, *) {
-//            collectionView.contentInsetAdjustmentBehavior = .never
-//
-//        } else {
-//            automaticallyAdjustsScrollViewInsets = false
-//        }
-        
-        addDummyData()
-    }
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            guard let `self` = self else { return }
+            self.getPhotoReviewData(url: self.url("reviews/photo/last/\(self.pId)/course/\(self.selectedMap!)"))
+        }
+        //        if #available(iOS 11.0, *) {
+        //            collectionView.contentInsetAdjustmentBehavior = .never
+        //
+        //        } else {
+        //            automaticallyAdjustsScrollViewInsets = false
+        //        }
     
-    private func addDummyData(){
-        let a = SamplePhotoReviewStruct(date: "2018.09.30", title: "수진날진의 여행기", tag: ["#수진", "#날진"], imgUrl: "https://pbs.twimg.com/media/DUcm7xQVoAE5q4Z.jpg")
-         let b = SamplePhotoReviewStruct(date: "2018.09.30", title: " 장드타는 왜 장드타", tag: ["#드래곤", "#타이거"], imgUrl: "https://pbs.twimg.com/media/DPDN06VVoAEfXG_.jpg")
-         let c = SamplePhotoReviewStruct(date: "2018.09.30", title: "예은 와서 뷰짠다", tag: ["#맵", "#뷰노예"], imgUrl: "https://post-phinf.pstatic.net/MjAxODA0MTBfMTQ2/MDAxNTIzMzQxMDQxODYw.aO_dJut4YK-3jjbJ_dw49KG5Cl8nGQjhbBX8S1elmE8g.sIvK_NXFGk7KYJo-OcUWExWGlJVxgMja-2SokwVf9wUg.JPEG/2.jpg?type=w1200")
-        let d = SamplePhotoReviewStruct(date: "2018.09.30", title: "승미야 일해!", tag: ["#제플린", "#업데이트"], imgUrl: "https://i.pinimg.com/originals/f0/a7/02/f0a70248f3c8d5887c2c66f49d7fc570.png")
-        let e = SamplePhotoReviewStruct(date: "2018.09.30", title: "융선픽", tag: ["#픽픽", "#서강준"], imgUrl: "https://pbs.twimg.com/media/C46e96dUMAMuD96.jpg")
-
-         photoReviewArr.append(contentsOf: [a,b,c,d,e])
     }
 }
 
@@ -97,23 +84,59 @@ extension PhotoReviewVC : UICollectionViewDelegate, UICollectionViewDataSource  
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return photoReviewArr.count
+        return photoReviewData.count
     }
     
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoReviewCVCell.reuseIdentifier, for: indexPath) as! PhotoReviewCVCell
-        cell.configure(data: photoReviewArr[indexPath.row])
+        cell.configure(data: photoReviewData[indexPath.row])
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         UIApplication.shared.keyWindow!.addSubview(popupView)
-        popupView.mainImgView.setImgWithKF(url: photoReviewArr[indexPath.row].imgUrl, defaultImg: #imageLiteral(resourceName: "ccc"))
+        popupView.mainImgView.setImgWithKF(url: photoReviewData[indexPath.row].imageURL, defaultImg: #imageLiteral(resourceName: "ccc"))
         popupView.snp.makeConstraints { (make) in
             make.top.bottom.leading.trailing.equalToSuperview()
         }
+    }
+    
+    //페이지네이션
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        guard photoReviewData.count > 0 else {return}
+        
+        let lastItemIdx = photoReviewData.count-1
+        let itemIdx = photoReviewData[lastItemIdx].courseID
+        if indexPath.row == lastItemIdx {
+            DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+                guard let `self` = self else { return }
+                self.getPhotoReviewData(url: self.url("reviews/photo/last/\(itemIdx)/course/\(self.selectedMap!)"))
+            }
+        }
+    }
+}
+
+extension PhotoReviewVC {
+    func getPhotoReviewData(url : String){
+        GetPhotoReviewService.shareInstance.getMainData(url: url,completion: { [weak self] (result) in
+            guard let `self` = self else { return }
+            switch result {
+            case .networkSuccess(let data):
+                let photoData = data as? PhotoReviewVO
+                guard let photoData_ = photoData else {return}
+                self.photoReviewData = photoData_
+                if photoData_.count > 0 {
+                    self.photoReviewData.append(contentsOf: photoData_)
+                }
+            case .networkFail :
+                self.networkSimpleAlert()
+            default :
+                self.simpleAlert(title: "오류", message: "다시 시도해주세요")
+                break
+            }
+        })
     }
 }
 
