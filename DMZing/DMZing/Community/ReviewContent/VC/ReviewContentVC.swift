@@ -44,7 +44,6 @@ class ReviewContentVC: UIViewController, UIGestureRecognizerDelegate, APIService
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController?.view.backgroundColor = .clear
     }
     
     override func viewDidLoad() {
@@ -60,7 +59,7 @@ class ReviewContentVC: UIViewController, UIGestureRecognizerDelegate, APIService
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        self.navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
+        super.viewWillDisappear(animated)
         self.navigationController?.navigationBar.isTranslucent = false
     }
     

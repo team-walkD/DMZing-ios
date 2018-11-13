@@ -39,6 +39,7 @@ class PhotoReviewVC : UIViewController, LTTableViewProtocal, APIService  {
         layout.sectionInset = UIEdgeInsetsMake(29, 22, 29, 22)
         
         let collectionView = collectionViewConfig(CGRect(x: 0, y: 0, width: view.bounds.width, height: H), layout, self, self)
+        collectionView.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9647058824, blue: 0.9725490196, alpha: 1)
         return collectionView
     }()
     

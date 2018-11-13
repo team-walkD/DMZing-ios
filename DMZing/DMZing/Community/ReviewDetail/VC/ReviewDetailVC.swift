@@ -81,11 +81,12 @@ class ReviewDetailVC: UIViewController, APIService, UIGestureRecognizerDelegate 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.white
+        view.backgroundColor = UIColor.gray
         // self.automaticallyAdjustsScrollViewInsets = false
         view.addSubview(advancedManager)
         advancedManagerConfig()
         setBackBtn()
+       
     }
     
    
