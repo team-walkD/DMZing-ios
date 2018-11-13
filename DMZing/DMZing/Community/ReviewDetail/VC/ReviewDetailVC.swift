@@ -32,6 +32,7 @@ class ReviewDetailVC: UIViewController, APIService, UIGestureRecognizerDelegate 
     
     private lazy var viewControllers: [UIViewController] = {
         photoReviewVC.selectedMap = selectedMap
+        articleReviewVC.selectedMap = selectedMap
         return [photoReviewVC, articleReviewVC]
     }()
     

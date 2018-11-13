@@ -9,17 +9,11 @@
 import UIKit
 import LTScrollView
 
-struct SampleArticleReviewStruct {
-    let startDate : String
-    let endDate : String
-    let title : String
-    let likeCount : Int
-    let imgUrl : String
-}
 private let glt_iphoneX = (UIScreen.main.bounds.height == 812.0)
 class ArticleReviewVC : UIViewController, LTTableViewProtocal, APIService  {
     
-    var articleReviewArr : [SampleArticleReviewStruct]  = [] {
+    var selectedMap : MapType?
+    var articleReviewArr : [ArticleReviewVOData]  = [] {
         didSet {
             self.collectionView.reloadData()
         }
@@ -51,24 +45,14 @@ class ArticleReviewVC : UIViewController, LTTableViewProtocal, APIService  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            guard let `self` = self else { return }
+            self.getArticleReviewData(url: self.url("reviews/last/0/course/\(self.selectedMap!)"))
+        }
         let nib = UINib.init(nibName: ArticleReviewCVCell.reuseIdentifier, bundle: nil)
         self.collectionView.register(nib, forCellWithReuseIdentifier: ArticleReviewCVCell.reuseIdentifier)
         view.addSubview(collectionView)
         glt_scrollView = collectionView
-        
-        
-        addDummyData()
-    }
-    
-    private func addDummyData(){
-        
-        let a = SampleArticleReviewStruct(startDate: "2018.09.30", endDate: "2018.09.30", title: "수진날진의 여행기", likeCount: 10, imgUrl: "https://pbs.twimg.com/media/DUcm7xQVoAE5q4Z.jpg")
-        let b = SampleArticleReviewStruct(startDate: "2018.09.30", endDate: "2018.09.30", title: "장드타는 왜 장드타", likeCount: 10, imgUrl: "https://pbs.twimg.com/media/DPDN06VVoAEfXG_.jpg")
-        let c = SampleArticleReviewStruct(startDate: "2018.09.30", endDate: "2018.09.30", title: "예은 와서 뷰짠다", likeCount: 10, imgUrl: "https://post-phinf.pstatic.net/MjAxODA0MTBfMTQ2/MDAxNTIzMzQxMDQxODYw.aO_dJut4YK-3jjbJ_dw49KG5Cl8nGQjhbBX8S1elmE8g.sIvK_NXFGk7KYJo-OcUWExWGlJVxgMja-2SokwVf9wUg.JPEG/2.jpg?type=w1200")
-        let d = SampleArticleReviewStruct(startDate: "2018.09.30", endDate: "2018.09.30", title: "승미야 일해!", likeCount: 10, imgUrl: "https://i.pinimg.com/originals/f0/a7/02/f0a70248f3c8d5887c2c66f49d7fc570.png")
-        
-        let e = SampleArticleReviewStruct(startDate: "2018.09.30", endDate: "2018.09.30", title: "융성픽", likeCount: 10, imgUrl: "https://pbs.twimg.com/media/C46e96dUMAMuD96.jpg")
-        articleReviewArr.append(contentsOf: [a,b,c,d,e])
     }
 }
 
@@ -79,16 +63,12 @@ extension ArticleReviewVC : UICollectionViewDelegate, UICollectionViewDataSource
         return 1
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return articleReviewArr.count
     }
     
-    
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ArticleReviewCVCell.reuseIdentifier, for: indexPath) as! ArticleReviewCVCell
-        
         //configure로
         cell.configure(data: articleReviewArr[indexPath.row])
         return cell
@@ -101,6 +81,41 @@ extension ArticleReviewVC : UICollectionViewDelegate, UICollectionViewDataSource
             self.navigationController?.pushViewController(reviewContentVC, animated: true)
         }
     }
+    //페이지네이션
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        guard articleReviewArr.count > 0 else {return}
+        let lastItemIdx = articleReviewArr.count-1
+        let itemIdx = articleReviewArr[lastItemIdx].id
+        if indexPath.row == lastItemIdx {
+            DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+                guard let `self` = self else { return }
+                self.getArticleReviewData(url: self.url("reviews/last/\(itemIdx)/course/\(self.selectedMap!)"))
+            }
+        }
+    }
     
 }
+
+
+extension ArticleReviewVC {
+    func getArticleReviewData(url : String){
+        GetArticleReviewService.shareInstance.getMainData(url: url,completion: { [weak self] (result) in
+            guard let `self` = self else { return }
+            switch result {
+            case .networkSuccess(let data):
+                let articleData = data as? ArticleReviewVO
+                guard let articleData_ = articleData else {return}
+                if articleData_.count > 0 {
+                    self.articleReviewArr.append(contentsOf: articleData_)
+                }
+            case .networkFail :
+                self.networkSimpleAlert()
+            default :
+                self.simpleAlert(title: "오류", message: "다시 시도해주세요")
+                break
+            }
+        })
+    }
+}
+
 

@@ -14,7 +14,6 @@ private let glt_iphoneX = (UIScreen.main.bounds.height == 812.0)
 class PhotoReviewVC : UIViewController, LTTableViewProtocal, APIService  {
 
     var selectedMap : MapType?
-    var pId = 0
     var photoReviewData : [PhotoReviewVOData] = [] {
         didSet {
             self.collectionView.reloadData()
@@ -64,7 +63,7 @@ class PhotoReviewVC : UIViewController, LTTableViewProtocal, APIService  {
         
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             guard let `self` = self else { return }
-            self.getPhotoReviewData(url: self.url("reviews/photo/last/\(self.pId)/course/\(self.selectedMap!)"))
+            self.getPhotoReviewData(url: self.url("reviews/photo/last/0/course/\(self.selectedMap!)"))
         }
         //        if #available(iOS 11.0, *) {
         //            collectionView.contentInsetAdjustmentBehavior = .never
