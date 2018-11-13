@@ -32,15 +32,11 @@ class WritePhotoReviewVC: UIViewController, APIService {
     }
     
     @objc func doneAction(){
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy.MM.dd"
-        guard let date = dateFormatter.date(from: dateTxt.text!) else {
-            fatalError("포맷과 맞지 않아 데이터 변환이 실패했습니다")
-        }
-        guard let imageUrl_ = imgUrl else {return}
+        guard let dateString = dateTxt.text, let imageUrl_ = imgUrl else {return}
+        let date = dateString.dateTxtToTimeStamp()
         let params : [String : Any] = [
             "imageUrl": imageUrl_,
-            "startAt": date.timeIntervalSince1970*1000,
+            "startAt": date,
             "placeName": selectedCourse.courseName,
             "courseId": selectedCourse.courseId
         ]

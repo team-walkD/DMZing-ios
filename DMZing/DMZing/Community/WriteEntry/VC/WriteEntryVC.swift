@@ -7,10 +7,19 @@
 //
 
 import UIKit
-
-class WriteEntryVC: UIViewController{
-    var homeController: UIViewController?
+extension String {
+    func dateTxtToTimeStamp() -> TimeInterval{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy.MM.dd"
+        guard let date = dateFormatter.date(from: self) else {
+            fatalError("포맷과 맞지 않아 데이터 변환이 실패했습니다")
+        }
+        return date.timeIntervalSince1970*1000
+    }
+}
+class WriteEntryVC: UIViewController, APIService{
     
+    var selectedCourseId  = -1
     let datePickerView = UIDatePicker()
     let imagePicker : UIImagePickerController = UIImagePickerController()
     var keyboardDismissGesture: UITapGestureRecognizer?
@@ -21,18 +30,9 @@ class WriteEntryVC: UIViewController{
             articleArr = Array.init(repeatElement(ArticleStruct(), count: rowCount))
         }
     }
-    var imageData : Data? {
-        didSet {
-            if imageData != nil {
-                if let imageData_ = imageData {
-                    bgImgView.image =  UIImage(data: imageData_)
-                }
-            }
-        }
-    }
     
     var articleArr : [ArticleStruct] = []
-    
+    var bgImgUrl = ""
     
     @IBAction func dismissAction(_ sender: Any) {
         
@@ -52,7 +52,7 @@ class WriteEntryVC: UIViewController{
     
     @IBOutlet weak var tableViewBgView: UIView!
     @IBAction func selectThumbnailAction(_ sender: Any) {
-        //openGallery()
+        openGallery()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -64,7 +64,6 @@ class WriteEntryVC: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        homeController = self
         initDatePicker()
         setKeyboardSetting()
         setUpTableView()
@@ -82,12 +81,33 @@ class WriteEntryVC: UIViewController{
         tableView.tableFooterView = UIView(frame : .zero)
         tableView.isHidden = true
     }
-    
     @objc func doneAction(){
         let writtenArticle = articleArr.filter { (item) in
             return item.day != 0
         }
         print(writtenArticle)
+        let postDTO = writtenArticle.map { (item) -> [String : Any] in
+            let postDto = [
+                "day": item.day,
+                "postImgUrl": item.imageArr,
+                "title": item.title,
+                "content": item.content
+                ] as [String : Any]
+            return postDto
+        }
+        guard let startDateString = startTxt.text, let endDateString = endTxt.text else {return}
+        let startTime = startDateString.dateTxtToTimeStamp()
+        let endTime = endDateString.dateTxtToTimeStamp()
+        let params : [String : Any] = [
+            "title": titleTxt.text ?? "",
+            "thumbnailUrl": bgImgUrl,
+            "courseId": selectedCourseId,
+            "startAt": startTime,
+            "endAt": endTime,
+            "postDto" : postDTO
+        ]
+        writeArticleReview(url: url("reviews"), params: params)
+        
     }
     @objc func isBtnValid(){
         //완료 버튼 활성화
@@ -147,10 +167,10 @@ extension WriteEntryVC : UITableViewDelegate, UITableViewDataSource{
 
 //DatePicker
 extension WriteEntryVC {
-
+    
     func initDatePicker(){
         datePickerView.datePickerMode = .date
-
+        
         let loc = Locale(identifier: "ko_KR")
         self.datePickerView.locale = loc
         let dateFormatter = DateFormatter()
@@ -205,21 +225,38 @@ extension WriteEntryVC {
 }
 
 //MARK: - 앨범 열기 위함
-extension WriteEntryVC{
+extension WriteEntryVC : UIImagePickerControllerDelegate,
+UINavigationControllerDelegate  {
     
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        self.dismiss(animated: true)
+    }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
         //크롭한 이미지
         if let editedImage: UIImage = info[UIImagePickerControllerEditedImage] as? UIImage {
-            imageData = UIImageJPEGRepresentation(editedImage, 0.1)
+            let image = UIImageJPEGRepresentation(editedImage, 0.1)
+            addImage(url: url("reviews/images"), image: image)
         } else if let originalImage: UIImage = info[UIImagePickerControllerOriginalImage] as? UIImage{
-            imageData = UIImageJPEGRepresentation(originalImage, 0.1)
+            let image = UIImageJPEGRepresentation(originalImage, 0.1)
+            addImage(url: url("reviews/images"), image: image)
+            
         }
-        
         self.dismiss(animated: true)
     }
     
+    // Method
+    func openGallery() {
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            let imagePicker : UIImagePickerController = UIImagePickerController()
+            imagePicker.sourceType = .photoLibrary
+            imagePicker.delegate = self
+            imagePicker.allowsEditing = true
+            
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+    }
 }
 
 //MARK: - 키보드 대응
@@ -257,4 +294,55 @@ extension WriteEntryVC {
     }
 }
 
+//통신
+extension WriteEntryVC {
+    func addImage(url : String, image : Data?){
+        let params : [String : Any] = [:]
+        var images : [String : Data]?
+        
+        if let image_ = image {
+            images = [
+                "data" : image_
+            ]
+        }
+        
+        PostImageService.shareInstance.addPhoto(url: url, params: params, image: images, completion: { [weak self] (result) in
+            guard let `self` = self else { return }
+            switch result {
+            case .networkSuccess(let data):
+                let data = data as? PostImageVO
+                if let img = data?.image {
+                    self.bgImgView.setImgWithKF(url: img, defaultImg: #imageLiteral(resourceName: "ccc"))
+                    self.bgImgUrl = img
+                    self.doneBtn.isEnabled = true
+                    self.doneBtn.backgroundColor = ColorChip.shared().middleBlue
+                }
+                break
+            case .networkFail :
+                self.networkSimpleAlert()
+            default :
+                self.simpleAlert(title: "오류", message: "다시 시도해주세요")
+                break
+            }
+        })
+    }
+    
+    func writeArticleReview(url : String, params : [String : Any]){
+        WriteArticleService.shareInstance.writeArticleReview(url: url, params: params, completion: { [weak self] (result) in
+            guard let `self` = self else { return }
+            switch result {
+            case .networkSuccess(_):
+                self.simpleAlertwithHandler(title: "성공", message: "리뷰를 등록했습니다", okHandler: { (_) in
+                    self.dismissAction("")
+                })
+                break
+            case .networkFail :
+                self.networkSimpleAlert()
+            default :
+                self.simpleAlert(title: "오류", message: "다시 시도해주세요")
+                break
+            }
+        })
+    }
+}
 

@@ -9,7 +9,6 @@
 import UIKit
 
 class WriteArticleReviewVC: UIViewController, APIService, UIGestureRecognizerDelegate  {
-    var homeController: UIViewController?
     @IBOutlet weak var dayLbl: UILabel!
     @IBOutlet weak var dateLbl: UILabel!
     @IBOutlet weak var titleTxt: UITextField!
@@ -34,7 +33,6 @@ class WriteArticleReviewVC: UIViewController, APIService, UIGestureRecognizerDel
         super.viewDidLoad()
         setKeyboardSetting()
         setBackBtn()
-        homeController = self
         collectionView.delegate = self
         collectionView.dataSource = self
         contentTxtView.delegate = self
@@ -85,7 +83,7 @@ extension WriteArticleReviewVC :  UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedPhotoIdx = indexPath.row
-        //openGallery()
+        openGallery()
     }
   
 }
@@ -175,6 +173,10 @@ extension WriteArticleReviewVC : UITextViewDelegate{
 extension WriteArticleReviewVC : UIImagePickerControllerDelegate,
 UINavigationControllerDelegate  {
     
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        self.dismiss(animated: true)
+    }
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
         //크롭한 이미지
@@ -184,9 +186,21 @@ UINavigationControllerDelegate  {
         } else if let originalImage: UIImage = info[UIImagePickerControllerOriginalImage] as? UIImage{
             let image = UIImageJPEGRepresentation(originalImage, 0.1)
             addImage(url: url("reviews/images"), image: image)
-           
+            
         }
         self.dismiss(animated: true)
+    }
+    
+    // Method
+    func openGallery() {
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            let imagePicker : UIImagePickerController = UIImagePickerController()
+            imagePicker.sourceType = .photoLibrary
+            imagePicker.delegate = self
+            imagePicker.allowsEditing = true
+            
+            self.present(imagePicker, animated: true, completion: nil)
+        }
     }
 }
 
