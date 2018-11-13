@@ -89,6 +89,10 @@
 		CC31AC74217C92AF00A02388 /* Community.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC31AC73217C92AF00A02388 /* Community.storyboard */; };
 		CC31AC76217C92BD00A02388 /* Mypage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC31AC75217C92BD00A02388 /* Mypage.storyboard */; };
 		CC3D43BC2185A9F8003171C0 /* ThemeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3D43BB2185A9F8003171C0 /* ThemeCollectionViewCell.swift */; };
+		CC529162219AD69500F58603 /* FirstCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC529161219AD69500F58603 /* FirstCVCell.swift */; };
+		CC529164219AD75300F58603 /* LastCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC529163219AD75300F58603 /* LastCVCell.swift */; };
+		CC529167219AE3BD00F58603 /* FirstModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC529166219AE3BD00F58603 /* FirstModel.swift */; };
+		CC529169219AE4CD00F58603 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC529168219AE4CD00F58603 /* MainModel.swift */; };
 		CCB3CC9C218AF97A0033B9F9 /* Sign.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCB3CC9B218AF97A0033B9F9 /* Sign.storyboard */; };
 		CCB3CC9E218AF9D40033B9F9 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB3CC9D218AF9D40033B9F9 /* SignInViewController.swift */; };
 		CCB3CCA0218B01430033B9F9 /* SignUp1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB3CC9F218B01430033B9F9 /* SignUp1ViewController.swift */; };
@@ -185,6 +189,10 @@
 		CC31AC73217C92AF00A02388 /* Community.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Community.storyboard; sourceTree = "<group>"; };
 		CC31AC75217C92BD00A02388 /* Mypage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mypage.storyboard; sourceTree = "<group>"; };
 		CC3D43BB2185A9F8003171C0 /* ThemeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCollectionViewCell.swift; sourceTree = "<group>"; };
+		CC529161219AD69500F58603 /* FirstCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstCVCell.swift; sourceTree = "<group>"; };
+		CC529163219AD75300F58603 /* LastCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastCVCell.swift; sourceTree = "<group>"; };
+		CC529166219AE3BD00F58603 /* FirstModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstModel.swift; sourceTree = "<group>"; };
+		CC529168219AE4CD00F58603 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 		CCB3CC9B218AF97A0033B9F9 /* Sign.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sign.storyboard; sourceTree = "<group>"; };
 		CCB3CC9D218AF9D40033B9F9 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		CCB3CC9F218B01430033B9F9 /* SignUp1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp1ViewController.swift; sourceTree = "<group>"; };
@@ -685,10 +693,13 @@
 		CC31AC6D217C920500A02388 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				CC529165219AE2C400F58603 /* Model */,
 				CC31AC5F217C8D3200A02388 /* Main.storyboard */,
 				CC31AC5D217C8D3200A02388 /* MainViewController.swift */,
 				CC3D43BB2185A9F8003171C0 /* ThemeCollectionViewCell.swift */,
 				3BD63A1F2185E308007F5972 /* MainCVCell.swift */,
+				CC529161219AD69500F58603 /* FirstCVCell.swift */,
+				CC529163219AD75300F58603 /* LastCVCell.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -728,6 +739,15 @@
 				3B872CD12180B3DF00498F97 /* DPPoint */,
 			);
 			path = Mypage;
+			sourceTree = "<group>";
+		};
+		CC529165219AE2C400F58603 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CC529166219AE3BD00F58603 /* FirstModel.swift */,
+				CC529168219AE4CD00F58603 /* MainModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		CCB3CC9A218AF95B0033B9F9 /* Sign */ = {
@@ -846,7 +866,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DMZing/Pods-DMZing-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-DMZing/Pods-DMZing-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/LTScrollView/LTScrollView.framework",
@@ -863,7 +883,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DMZing/Pods-DMZing-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DMZing/Pods-DMZing-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F5BF7C7DFFE6288E27244881 /* [CP] Check Pods Manifest.lock */ = {
@@ -893,6 +913,7 @@
 			files = (
 				3B872CB72180902700498F97 /* MypageVC.swift in Sources */,
 				3B800595218B73650003EA5C /* ReviewMainCVCell.swift in Sources */,
+				CC529164219AD75300F58603 /* LastCVCell.swift in Sources */,
 				3B6697C721980BE6008789E3 /* MypageReviewService.swift in Sources */,
 				3B6697D5219825D0008789E3 /* PostImageService.swift in Sources */,
 				3B6697B92195A266008789E3 /* WriteArticleCVCell.swift in Sources */,
@@ -938,6 +959,7 @@
 				3B79938D219A9EEA00DBF5B2 /* ReviewMainVO.swift in Sources */,
 				3B800588218B2AC40003EA5C /* ReviewDetailHeaderView.swift in Sources */,
 				222EEC6A219828C800FB15C6 /* MapCoverViewController.swift in Sources */,
+				CC529169219AE4CD00F58603 /* MainModel.swift in Sources */,
 				222EEC6E2199BFE500FB15C6 /* CourseDetailViewController.swift in Sources */,
 				3BB05018217CADEF0096BF4D /* PostSampleService.swift in Sources */,
 				3B800584218B26D50003EA5C /* RoundShadowView.swift in Sources */,
@@ -945,6 +967,8 @@
 				3B6697B121949DBA008789E3 /* WriteEntryTVCell.swift in Sources */,
 				3B6697BF21980410008789E3 /* MypageMainService.swift in Sources */,
 				3BB05016217CADE80096BF4D /* GetSampleService.swift in Sources */,
+				CC529167219AE3BD00F58603 /* FirstModel.swift in Sources */,
+				CC529162219AD69500F58603 /* FirstCVCell.swift in Sources */,
 				3B800580218B213F0003EA5C /* PhotoReviewCVCell.swift in Sources */,
 				3BB0501A217CADFA0096BF4D /* PhotoSampleService.swift in Sources */,
 				3B800598218B81080003EA5C /* PhotoReviewPopupView.swift in Sources */,
