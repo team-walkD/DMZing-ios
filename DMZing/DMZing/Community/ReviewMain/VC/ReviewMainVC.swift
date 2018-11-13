@@ -51,8 +51,8 @@ extension ReviewMainVC :  UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let reviewStoryboard = Storyboard.shared().reviewStoryboard
         if let reviewDetailVC = reviewStoryboard.instantiateViewController(withIdentifier:ReviewDetailVC.reuseIdentifier) as? ReviewDetailVC {
-            var selectedMap : MapType = reviewMainArr[indexPath.row].typeName
-            reviewDetailVC.selectedMap = selectedMap
+            let selectedMap = reviewMainArr[indexPath.row]
+            reviewDetailVC.selectedMap = (selectedMap.courseId, selectedMap.typeName)
             self.navigationController?.pushViewController(reviewDetailVC, animated: true)
         }
     }

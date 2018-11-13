@@ -8,7 +8,7 @@
 
 import UIKit
 import LTScrollView
-
+typealias MapType = (mapIdx : Int, mapName : MapName)
 class ReviewDetailVC: UIViewController, APIService, UIGestureRecognizerDelegate {
     
     private let glt_iphoneX = (UIScreen.main.bounds.height == 812.0)
@@ -17,18 +17,7 @@ class ReviewDetailVC: UIViewController, APIService, UIGestureRecognizerDelegate 
     let articleReviewVC = ArticleReviewVC()
     var selectedIdx = 0 //어떤 유형의 리뷰가 선택 되었는지 (사진 / 글)
     var selectedMap : MapType? //어떤 맵이 선택되었는지
-    var spotArr : [(courseIdx : Int, courseName : String)] = [(0, "섬진강 유역"), (1, "평화 전망대")]//맵 선택에 따른 스팟 어레이
-    
-    /* var myBoardData : [MyPageVODataBoard]  = [] {
-     didSet {
-     myFeedVC.myBoardData = myBoardData
-     }
-     }
-     var myScrapData : [MyPageVODataScrap]  = [] {
-     didSet {
-     myScrapVC.myScrapData = myScrapData
-     }
-     }*/
+    var spotArr : [String] = []//맵 선택에 따른 스팟 어레이
     
     private lazy var viewControllers: [UIViewController] = {
         photoReviewVC.selectedMap = selectedMap
@@ -45,7 +34,7 @@ class ReviewDetailVC: UIViewController, APIService, UIGestureRecognizerDelegate 
         let headerView = ReviewDetailHeaderView.instanceFromNib()
         headerView.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 167)
         guard let selectedMap_ = selectedMap else {return headerView}
-        headerView.titleLbl.text = "\(selectedMap_.rawValue)하기 좋은 코스"
+        headerView.titleLbl.text = "\(selectedMap_.mapName.rawValue)하기 좋은 코스"
         return headerView
     }()
     
@@ -99,24 +88,30 @@ class ReviewDetailVC: UIViewController, APIService, UIGestureRecognizerDelegate 
         setBackBtn()
     }
     
+   
+    
     func selectCoursePopup(){
+        guard let selectedMap_ = selectedMap else {return}
+        getSpotData(url: url("course/\(selectedMap_.mapIdx)/places"))
+    }
+    
+    func setPopupUI(){
+        guard let selectedMap_ = selectedMap else {return}
         let title = "어떤 장소의 사진리뷰를 작성하시나요?"
         let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
         let goToWriteVC = { (action: UIAlertAction!) -> Void in
             let reviewStoryboard = Storyboard.shared().reviewStoryboard
             if let writePhotoReviewVC = reviewStoryboard.instantiateViewController(withIdentifier:WritePhotoReviewVC.reuseIdentifier) as? WritePhotoReviewVC {
                 guard let index = alert.actions.index(of: action)  else {return}
-                writePhotoReviewVC.selectedCourse = (self.spotArr[index].courseIdx, self.spotArr[index].courseName)
+                writePhotoReviewVC.selectedCourse = (selectedMap_.mapIdx, self.spotArr[index])
                 self.present(writePhotoReviewVC, animated: true, completion: nil)
             }
         }
         spotArr.forEach { (item) in
-            alert.addAction(UIAlertAction(title: item.courseName, style: .default, handler: goToWriteVC))
+            alert.addAction(UIAlertAction(title: item, style: .default, handler: goToWriteVC))
         }
         alert.addAction(UIAlertAction(title: "취소", style: .cancel, handler: nil))
         self.present(alert, animated: true)
-        
-        
     }
     
     @IBAction func writeAction(_ sender: Any) {
@@ -148,5 +143,27 @@ extension ReviewDetailVC : LTAdvancedScrollViewDelegate {
             self.selectedIdx = $0
         }
         
+    }
+}
+
+extension ReviewDetailVC {
+    func getSpotData(url : String){
+        GetSpotService.shareInstance.getMainData(url: url,completion: { [weak self] (result) in
+            guard let `self` = self else { return }
+            switch result {
+            case .networkSuccess(let data):
+                let spotData = data as? SpotVO
+                guard let spotData_ = spotData else {return}
+                self.spotArr = spotData_.map({ (item) in
+                    item.name
+                })
+                self.setPopupUI()
+            case .networkFail :
+                self.networkSimpleAlert()
+            default :
+                self.simpleAlert(title: "오류", message: "다시 시도해주세요")
+                break
+            }
+        })
     }
 }

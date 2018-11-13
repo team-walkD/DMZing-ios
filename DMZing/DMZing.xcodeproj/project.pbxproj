@@ -33,6 +33,8 @@
 		3B799392219AB3AB00DBF5B2 /* GetArticleReviewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B799391219AB3AB00DBF5B2 /* GetArticleReviewService.swift */; };
 		3B799396219ABD3400DBF5B2 /* ReviewContentVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B799395219ABD3400DBF5B2 /* ReviewContentVO.swift */; };
 		3B799398219ABE3900DBF5B2 /* GetReviewContentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B799397219ABE3900DBF5B2 /* GetReviewContentService.swift */; };
+		3B79939B219AD89000DBF5B2 /* GetSpotService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B79939A219AD89000DBF5B2 /* GetSpotService.swift */; };
+		3B79939D219AD8B200DBF5B2 /* SpotVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B79939C219AD8B200DBF5B2 /* SpotVO.swift */; };
 		3B800572218B1F160003EA5C /* PhotoReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B800571218B1F160003EA5C /* PhotoReviewVC.swift */; };
 		3B80057C218B1FFA0003EA5C /* ReviewDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B80057B218B1FFA0003EA5C /* ReviewDetailVC.swift */; };
 		3B80057E218B206E0003EA5C /* ArticleReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B80057D218B206E0003EA5C /* ArticleReviewVC.swift */; };
@@ -126,6 +128,8 @@
 		3B799391219AB3AB00DBF5B2 /* GetArticleReviewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetArticleReviewService.swift; sourceTree = "<group>"; };
 		3B799395219ABD3400DBF5B2 /* ReviewContentVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewContentVO.swift; sourceTree = "<group>"; };
 		3B799397219ABE3900DBF5B2 /* GetReviewContentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReviewContentService.swift; sourceTree = "<group>"; };
+		3B79939A219AD89000DBF5B2 /* GetSpotService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSpotService.swift; sourceTree = "<group>"; };
+		3B79939C219AD8B200DBF5B2 /* SpotVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotVO.swift; sourceTree = "<group>"; };
 		3B800571218B1F160003EA5C /* PhotoReviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoReviewVC.swift; sourceTree = "<group>"; };
 		3B80057B218B1FFA0003EA5C /* ReviewDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewDetailVC.swift; sourceTree = "<group>"; };
 		3B80057D218B206E0003EA5C /* ArticleReviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleReviewVC.swift; sourceTree = "<group>"; };
@@ -405,6 +409,7 @@
 			children = (
 				3B7993822199E65800DBF5B2 /* GetPhotoReviewService.swift */,
 				3B799391219AB3AB00DBF5B2 /* GetArticleReviewService.swift */,
+				3B79939A219AD89000DBF5B2 /* GetSpotService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -414,6 +419,7 @@
 			children = (
 				3B7993852199E6B400DBF5B2 /* PhotoReviewVO.swift */,
 				3B79938E219AB39900DBF5B2 /* ArticleReviewVO.swift */,
+				3B79939C219AD8B200DBF5B2 /* SpotVO.swift */,
 			);
 			path = VO;
 			sourceTree = "<group>";
@@ -928,6 +934,7 @@
 				3BB0500D217CAA890096BF4D /* NetworkConfiguration.swift in Sources */,
 				3BB0500F217CAAFC0096BF4D /* APIService.swift in Sources */,
 				3B8364EE219425FB000BD706 /* WriteEntryVC.swift in Sources */,
+				3B79939B219AD89000DBF5B2 /* GetSpotService.swift in Sources */,
 				3B872CC121809A5500498F97 /* MyCourseVC.swift in Sources */,
 				3B3A85CE2198836B00D1A835 /* MypageMainVO.swift in Sources */,
 				22F3025D2195515F00152700 /* MainMapViewController.swift in Sources */,
@@ -948,6 +955,7 @@
 				3B800580218B213F0003EA5C /* PhotoReviewCVCell.swift in Sources */,
 				3BB0501A217CADFA0096BF4D /* PhotoSampleService.swift in Sources */,
 				3B800598218B81080003EA5C /* PhotoReviewPopupView.swift in Sources */,
+				3B79939D219AD8B200DBF5B2 /* SpotVO.swift in Sources */,
 				3B6697D7219825DB008789E3 /* PostArticleService.swift in Sources */,
 				3B872CBA2180905000498F97 /* MyPageTVCell.swift in Sources */,
 				3BB05000217CA6540096BF4D /* Extensions.swift in Sources */,
