@@ -40,7 +40,7 @@ class WritePhotoReviewVC: UIViewController, APIService {
         guard let imageUrl_ = imgUrl else {return}
         let params : [String : Any] = [
             "imageUrl": imageUrl_,
-            "startAt": date.timeIntervalSince1970,
+            "startAt": date.timeIntervalSince1970*1000,
             "placeName": selectedCourse.courseName,
             "courseId": selectedCourse.courseId
         ]

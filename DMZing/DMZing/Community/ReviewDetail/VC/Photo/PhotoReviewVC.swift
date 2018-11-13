@@ -63,7 +63,7 @@ class PhotoReviewVC : UIViewController, LTTableViewProtocal, APIService  {
         
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             guard let `self` = self else { return }
-            self.getPhotoReviewData(url: self.url("reviews/photo/last/0/course/\(self.selectedMap!)"))
+            self.getPhotoReviewData(url: self.url("reviews/photo/last/0/course/\(self.selectedMap!.mapName)"))
         }
         //        if #available(iOS 11.0, *) {
         //            collectionView.contentInsetAdjustmentBehavior = .never
@@ -111,7 +111,7 @@ extension PhotoReviewVC : UICollectionViewDelegate, UICollectionViewDataSource  
         if indexPath.row == lastItemIdx {
             DispatchQueue.global(qos: .userInitiated).async { [weak self] in
                 guard let `self` = self else { return }
-                self.getPhotoReviewData(url: self.url("reviews/photo/last/\(itemIdx)/course/\(self.selectedMap!)"))
+                self.getPhotoReviewData(url: self.url("reviews/photo/last/\(itemIdx)/course/\(self.selectedMap!.mapName)"))
             }
         }
     }

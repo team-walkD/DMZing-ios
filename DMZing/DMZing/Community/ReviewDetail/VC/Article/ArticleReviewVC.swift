@@ -47,7 +47,7 @@ class ArticleReviewVC : UIViewController, LTTableViewProtocal, APIService  {
         super.viewDidLoad()
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             guard let `self` = self else { return }
-            self.getArticleReviewData(url: self.url("reviews/last/0/course/\(self.selectedMap!)"))
+            self.getArticleReviewData(url: self.url("reviews/last/0/course/\(self.selectedMap!.mapName)"))
         }
         let nib = UINib.init(nibName: ArticleReviewCVCell.reuseIdentifier, bundle: nil)
         self.collectionView.register(nib, forCellWithReuseIdentifier: ArticleReviewCVCell.reuseIdentifier)
@@ -90,7 +90,7 @@ extension ArticleReviewVC : UICollectionViewDelegate, UICollectionViewDataSource
         if indexPath.row == lastItemIdx {
             DispatchQueue.global(qos: .userInitiated).async { [weak self] in
                 guard let `self` = self else { return }
-                self.getArticleReviewData(url: self.url("reviews/last/\(itemIdx)/course/\(self.selectedMap!)"))
+                self.getArticleReviewData(url: self.url("reviews/last/\(itemIdx)/course/\(self.selectedMap!.mapName)"))
             }
         }
     }

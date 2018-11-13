@@ -11,13 +11,13 @@ import Foundation
 typealias ReviewMainVO = [ReviewMainVOData]
 
 struct ReviewMainVOData: Codable {
-    let typeName: MapType
+    let typeName: MapName
     let conut: Int
     let imageUrl : String
     let courseId : Int
 }
 
-enum MapType: String, Codable {
+enum MapName: String, Codable {
     case DATE = "데이트"
     case HISTORY = "역사기행"
     case ADVENTURE = "탐험"
