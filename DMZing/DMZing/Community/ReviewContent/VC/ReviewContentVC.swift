@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ReviewContentVC: UIViewController, UIGestureRecognizerDelegate{
+class ReviewContentVC: UIViewController, UIGestureRecognizerDelegate, APIService{
     private let glt_iphoneX = (UIScreen.main.bounds.height == 812.0)
     
     @IBOutlet weak var topView: UIView!
@@ -26,6 +26,14 @@ class ReviewContentVC: UIViewController, UIGestureRecognizerDelegate{
     @IBOutlet weak var heartImgView: UIImageView!
     @IBOutlet weak var heartCntLbl: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    var selectedRId = 0
+    var contentData : ReviewContentVO? {
+        didSet {
+            guard let contentData_ = contentData else {return}
+            self.setUI(data: contentData_)
+            self.tableView.reloadData()
+        }
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -36,6 +44,10 @@ class ReviewContentVC: UIViewController, UIGestureRecognizerDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            guard let `self` = self else { return }
+            self.getReviewDetail(url: self.url("reviews/\(self.selectedRId)"))
+        }
         tableView.dataSource = self
         tableView.delegate = self
         makeLayout()
@@ -47,15 +59,25 @@ class ReviewContentVC: UIViewController, UIGestureRecognizerDelegate{
         self.navigationController?.navigationBar.isTranslucent = false
     }
     
+    func setUI(data : ReviewContentVO){
+        titleLbl.text = data.title
+        startDateLbl.text = data.startAt.timeStampToDate()
+        endDateLbl.text = data.endAt.timeStampToDate()
+        topImgView.setImgWithKF(url: data.thumbnailURL, defaultImg: #imageLiteral(resourceName: "ccc"))
+        heartCntLbl.text = data.likeCount.description
+    }
 }
 
 extension ReviewContentVC : UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        guard let contentData_ = contentData else {return 0}
+        return contentData_.postDto.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ReviewContentTVCell.reuseIdentifier) as! ReviewContentTVCell
+        guard let contentData_ = contentData else {return cell}
+        cell.configure(data : contentData_.postDto[indexPath.row])
         return cell
     }
     
@@ -172,5 +194,24 @@ extension ReviewContentVC {
         
     }
     
+}
+
+extension ReviewContentVC {
+    func getReviewDetail(url : String){
+        GetReviewContentService.shareInstance.getMainData(url: url,completion: { [weak self] (result) in
+            guard let `self` = self else { return }
+            switch result {
+            case .networkSuccess(let data):
+                guard let reviewData = data as? ReviewContentVO else {return}
+                self.contentData = reviewData
+            case .networkFail :
+                self.networkSimpleAlert()
+            default :
+                self.simpleAlert(title: "오류", message: "다시 시도해주세요")
+                break
+            }
+        })
+    }
+   
 }
 

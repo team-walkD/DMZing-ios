@@ -14,7 +14,7 @@ struct PhotoReviewVOData: Codable {
     let startAt: Int
     let imageURL, placeName: String
     let courseId: Int
-    let id : Int?
+    let id : Int
     
     enum CodingKeys: String, CodingKey {
         case startAt, courseId, id

@@ -13,7 +13,8 @@ typealias ReviewMainVO = [ReviewMainVOData]
 struct ReviewMainVOData: Codable {
     let typeName: MapType
     let conut: Int
-    let imageUrl : String = ""
+    let imageUrl : String
+    let courseId : Int
 }
 
 enum MapType: String, Codable {

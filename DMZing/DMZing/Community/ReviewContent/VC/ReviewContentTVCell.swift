@@ -17,7 +17,7 @@ class ReviewContentTVCell: UITableViewCell {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var bottomWhiteView: UIView!
-    var imgUrlArr = ["https://pbs.twimg.com/media/DUcm7xQVoAE5q4Z.jpg", "https://pbs.twimg.com/media/DPDN06VVoAEfXG_.jpg", "https://post-phinf.pstatic.net/MjAxODA0MTBfMTQ2/MDAxNTIzMzQxMDQxODYw.aO_dJut4YK-3jjbJ_dw49KG5Cl8nGQjhbBX8S1elmE8g.sIvK_NXFGk7KYJo-OcUWExWGlJVxgMja-2SokwVf9wUg.JPEG/2.jpg?type=w1200",  "https://i.pinimg.com/originals/f0/a7/02/f0a70248f3c8d5887c2c66f49d7fc570.png","https://pbs.twimg.com/media/C46e96dUMAMuD96.jpg"] {
+    var imgUrlArr : [String] = [] {
         didSet {
             collectionView.reloadData()
         }
@@ -25,6 +25,13 @@ class ReviewContentTVCell: UITableViewCell {
     var finalOffset : CGFloat = 0
     var startOffset  : CGFloat = 0
     var currentIdx = 0
+    
+    func configure(data : ReviewContentVOPostDTO){
+        dayLbl.text = data.day.description
+        titleLbl.text = data.title
+        contentLbl.text = data.content
+        imgUrlArr = data.postImgURL
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
