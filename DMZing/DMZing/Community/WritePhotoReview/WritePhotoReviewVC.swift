@@ -153,7 +153,7 @@ extension WritePhotoReviewVC {
                     self.myImgView.setImgWithKF(url: img, defaultImg: #imageLiteral(resourceName: "ccc"))
                     self.imgUrl = img
                     self.doneBtn.isEnabled = true
-                    self.doneBtn.backgroundColor = ColorChip.shared().middleBlue
+                    self.doneBtn.backgroundColor = UIColor.FlatColor.Blue.middleBlue
                 }
                 break
             case .networkFail :

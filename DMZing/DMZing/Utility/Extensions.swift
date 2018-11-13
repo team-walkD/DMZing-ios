@@ -25,7 +25,7 @@ extension NSObject {
 extension UIViewController {
     
     //백버튼
-    func setBackBtn(color : UIColor? = ColorChip.shared().deepBlue){
+    func setBackBtn(color : UIColor? = UIColor.FlatColor.Blue.deepBlue){
         let backBTN = UIBarButtonItem(image: UIImage(named: "back_white_btn"),
                                       style: .plain,
                                       target: self,

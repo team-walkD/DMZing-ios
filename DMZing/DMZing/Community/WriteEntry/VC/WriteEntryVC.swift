@@ -67,9 +67,11 @@ class WriteEntryVC: UIViewController, APIService{
         initDatePicker()
         setKeyboardSetting()
         setUpTableView()
+        titleTxt.addTarget(self, action: #selector(isBtnValid), for: .editingChanged)
         doneBtn.addTarget(self, action: #selector(doneAction), for: .touchUpInside)
         titleTxt.attributedPlaceholder = NSAttributedString(string: "제목을 입력해주세요", attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
     }
+    
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
         self.navigationController?.navigationBar.isTranslucent = false
@@ -111,11 +113,11 @@ class WriteEntryVC: UIViewController, APIService{
     }
     @objc func isBtnValid(){
         //완료 버튼 활성화
-        if (articleArr.filter { (item) in
+        if titleTxt.text != "" && (articleArr.filter { (item) in
             return item.day != 0
         }).count > 0 {
             doneBtn.isEnabled = true
-            doneBtn.backgroundColor = ColorChip.shared().middleBlue
+            doneBtn.backgroundColor = UIColor.FlatColor.Blue.middleBlue
         } else {
             doneBtn.isEnabled = false
             doneBtn.backgroundColor = #colorLiteral(red: 0.8666666667, green: 0.8666666667, blue: 0.8666666667, alpha: 1)
@@ -314,8 +316,6 @@ extension WriteEntryVC {
                 if let img = data?.image {
                     self.bgImgView.setImgWithKF(url: img, defaultImg: #imageLiteral(resourceName: "ccc"))
                     self.bgImgUrl = img
-                    self.doneBtn.isEnabled = true
-                    self.doneBtn.backgroundColor = ColorChip.shared().middleBlue
                 }
                 break
             case .networkFail :

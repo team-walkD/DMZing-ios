@@ -8,7 +8,6 @@
 
 import UIKit
 class Storyboard {
-    
     let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
     let mapStoryboard = UIStoryboard(name: "Course", bundle: nil)
     let reviewStoryboard = UIStoryboard(name: "Community", bundle: nil)

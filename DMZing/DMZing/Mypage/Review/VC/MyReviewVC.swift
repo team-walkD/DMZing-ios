@@ -31,7 +31,7 @@ class MyReviewVC: UIViewController, APIService {
     }
     
     func setupNavBar(){
-        navigationController?.navigationBar.barTintColor = ColorChip.shared().lightBlue
+        navigationController?.navigationBar.barTintColor = UIColor.FlatColor.Blue.lightBlue
         //navigationController?.navigationBar.isTranslucent = false
     }
 }

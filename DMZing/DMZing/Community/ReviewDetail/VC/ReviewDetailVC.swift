@@ -45,11 +45,11 @@ class ReviewDetailVC: UIViewController, APIService, UIGestureRecognizerDelegate 
         layout.isNeedScale = false
         layout.titleFont = UIFont(name: AppleSDGothicNeo.Bold.rawValue, size: 16)!
         layout.titleColor = #colorLiteral(red: 0.4823529412, green: 0.5450980392, blue: 0.5843137255, alpha: 1)
-        layout.titleSelectColor = ColorChip.shared().deepBlue
+        layout.titleSelectColor = UIColor.FlatColor.Blue.deepBlue
         layout.sliderHeight = 50.0
         layout.sliderWidth = 70
         layout.bottomLineHeight = 2
-        layout.bottomLineColor = ColorChip.shared().middleBlue
+        layout.bottomLineColor = UIColor.FlatColor.Blue.middleBlue
         return layout
     }()
     
