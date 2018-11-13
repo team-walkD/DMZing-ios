@@ -18,12 +18,12 @@ class ArticleReviewCVCell: UICollectionViewCell {
     var mainImgView = UIImageView()
     
         
-    func configure(data : SampleArticleReviewStruct){
-        startDateLbl.text = data.startDate
-        endDateLbl.text = data.endDate
+    func configure(data : ArticleReviewVOData){
+        startDateLbl.text = data.startAt.timeStampToDate()
+        endDateLbl.text = data.endAt.timeStampToDate()
         likeCntLbl.text = data.likeCount.description
         titleLbl.text = data.title
-        mainImgView.setImgWithKF(url: data.imgUrl, defaultImg: #imageLiteral(resourceName: "ccc"))
+        mainImgView.setImgWithKF(url: data.thumbnailURL, defaultImg: #imageLiteral(resourceName: "ccc"))
     }
     
     override func awakeFromNib() {

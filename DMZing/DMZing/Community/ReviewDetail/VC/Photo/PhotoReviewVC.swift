@@ -14,7 +14,6 @@ private let glt_iphoneX = (UIScreen.main.bounds.height == 812.0)
 class PhotoReviewVC : UIViewController, LTTableViewProtocal, APIService  {
 
     var selectedMap : MapType?
-    var pId = 0
     var photoReviewData : [PhotoReviewVOData] = [] {
         didSet {
             self.collectionView.reloadData()
@@ -64,7 +63,7 @@ class PhotoReviewVC : UIViewController, LTTableViewProtocal, APIService  {
         
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             guard let `self` = self else { return }
-            self.getPhotoReviewData(url: self.url("reviews/photo/last/\(self.pId)/course/\(self.selectedMap!)"))
+            self.getPhotoReviewData(url: self.url("reviews/photo/last/0/course/\(self.selectedMap!)"))
         }
         //        if #available(iOS 11.0, *) {
         //            collectionView.contentInsetAdjustmentBehavior = .never
@@ -108,7 +107,7 @@ extension PhotoReviewVC : UICollectionViewDelegate, UICollectionViewDataSource  
         guard photoReviewData.count > 0 else {return}
         
         let lastItemIdx = photoReviewData.count-1
-        let itemIdx = photoReviewData[lastItemIdx].courseID
+        let itemIdx = photoReviewData[lastItemIdx].id ?? 0
         if indexPath.row == lastItemIdx {
             DispatchQueue.global(qos: .userInitiated).async { [weak self] in
                 guard let `self` = self else { return }
@@ -126,7 +125,6 @@ extension PhotoReviewVC {
             case .networkSuccess(let data):
                 let photoData = data as? PhotoReviewVO
                 guard let photoData_ = photoData else {return}
-                self.photoReviewData = photoData_
                 if photoData_.count > 0 {
                     self.photoReviewData.append(contentsOf: photoData_)
                 }
