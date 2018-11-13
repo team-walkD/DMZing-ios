@@ -119,10 +119,14 @@ class ReviewDetailVC: UIViewController, APIService, UIGestureRecognizerDelegate 
         if selectedIdx == 0 {
             selectCoursePopup()
         } else {
-             let reviewStoryboard = Storyboard.shared().reviewStoryboard
-            let writeEntryVC = reviewStoryboard.instantiateViewController(withIdentifier:"reviewNavi")
+            guard let selectedMap_ = selectedMap else {return}
+            let reviewStoryboard = Storyboard.shared().reviewStoryboard
+            let writeEntryNavC = reviewStoryboard.instantiateViewController(withIdentifier:"reviewNavi") as! UINavigationController
             
-            self.present(writeEntryVC, animated: true, completion: nil)
+            if let writeEntryVC = writeEntryNavC.topViewController as? WriteEntryVC {
+                writeEntryVC.selectedCourseId = (selectedMap_.mapIdx)
+                self.present(writeEntryNavC, animated: true, completion: nil)
+            }
         }
         
     }
