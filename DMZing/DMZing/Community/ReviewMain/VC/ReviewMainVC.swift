@@ -8,15 +8,9 @@
 
 import UIKit
 
-struct SampleReviewMainStruct {
-    let cnt : Int
-    let title : String
-    let imgUrl : String
-}
+class ReviewMainVC: UIViewController, APIService {
 
-class ReviewMainVC: UIViewController {
-
-    var reviewMainArr : [SampleReviewMainStruct] = [] {
+    var reviewMainArr : [ReviewMainVOData] = [] {
         didSet {
             collectionView.reloadData()
         }
@@ -26,22 +20,12 @@ class ReviewMainVC: UIViewController {
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
-        addDummyData()
-        
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            guard let `self` = self else { return }
+            self.getReviewType(url: self.url("reviews/count"))
+        }
     }
-    
-    private func addDummyData(){
-        let imgUrlArr = ["https://pbs.twimg.com/media/DUcm7xQVoAE5q4Z.jpg", "https://pbs.twimg.com/media/DPDN06VVoAEfXG_.jpg", "https://post-phinf.pstatic.net/MjAxODA0MTBfMTQ2/MDAxNTIzMzQxMDQxODYw.aO_dJut4YK-3jjbJ_dw49KG5Cl8nGQjhbBX8S1elmE8g.sIvK_NXFGk7KYJo-OcUWExWGlJVxgMja-2SokwVf9wUg.JPEG/2.jpg?type=w1200",  "https://i.pinimg.com/originals/f0/a7/02/f0a70248f3c8d5887c2c66f49d7fc570.png","https://pbs.twimg.com/media/C46e96dUMAMuD96.jpg"]
-        let titleArr = ["수진날진의 여행기", "장드타는 왜 장드타", "예은 와서 뷰짠다", "승미야 일해!", "융선픽"]
-        let a = SampleReviewMainStruct(cnt: 10, title: titleArr[0], imgUrl: imgUrlArr[0])
-        let b = SampleReviewMainStruct(cnt: 10, title: titleArr[1], imgUrl: imgUrlArr[1])
-        let c = SampleReviewMainStruct(cnt: 10, title: titleArr[2], imgUrl: imgUrlArr[2])
-        let d = SampleReviewMainStruct(cnt: 10, title: titleArr[3], imgUrl: imgUrlArr[3])
-        let e = SampleReviewMainStruct(cnt: 10, title: titleArr[4], imgUrl: imgUrlArr[4])
-        
-        reviewMainArr.append(contentsOf: [a,b,c,d,e])
-    }
-    
+
 }
 
 extension ReviewMainVC :  UICollectionViewDelegate, UICollectionViewDataSource{
@@ -57,6 +41,7 @@ extension ReviewMainVC :  UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if let cell: ReviewMainCVCell = collectionView.dequeueReusableCell(withReuseIdentifier: ReviewMainCVCell.reuseIdentifier, for: indexPath) as? ReviewMainCVCell {
+            guard reviewMainArr.count > 0 else {return cell}
             cell.configure(data: reviewMainArr[indexPath.row])
             return cell
         }
@@ -66,6 +51,7 @@ extension ReviewMainVC :  UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let reviewStoryboard = Storyboard.shared().reviewStoryboard
         if let reviewDetailVC = reviewStoryboard.instantiateViewController(withIdentifier:ReviewDetailVC.reuseIdentifier) as? ReviewDetailVC {
+            reviewDetailVC.selectedMapId = 1 //DATE, HISTORY, ADVENTURE
             self.navigationController?.pushViewController(reviewDetailVC, animated: true)
         }
     }
@@ -91,4 +77,24 @@ extension ReviewMainVC: UICollectionViewDelegateFlowLayout {
         return 0
     }
     
+}
+
+extension ReviewMainVC {
+    func getReviewType(url : String){
+        GetReviewMainService.shareInstance.getMainData(url: url,completion: { [weak self] (result) in
+            guard let `self` = self else { return }
+            switch result {
+            case .networkSuccess(let data):
+                let reviewMainData = data as? ReviewMainVO
+                if let reviewMainData_ = reviewMainData {
+                    self.reviewMainArr = reviewMainData_
+                }
+            case .networkFail :
+                self.networkSimpleAlert()
+            default :
+                self.simpleAlert(title: "오류", message: "다시 시도해주세요")
+                break
+            }
+        })
+    }
 }

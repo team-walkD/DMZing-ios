@@ -16,10 +16,10 @@ class ReviewMainCVCell: UICollectionViewCell {
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var cntLbl: UILabel!
    
-    func configure(data : SampleReviewMainStruct){
-        cntLbl.text = data.cnt.description
-        titleLbl.text = data.title
-        mainImgView.setImgWithKF(url: data.imgUrl, defaultImg: #imageLiteral(resourceName: "ccc"))
+    func configure(data : ReviewMainVOData){
+        cntLbl.text = data.conut.description
+        titleLbl.text = "\(data.typeName.rawValue) 맵"
+        mainImgView.setImgWithKF(url: data.imageUrl, defaultImg: #imageLiteral(resourceName: "ccc"))
     }
     
     override func awakeFromNib() {
