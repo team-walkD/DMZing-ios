@@ -117,7 +117,7 @@ class WriteEntryVC: UIViewController, APIService{
             return item.day != 0
         }).count > 0 {
             doneBtn.isEnabled = true
-            doneBtn.backgroundColor = ColorChip.shared().middleBlue
+            doneBtn.backgroundColor = UIColor.FlatColor.Blue.middleBlue
         } else {
             doneBtn.isEnabled = false
             doneBtn.backgroundColor = #colorLiteral(red: 0.8666666667, green: 0.8666666667, blue: 0.8666666667, alpha: 1)

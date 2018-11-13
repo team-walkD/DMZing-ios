@@ -57,7 +57,7 @@ class WriteArticleReviewVC: UIViewController, APIService, UIGestureRecognizerDel
         if article.day == 0 {return}
         titleTxt.text = article.title
         contentTxtView.text = article.content
-        contentTxtView.textColor = ColorChip.shared().deepBlue
+        contentTxtView.textColor = UIColor.FlatColor.Blue.deepBlue
         for i in 0..<article.imageArr.count {
             imageArr[i] = article.imageArr[i]
         }
@@ -130,7 +130,7 @@ extension WriteArticleReviewVC : UITextViewDelegate{
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.text == defaultTxtMsg {
             textView.text = nil
-            textView.textColor = ColorChip.shared().deepBlue
+            textView.textColor = UIColor.FlatColor.Blue.deepBlue
         }
     }
     
@@ -161,7 +161,7 @@ extension WriteArticleReviewVC : UITextViewDelegate{
         //완료 버튼 활성화
         if (!(titleTxt.text?.isEmpty)! && !(contentTxtView.text.isEmpty)) && contentTxtView.text != defaultTxtMsg {
             doneBtn.isEnabled = true
-            doneBtn.backgroundColor = ColorChip.shared().middleBlue
+            doneBtn.backgroundColor = UIColor.FlatColor.Blue.middleBlue
         } else {
             doneBtn.isEnabled = false
             doneBtn.backgroundColor = #colorLiteral(red: 0.8666666667, green: 0.8666666667, blue: 0.8666666667, alpha: 1)

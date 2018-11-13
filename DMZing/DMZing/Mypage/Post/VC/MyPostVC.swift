@@ -24,7 +24,7 @@ class MyPostVC: UIViewController {
     }
     
     func setupNavBar(){
-        navigationController?.navigationBar.barTintColor = ColorChip.shared().lightBlue
+        navigationController?.navigationBar.barTintColor = UIColor.FlatColor.Blue.lightBlue
     }
 
 }
