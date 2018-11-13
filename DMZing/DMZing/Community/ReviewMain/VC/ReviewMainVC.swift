@@ -16,6 +16,14 @@ class ReviewMainVC: UIViewController, APIService {
         }
     }
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
+        self.navigationController?.navigationBar.isTranslucent = false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
@@ -24,8 +32,8 @@ class ReviewMainVC: UIViewController, APIService {
             guard let `self` = self else { return }
             self.getReviewType(url: self.url("reviews/count"))
         }
+    
     }
-
 }
 
 extension ReviewMainVC :  UICollectionViewDelegate, UICollectionViewDataSource{
