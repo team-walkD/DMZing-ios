@@ -108,7 +108,7 @@ extension PhotoReviewVC : UICollectionViewDelegate, UICollectionViewDataSource  
         guard photoReviewData.count > 0 else {return}
         
         let lastItemIdx = photoReviewData.count-1
-        let itemIdx = photoReviewData[lastItemIdx].courseID
+        let itemIdx = photoReviewData[lastItemIdx].id
         if indexPath.row == lastItemIdx {
             DispatchQueue.global(qos: .userInitiated).async { [weak self] in
                 guard let `self` = self else { return }
@@ -126,7 +126,6 @@ extension PhotoReviewVC {
             case .networkSuccess(let data):
                 let photoData = data as? PhotoReviewVO
                 guard let photoData_ = photoData else {return}
-                self.photoReviewData = photoData_
                 if photoData_.count > 0 {
                     self.photoReviewData.append(contentsOf: photoData_)
                 }

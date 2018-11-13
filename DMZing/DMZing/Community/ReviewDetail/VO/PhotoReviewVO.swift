@@ -13,12 +13,11 @@ typealias PhotoReviewVO = [PhotoReviewVOData]
 struct PhotoReviewVOData: Codable {
     let startAt: Int
     let imageURL, placeName: String
-    let courseID: Int
+    let id: Int
     
     enum CodingKeys: String, CodingKey {
-        case startAt
+        case startAt, id
         case imageURL = "imageUrl"
         case placeName
-        case courseID = "courseId"
     }
 }
