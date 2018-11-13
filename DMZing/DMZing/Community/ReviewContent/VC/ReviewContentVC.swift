@@ -27,6 +27,11 @@ class ReviewContentVC: UIViewController, UIGestureRecognizerDelegate, APIService
     @IBOutlet weak var heartCntLbl: UILabel!
     @IBOutlet weak var tableView: UITableView!
     var selectedRId = 0
+    var isSelected = false {
+        didSet {
+            heartImgView.image = isSelected ? #imageLiteral(resourceName: "heart_fill_icon") : #imageLiteral(resourceName: "heart_icon")
+        }
+    }
     var contentData : ReviewContentVO? {
         didSet {
             guard let contentData_ = contentData else {return}
@@ -65,6 +70,12 @@ class ReviewContentVC: UIViewController, UIGestureRecognizerDelegate, APIService
         endDateLbl.text = data.endAt.timeStampToDate()
         topImgView.setImgWithKF(url: data.thumbnailURL, defaultImg: #imageLiteral(resourceName: "ccc"))
         heartCntLbl.text = data.likeCount.description
+        heartImgView.image = data.like ? #imageLiteral(resourceName: "heart_fill_icon") : #imageLiteral(resourceName: "heart_icon")
+        isSelected = data.like
+    }
+    
+    @IBAction func likeAction(_ sender: Any) {
+        likeContent(url: url("reviews/like/\(selectedRId)"))
     }
 }
 
@@ -204,6 +215,24 @@ extension ReviewContentVC {
             case .networkSuccess(let data):
                 guard let reviewData = data as? ReviewContentVO else {return}
                 self.contentData = reviewData
+            case .networkFail :
+                self.networkSimpleAlert()
+            default :
+                self.simpleAlert(title: "오류", message: "다시 시도해주세요")
+                break
+            }
+        })
+    }
+    
+    func likeContent(url : String){
+        let params : [String : Any] = [:]
+        WriteArticleService.shareInstance.writeArticleReview(url: url, params: params, completion: { [weak self] (result) in
+            guard let `self` = self else { return }
+            switch result {
+            case .networkSuccess(_):
+                self.isSelected = !self.isSelected
+                guard let likeCount = Int(self.heartCntLbl.text!) else {return}
+                self.heartCntLbl.text = self.isSelected ? (likeCount+1).description : (likeCount-1).description
             case .networkFail :
                 self.networkSimpleAlert()
             default :
