@@ -99,7 +99,7 @@ class ReviewDetailVC: UIViewController, APIService, UIGestureRecognizerDelegate 
     }
     
     func selectCoursePopup(){
-        let title = "어떤 맵의 사진리뷰를 작성하시나요?"
+        let title = "어떤 장소의 사진리뷰를 작성하시나요?"
         let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
         let goToWriteVC = { (action: UIAlertAction!) -> Void in
             let reviewStoryboard = Storyboard.shared().reviewStoryboard
