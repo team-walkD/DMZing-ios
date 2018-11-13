@@ -17,6 +17,7 @@ class ReviewContentTVCell: UITableViewCell {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var bottomWhiteView: UIView!
+
     var imgUrlArr : [String] = [] {
         didSet {
             collectionView.reloadData()
@@ -30,17 +31,26 @@ class ReviewContentTVCell: UITableViewCell {
         dayLbl.text = data.day.description
         titleLbl.text = data.title
         contentLbl.text = data.content
-        imgUrlArr = data.postImgURL
+        if data.postImgURL.count > 0 {
+           imgUrlArr = data.postImgURL
+        }
     }
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         collectionView.dataSource = self
         collectionView.delegate = self
-         bottomWhiteView.layer.applySketchShadow(alpha : 0.06, x : 0, y : 5, blur : 6, spread : 0)
+        bottomWhiteView.layer.applySketchShadow(alpha : 0.06, x : 0, y : 5, blur : 6, spread : 0)
         contentLbl.setLineSpacing(lineSpacing: 0, lineHeightMultiple: 1.25)
     }
-
+    
+    override func prepareForReuse() {
+        if imgUrlArr.count == 0 {
+            if collectionView != nil {
+                collectionView.removeFromSuperview()
+                collectionView.setNeedsDisplay()
+            }
+        }
+    }
 }
 //MARK: - UICollectionViewDataSource, UICollectionViewDelegate
 extension ReviewContentTVCell : UICollectionViewDataSource, UICollectionViewDelegate {

@@ -58,6 +58,11 @@ class ReviewContentVC: UIViewController, UIGestureRecognizerDelegate, APIService
         setBackBtn(color: .white)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.navigationBar.isTranslucent = false
+    }
+    
     func setUI(data : ReviewContentVO){
         titleLbl.text = data.title
         startDateLbl.text = data.startAt.timeStampToDate()
