@@ -71,9 +71,23 @@ extension MainViewController : UICollectionViewDelegate,UICollectionViewDataSour
             
             return cell
         } else {
-            let cell = self.mainCollectionView.dequeueReusableCell(withReuseIdentifier: MainCVCell.reuseIdentifier, for: indexPath) as! MainCVCell
-            return cell
-            
+            if indexPath.row == 0{
+                let cell = self.mainCollectionView.dequeueReusableCell(withReuseIdentifier: FirstCVCell.reuseIdentifier, for: indexPath) as! FirstCVCell
+                cell.subtitleLabel.text = "사진 찍기 좋은 핫스팟"
+                cell.titleLabel.text = "데이트 하기 좋은 코스"
+                cell.difficultyLabel.text = "중"
+                cell.timeLabel.text = "3"
+                cell.peopleLabel.text = "50"
+                return cell
+            }else if indexPath.row == 4{
+                let cell = self.mainCollectionView.dequeueReusableCell(withReuseIdentifier: LastCVCell.reuseIdentifier, for: indexPath) as! LastCVCell
+                return cell
+            }else{
+                let cell = self.mainCollectionView.dequeueReusableCell(withReuseIdentifier: MainCVCell.reuseIdentifier, for: indexPath) as! MainCVCell
+                cell.subtitleLabel.text = "첫 번째 장소,"
+                cell.titleLabel.text = "평화 전망대"
+                return cell
+            }
             
         }
     }

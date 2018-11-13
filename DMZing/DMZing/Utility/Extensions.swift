@@ -129,6 +129,13 @@ extension UIView {
         self.layer.borderWidth = CGFloat(width)
         self.layer.borderColor = color.cgColor
     }
+    
+    func roundCorners(corners: UIRectCorner, radius: CGFloat) {
+        let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        let mask = CAShapeLayer()
+        mask.path = path.cgPath
+        layer.mask = mask
+    }
 }
 
 extension UIImage {
@@ -185,6 +192,14 @@ extension UICollectionViewCell {
         self.contentView.layer.borderColor = #colorLiteral(red: 0.8784313725, green: 0.8784313725, blue: 0.8784313725, alpha: 1)
         self.contentView.layer.masksToBounds = true
         self.contentView.clipsToBounds = true
+    }
+    
+    func makeCellCornerRound(corners: UIRectCorner,cornerRadius : CGFloat){
+        let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: cornerRadius, height: cornerRadius))
+        let mask = CAShapeLayer()
+        mask.path = path.cgPath
+        self.layer.mask = mask
+        //self.layer.cornerRadius = cornerRadius
     }
     
     
