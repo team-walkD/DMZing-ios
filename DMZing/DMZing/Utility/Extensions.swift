@@ -269,13 +269,13 @@ extension CALayer {
 
 
 extension Int{
-    func timeStampToDate() -> String{
+    func timeStampToDate(dateFormat : String = "yyyy-MM-dd") -> String{
         let unixTimestamp = (self)
         let date = Date(timeIntervalSince1970: TimeInterval(unixTimestamp/1000))
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = TimeZone(abbreviation: "KST") //Set timezone that you want
         dateFormatter.locale = NSLocale.current
-        dateFormatter.dateFormat = "yyyy-MM-dd" //Specify your format that you want
+        dateFormatter.dateFormat = dateFormat //Specify your format that you want
         let strDate = dateFormatter.string(from: date)
         return strDate
     }

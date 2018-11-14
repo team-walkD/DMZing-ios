@@ -67,6 +67,8 @@
 		3BA7ED392198AC2E00BAC493 /* ArticleStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA7ED382198AC2E00BAC493 /* ArticleStruct.swift */; };
 		3BAF0ED3219C24C300C3CF31 /* MyCourseVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAF0ED2219C24C300C3CF31 /* MyCourseVO.swift */; };
 		3BAF0ED5219C24CE00C3CF31 /* MyCourseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAF0ED4219C24CE00C3CF31 /* MyCourseService.swift */; };
+		3BAF0ED9219C38D400C3CF31 /* MypageDPVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAF0ED8219C38D400C3CF31 /* MypageDPVO.swift */; };
+		3BAF0EDB219C39A800C3CF31 /* MypageDPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAF0EDA219C39A800C3CF31 /* MypageDPService.swift */; };
 		3BB05000217CA6540096BF4D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB04FFF217CA6540096BF4D /* Extensions.swift */; };
 		3BB05002217CA65D0096BF4D /* GettableService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB05001217CA65D0096BF4D /* GettableService.swift */; };
 		3BB05004217CA6650096BF4D /* PostableService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB05003217CA6650096BF4D /* PostableService.swift */; };
@@ -169,6 +171,8 @@
 		3BA7ED382198AC2E00BAC493 /* ArticleStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleStruct.swift; sourceTree = "<group>"; };
 		3BAF0ED2219C24C300C3CF31 /* MyCourseVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCourseVO.swift; sourceTree = "<group>"; };
 		3BAF0ED4219C24CE00C3CF31 /* MyCourseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCourseService.swift; sourceTree = "<group>"; };
+		3BAF0ED8219C38D400C3CF31 /* MypageDPVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageDPVO.swift; sourceTree = "<group>"; };
+		3BAF0EDA219C39A800C3CF31 /* MypageDPService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageDPService.swift; sourceTree = "<group>"; };
 		3BB04FFF217CA6540096BF4D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		3BB05001217CA65D0096BF4D /* GettableService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GettableService.swift; sourceTree = "<group>"; };
 		3BB05003217CA6650096BF4D /* PostableService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostableService.swift; sourceTree = "<group>"; };
@@ -593,6 +597,8 @@
 		3B872CD12180B3DF00498F97 /* DPPoint */ = {
 			isa = PBXGroup;
 			children = (
+				3BAF0ED7219C38C000C3CF31 /* VO */,
+				3BAF0ED6219C38BB00C3CF31 /* Service */,
 				3B872CD22180B3EB00498F97 /* VC */,
 			);
 			path = DPPoint;
@@ -627,6 +633,22 @@
 			isa = PBXGroup;
 			children = (
 				3BAF0ED2219C24C300C3CF31 /* MyCourseVO.swift */,
+			);
+			path = VO;
+			sourceTree = "<group>";
+		};
+		3BAF0ED6219C38BB00C3CF31 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				3BAF0EDA219C39A800C3CF31 /* MypageDPService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		3BAF0ED7219C38C000C3CF31 /* VO */ = {
+			isa = PBXGroup;
+			children = (
+				3BAF0ED8219C38D400C3CF31 /* MypageDPVO.swift */,
 			);
 			path = VO;
 			sourceTree = "<group>";
@@ -1011,6 +1033,7 @@
 				3BB05016217CADE80096BF4D /* GetSampleService.swift in Sources */,
 				CC529167219AE3BD00F58603 /* FirstModel.swift in Sources */,
 				CC529162219AD69500F58603 /* FirstCVCell.swift in Sources */,
+				3BAF0ED9219C38D400C3CF31 /* MypageDPVO.swift in Sources */,
 				3B800580218B213F0003EA5C /* PhotoReviewCVCell.swift in Sources */,
 				3BB0501A217CADFA0096BF4D /* PhotoSampleService.swift in Sources */,
 				3B800598218B81080003EA5C /* PhotoReviewPopupView.swift in Sources */,
@@ -1022,6 +1045,7 @@
 				3B79938A219A9EDF00DBF5B2 /* GetReviewMainService.swift in Sources */,
 				CC31AC5C217C8D3200A02388 /* AppDelegate.swift in Sources */,
 				3B79938F219AB39900DBF5B2 /* ArticleReviewVO.swift in Sources */,
+				3BAF0EDB219C39A800C3CF31 /* MypageDPService.swift in Sources */,
 				3B872CD52180B40900498F97 /* MyDPPointTVCell.swift in Sources */,
 				3B80058F218B54F10003EA5C /* ReviewMainVC.swift in Sources */,
 				3B6697C521980BB2008789E3 /* MypageReviewVO.swift in Sources */,
@@ -1179,7 +1203,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = Y4XABUQ539;
 				INFOPLIST_FILE = DMZing/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1196,7 +1220,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = Y4XABUQ539;
 				INFOPLIST_FILE = DMZing/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
