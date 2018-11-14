@@ -12,7 +12,7 @@ import LTScrollView
 private let glt_iphoneX = (UIScreen.main.bounds.height == 812.0)
 class ArticleReviewVC : UIViewController, LTTableViewProtocal, APIService  {
     
-    var selectedMap : MapType?
+    var selectedMap : MapInfo?
     var articleReviewArr : [ArticleReviewVOData]  = [] {
         didSet {
             self.collectionView.reloadData()
@@ -48,7 +48,7 @@ class ArticleReviewVC : UIViewController, LTTableViewProtocal, APIService  {
         super.viewDidLoad()
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             guard let `self` = self else { return }
-            self.getArticleReviewData(url: self.url("reviews/last/0/course/\(self.selectedMap!.mapName)"))
+            self.getArticleReviewData(url: self.url("reviews/last/0/course/\(self.selectedMap!.mapType)"))
         }
         let nib = UINib.init(nibName: ArticleReviewCVCell.reuseIdentifier, bundle: nil)
         self.collectionView.register(nib, forCellWithReuseIdentifier: ArticleReviewCVCell.reuseIdentifier)

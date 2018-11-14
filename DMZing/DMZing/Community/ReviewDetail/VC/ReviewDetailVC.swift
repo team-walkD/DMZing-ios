@@ -8,7 +8,7 @@
 
 import UIKit
 import LTScrollView
-typealias MapType = (mapIdx : Int, mapName : MapName)
+typealias MapInfo = (mapName : String, mapType : MapType)
 class ReviewDetailVC: UIViewController, APIService, UIGestureRecognizerDelegate {
     
     private let glt_iphoneX = (UIScreen.main.bounds.height == 812.0)
@@ -16,7 +16,7 @@ class ReviewDetailVC: UIViewController, APIService, UIGestureRecognizerDelegate 
     let photoReviewVC = PhotoReviewVC()
     let articleReviewVC = ArticleReviewVC()
     var selectedIdx = 0 //어떤 유형의 리뷰가 선택 되었는지 (사진 / 글)
-    var selectedMap : MapType? //어떤 맵이 선택되었는지
+    var selectedMap : MapInfo? //어떤 맵이 선택되었는지
     var spotArr : [String] = []//맵 선택에 따른 스팟 어레이
     
     private lazy var viewControllers: [UIViewController] = {
@@ -34,7 +34,7 @@ class ReviewDetailVC: UIViewController, APIService, UIGestureRecognizerDelegate 
         let headerView = ReviewDetailHeaderView.instanceFromNib()
         headerView.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 167)
         guard let selectedMap_ = selectedMap else {return headerView}
-        headerView.titleLbl.text = "\(selectedMap_.mapName.rawValue)하기 좋은 코스"
+        headerView.titleLbl.text = "\(selectedMap_.mapName)하기 좋은 코스"
         return headerView
     }()
     
@@ -93,7 +93,7 @@ class ReviewDetailVC: UIViewController, APIService, UIGestureRecognizerDelegate 
     
     func selectCoursePopup(){
         guard let selectedMap_ = selectedMap else {return}
-        getSpotData(url: url("course/\(selectedMap_.mapIdx)/places"))
+        getSpotData(url: url("course/\(selectedMap_.mapType.rawValue)/places"))
     }
     
     func setPopupUI(){
@@ -104,7 +104,7 @@ class ReviewDetailVC: UIViewController, APIService, UIGestureRecognizerDelegate 
             let reviewStoryboard = Storyboard.shared().reviewStoryboard
             if let writePhotoReviewVC = reviewStoryboard.instantiateViewController(withIdentifier:WritePhotoReviewVC.reuseIdentifier) as? WritePhotoReviewVC {
                 guard let index = alert.actions.index(of: action)  else {return}
-                writePhotoReviewVC.selectedCourse = (selectedMap_.mapIdx, self.spotArr[index])
+                writePhotoReviewVC.selectedCourse = (selectedMap_.mapType.rawValue, self.spotArr[index])
                 self.present(writePhotoReviewVC, animated: true, completion: nil)
             }
         }
@@ -125,7 +125,7 @@ class ReviewDetailVC: UIViewController, APIService, UIGestureRecognizerDelegate 
             let writeEntryNavC = reviewStoryboard.instantiateViewController(withIdentifier:"reviewNavi") as! UINavigationController
             
             if let writeEntryVC = writeEntryNavC.topViewController as? WriteEntryVC {
-                writeEntryVC.selectedCourseId = (selectedMap_.mapIdx)
+                writeEntryVC.selectedCourseId = (selectedMap_.mapType.rawValue)
                 self.present(writeEntryNavC, animated: true, completion: nil)
             }
         }

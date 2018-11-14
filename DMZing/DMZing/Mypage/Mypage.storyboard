@@ -481,8 +481,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="28"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내가 쓴 리뷰와 ‘좋아요’를 누른 리뷰입니다!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YDs-lB-VoZ">
-                                            <rect key="frame" x="37" y="0.0" width="267" height="20"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내가 쓴 리뷰입니다!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YDs-lB-VoZ">
+                                            <rect key="frame" x="37.000000000000007" y="0.0" width="123.66666666666669" height="20"/>
                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="16"/>
                                             <color key="textColor" red="0.10980392160000001" green="0.2156862745" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -530,7 +530,7 @@
                                                             </constraints>
                                                             <state key="normal" title="Button"/>
                                                         </button>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nX4-bv-1Jn">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="my_myreview_icon" translatesAutoresizingMaskIntoConstraints="NO" id="nX4-bv-1Jn">
                                                             <rect key="frame" x="20" y="30" width="21" height="26"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="21" id="Fhc-Ld-624"/>
@@ -918,4 +918,7 @@
             <point key="canvasLocation" x="5653.6000000000004" y="-1301.231527093596"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="my_myreview_icon" width="22" height="28"/>
+    </resources>
 </document>

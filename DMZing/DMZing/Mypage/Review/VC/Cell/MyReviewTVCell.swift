@@ -17,7 +17,6 @@ class MyReviewTVCell: UITableViewCell {
     func configure(data : MypageReviewVOData){
         dateLbl.text = data.createdAt.timeStampToDate()
         titleLbl.text = data.title
-        typeImgView.setImgWithKF(url: data.thumbnailURL, defaultImg: #imageLiteral(resourceName: "ccc"))
     }
     
     
