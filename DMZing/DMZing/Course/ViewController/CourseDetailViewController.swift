@@ -11,9 +11,20 @@ import UIKit
 class CourseDetailViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var backView1: UIView!
-    @IBOutlet weak var backView2: UIView!
     
+    @IBOutlet weak var mainTitleLabel: UILabel!
+    @IBOutlet weak var subTitleLabel: UILabel!
+    
+    @IBOutlet weak var backView1: UIView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var contentTextView: UITextView!
+    @IBOutlet weak var levelLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var reviewLabel: UILabel!
+    
+    @IBOutlet weak var backView2: UIView!
+    @IBOutlet weak var tMapView: UIView!
+    @IBOutlet weak var totalTimeLabel: UILabel!
     @IBOutlet weak var detailButton: UIButton!
     
     
