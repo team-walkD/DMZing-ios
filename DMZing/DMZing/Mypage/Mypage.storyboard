@@ -827,7 +827,18 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V9N-4X-ad2" customClass="CustomView" customModule="DMZing" customModuleProvider="target">
                                                     <rect key="frame" x="24" y="8" width="327" height="347"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5Dk-dg-mUR">
+                                                            <rect key="frame" x="0.0" y="0.0" width="327" height="347"/>
+                                                        </imageView>
+                                                    </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="5Dk-dg-mUR" firstAttribute="leading" secondItem="V9N-4X-ad2" secondAttribute="leading" id="4ZE-Rk-2FM"/>
+                                                        <constraint firstItem="5Dk-dg-mUR" firstAttribute="top" secondItem="V9N-4X-ad2" secondAttribute="top" id="P4K-8y-GPI"/>
+                                                        <constraint firstAttribute="trailing" secondItem="5Dk-dg-mUR" secondAttribute="trailing" id="hzS-jm-9kF"/>
+                                                        <constraint firstAttribute="bottom" secondItem="5Dk-dg-mUR" secondAttribute="bottom" id="tWB-20-6M6"/>
+                                                    </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                             <real key="value" value="10"/>
@@ -844,6 +855,9 @@
                                             <constraint firstItem="V9N-4X-ad2" firstAttribute="top" secondItem="w5K-RF-rsv" secondAttribute="top" constant="8" id="obc-NV-ZBo"/>
                                         </constraints>
                                         <size key="customSize" width="375" height="363"/>
+                                        <connections>
+                                            <outlet property="postImgView" destination="5Dk-dg-mUR" id="VYP-By-Q9F"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="postCollectionHeaderView" id="pPy-18-8Ge">

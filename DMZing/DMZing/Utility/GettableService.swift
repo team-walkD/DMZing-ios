@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-let sampleJWT = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdXRob3JpdHkiOiJVU0VSIiwiaXNzIjoiZG16aW5nIiwiZXhwIjoxNTQyNDUyMzA0LCJlbWFpbCI6ImV4YW1wbGUxQGdtYWlsLmNvbSJ9.LltNbEX9ipabBl805lOz9OLfshVsZYt8KU0CgQWFMZ4"
+let sampleJWT = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdXRob3JpdHkiOiJVU0VSIiwiaXNzIjoiZG16aW5nIiwiZXhwIjoxNTQyNDYwODU0LCJlbWFpbCI6ImV4YW1wbGVAZ21haWwuY29tIn0.YHt7BYWJN-KVvsO99VNWt33Vuzj-iCYuYejkMu5uYKw"
 
 protocol GettableService {
     associatedtype NetworkData : Codable

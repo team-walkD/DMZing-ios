@@ -76,14 +76,16 @@ extension UIViewController {
         present(alert, animated: true)
     }
     
-    func simpleAlertwithHandler(title: String, message: String, okHandler : ((UIAlertAction) -> Void)?){
+    func simpleAlertwithHandler(title: String, message: String,  isCancleBtnExist : Bool = true, okHandler : ((UIAlertAction) -> Void)?){
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okTitle = "확인"
-        let cancelTitle = "취소"
         let okAction = UIAlertAction(title: okTitle,style: .default, handler: okHandler)
-        let cancelAction = UIAlertAction(title: cancelTitle,style: .cancel, handler: nil)
         alert.addAction(okAction)
-        alert.addAction(cancelAction)
+        if isCancleBtnExist {
+            let cancelTitle = "취소"
+             let cancelAction = UIAlertAction(title: cancelTitle,style: .cancel, handler: nil)
+             alert.addAction(cancelAction)
+        }
         present(alert, animated: true, completion: nil)
     }
     
