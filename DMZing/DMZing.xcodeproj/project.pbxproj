@@ -67,6 +67,10 @@
 		3BA7ED392198AC2E00BAC493 /* ArticleStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA7ED382198AC2E00BAC493 /* ArticleStruct.swift */; };
 		3BAF0ED3219C24C300C3CF31 /* MyCourseVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAF0ED2219C24C300C3CF31 /* MyCourseVO.swift */; };
 		3BAF0ED5219C24CE00C3CF31 /* MyCourseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAF0ED4219C24CE00C3CF31 /* MyCourseService.swift */; };
+		3BAF0ED9219C38D400C3CF31 /* MypageDPVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAF0ED8219C38D400C3CF31 /* MypageDPVO.swift */; };
+		3BAF0EDB219C39A800C3CF31 /* MypageDPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAF0EDA219C39A800C3CF31 /* MypageDPService.swift */; };
+		3BAF0EDF219C48C200C3CF31 /* MyPostVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAF0EDE219C48C200C3CF31 /* MyPostVO.swift */; };
+		3BAF0EE2219C4A1200C3CF31 /* MyPostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAF0EE1219C4A1200C3CF31 /* MyPostService.swift */; };
 		3BB05000217CA6540096BF4D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB04FFF217CA6540096BF4D /* Extensions.swift */; };
 		3BB05002217CA65D0096BF4D /* GettableService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB05001217CA65D0096BF4D /* GettableService.swift */; };
 		3BB05004217CA6650096BF4D /* PostableService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB05003217CA6650096BF4D /* PostableService.swift */; };
@@ -169,6 +173,10 @@
 		3BA7ED382198AC2E00BAC493 /* ArticleStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleStruct.swift; sourceTree = "<group>"; };
 		3BAF0ED2219C24C300C3CF31 /* MyCourseVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCourseVO.swift; sourceTree = "<group>"; };
 		3BAF0ED4219C24CE00C3CF31 /* MyCourseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCourseService.swift; sourceTree = "<group>"; };
+		3BAF0ED8219C38D400C3CF31 /* MypageDPVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageDPVO.swift; sourceTree = "<group>"; };
+		3BAF0EDA219C39A800C3CF31 /* MypageDPService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageDPService.swift; sourceTree = "<group>"; };
+		3BAF0EDE219C48C200C3CF31 /* MyPostVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostVO.swift; sourceTree = "<group>"; };
+		3BAF0EE1219C4A1200C3CF31 /* MyPostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostService.swift; sourceTree = "<group>"; };
 		3BB04FFF217CA6540096BF4D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		3BB05001217CA65D0096BF4D /* GettableService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GettableService.swift; sourceTree = "<group>"; };
 		3BB05003217CA6650096BF4D /* PostableService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostableService.swift; sourceTree = "<group>"; };
@@ -593,6 +601,8 @@
 		3B872CD12180B3DF00498F97 /* DPPoint */ = {
 			isa = PBXGroup;
 			children = (
+				3BAF0ED7219C38C000C3CF31 /* VO */,
+				3BAF0ED6219C38BB00C3CF31 /* Service */,
 				3B872CD22180B3EB00498F97 /* VC */,
 			);
 			path = DPPoint;
@@ -629,6 +639,38 @@
 				3BAF0ED2219C24C300C3CF31 /* MyCourseVO.swift */,
 			);
 			path = VO;
+			sourceTree = "<group>";
+		};
+		3BAF0ED6219C38BB00C3CF31 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				3BAF0EDA219C39A800C3CF31 /* MypageDPService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		3BAF0ED7219C38C000C3CF31 /* VO */ = {
+			isa = PBXGroup;
+			children = (
+				3BAF0ED8219C38D400C3CF31 /* MypageDPVO.swift */,
+			);
+			path = VO;
+			sourceTree = "<group>";
+		};
+		3BAF0EDC219C415700C3CF31 /* VO */ = {
+			isa = PBXGroup;
+			children = (
+				3BAF0EDE219C48C200C3CF31 /* MyPostVO.swift */,
+			);
+			path = VO;
+			sourceTree = "<group>";
+		};
+		3BAF0EDD219C415800C3CF31 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				3BAF0EE1219C4A1200C3CF31 /* MyPostService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		3BB04FFE217CA63F0096BF4D /* Utility */ = {
@@ -670,6 +712,8 @@
 		3BD63A012180B850007F5972 /* Post */ = {
 			isa = PBXGroup;
 			children = (
+				3BAF0EDD219C415800C3CF31 /* Service */,
+				3BAF0EDC219C415700C3CF31 /* VO */,
 				3BD63A022180B860007F5972 /* VC */,
 			);
 			path = Post;
@@ -769,10 +813,10 @@
 		CC31AC70217C923800A02388 /* Mypage */ = {
 			isa = PBXGroup;
 			children = (
-				3BD63A012180B850007F5972 /* Post */,
 				CC31AC75217C92BD00A02388 /* Mypage.storyboard */,
 				3B872CBB2180943D00498F97 /* CustomView.swift */,
 				3B872CBD21809A0B00498F97 /* Main */,
+				3BD63A012180B850007F5972 /* Post */,
 				3B872CBE21809A1000498F97 /* Course */,
 				3B872CC92180B0DD00498F97 /* Review */,
 				3B872CD12180B3DF00498F97 /* DPPoint */,
@@ -992,6 +1036,7 @@
 				3B79939B219AD89000DBF5B2 /* GetSpotService.swift in Sources */,
 				3B872CC121809A5500498F97 /* MyCourseVC.swift in Sources */,
 				3B3A85CE2198836B00D1A835 /* MypageMainVO.swift in Sources */,
+				3BAF0EE2219C4A1200C3CF31 /* MyPostService.swift in Sources */,
 				22F3025D2195515F00152700 /* MainMapViewController.swift in Sources */,
 				3B7993A1219AEBE200DBF5B2 /* WriteArticleService.swift in Sources */,
 				222EEC6C2198364D00FB15C6 /* PlaceInfoViewController.swift in Sources */,
@@ -1008,9 +1053,11 @@
 				3BD63A072180B88B007F5972 /* MyPostCVCell.swift in Sources */,
 				3B6697B121949DBA008789E3 /* WriteEntryTVCell.swift in Sources */,
 				3B6697BF21980410008789E3 /* MypageMainService.swift in Sources */,
+				3BAF0EDF219C48C200C3CF31 /* MyPostVO.swift in Sources */,
 				3BB05016217CADE80096BF4D /* GetSampleService.swift in Sources */,
 				CC529167219AE3BD00F58603 /* FirstModel.swift in Sources */,
 				CC529162219AD69500F58603 /* FirstCVCell.swift in Sources */,
+				3BAF0ED9219C38D400C3CF31 /* MypageDPVO.swift in Sources */,
 				3B800580218B213F0003EA5C /* PhotoReviewCVCell.swift in Sources */,
 				3BB0501A217CADFA0096BF4D /* PhotoSampleService.swift in Sources */,
 				3B800598218B81080003EA5C /* PhotoReviewPopupView.swift in Sources */,
@@ -1022,6 +1069,7 @@
 				3B79938A219A9EDF00DBF5B2 /* GetReviewMainService.swift in Sources */,
 				CC31AC5C217C8D3200A02388 /* AppDelegate.swift in Sources */,
 				3B79938F219AB39900DBF5B2 /* ArticleReviewVO.swift in Sources */,
+				3BAF0EDB219C39A800C3CF31 /* MypageDPService.swift in Sources */,
 				3B872CD52180B40900498F97 /* MyDPPointTVCell.swift in Sources */,
 				3B80058F218B54F10003EA5C /* ReviewMainVC.swift in Sources */,
 				3B6697C521980BB2008789E3 /* MypageReviewVO.swift in Sources */,

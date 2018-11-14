@@ -8,14 +8,22 @@
 
 import UIKit
 
-class MyPostVC: UIViewController {
+class MyPostVC: UIViewController, APIService {
     @IBOutlet weak var collectionView: UICollectionView!
-   
-
+    var courseId = 0
+    var postImgArr : [MyPostVOData] = [] {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
         setupNavBar()
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            guard let `self` = self else { return }
+            self.getMyPostData(url: self.url("users/\(self.courseId)/mail"))
+        }
     }
     
     func setupCollectionView(){
@@ -42,20 +50,17 @@ extension MyPostVC : UICollectionViewDataSource, UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return postImgArr.count
     }
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyPostCVCell.reuseIdentifier, for : indexPath) as! MyPostCVCell
-      
+        guard postImgArr.count > 0 else {return cell}
+        cell.configure(data: postImgArr[indexPath.row].letterImageURL)
         return cell
-        
     }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("touched")
-    }
+
 }
 
 //MARK: - UICollectionViewDelegateFlowLayout
@@ -75,3 +80,22 @@ extension MyPostVC: UICollectionViewDelegateFlowLayout {
     }
 }
 
+
+
+extension MyPostVC {
+    func getMyPostData(url : String){
+        MyPostService.shareInstance.getMainData(url: url,completion: { [weak self] (result) in
+            guard let `self` = self else { return }
+            switch result {
+            case .networkSuccess(let data):
+                guard let myPostArr = data as? MyPostVO else {return }
+                self.postImgArr = myPostArr
+            case .networkFail :
+                self.networkSimpleAlert()
+            default :
+                self.simpleAlert(title: "오류", message: "다시 시도해주세요")
+                break
+            }
+        })
+    }
+}

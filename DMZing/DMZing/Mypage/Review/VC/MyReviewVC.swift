@@ -51,7 +51,11 @@ extension MyReviewVC : UITableViewDelegate, UITableViewDataSource{
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let reviewStoryboard = Storyboard.shared().reviewStoryboard
+        if let reviewContentVC = reviewStoryboard.instantiateViewController(withIdentifier:ReviewContentVC.reuseIdentifier) as? ReviewContentVC {
+            reviewContentVC.selectedRId = mainData[indexPath.row].id
+            self.navigationController?.pushViewController(reviewContentVC, animated: true)
+        }
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }

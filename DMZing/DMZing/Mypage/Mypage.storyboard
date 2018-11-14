@@ -620,7 +620,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="syr-hC-Njq">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="syr-hC-Njq">
                                 <rect key="frame" x="0.0" y="330" width="375" height="448"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -704,22 +704,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="56E-LL-b0x" customClass="CustomView" customModule="DMZing" customModuleProvider="target">
                                         <rect key="frame" x="24" y="124" width="337" height="87"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RW8-Zy-MmG">
-                                                <rect key="frame" x="240.33333333333331" y="13" width="0.66666666666665719" height="61"/>
-                                                <color key="backgroundColor" red="0.86666666670000003" green="0.86666666670000003" blue="0.86666666670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="0.5" id="uZn-aA-MzP"/>
-                                                </constraints>
-                                            </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZKk-GK-QiK">
-                                                <rect key="frame" x="241" y="0.0" width="96" height="87"/>
-                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="16"/>
-                                                <state key="normal" title="충전">
-                                                    <color key="titleColor" red="0.10980392160000001" green="0.2156862745" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                            </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZ4-W1-wqj">
-                                                <rect key="frame" x="192.66666666666666" y="34" width="20.666666666666657" height="20"/>
+                                                <rect key="frame" x="301.33333333333331" y="34" width="20.666666666666686" height="20"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="16"/>
                                                 <color key="textColor" red="0.10980392160000001" green="0.2156862745" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -731,7 +717,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="500" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gYz-is-ifx">
-                                                <rect key="frame" x="145.33333333333334" y="29.666666666666657" width="43.333333333333343" height="29"/>
+                                                <rect key="frame" x="254.00000000000003" y="29.666666666666657" width="43.333333333333343" height="29"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="24"/>
                                                 <color key="textColor" red="0.10980392160000001" green="0.2156862745" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -739,16 +725,11 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="ZKk-GK-QiK" firstAttribute="leading" secondItem="RW8-Zy-MmG" secondAttribute="trailing" id="2PS-E4-1t0"/>
                                             <constraint firstItem="LZ4-W1-wqj" firstAttribute="leading" secondItem="gYz-is-ifx" secondAttribute="trailing" constant="4" id="4kC-le-2S2"/>
-                                            <constraint firstAttribute="bottom" secondItem="ZKk-GK-QiK" secondAttribute="bottom" id="AZY-pv-V8x"/>
-                                            <constraint firstItem="ZKk-GK-QiK" firstAttribute="top" secondItem="56E-LL-b0x" secondAttribute="top" id="Gyt-xb-qxA"/>
-                                            <constraint firstItem="RW8-Zy-MmG" firstAttribute="centerX" secondItem="56E-LL-b0x" secondAttribute="centerX" multiplier="1.43" id="NGX-j1-xhF"/>
                                             <constraint firstAttribute="height" constant="87" id="STj-gT-eod"/>
-                                            <constraint firstItem="gYz-is-ifx" firstAttribute="leading" secondItem="XTz-9F-2zh" secondAttribute="trailing" constant="64" id="UcA-wf-y9m"/>
                                             <constraint firstItem="XTz-9F-2zh" firstAttribute="centerY" secondItem="56E-LL-b0x" secondAttribute="centerY" id="YTx-0K-4m7"/>
                                             <constraint firstItem="XTz-9F-2zh" firstAttribute="leading" secondItem="56E-LL-b0x" secondAttribute="leading" constant="15" id="Zhp-Fm-d1P"/>
-                                            <constraint firstAttribute="trailing" secondItem="ZKk-GK-QiK" secondAttribute="trailing" id="vAs-E5-e73"/>
+                                            <constraint firstAttribute="trailing" secondItem="LZ4-W1-wqj" secondAttribute="trailing" constant="15" id="mdf-7h-nRU"/>
                                             <constraint firstItem="gYz-is-ifx" firstAttribute="centerY" secondItem="XTz-9F-2zh" secondAttribute="centerY" id="xJr-0m-ddp"/>
                                             <constraint firstItem="LZ4-W1-wqj" firstAttribute="centerY" secondItem="gYz-is-ifx" secondAttribute="centerY" id="ycH-db-ybV"/>
                                         </constraints>
@@ -787,6 +768,7 @@
                     <navigationItem key="navigationItem" id="meR-az-Hbe"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="myDPLbl" destination="gYz-is-ifx" id="eDA-Uy-M2Q"/>
                         <outlet property="tableView" destination="syr-hC-Njq" id="0I9-hU-XJq"/>
                     </connections>
                 </viewController>
@@ -845,7 +827,18 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V9N-4X-ad2" customClass="CustomView" customModule="DMZing" customModuleProvider="target">
                                                     <rect key="frame" x="24" y="8" width="327" height="347"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5Dk-dg-mUR">
+                                                            <rect key="frame" x="0.0" y="0.0" width="327" height="347"/>
+                                                        </imageView>
+                                                    </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="5Dk-dg-mUR" firstAttribute="leading" secondItem="V9N-4X-ad2" secondAttribute="leading" id="4ZE-Rk-2FM"/>
+                                                        <constraint firstItem="5Dk-dg-mUR" firstAttribute="top" secondItem="V9N-4X-ad2" secondAttribute="top" id="P4K-8y-GPI"/>
+                                                        <constraint firstAttribute="trailing" secondItem="5Dk-dg-mUR" secondAttribute="trailing" id="hzS-jm-9kF"/>
+                                                        <constraint firstAttribute="bottom" secondItem="5Dk-dg-mUR" secondAttribute="bottom" id="tWB-20-6M6"/>
+                                                    </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                             <real key="value" value="10"/>
@@ -862,6 +855,9 @@
                                             <constraint firstItem="V9N-4X-ad2" firstAttribute="top" secondItem="w5K-RF-rsv" secondAttribute="top" constant="8" id="obc-NV-ZBo"/>
                                         </constraints>
                                         <size key="customSize" width="375" height="363"/>
+                                        <connections>
+                                            <outlet property="postImgView" destination="5Dk-dg-mUR" id="VYP-By-Q9F"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="postCollectionHeaderView" id="pPy-18-8Ge">
@@ -898,9 +894,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="IoM-Qz-fV2"/>
                     </view>
-                    <navigationItem key="navigationItem" id="MOL-SO-cYp">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="5qW-R3-2X9"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="MOL-SO-cYp"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="collectionView" destination="6Pe-jD-TGc" id="8CF-Z0-5T2"/>

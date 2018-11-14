@@ -76,14 +76,16 @@ extension UIViewController {
         present(alert, animated: true)
     }
     
-    func simpleAlertwithHandler(title: String, message: String, okHandler : ((UIAlertAction) -> Void)?){
+    func simpleAlertwithHandler(title: String, message: String,  isCancleBtnExist : Bool = true, okHandler : ((UIAlertAction) -> Void)?){
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okTitle = "확인"
-        let cancelTitle = "취소"
         let okAction = UIAlertAction(title: okTitle,style: .default, handler: okHandler)
-        let cancelAction = UIAlertAction(title: cancelTitle,style: .cancel, handler: nil)
         alert.addAction(okAction)
-        alert.addAction(cancelAction)
+        if isCancleBtnExist {
+            let cancelTitle = "취소"
+             let cancelAction = UIAlertAction(title: cancelTitle,style: .cancel, handler: nil)
+             alert.addAction(cancelAction)
+        }
         present(alert, animated: true, completion: nil)
     }
     
@@ -269,13 +271,13 @@ extension CALayer {
 
 
 extension Int{
-    func timeStampToDate() -> String{
+    func timeStampToDate(dateFormat : String = "yyyy-MM-dd") -> String{
         let unixTimestamp = (self)
         let date = Date(timeIntervalSince1970: TimeInterval(unixTimestamp/1000))
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = TimeZone(abbreviation: "KST") //Set timezone that you want
         dateFormatter.locale = NSLocale.current
-        dateFormatter.dateFormat = "yyyy-MM-dd" //Specify your format that you want
+        dateFormatter.dateFormat = dateFormat //Specify your format that you want
         let strDate = dateFormatter.string(from: date)
         return strDate
     }

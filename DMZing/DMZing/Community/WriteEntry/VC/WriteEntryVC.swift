@@ -332,7 +332,7 @@ extension WriteEntryVC {
             guard let `self` = self else { return }
             switch result {
             case .networkSuccess(_):
-                self.simpleAlertwithHandler(title: "성공", message: "리뷰를 등록했습니다", okHandler: { (_) in
+                self.simpleAlertwithHandler(title: "성공", message: "리뷰를 등록했습니다", isCancleBtnExist : false, okHandler: { (_) in
                     self.dismissAction("")
                 })
                 break

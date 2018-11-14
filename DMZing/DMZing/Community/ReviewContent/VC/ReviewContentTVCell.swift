@@ -20,7 +20,9 @@ class ReviewContentTVCell: UITableViewCell {
 
     var imgUrlArr : [String] = [] {
         didSet {
-            collectionView.reloadData()
+            if collectionView != nil {
+                  collectionView.reloadData()
+            }
         }
     }
     var finalOffset : CGFloat = 0
