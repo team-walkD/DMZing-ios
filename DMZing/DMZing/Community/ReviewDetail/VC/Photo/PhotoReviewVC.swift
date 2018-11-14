@@ -112,7 +112,7 @@ extension PhotoReviewVC : UICollectionViewDelegate, UICollectionViewDataSource  
         if indexPath.row == lastItemIdx {
             DispatchQueue.global(qos: .userInitiated).async { [weak self] in
                 guard let `self` = self else { return }
-                self.getPhotoReviewData(url: self.url("reviews/photo/last/\(itemIdx)/course/\(self.selectedMap!.mapName)"))
+                self.getPhotoReviewData(url: self.url("reviews/photo/last/\(itemIdx)/course/\(self.selectedMap!.mapType)"))
             }
         }
     }

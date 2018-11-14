@@ -16,6 +16,7 @@ class MyDPPointVC: UIViewController {
         super.viewDidLoad()
         setupTableView()
         setupNavBar()
+        setBackBtn()
     }
     
     func setupTableView(){

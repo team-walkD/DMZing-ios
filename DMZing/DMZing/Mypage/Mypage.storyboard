@@ -20,7 +20,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Title-->
+        <!--MypageVC-->
         <scene sceneID="t4w-9p-9u9">
             <objects>
                 <viewController storyboardIdentifier="MypageVC" id="S0t-YF-QPF" customClass="MypageVC" customModule="DMZing" customModuleProvider="target" sceneMemberID="viewController">
@@ -278,9 +278,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OKk-tE-6Oa"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="Ul5-r5-RT9">
+                    <navigationItem key="navigationItem" id="Ul5-r5-RT9">
                         <barButtonItem key="leftBarButtonItem" title="Item" id="yYC-bz-1ju"/>
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="jox-05-Ier"/>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
@@ -334,8 +333,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="28"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="‘좋아요’를 누른 코스들을 볼 수 있어요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYL-PP-O1u">
-                                            <rect key="frame" x="37" y="0.0" width="239" height="19.333333333333332"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내가 구매한 코스들을 볼 수 있어요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYL-PP-O1u">
+                                            <rect key="frame" x="37.000000000000014" y="0.0" width="219.33333333333337" height="19.333333333333332"/>
                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="16"/>
                                             <color key="textColor" red="0.10980392160000001" green="0.2156862745" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -375,13 +374,13 @@
                                                                 </label>
                                                             </subviews>
                                                         </stackView>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="98E-aS-M5P">
-                                                            <rect key="frame" x="295" y="34.666666666666664" width="9" height="18"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="98E-aS-M5P">
+                                                            <rect key="frame" x="271" y="19.666666666666671" width="48" height="48"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="9" id="VzO-4R-hBy"/>
-                                                                <constraint firstAttribute="height" constant="18" id="w2F-t0-kfe"/>
+                                                                <constraint firstAttribute="height" constant="48" id="A2L-MW-ASM"/>
+                                                                <constraint firstAttribute="width" secondItem="98E-aS-M5P" secondAttribute="height" multiplier="1:1" id="Pfv-gI-L3H"/>
                                                             </constraints>
-                                                            <state key="normal" title="Button"/>
+                                                            <state key="normal" image="my_faq_arrow_btn"/>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -390,7 +389,7 @@
                                                         <constraint firstItem="5Qf-d9-gYp" firstAttribute="leading" secondItem="7GV-zu-g8y" secondAttribute="leading" constant="37" id="6ft-uv-crI"/>
                                                         <constraint firstAttribute="height" constant="87" id="Lh9-lF-8PH"/>
                                                         <constraint firstItem="5Qf-d9-gYp" firstAttribute="centerY" secondItem="7GV-zu-g8y" secondAttribute="centerY" id="NBc-7a-Ppc"/>
-                                                        <constraint firstAttribute="trailing" secondItem="98E-aS-M5P" secondAttribute="trailing" constant="23" id="yth-gS-c8h"/>
+                                                        <constraint firstAttribute="trailing" secondItem="98E-aS-M5P" secondAttribute="trailing" constant="8" id="yth-gS-c8h"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -447,9 +446,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bH5-g4-vOl"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Fcx-bx-Mgt">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="768-7H-ugN"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="Fcx-bx-Mgt"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="tableView" destination="a9A-4u-TmZ" id="3n1-vZ-Ec4"/>
@@ -481,8 +478,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="28"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내가 쓴 리뷰입니다!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YDs-lB-VoZ">
-                                            <rect key="frame" x="37.000000000000007" y="0.0" width="123.66666666666669" height="20"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내가 쓴 리뷰를 볼 수 있어요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YDs-lB-VoZ">
+                                            <rect key="frame" x="37" y="0.0" width="177.66666666666666" height="20"/>
                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="16"/>
                                             <color key="textColor" red="0.10980392160000001" green="0.2156862745" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -522,13 +519,13 @@
                                                                 </label>
                                                             </subviews>
                                                         </stackView>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j6e-7l-VkE">
-                                                            <rect key="frame" x="295" y="34.666666666666664" width="9" height="18"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j6e-7l-VkE">
+                                                            <rect key="frame" x="271" y="20.333333333333329" width="48" height="48"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="18" id="AAm-Yn-f6d"/>
-                                                                <constraint firstAttribute="width" constant="9" id="G49-47-HwD"/>
+                                                                <constraint firstAttribute="width" constant="48" id="diH-05-UZy"/>
+                                                                <constraint firstAttribute="width" secondItem="j6e-7l-VkE" secondAttribute="height" multiplier="1:1" id="r1m-5c-D5p"/>
                                                             </constraints>
-                                                            <state key="normal" title="Button"/>
+                                                            <state key="normal" image="my_faq_arrow_btn"/>
                                                         </button>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="my_myreview_icon" translatesAutoresizingMaskIntoConstraints="NO" id="nX4-bv-1Jn">
                                                             <rect key="frame" x="20" y="30" width="21" height="26"/>
@@ -545,7 +542,7 @@
                                                         <constraint firstItem="OkN-Tt-mf6" firstAttribute="leading" secondItem="nX4-bv-1Jn" secondAttribute="trailing" constant="20" id="Yxx-8V-B7E"/>
                                                         <constraint firstAttribute="height" constant="87" id="bUm-ql-8RV"/>
                                                         <constraint firstItem="nX4-bv-1Jn" firstAttribute="top" secondItem="FVV-ID-Kwn" secondAttribute="top" constant="30" id="elg-O7-lWp"/>
-                                                        <constraint firstAttribute="trailing" secondItem="j6e-7l-VkE" secondAttribute="trailing" constant="23" id="rvl-nz-zwn"/>
+                                                        <constraint firstAttribute="trailing" secondItem="j6e-7l-VkE" secondAttribute="trailing" constant="8" id="rvl-nz-zwn"/>
                                                         <constraint firstItem="j6e-7l-VkE" firstAttribute="centerY" secondItem="FVV-ID-Kwn" secondAttribute="centerY" id="xPx-X3-2Rq"/>
                                                         <constraint firstAttribute="bottom" secondItem="nX4-bv-1Jn" secondAttribute="bottom" constant="31" id="yJH-q4-e4H"/>
                                                     </constraints>
@@ -605,9 +602,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kXc-Ci-5la"/>
                     </view>
-                    <navigationItem key="navigationItem" id="0wR-Nq-MLc">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="SSw-OX-k0L"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="0wR-Nq-MLc"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="tableView" destination="fUr-sR-cc6" id="hLz-6Q-qHB"/>
@@ -789,9 +784,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KPQ-Df-u12"/>
                     </view>
-                    <navigationItem key="navigationItem" id="meR-az-Hbe">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="tkC-kO-0MD"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="meR-az-Hbe"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="tableView" destination="syr-hC-Njq" id="0I9-hU-XJq"/>
@@ -919,6 +912,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="my_faq_arrow_btn" width="45" height="45"/>
         <image name="my_myreview_icon" width="22" height="28"/>
     </resources>
 </document>
