@@ -21,7 +21,11 @@ class MyReviewVC: UIViewController, APIService {
         super.viewDidLoad()
         setupTableView()
         setupNavBar()
-        getMainData(url: url("users/reviews"))
+        setBackBtn()
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            guard let `self` = self else { return }
+            self.getMainData(url: self.url("users/reviews"))
+        }
     }
     
     func setupTableView(){

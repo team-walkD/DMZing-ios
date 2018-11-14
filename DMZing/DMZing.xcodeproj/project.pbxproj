@@ -65,6 +65,8 @@
 		3B872CD72180B41800498F97 /* MyDPPointVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B872CD62180B41800498F97 /* MyDPPointVC.swift */; };
 		3BA7ED352198933B00BAC493 /* Gallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA7ED342198933B00BAC493 /* Gallery.swift */; };
 		3BA7ED392198AC2E00BAC493 /* ArticleStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA7ED382198AC2E00BAC493 /* ArticleStruct.swift */; };
+		3BAF0ED3219C24C300C3CF31 /* MyCourseVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAF0ED2219C24C300C3CF31 /* MyCourseVO.swift */; };
+		3BAF0ED5219C24CE00C3CF31 /* MyCourseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAF0ED4219C24CE00C3CF31 /* MyCourseService.swift */; };
 		3BB05000217CA6540096BF4D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB04FFF217CA6540096BF4D /* Extensions.swift */; };
 		3BB05002217CA65D0096BF4D /* GettableService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB05001217CA65D0096BF4D /* GettableService.swift */; };
 		3BB05004217CA6650096BF4D /* PostableService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB05003217CA6650096BF4D /* PostableService.swift */; };
@@ -165,6 +167,8 @@
 		3B872CD62180B41800498F97 /* MyDPPointVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDPPointVC.swift; sourceTree = "<group>"; };
 		3BA7ED342198933B00BAC493 /* Gallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gallery.swift; sourceTree = "<group>"; };
 		3BA7ED382198AC2E00BAC493 /* ArticleStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleStruct.swift; sourceTree = "<group>"; };
+		3BAF0ED2219C24C300C3CF31 /* MyCourseVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCourseVO.swift; sourceTree = "<group>"; };
+		3BAF0ED4219C24CE00C3CF31 /* MyCourseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCourseService.swift; sourceTree = "<group>"; };
 		3BB04FFF217CA6540096BF4D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		3BB05001217CA65D0096BF4D /* GettableService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GettableService.swift; sourceTree = "<group>"; };
 		3BB05003217CA6650096BF4D /* PostableService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostableService.swift; sourceTree = "<group>"; };
@@ -535,6 +539,8 @@
 		3B872CBE21809A1000498F97 /* Course */ = {
 			isa = PBXGroup;
 			children = (
+				3BAF0ED1219C24AF00C3CF31 /* VO */,
+				3BAF0ED0219C24AE00C3CF31 /* Service */,
 				3B872CBF21809A2C00498F97 /* VC */,
 			);
 			path = Course;
@@ -607,6 +613,22 @@
 				3B872CD42180B40900498F97 /* MyDPPointTVCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		3BAF0ED0219C24AE00C3CF31 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				3BAF0ED4219C24CE00C3CF31 /* MyCourseService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		3BAF0ED1219C24AF00C3CF31 /* VO */ = {
+			isa = PBXGroup;
+			children = (
+				3BAF0ED2219C24C300C3CF31 /* MyCourseVO.swift */,
+			);
+			path = VO;
 			sourceTree = "<group>";
 		};
 		3BB04FFE217CA63F0096BF4D /* Utility */ = {
@@ -959,6 +981,7 @@
 				3B7993832199E65800DBF5B2 /* GetPhotoReviewService.swift in Sources */,
 				3B7993862199E6B400DBF5B2 /* PhotoReviewVO.swift in Sources */,
 				3BB05011217CAC910096BF4D /* HttpResCode.swift in Sources */,
+				3BAF0ED5219C24CE00C3CF31 /* MyCourseService.swift in Sources */,
 				3B872CBC2180943D00498F97 /* CustomView.swift in Sources */,
 				3B872CD02180B12100498F97 /* MyReviewTVCell.swift in Sources */,
 				3BB0500B217CAA410096BF4D /* Storyboard.swift in Sources */,
@@ -1011,6 +1034,7 @@
 				3B800572218B1F160003EA5C /* PhotoReviewVC.swift in Sources */,
 				3B79937D2199CFD100DBF5B2 /* WritePhotoReviewService.swift in Sources */,
 				3BD63A202185E308007F5972 /* MainCVCell.swift in Sources */,
+				3BAF0ED3219C24C300C3CF31 /* MyCourseVO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1155,7 +1179,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Y4XABUQ539;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = DMZing/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1172,7 +1196,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Y4XABUQ539;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = DMZing/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

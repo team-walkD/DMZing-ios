@@ -18,7 +18,7 @@ class ReviewMainCVCell: UICollectionViewCell {
    
     func configure(data : ReviewMainVOData){
         cntLbl.text = data.conut.description
-        titleLbl.text = "\(data.typeName.rawValue) 맵"
+        titleLbl.text = "\(data.typeName)"
         mainImgView.setImgWithKF(url: data.imageUrl, defaultImg: #imageLiteral(resourceName: "ccc"))
     }
     

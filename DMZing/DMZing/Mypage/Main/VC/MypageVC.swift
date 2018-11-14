@@ -52,25 +52,30 @@ class MypageVC: UIViewController, APIService {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setupNavBar()
+        setupNavBar(color: .white)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-        getMainData(url: url("users/info"))
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            guard let `self` = self else { return }
+            self.getMainData(url: self.url("users/info"))
+        }
     }
-    
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        setupNavBar(color: UIColor.FlatColor.Blue.lightBlue)
+    }
     func setupTableView(){
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.tableFooterView = UIView(frame : .zero)
     }
     
-    func setupNavBar(){
-        navigationController?.navigationBar.isTranslucent = false
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.barTintColor = .white
+    func setupNavBar(color : UIColor){
+        navigationController?.navigationBar.barTintColor = color
     }
     
 }

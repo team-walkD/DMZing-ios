@@ -13,6 +13,10 @@ class MyCourseTVCell: UITableViewCell {
     @IBOutlet weak var descLbl: UILabel!
     @IBOutlet weak var titleLbl: UILabel!
     
+    func configure(data : MyCourseVOData){
+        titleLbl.text = data.title
+        descLbl.text = data.mapName+"하기 좋은 핫스팟"
+    }
    
     
     override func awakeFromNib() {
