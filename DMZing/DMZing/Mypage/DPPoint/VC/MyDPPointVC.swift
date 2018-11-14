@@ -53,10 +53,6 @@ extension MyDPPointVC : UITableViewDelegate, UITableViewDataSource{
         cell.configure(data: dpArr[indexPath.row])
         return cell
     }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
 }
 
 extension MyDPPointVC {

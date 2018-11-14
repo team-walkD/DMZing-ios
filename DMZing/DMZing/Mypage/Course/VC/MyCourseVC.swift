@@ -50,7 +50,10 @@ extension MyCourseVC : UITableViewDelegate, UITableViewDataSource{
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       
+        let mypageStoryboard = Storyboard.shared().mypageStoryboard
+        if let myPostVC = mypageStoryboard.instantiateViewController(withIdentifier:MyPostVC.reuseIdentifier) as? MyPostVC {
+            self.navigationController?.pushViewController(myPostVC, animated: true)
+        }
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }

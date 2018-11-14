@@ -620,7 +620,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="syr-hC-Njq">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="syr-hC-Njq">
                                 <rect key="frame" x="0.0" y="330" width="375" height="448"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -880,9 +880,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="IoM-Qz-fV2"/>
                     </view>
-                    <navigationItem key="navigationItem" id="MOL-SO-cYp">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="5qW-R3-2X9"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="MOL-SO-cYp"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="collectionView" destination="6Pe-jD-TGc" id="8CF-Z0-5T2"/>
