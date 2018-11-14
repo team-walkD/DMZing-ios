@@ -13,6 +13,11 @@ class PlaceInfoViewController: UIViewController {
     @IBOutlet weak var numberLabel: UILabel!
     @IBOutlet weak var placeLabel: UILabel!
     
+    @IBOutlet weak var contentTextView: UITextView!
+    @IBOutlet weak var closedLabel: UILabel!
+    @IBOutlet weak var parkingLabel: UILabel!
+    @IBOutlet weak var phoneLabel: UILabel!
+    
     @IBOutlet weak var backView: UIView!
     
     override func viewDidLoad() {
