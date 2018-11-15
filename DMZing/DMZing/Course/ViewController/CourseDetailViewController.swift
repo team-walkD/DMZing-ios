@@ -100,7 +100,7 @@ extension CourseDetailViewController: TMapViewDelegate {
         mapView.zoom(toLatSpan: maxLat - minLat, lonSpan: maxLon - minLon)
         mapView.setCenter(centerCoord)
         
-        mapView.setZoomLevel(12)
+        mapView.setZoomLevel(11)
         
         
         mapView.setSKTMapApiKey(tMapKey)// 발급 받은 apiKey 설정
@@ -116,7 +116,7 @@ extension CourseDetailViewController: TMapViewDelegate {
         let mapPoint = TMapPoint(coordinate: CLLocationCoordinate2D(latitude: 37.5662952, longitude: 126.97794509999994))
         let marker1 = TMapMarkerItem()
         marker1.setTMapPoint(mapPoint)
-        marker1.setIcon(#imageLiteral(resourceName: "heart_fill_icon.png"), anchorPoint: CGPoint(x: 0.5, y: 1.0))
+        marker1.setIcon(#imageLiteral(resourceName: "map_one_mark"), anchorPoint: CGPoint(x: 0.5, y: 1.0))
         
         marker1.enableClustering = true
         tMapView?.addTMapMarkerItemID("1", marker: marker1, animated: true)
@@ -124,7 +124,7 @@ extension CourseDetailViewController: TMapViewDelegate {
         let mapPoint1 = TMapPoint(coordinate: CLLocationCoordinate2D(latitude: 37.5536067, longitude: 126.96961950000002))
         let marker2 = TMapMarkerItem()
         marker2.setTMapPoint(mapPoint1)
-        marker2.setIcon(#imageLiteral(resourceName: "heart_fill_icon.png"), anchorPoint: CGPoint(x: 0.5, y: 1.0))
+        marker2.setIcon(#imageLiteral(resourceName: "map_two_mark"), anchorPoint: CGPoint(x: 0.5, y: 1.0))
         
         marker2.enableClustering = true
         tMapView?.addTMapMarkerItemID("22ㅇㄹㅁ", marker: marker2, animated: true)

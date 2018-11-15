@@ -32,6 +32,7 @@ class PlaceDetailTableViewCell: UITableViewCell {
     @IBOutlet weak var nextLabel2: UILabel!
     @IBOutlet weak var nextLabel3: UILabel!
     
+    @IBOutlet weak var lineView: UIView!
     
     var isExpanded:Bool = false
     {
