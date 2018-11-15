@@ -77,6 +77,10 @@ extension PlaceDetailViewController: UITableViewDelegate, UITableViewDataSource 
         cell.nextLabel3.text = "산책로"
         cell.isExpanded = self.expandedRows.contains(indexPath.row)
         
+        if indexPath.row == 0 {
+            cell.lineView.isHidden = true
+        }
+
         return cell
     }
     
