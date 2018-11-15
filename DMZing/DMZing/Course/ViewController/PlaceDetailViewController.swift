@@ -1,52 +1,38 @@
 //
-//  CourseDetailViewController.swift
+//  PlaceDetailViewController.swift
 //  DMZing
 //
-//  Created by 김예은 on 12/11/2018.
+//  Created by 김예은 on 15/11/2018.
 //  Copyright © 2018 장용범. All rights reserved.
 //
 
 import UIKit
 
-class CourseDetailViewController: UIViewController {
-
+class PlaceDetailViewController: UIViewController {
+    
     @IBOutlet weak var tableView: UITableView!
-    
-    @IBOutlet weak var mainTitleLabel: UILabel!
-    @IBOutlet weak var subTitleLabel: UILabel!
-    
-    @IBOutlet weak var backView1: UIView!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var contentTextView: UITextView!
-    @IBOutlet weak var levelLabel: UILabel!
-    @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var reviewLabel: UILabel!
-    
-    @IBOutlet weak var backView2: UIView!
     @IBOutlet weak var mapContainerView: UIView!
-    @IBOutlet weak var totalTimeLabel: UILabel!
-    @IBOutlet weak var detailButton: UIButton!
     @IBOutlet weak var navi: UINavigationBar!
     
     private var tMapView: TMapView? = nil
     
+    var expandedRows = Set<Int>()
+    var initialTouchPoint: CGPoint = CGPoint(x: 0, y: 0)
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.contentInset = UIEdgeInsets(top: -88, left: 0, bottom: 0, right: 0)
+        setTableView()
         setNavigationBar()
-        
-        backView1.makeRounded(cornerRadius: 10)
-        backView1.dropShadow(color: #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1), opacity: 0.3, offSet: CGSize(width: -0.5, height: 0.5), radius: 10, scale: true)
-        
-        backView2.makeRounded(cornerRadius: 10)
-        backView2.dropShadow(color: #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1), opacity: 0.3, offSet: CGSize(width: -0.5, height: 0.5), radius: 10, scale: true)
-        
-        detailButton.makeRounded(cornerRadius: 20)
-        
         createTmapView()
-
-        // Do any additional setup after loading the view.
+    
+    }
+    
+    func setTableView() {
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        self.tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     //MARK: navigationBar transparent
@@ -58,29 +44,66 @@ class CourseDetailViewController: UIViewController {
         navi.backgroundColor = UIColor.clear
     }
     
-    //MARK: 상세보기 액션
-    @IBAction func detailAction(_ sender: UIButton) {
-        let detailVC = UIStoryboard(name: "Course", bundle: nil).instantiateViewController(withIdentifier: "PlaceDetailViewController") as! PlaceDetailViewController
-        
-        self.present(detailVC, animated: true, completion: nil)
-    }
-    
-    //MARK: BackBtn Action
-    @IBAction func backAction(_ sender: UIBarButtonItem) {
+    //MARK: Dismiss Action
+    @IBAction func dismissAction(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func rightBtnAction(_ sender: UIBarButtonItem) {
+    
+}
+
+//MARK: - TableView extension
+extension PlaceDetailViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PlaceDetailTableViewCell") as! PlaceDetailTableViewCell
+        
+        cell.placeLabel.text = "평화 전망대"
+        cell.amLabel.text = "8:00"
+        cell.pmLabel.text = "7:00"
+        cell.busLabel.text = "20분"
+        cell.walkLabel.text = "30분"
+        cell.carLabel.text = "10분"
+        cell.nextLabel1.text = "맛집"
+        cell.nextLabel2.text = "포토존"
+        cell.nextLabel3.text = "산책로"
+        cell.isExpanded = self.expandedRows.contains(indexPath.row)
+        
+        return cell
+    }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        guard let cell = tableView.cellForRow(at: indexPath) as? PlaceDetailTableViewCell else { return }
 
+        switch cell.isExpanded {
+            
+            case true:
+                self.expandedRows.remove(indexPath.row)
+            
+            case false:
+                self.expandedRows.insert(indexPath.row)
+            
+        }
+        
+        cell.isExpanded = !cell.isExpanded
+        
+        self.tableView.beginUpdates()
+        self.tableView.endUpdates()
+    }
     
 }
 
 //MARK: - TMap extension
-extension CourseDetailViewController: TMapViewDelegate {
+extension PlaceDetailViewController: TMapViewDelegate {
     
     func createTmapView() {
         tMapView = TMapView.init(frame: mapContainerView.bounds)

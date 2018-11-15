@@ -11,6 +11,9 @@
 		222EEC6C2198364D00FB15C6 /* PlaceInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222EEC6B2198364D00FB15C6 /* PlaceInfoViewController.swift */; };
 		222EEC6E2199BFE500FB15C6 /* CourseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222EEC6D2199BFE500FB15C6 /* CourseDetailViewController.swift */; };
 		222EECDD219C910D00FB15C6 /* TopLib_Op.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 222EECD7219C910D00FB15C6 /* TopLib_Op.a */; };
+		222EECE1219D4BDC00FB15C6 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222EECE0219D4BDC00FB15C6 /* APIKey.swift */; };
+		222EECE5219D65E800FB15C6 /* PlaceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222EECE4219D65E800FB15C6 /* PlaceDetailViewController.swift */; };
+		222EECE7219D671800FB15C6 /* PlaceDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222EECE6219D671800FB15C6 /* PlaceDetailTableViewCell.swift */; };
 		22F3025D2195515F00152700 /* MainMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F3025C2195515F00152700 /* MainMapViewController.swift */; };
 		22F3025F2195518B00152700 /* MainMapCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F3025E2195518B00152700 /* MainMapCollectionViewCell.swift */; };
 		3B3A85CE2198836B00D1A835 /* MypageMainVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3A85CD2198836B00D1A835 /* MypageMainVO.swift */; };
@@ -86,7 +89,6 @@
 		3BB05018217CADEF0096BF4D /* PostSampleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB05017217CADEF0096BF4D /* PostSampleService.swift */; };
 		3BB0501A217CADFA0096BF4D /* PhotoSampleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB05019217CADFA0096BF4D /* PhotoSampleService.swift */; };
 		3BB0501C217CAE1E0096BF4D /* SampleVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB0501B217CAE1E0096BF4D /* SampleVO.swift */; };
-		3BCA4A48219D5696003E77A5 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCA4A47219D5696003E77A5 /* APIKey.swift */; };
 		3BD63A052180B873007F5972 /* MyPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD63A042180B873007F5972 /* MyPostVC.swift */; };
 		3BD63A072180B88B007F5972 /* MyPostCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD63A062180B88B007F5972 /* MyPostCVCell.swift */; };
 		3BD63A202185E308007F5972 /* MainCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD63A1F2185E308007F5972 /* MainCVCell.swift */; };
@@ -137,6 +139,9 @@
 		222EECDA219C910D00FB15C6 /* TMapMarkerItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMapMarkerItem.h; sourceTree = "<group>"; };
 		222EECDB219C910D00FB15C6 /* TMapCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMapCircle.h; sourceTree = "<group>"; };
 		222EECDC219C910D00FB15C6 /* TMapTapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMapTapi.h; sourceTree = "<group>"; };
+		222EECE0219D4BDC00FB15C6 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		222EECE4219D65E800FB15C6 /* PlaceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailViewController.swift; sourceTree = "<group>"; };
+		222EECE6219D671800FB15C6 /* PlaceDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailTableViewCell.swift; sourceTree = "<group>"; };
 		22F3025C2195515F00152700 /* MainMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapViewController.swift; sourceTree = "<group>"; };
 		22F3025E2195518B00152700 /* MainMapCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapCollectionViewCell.swift; sourceTree = "<group>"; };
 		31A78C13C32CCDE3112EE612 /* Pods-DMZing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DMZing.release.xcconfig"; path = "Target Support Files/Pods-DMZing/Pods-DMZing.release.xcconfig"; sourceTree = "<group>"; };
@@ -213,7 +218,6 @@
 		3BB05017217CADEF0096BF4D /* PostSampleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSampleService.swift; sourceTree = "<group>"; };
 		3BB05019217CADFA0096BF4D /* PhotoSampleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSampleService.swift; sourceTree = "<group>"; };
 		3BB0501B217CAE1E0096BF4D /* SampleVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleVO.swift; sourceTree = "<group>"; };
-		3BCA4A47219D5696003E77A5 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		3BD63A042180B873007F5972 /* MyPostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostVC.swift; sourceTree = "<group>"; };
 		3BD63A062180B88B007F5972 /* MyPostCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostCVCell.swift; sourceTree = "<group>"; };
 		3BD63A1F2185E308007F5972 /* MainCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCVCell.swift; sourceTree = "<group>"; };
@@ -291,6 +295,8 @@
 				222EEC69219828C800FB15C6 /* MapCoverViewController.swift */,
 				222EEC6B2198364D00FB15C6 /* PlaceInfoViewController.swift */,
 				222EEC6D2199BFE500FB15C6 /* CourseDetailViewController.swift */,
+				222EECE4219D65E800FB15C6 /* PlaceDetailViewController.swift */,
+				222EECE6219D671800FB15C6 /* PlaceDetailTableViewCell.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -841,7 +847,7 @@
 		CC31AC6E217C922A00A02388 /* Course */ = {
 			isa = PBXGroup;
 			children = (
-				3BCA4A47219D5696003E77A5 /* APIKey.swift */,
+				222EECE0219D4BDC00FB15C6 /* APIKey.swift */,
 				222EECC8219C90D600FB15C6 /* TMap-SDK */,
 				22F3025B2195513B00152700 /* Storyboard */,
 				22F3025A2195512C00152700 /* ViewController */,
@@ -1081,7 +1087,7 @@
 				3BAF0ED5219C24CE00C3CF31 /* MyCourseService.swift in Sources */,
 				3B872CBC2180943D00498F97 /* CustomView.swift in Sources */,
 				3B872CD02180B12100498F97 /* MyReviewTVCell.swift in Sources */,
-				3BCA4A48219D5696003E77A5 /* APIKey.swift in Sources */,
+				222EECE1219D4BDC00FB15C6 /* APIKey.swift in Sources */,
 				3BB0500B217CAA410096BF4D /* Storyboard.swift in Sources */,
 				3B800591218B55790003EA5C /* ArticleReviewCVCell.swift in Sources */,
 				3BB0500D217CAA890096BF4D /* NetworkConfiguration.swift in Sources */,
@@ -1107,11 +1113,13 @@
 				3BD63A072180B88B007F5972 /* MyPostCVCell.swift in Sources */,
 				3B6697B121949DBA008789E3 /* WriteEntryTVCell.swift in Sources */,
 				3B6697BF21980410008789E3 /* MypageMainService.swift in Sources */,
+				222EECE7219D671800FB15C6 /* PlaceDetailTableViewCell.swift in Sources */,
 				3BAF0EDF219C48C200C3CF31 /* MyPostVO.swift in Sources */,
 				3BB05016217CADE80096BF4D /* GetSampleService.swift in Sources */,
 				CC529167219AE3BD00F58603 /* FirstModel.swift in Sources */,
 				CC529162219AD69500F58603 /* FirstCVCell.swift in Sources */,
 				3BAF0ED9219C38D400C3CF31 /* MypageDPVO.swift in Sources */,
+				222EECE5219D65E800FB15C6 /* PlaceDetailViewController.swift in Sources */,
 				3B800580218B213F0003EA5C /* PhotoReviewCVCell.swift in Sources */,
 				3BB0501A217CADFA0096BF4D /* PhotoSampleService.swift in Sources */,
 				3B800598218B81080003EA5C /* PhotoReviewPopupView.swift in Sources */,
