@@ -102,6 +102,8 @@
 		CC31AC74217C92AF00A02388 /* Community.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC31AC73217C92AF00A02388 /* Community.storyboard */; };
 		CC31AC76217C92BD00A02388 /* Mypage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC31AC75217C92BD00A02388 /* Mypage.storyboard */; };
 		CC3D43BC2185A9F8003171C0 /* ThemeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3D43BB2185A9F8003171C0 /* ThemeCollectionViewCell.swift */; };
+		CC4178E2219D4E8000E0CD3E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4178E1219D4E8000E0CD3E /* SignUpViewController.swift */; };
+		CC4497B9219DAE0C000DE7C5 /* SignService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4497B8219DAE0C000DE7C5 /* SignService.swift */; };
 		CC529162219AD69500F58603 /* FirstCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC529161219AD69500F58603 /* FirstCVCell.swift */; };
 		CC529164219AD75300F58603 /* LastCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC529163219AD75300F58603 /* LastCVCell.swift */; };
 		CC529167219AE3BD00F58603 /* FirstModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC529166219AE3BD00F58603 /* FirstModel.swift */; };
@@ -234,6 +236,8 @@
 		CC31AC73217C92AF00A02388 /* Community.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Community.storyboard; sourceTree = "<group>"; };
 		CC31AC75217C92BD00A02388 /* Mypage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mypage.storyboard; sourceTree = "<group>"; };
 		CC3D43BB2185A9F8003171C0 /* ThemeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCollectionViewCell.swift; sourceTree = "<group>"; };
+		CC4178E1219D4E8000E0CD3E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		CC4497B8219DAE0C000DE7C5 /* SignService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignService.swift; sourceTree = "<group>"; };
 		CC529161219AD69500F58603 /* FirstCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstCVCell.swift; sourceTree = "<group>"; };
 		CC529163219AD75300F58603 /* LastCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastCVCell.swift; sourceTree = "<group>"; };
 		CC529166219AE3BD00F58603 /* FirstModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstModel.swift; sourceTree = "<group>"; };
@@ -883,6 +887,13 @@
 			path = Mypage;
 			sourceTree = "<group>";
 		};
+		CC4497B6219DADB7000DE7C5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		CC529165219AE2C400F58603 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -895,12 +906,15 @@
 		CCB3CC9A218AF95B0033B9F9 /* Sign */ = {
 			isa = PBXGroup;
 			children = (
+				CC4497B6219DADB7000DE7C5 /* Model */,
 				CCB3CC9B218AF97A0033B9F9 /* Sign.storyboard */,
 				CCB3CC9D218AF9D40033B9F9 /* SignInViewController.swift */,
 				CCB3CC9F218B01430033B9F9 /* SignUp1ViewController.swift */,
 				CCB3CCA1218B035B0033B9F9 /* SignUp2ViewController.swift */,
 				CCB3CCA3218B041B0033B9F9 /* SignUp3ViewController.swift */,
 				CCB3CCA5218B061A0033B9F9 /* InitialViewController.swift */,
+				CC4178E1219D4E8000E0CD3E /* SignUpViewController.swift */,
+				CC4497B8219DAE0C000DE7C5 /* SignService.swift */,
 			);
 			path = Sign;
 			sourceTree = "<group>";
@@ -1077,6 +1091,7 @@
 				CCB3CC9E218AF9D40033B9F9 /* SignInViewController.swift in Sources */,
 				3BB05004217CA6650096BF4D /* PostableService.swift in Sources */,
 				CCB3CCA0218B01430033B9F9 /* SignUp1ViewController.swift in Sources */,
+				CC4178E2219D4E8000E0CD3E /* SignUpViewController.swift in Sources */,
 				3BA7ED392198AC2E00BAC493 /* ArticleStruct.swift in Sources */,
 				3B799396219ABD3400DBF5B2 /* ReviewContentVO.swift in Sources */,
 				3B6697B721959405008789E3 /* WriteArticleReviewVC.swift in Sources */,
@@ -1125,6 +1140,7 @@
 				3B800598218B81080003EA5C /* PhotoReviewPopupView.swift in Sources */,
 				3B79939D219AD8B200DBF5B2 /* SpotVO.swift in Sources */,
 				3B6697D7219825DB008789E3 /* PostArticleService.swift in Sources */,
+				CC4497B9219DAE0C000DE7C5 /* SignService.swift in Sources */,
 				3B872CBA2180905000498F97 /* MyPageTVCell.swift in Sources */,
 				3BB05000217CA6540096BF4D /* Extensions.swift in Sources */,
 				3B8364F2219461EE000BD706 /* ReviewContentVC.swift in Sources */,
