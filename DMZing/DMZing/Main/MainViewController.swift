@@ -66,6 +66,12 @@ extension MainViewController : UICollectionViewDelegate,UICollectionViewDataSour
         if collectionView == self.themeCollectionView {
             let cell = self.themeCollectionView.dequeueReusableCell(withReuseIdentifier: "ThemeCollectionViewCell", for: indexPath) as! ThemeCollectionViewCell
             
+            if(indexPath.row == 0){
+                cell.isSelected = true
+            }else{
+                cell.isSelected = false
+            }
+            
             cell.titleLabel.text = "theme\(indexPath.row)"
             
             
@@ -97,8 +103,12 @@ extension MainViewController : UICollectionViewDelegate,UICollectionViewDataSour
         
         if(collectionView == themeCollectionView){
             print(indexPath.row)
+            
+            let cell = self.themeCollectionView.dequeueReusableCell(withReuseIdentifier: ThemeCollectionViewCell.reuseIdentifier, for: indexPath) as! ThemeCollectionViewCell
+            
+            cell.isSelected = !cell.isSelected
         
-            collectionView.reloadData()
+            //collectionView.reloadData()
         }
         
         
