@@ -75,6 +75,7 @@ extension MainViewController : UICollectionViewDelegate,UICollectionViewDataSour
                 let cell = self.mainCollectionView.dequeueReusableCell(withReuseIdentifier: FirstCVCell.reuseIdentifier, for: indexPath) as! FirstCVCell
                 cell.subtitleLabel.text = "사진 찍기 좋은 핫스팟"
                 cell.titleLabel.text = "데이트 하기 좋은 코스"
+                cell.titleLabel.adjustsFontSizeToFitWidth = true
                 cell.difficultyLabel.text = "중"
                 cell.timeLabel.text = "3"
                 cell.peopleLabel.text = "50"
@@ -112,7 +113,7 @@ extension MainViewController : UICollectionViewDelegate,UICollectionViewDataSour
         if collectionView == self.themeCollectionView {
             return CGSize(width: 118, height: 41)
         } else {
-           return CGSize(width: 325, height: 506)
+           return CGSize(width: 325/375*self.view.frame.width, height: self.mainCollectionView.frame.height)
         }
        
     }
