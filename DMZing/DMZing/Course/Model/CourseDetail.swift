@@ -25,6 +25,8 @@ struct CourseDetail: Codable {
     let title: String
 }
 
+typealias PlaceData = [Place]
+
 struct Place: Codable {
     let address: String
     let description: String
