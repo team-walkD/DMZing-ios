@@ -7,10 +7,8 @@
 //
 
 import UIKit
-import Alamofire
-import SwiftyJSON
 
-class SignUpViewController: UIViewController, APIService {
+class SignUpViewController: UIViewController {
 
     @IBOutlet weak var alertEmailLabel: UILabel!
     @IBOutlet weak var alertPwLabel: UILabel!
@@ -39,37 +37,18 @@ class SignUpViewController: UIViewController, APIService {
             if(!validEmail){
                 emailTextField.shake()
                 alertEmailLabel.isHidden = false
-            }else{
-                alertEmailLabel.isHidden = true
             }
             if(!validPassword){
                 pwTextField.shake()
                 alertPwLabel.isHidden = false
-            }else{
-                alertPwLabel.isHidden = true
             }
             if(!validPhone){
                 phoneTextField.shake()
                 alertPhoneLabel.isHidden = false
-            }else{
-                alertPhoneLabel.isHidden = true
             }
             
-            let phonenumber = phone.substring(from: 0, to: 3)+"-"+phone.substring(from: 3, to: 7)+"-"+phone.substring(from: 7, to: phone.count)
-            
             if(validEmail && validPassword && validPhone){
-                SignService.signup(email: email, pwd: password, nickname: nickname, phone: phonenumber) { message in
-                    if message == "success"{
-                        print("signup success")
-                        self.simpleAlertwithHandler(title: "회원가입 성공", message: "축하드립니다!", okHandler: { action in
-                            self.dismiss(animated: true, completion: nil)
-                        })
-                    }else if message == "already exist"{
-                        self.simpleAlert(title: "회원가입 오류", message: "이미 가입된 이메일입니다.")
-                    }else if message == "error"{
-                        self.simpleAlert(title: "회원가입 오류", message: "에러")
-                    }
-                }
+                self.simpleAlert(title: "회원가입 gogo", message: "gogo")
             }
         }else{
             self.simpleAlert(title: "회원가입 오류", message: "모두 입력해주세요")
@@ -87,7 +66,7 @@ class SignUpViewController: UIViewController, APIService {
     
     func isValidPhoneNumber(phone: String) -> Bool {
         
-        let phoneRegEx = "^01([0|1|6|7|8|9]?)?([0-9]{4})?([0-9]{4})$"
+        let phoneRegEx = "^01([0|1|6|7|8|9]?)?([0-9]{3,4})?([0-9]{4})$"
         let emailTest = NSPredicate(format:"SELF MATCHES %@", phoneRegEx)
         return emailTest.evaluate(with: phone)
         
@@ -105,13 +84,5 @@ class SignUpViewController: UIViewController, APIService {
         self.dismiss(animated: true, completion: nil)
     }
     
-}
-
-extension String{
-    func substring(from: Int, to: Int) -> String {
-        let start = index(startIndex, offsetBy: from)
-        let end = index(start, offsetBy: to - from)
-        return String(self[start ..< end])
-    }
 }
 
