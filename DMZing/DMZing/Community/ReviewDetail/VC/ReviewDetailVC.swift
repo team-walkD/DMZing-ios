@@ -160,7 +160,7 @@ extension ReviewDetailVC {
                 let spotData = data as? SpotVO
                 guard let spotData_ = spotData else {return}
                 self.spotArr = spotData_.map({ (item) in
-                    item.name
+                    item.title
                 })
                 self.setPopupUI()
             case .networkFail :
