@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
-class SignInViewController: UIViewController {
+class SignInViewController: UIViewController,APIService {
     
 
     @IBOutlet weak var emailTextField: UITextField!
@@ -28,6 +30,19 @@ class SignInViewController: UIViewController {
         if(emailTextField.text != "" && pwTextField.text != ""){
             guard let email = emailTextField.text else {return}
             guard let password = pwTextField.text else {return}
+            
+            print("여기까지")
+            SignService.login(email: email, pwd: password) { message in
+                if message == "success"{
+                    let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainTab")
+                    self.present(vc, animated: true, completion: nil)
+                    
+                }else if message == "failure"{
+                    self.simpleAlert(title: "로그인 실패", message: "회원 정보가 틀렸습니다.")
+                }
+            }
+            
+            
         }else{
             self.simpleAlert(title: "로그인 오류", message: "모두 입력해주세요")
         }
@@ -40,4 +55,6 @@ class SignInViewController: UIViewController {
     @IBAction func cancelAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    
 }
