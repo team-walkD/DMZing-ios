@@ -314,7 +314,7 @@ extension WriteEntryVC {
             case .networkSuccess(let data):
                 let data = data as? PostImageVO
                 if let img = data?.image {
-                    self.bgImgView.setImgWithKF(url: img, defaultImg: #imageLiteral(resourceName: "ccc"))
+                    self.bgImgView.setImgWithKF(url: img, defaultImg: #imageLiteral(resourceName: "review_default_img"))
                     self.bgImgUrl = img
                 }
                 break

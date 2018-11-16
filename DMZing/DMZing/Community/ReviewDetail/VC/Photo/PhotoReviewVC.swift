@@ -100,7 +100,7 @@ extension PhotoReviewVC : UICollectionViewDelegate, UICollectionViewDataSource  
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         UIApplication.shared.keyWindow!.addSubview(popupView)
-        popupView.mainImgView.setImgWithKF(url: photoReviewData[indexPath.row].imageURL, defaultImg: #imageLiteral(resourceName: "ccc"))
+        popupView.mainImgView.setImgWithKF(url: photoReviewData[indexPath.row].imageURL, defaultImg: #imageLiteral(resourceName: "review_default_img"))
         popupView.snp.makeConstraints { (make) in
             make.top.bottom.leading.trailing.equalToSuperview()
         }

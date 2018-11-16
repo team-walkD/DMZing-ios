@@ -205,7 +205,7 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="359"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ccc" translatesAutoresizingMaskIntoConstraints="NO" id="Kcc-2m-9Ua">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="review_default_img" translatesAutoresizingMaskIntoConstraints="NO" id="Kcc-2m-9Ua">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="335"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
@@ -539,7 +539,7 @@ tOyVmOuLpC4LCuyerOuvuCDsl4bsnYQg6rKDIOqwmeuLpOqzoOunjCDsg53qsIHtlojripTrjbAg7IOd
                                             <rect key="frame" x="0.0" y="0.0" width="107" height="107"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ccc" translatesAutoresizingMaskIntoConstraints="NO" id="aIV-di-5Lf">
+                                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="photo_review_plus_img" translatesAutoresizingMaskIntoConstraints="NO" id="aIV-di-5Lf">
                                                     <rect key="frame" x="0.0" y="0.0" width="107" height="107"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -700,7 +700,7 @@ tOyVmOuLpC4LCuyerOuvuCDsl4bsnYQg6rKDIOqwmeuLpOqzoOunjCDsg53qsIHtlojripTrjbAg7IOd
                                     <constraint firstItem="k9V-Bc-hQb" firstAttribute="centerX" secondItem="QH8-0u-EKP" secondAttribute="centerX" id="zHU-qU-FRi"/>
                                 </constraints>
                             </view>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bTD-pP-E6w">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo_review_plus_img" translatesAutoresizingMaskIntoConstraints="NO" id="bTD-pP-E6w">
                                 <rect key="frame" x="0.0" y="128" width="375" height="375"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -773,20 +773,20 @@ tOyVmOuLpC4LCuyerOuvuCDsl4bsnYQg6rKDIOqwmeuLpOqzoOunjCDsg53qsIHtlojripTrjbAg7IOd
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ccc" translatesAutoresizingMaskIntoConstraints="NO" id="Anc-48-ibe">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="review_default_img" translatesAutoresizingMaskIntoConstraints="NO" id="Anc-48-ibe">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="425"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EBs-1j-dNx">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="425"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.55000000000000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ozw-vE-2wj">
-                                <rect key="frame" x="331.66666666666669" y="390.66666666666669" width="19.333333333333314" height="19.333333333333314"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ozw-vE-2wj">
+                                <rect key="frame" x="332.66666666666669" y="391" width="19" height="19"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ozw-vE-2wj" secondAttribute="height" multiplier="1:1" id="6Gn-jE-0se"/>
                                     <constraint firstAttribute="width" constant="19.5" id="m0W-p0-6Wv"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" image="thumbnail_plus_icon"/>
                                 <connections>
                                     <action selector="selectThumbnailAction:" destination="Mjv-y5-hZR" eventType="touchUpInside" id="deX-qG-szm"/>
                                 </connections>
@@ -945,7 +945,7 @@ tOyVmOuLpC4LCuyerOuvuCDsl4bsnYQg6rKDIOqwmeuLpOqzoOunjCDsg53qsIHtlojripTrjbAg7IOd
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xaq-J5-N0w">
-                                <rect key="frame" x="245.66666666666663" y="387" width="76" height="27"/>
+                                <rect key="frame" x="246.66666666666663" y="387" width="76" height="27"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="12"/>
                                 <state key="normal" title="썸네일 불러오기">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -995,7 +995,7 @@ tOyVmOuLpC4LCuyerOuvuCDsl4bsnYQg6rKDIOqwmeuLpOqzoOunjCDsg53qsIHtlojripTrjbAg7IOd
                     </view>
                     <navigationItem key="navigationItem" id="Q9Z-Uq-GjK">
                         <barButtonItem key="rightBarButtonItem" image="x_white_btn" id="4tw-TB-1Qs">
-                            <color key="tintColor" red="0.10980392160000001" green="0.2156862745" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="dismissAction:" destination="Mjv-y5-hZR" id="Dau-mB-rrU"/>
                             </connections>
@@ -1037,10 +1037,12 @@ tOyVmOuLpC4LCuyerOuvuCDsl4bsnYQg6rKDIOqwmeuLpOqzoOunjCDsg53qsIHtlojripTrjbAg7IOd
         </scene>
     </scenes>
     <resources>
-        <image name="ccc" width="99" height="99"/>
         <image name="heart_icon" width="18" height="16"/>
+        <image name="photo_review_plus_img" width="376" height="376"/>
         <image name="reviewHeartShadowBtn" width="71" height="71"/>
+        <image name="review_default_img" width="375" height="263"/>
         <image name="review_write_icon" width="23" height="24"/>
+        <image name="thumbnail_plus_icon" width="19" height="19"/>
         <image name="x_btn" width="24" height="24"/>
         <image name="x_white_btn" width="24" height="24"/>
     </resources>
