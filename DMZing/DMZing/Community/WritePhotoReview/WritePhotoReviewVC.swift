@@ -150,7 +150,7 @@ extension WritePhotoReviewVC {
             case .networkSuccess(let data):
                 let data = data as? PostImageVO
                 if let img = data?.image {
-                    self.myImgView.setImgWithKF(url: img, defaultImg: #imageLiteral(resourceName: "ccc"))
+                    self.myImgView.setImgWithKF(url: img, defaultImg: #imageLiteral(resourceName: "photo_review_plus_img"))
                     self.imgUrl = img
                     self.doneBtn.isEnabled = true
                     self.doneBtn.backgroundColor = UIColor.FlatColor.Blue.middleBlue

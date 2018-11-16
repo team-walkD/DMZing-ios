@@ -13,7 +13,7 @@ class WriteArticleCVCell: UICollectionViewCell {
     @IBOutlet weak var mainImgView: UIImageView!
 
     func configure(data : String){
-        mainImgView.setImgWithKF(url: data, defaultImg: #imageLiteral(resourceName: "ccc"))
+        mainImgView.setImgWithKF(url: data, defaultImg: #imageLiteral(resourceName: "photo_review_plus_img"))
     }
     
     

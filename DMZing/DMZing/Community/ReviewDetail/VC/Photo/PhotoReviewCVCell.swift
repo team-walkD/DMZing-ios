@@ -21,7 +21,7 @@ class PhotoReviewCVCell: UICollectionViewCell {
         titleLbl.text = data.placeName
        // firstTagLbl.text = data.tag[0]
        // secondTagLbl.text = data.tag[1]
-        mainImgView.setImgWithKF(url: data.imageURL, defaultImg: #imageLiteral(resourceName: "ccc"))
+        mainImgView.setImgWithKF(url: data.imageURL, defaultImg: #imageLiteral(resourceName: "review_default_img"))
     }
     
     override func awakeFromNib() {
