@@ -22,18 +22,19 @@ class ReviewMainVC: UIViewController, APIService {
         
         self.navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
         self.navigationController?.navigationBar.isTranslucent = false
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            guard let `self` = self else { return }
+            self.getReviewType(url: self.url("reviews/count"))
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
-        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
-            guard let `self` = self else { return }
-            self.getReviewType(url: self.url("reviews/count"))
-        }
-    
+       
     }
+
 }
 
 extension ReviewMainVC :  UICollectionViewDelegate, UICollectionViewDataSource{
