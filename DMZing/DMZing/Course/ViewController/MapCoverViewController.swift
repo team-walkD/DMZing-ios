@@ -14,15 +14,23 @@ class MapCoverViewController: UIViewController {
     @IBOutlet weak var largeLabel: UILabel!
     @IBOutlet weak var pickLabel: UILabel!
     
-        var initialTouchPoint: CGPoint = CGPoint(x: 0, y: 0)
+    var initialTouchPoint: CGPoint = CGPoint(x: 0, y: 0)
+    
+    var id: Int?
+    var sub: String?
+    var main: String?
+    var pick: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setNavigationBar()
-
         setBackBtn(color: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
         setRightBarButtonItem()
+        
+        smallLabel.text = sub
+        largeLabel.text = main
+        pickLabel.text = String(gino(pick))
     }
     
     //MARK: navigationBar transparent
@@ -81,6 +89,8 @@ class MapCoverViewController: UIViewController {
     //MARK: 보러가기 액션
     @IBAction func detailAction(_ sender: UIButton) {
         let infoVC = UIStoryboard(name: "Course", bundle: nil).instantiateViewController(withIdentifier: "CourseDetailViewController") as! CourseDetailViewController
+        
+        infoVC.cid = gino(id)
         
         self.present(infoVC, animated: true, completion: nil)
         

@@ -7,12 +7,21 @@
 //
 
 import UIKit
+import Kingfisher
 
-class MainMapViewController: UIViewController {
+class MainMapViewController: UIViewController, APIService {
     
     enum Direction {
         case right
         case left
+    }
+    
+    var courses : [Course] = [] {
+        didSet {
+            //TODO: 이미지 변경 확인
+            mapImageView.kf.setImage(with: URL(string: courses[currentIdx].lineImageUrl), placeholder: UIImage())
+            mapCollectionView.reloadData()
+        }
     }
     
     @IBOutlet weak var mapCollectionView: UICollectionView!
@@ -29,27 +38,68 @@ class MainMapViewController: UIViewController {
         mapCollectionView.delegate = self
         mapCollectionView.dataSource = self
         
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            guard let `self` = self else { return }
+            self.getMainCourseData(url: self.url("course"))
+        }
+        
     }
+}
 
+//MARK: Server
+extension MainMapViewController {
+    
+    func getMainCourseData(url : String){
+        MainMapService.shareInstance.getMainCourseData(url: url,completion: { [weak self] (result) in
+            guard let `self` = self else { return }
+            
+            switch result {
+                
+            case .networkSuccess(let data):
+                let mainCourseData = data as? CourseData
+                
+                if let mainCourseData_ = mainCourseData {
+                    self.courses = mainCourseData_
+                }
+            case .networkFail :
+                self.networkSimpleAlert()
+            default :
+                self.simpleAlert(title: "오류", message: "다시 시도해주세요")
+                break
+            }
+        })
+    }
 }
 
 //MARK: - CollectionView Method
 extension MainMapViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return courses.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainMapCollectionViewCell", for: indexPath) as! MainMapCollectionViewCell
         
-        cell.courseImageView.image = #imageLiteral(resourceName: "ccc.png")
-        cell.smallLabel.text = "사진 찍기 좋은 핫스팟"
-        cell.largeLabel.text = "데이트하기 좋은 코스"
-        cell.pageLabel.text = "1/4"
+        cell.courseImageView.kf.setImage(with: URL(string: courses[indexPath.row].imageUrl), placeholder: UIImage())
+        cell.smallLabel.text = courses[indexPath.row].subDescription
+        cell.largeLabel.text = courses[indexPath.row].mainDescription
+        cell.pageLabel.text = String(courses[indexPath.row].id)
+        cell.totalPageLabel.text = String(courses.count)
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let coverVC = UIStoryboard(name: "Course", bundle: nil).instantiateViewController(withIdentifier: "MapCoverViewController") as! MapCoverViewController
+        
+        coverVC.sub = courses[indexPath.row].subDescription
+        coverVC.main = courses[indexPath.row].mainDescription
+        coverVC.pick = courses[indexPath.row].pickCount
+        coverVC.id = courses[indexPath.row].id
+        
+        self.navigationController?.pushViewController(coverVC, animated: true)
     }
     
 }
@@ -61,12 +111,14 @@ extension MainMapViewController : UIScrollViewDelegate {
      */
     private func indexOfMajorCell(direction : Direction) -> Int {
         var index = 0
+        
         switch direction {
         case .right :
             index = currentIdx + 1
         case .left :
             index = currentIdx - 1
         }
+        
         let numberOfItems = mapCollectionView.numberOfItems(inSection: 0)
         let safeIndex = max(0, min(numberOfItems - 1, index))
         currentIdx = safeIndex
@@ -88,11 +140,15 @@ extension MainMapViewController : UIScrollViewDelegate {
             let majorIdx = indexOfMajorCell(direction: .right)
             let indexPath = IndexPath(row: majorIdx, section: 0)
             mapCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+            //TODO: 이미지 변경 확인
+            mapImageView.kf.setImage(with: URL(string: courses[currentIdx].lineImageUrl), placeholder: UIImage())
         } else if finalOffset < startOffset {
             //앞으로 가기
             let majorIdx = indexOfMajorCell(direction: .left)
             let indexPath = IndexPath(row: majorIdx, section: 0)
             mapCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+            //TODO: 이미지 변경 확인
+            mapImageView.kf.setImage(with: URL(string: courses[currentIdx].lineImageUrl), placeholder: UIImage())
         } else {
             print("둘다 아님")
         }

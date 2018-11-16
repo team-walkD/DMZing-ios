@@ -13,6 +13,10 @@
 		222EECDD219C910D00FB15C6 /* TopLib_Op.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 222EECD7219C910D00FB15C6 /* TopLib_Op.a */; };
 		222EECE5219D65E800FB15C6 /* PlaceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222EECE4219D65E800FB15C6 /* PlaceDetailViewController.swift */; };
 		222EECE7219D671800FB15C6 /* PlaceDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222EECE6219D671800FB15C6 /* PlaceDetailTableViewCell.swift */; };
+		222EECED219DC5FB00FB15C6 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222EECEC219DC5FB00FB15C6 /* Course.swift */; };
+		222EECF1219DC6D900FB15C6 /* MainMapService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222EECF0219DC6D900FB15C6 /* MainMapService.swift */; };
+		222EECF3219F054500FB15C6 /* CourseDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222EECF2219F054500FB15C6 /* CourseDetail.swift */; };
+		222EECF5219F07F700FB15C6 /* CourseDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222EECF4219F07F700FB15C6 /* CourseDetailService.swift */; };
 		22F3025D2195515F00152700 /* MainMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F3025C2195515F00152700 /* MainMapViewController.swift */; };
 		22F3025F2195518B00152700 /* MainMapCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F3025E2195518B00152700 /* MainMapCollectionViewCell.swift */; };
 		3B3A85CE2198836B00D1A835 /* MypageMainVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3A85CD2198836B00D1A835 /* MypageMainVO.swift */; };
@@ -143,6 +147,10 @@
 		222EECDC219C910D00FB15C6 /* TMapTapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMapTapi.h; sourceTree = "<group>"; };
 		222EECE4219D65E800FB15C6 /* PlaceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailViewController.swift; sourceTree = "<group>"; };
 		222EECE6219D671800FB15C6 /* PlaceDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailTableViewCell.swift; sourceTree = "<group>"; };
+		222EECEC219DC5FB00FB15C6 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		222EECF0219DC6D900FB15C6 /* MainMapService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapService.swift; sourceTree = "<group>"; };
+		222EECF2219F054500FB15C6 /* CourseDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetail.swift; sourceTree = "<group>"; };
+		222EECF4219F07F700FB15C6 /* CourseDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailService.swift; sourceTree = "<group>"; };
 		22F3025C2195515F00152700 /* MainMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapViewController.swift; sourceTree = "<group>"; };
 		22F3025E2195518B00152700 /* MainMapCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapCollectionViewCell.swift; sourceTree = "<group>"; };
 		31A78C13C32CCDE3112EE612 /* Pods-DMZing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DMZing.release.xcconfig"; path = "Target Support Files/Pods-DMZing/Pods-DMZing.release.xcconfig"; sourceTree = "<group>"; };
@@ -289,6 +297,24 @@
 				222EECD7219C910D00FB15C6 /* TopLib_Op.a */,
 			);
 			path = "TMap-SDK";
+			sourceTree = "<group>";
+		};
+		222EECE8219DC4F700FB15C6 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				222EECF0219DC6D900FB15C6 /* MainMapService.swift */,
+				222EECF4219F07F700FB15C6 /* CourseDetailService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		222EECE9219DC52200FB15C6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				222EECEC219DC5FB00FB15C6 /* Course.swift */,
+				222EECF2219F054500FB15C6 /* CourseDetail.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		22F3025A2195512C00152700 /* ViewController */ = {
@@ -851,6 +877,9 @@
 		CC31AC6E217C922A00A02388 /* Course */ = {
 			isa = PBXGroup;
 			children = (
+
+				222EECE9219DC52200FB15C6 /* Model */,
+				222EECE8219DC4F700FB15C6 /* Service */,
 				222EECC8219C90D600FB15C6 /* TMap-SDK */,
 				22F3025B2195513B00152700 /* Storyboard */,
 				22F3025A2195512C00152700 /* ViewController */,
@@ -1062,6 +1091,7 @@
 				3B872CB72180902700498F97 /* MypageVC.swift in Sources */,
 				3B800595218B73650003EA5C /* ReviewMainCVCell.swift in Sources */,
 				CC529164219AD75300F58603 /* LastCVCell.swift in Sources */,
+				222EECF3219F054500FB15C6 /* CourseDetail.swift in Sources */,
 				3B6697C721980BE6008789E3 /* MypageReviewService.swift in Sources */,
 				3B6697D5219825D0008789E3 /* PostImageService.swift in Sources */,
 				3B6697B92195A266008789E3 /* WriteArticleCVCell.swift in Sources */,
@@ -1077,6 +1107,7 @@
 				22F3025F2195518B00152700 /* MainMapCollectionViewCell.swift in Sources */,
 				3B872CC421809C1700498F97 /* MyCourseTVCell.swift in Sources */,
 				3B8364F7219490BF000BD706 /* ReviewContentCVCell.swift in Sources */,
+				222EECED219DC5FB00FB15C6 /* Course.swift in Sources */,
 				3B872CD72180B41800498F97 /* MyDPPointVC.swift in Sources */,
 				CCB3CCA6218B061A0033B9F9 /* InitialViewController.swift in Sources */,
 				CC31AC5E217C8D3200A02388 /* MainViewController.swift in Sources */,
@@ -1097,6 +1128,8 @@
 				3BB0500B217CAA410096BF4D /* Storyboard.swift in Sources */,
 				3B800591218B55790003EA5C /* ArticleReviewCVCell.swift in Sources */,
 				3BB0500D217CAA890096BF4D /* NetworkConfiguration.swift in Sources */,
+				222EECF1219DC6D900FB15C6 /* MainMapService.swift in Sources */,
+				222EECF5219F07F700FB15C6 /* CourseDetailService.swift in Sources */,
 				3BB0500F217CAAFC0096BF4D /* APIService.swift in Sources */,
 				3B8364EE219425FB000BD706 /* WriteEntryVC.swift in Sources */,
 				3B79939B219AD89000DBF5B2 /* GetSpotService.swift in Sources */,
