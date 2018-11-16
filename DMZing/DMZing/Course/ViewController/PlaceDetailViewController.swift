@@ -7,12 +7,21 @@
 //
 
 import UIKit
+import Kingfisher
 
-class PlaceDetailViewController: UIViewController {
+class PlaceDetailViewController: UIViewController, APIService {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var mapContainerView: UIView!
     @IBOutlet weak var navi: UINavigationBar!
+
+    var places : [Place] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    var cid: Int = 0
+    var imageArr = [#imageLiteral(resourceName: "map_one_mark"), #imageLiteral(resourceName: "map_two_mark"), #imageLiteral(resourceName: "map_three_mark"), #imageLiteral(resourceName: "map_four_mark"), #imageLiteral(resourceName: "map_four_mark")]
     
     private var tMapView: TMapView? = nil
     
@@ -25,6 +34,12 @@ class PlaceDetailViewController: UIViewController {
         setTableView()
         setNavigationBar()
         createTmapView()
+        
+        
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            guard let `self` = self else { return }
+            self.getPlaceData(url: self.url("course/\(self.cid)/places"))
+        }
     
     }
     
@@ -52,6 +67,32 @@ class PlaceDetailViewController: UIViewController {
     
 }
 
+//MARK: Server
+extension PlaceDetailViewController {
+    
+    func getPlaceData(url : String){
+        PlaceService.shareInstance.getPlaceData(url: url,completion: { [weak self] (result) in
+            guard let `self` = self else { return }
+            
+            switch result {
+                
+            case .networkSuccess(let data):
+                let placeData = data as? PlaceData
+                
+                if let placeData_ = placeData {
+                    self.places = placeData_
+                }
+            case .networkFail :
+                self.networkSimpleAlert()
+            default :
+                self.simpleAlert(title: "오류", message: "다시 시도해주세요")
+                break
+            }
+        })
+    }
+}
+
+
 //MARK: - TableView extension
 extension PlaceDetailViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -60,22 +101,26 @@ extension PlaceDetailViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return places.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PlaceDetailTableViewCell") as! PlaceDetailTableViewCell
         
-        cell.placeLabel.text = "평화 전망대"
+        cell.numImageView.image = imageArr[indexPath.row]
+        cell.mainImageView.kf.setImage(with: URL(string: places[indexPath.row].mainImageUrl), placeholder: UIImage())
+        cell.placeLabel.text = places[indexPath.row].title
         cell.amLabel.text = "8:00"
         cell.pmLabel.text = "7:00"
         cell.busLabel.text = "20분"
         cell.walkLabel.text = "30분"
         cell.carLabel.text = "10분"
-        cell.nextLabel1.text = "맛집"
-        cell.nextLabel2.text = "포토존"
-        cell.nextLabel3.text = "산책로"
-        cell.isExpanded = self.expandedRows.contains(indexPath.row)
+        cell.nextLabel1.text = places[indexPath.row].peripheries[0].title
+        cell.nextLabel2.text = places[indexPath.row].peripheries[1].title
+        cell.nextLabel3.text = places[indexPath.row].peripheries[2].title
+        cell.nextImageView1.kf.setImage(with: URL(string: gsno(places[indexPath.row].peripheries[0].firstimage)), placeholder: UIImage())
+        cell.nextImageView2.kf.setImage(with: URL(string: gsno(places[indexPath.row].peripheries[1].firstimage)), placeholder: UIImage())
+        cell.nextImageView3.kf.setImage(with: URL(string: gsno(places[indexPath.row].peripheries[2].firstimage)), placeholder: UIImage())
         
         if indexPath.row == 0 {
             cell.lineView.isHidden = true

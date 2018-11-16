@@ -19,14 +19,14 @@ class PlaceDetailTableViewCell: UITableViewCell {
     
     @IBOutlet weak var amLabel: UILabel!
     @IBOutlet weak var pmLabel: UILabel!
-    @IBOutlet weak var placeImageView: UIView!
+    @IBOutlet weak var mainImageView: UIImageView!
     
     @IBOutlet weak var busLabel: UILabel!
     @IBOutlet weak var walkLabel: UILabel!
     @IBOutlet weak var carLabel: UILabel!
     
     @IBOutlet weak var nextImageView1: UIImageView!
-    @IBOutlet weak var nextImageView2: NSLayoutConstraint!
+    @IBOutlet weak var nextImageView2: UIImageView!
     @IBOutlet weak var nextImageView3: UIImageView!
     @IBOutlet weak var nextLabel1: UILabel!
     @IBOutlet weak var nextLabel2: UILabel!
