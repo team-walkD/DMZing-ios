@@ -11,6 +11,7 @@
 		222EEC6C2198364D00FB15C6 /* PlaceInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222EEC6B2198364D00FB15C6 /* PlaceInfoViewController.swift */; };
 		222EEC6E2199BFE500FB15C6 /* CourseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222EEC6D2199BFE500FB15C6 /* CourseDetailViewController.swift */; };
 		222EECDD219C910D00FB15C6 /* TopLib_Op.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 222EECD7219C910D00FB15C6 /* TopLib_Op.a */; };
+		222EECE1219D4BDC00FB15C6 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222EECE0219D4BDC00FB15C6 /* APIKey.swift */; };
 		222EECE5219D65E800FB15C6 /* PlaceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222EECE4219D65E800FB15C6 /* PlaceDetailViewController.swift */; };
 		222EECE7219D671800FB15C6 /* PlaceDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222EECE6219D671800FB15C6 /* PlaceDetailTableViewCell.swift */; };
 		22F3025D2195515F00152700 /* MainMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F3025C2195515F00152700 /* MainMapViewController.swift */; };
@@ -92,8 +93,6 @@
 		3BD63A072180B88B007F5972 /* MyPostCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD63A062180B88B007F5972 /* MyPostCVCell.swift */; };
 		3BD63A202185E308007F5972 /* MainCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD63A1F2185E308007F5972 /* MainCVCell.swift */; };
 		893E8C9EAF51BF82E1979921 /* Pods_DMZing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03429F00E6D01CE48BFFF5D1 /* Pods_DMZing.framework */; };
-		CC141023219EB12A00C8CDF3 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC141022219EB12A00C8CDF3 /* APIKey.swift */; };
-		CC141025219EB6A500C8CDF3 /* LoginVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC141024219EB6A500C8CDF3 /* LoginVO.swift */; };
 		CC31AC5C217C8D3200A02388 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC31AC5B217C8D3200A02388 /* AppDelegate.swift */; };
 		CC31AC5E217C8D3200A02388 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC31AC5D217C8D3200A02388 /* MainViewController.swift */; };
 		CC31AC61217C8D3200A02388 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC31AC5F217C8D3200A02388 /* Main.storyboard */; };
@@ -142,6 +141,7 @@
 		222EECDA219C910D00FB15C6 /* TMapMarkerItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMapMarkerItem.h; sourceTree = "<group>"; };
 		222EECDB219C910D00FB15C6 /* TMapCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMapCircle.h; sourceTree = "<group>"; };
 		222EECDC219C910D00FB15C6 /* TMapTapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMapTapi.h; sourceTree = "<group>"; };
+		222EECE0219D4BDC00FB15C6 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		222EECE4219D65E800FB15C6 /* PlaceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailViewController.swift; sourceTree = "<group>"; };
 		222EECE6219D671800FB15C6 /* PlaceDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailTableViewCell.swift; sourceTree = "<group>"; };
 		22F3025C2195515F00152700 /* MainMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapViewController.swift; sourceTree = "<group>"; };
@@ -225,8 +225,6 @@
 		3BD63A1F2185E308007F5972 /* MainCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCVCell.swift; sourceTree = "<group>"; };
 		BEE318596B099D3958535472 /* Pods-DMZing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DMZing.release.xcconfig"; path = "Pods/Target Support Files/Pods-DMZing/Pods-DMZing.release.xcconfig"; sourceTree = "<group>"; };
 		CBAA91FB15653A30BF8D6E25 /* Pods-DMZing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DMZing.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DMZing/Pods-DMZing.debug.xcconfig"; sourceTree = "<group>"; };
-		CC141022219EB12A00C8CDF3 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
-		CC141024219EB6A500C8CDF3 /* LoginVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVO.swift; sourceTree = "<group>"; };
 		CC31AC58217C8D3200A02388 /* DMZing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DMZing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC31AC5B217C8D3200A02388 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC31AC5D217C8D3200A02388 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -853,10 +851,10 @@
 		CC31AC6E217C922A00A02388 /* Course */ = {
 			isa = PBXGroup;
 			children = (
+				222EECE0219D4BDC00FB15C6 /* APIKey.swift */,
 				222EECC8219C90D600FB15C6 /* TMap-SDK */,
 				22F3025B2195513B00152700 /* Storyboard */,
 				22F3025A2195512C00152700 /* ViewController */,
-				CC141022219EB12A00C8CDF3 /* APIKey.swift */,
 			);
 			path = Course;
 			sourceTree = "<group>";
@@ -892,7 +890,6 @@
 		CC4497B6219DADB7000DE7C5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				CC141024219EB6A500C8CDF3 /* LoginVO.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1105,6 +1102,7 @@
 				3BAF0ED5219C24CE00C3CF31 /* MyCourseService.swift in Sources */,
 				3B872CBC2180943D00498F97 /* CustomView.swift in Sources */,
 				3B872CD02180B12100498F97 /* MyReviewTVCell.swift in Sources */,
+				222EECE1219D4BDC00FB15C6 /* APIKey.swift in Sources */,
 				3BB0500B217CAA410096BF4D /* Storyboard.swift in Sources */,
 				3B800591218B55790003EA5C /* ArticleReviewCVCell.swift in Sources */,
 				3BB0500D217CAA890096BF4D /* NetworkConfiguration.swift in Sources */,
@@ -1149,11 +1147,9 @@
 				3B79938A219A9EDF00DBF5B2 /* GetReviewMainService.swift in Sources */,
 				CC31AC5C217C8D3200A02388 /* AppDelegate.swift in Sources */,
 				3B79938F219AB39900DBF5B2 /* ArticleReviewVO.swift in Sources */,
-				CC141025219EB6A500C8CDF3 /* LoginVO.swift in Sources */,
 				3BAF0EDB219C39A800C3CF31 /* MypageDPService.swift in Sources */,
 				3B872CD52180B40900498F97 /* MyDPPointTVCell.swift in Sources */,
 				3B80058F218B54F10003EA5C /* ReviewMainVC.swift in Sources */,
-				CC141023219EB12A00C8CDF3 /* APIKey.swift in Sources */,
 				3B6697C521980BB2008789E3 /* MypageReviewVO.swift in Sources */,
 				3BA7ED352198933B00BAC493 /* Gallery.swift in Sources */,
 				CC3D43BC2185A9F8003171C0 /* ThemeCollectionViewCell.swift in Sources */,
