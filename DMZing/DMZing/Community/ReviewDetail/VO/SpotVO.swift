@@ -10,5 +10,5 @@ import Foundation
 typealias SpotVO = [SpotVOData]
 
 struct SpotVOData: Codable {
-    let name: String
+    let title: String
 }

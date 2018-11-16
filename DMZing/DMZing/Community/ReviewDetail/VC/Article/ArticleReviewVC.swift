@@ -44,12 +44,16 @@ class ArticleReviewVC : UIViewController, LTTableViewProtocal, APIService  {
         return collectionView
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             guard let `self` = self else { return }
             self.getArticleReviewData(url: self.url("reviews/last/0/course/\(self.selectedMap!.mapType)"))
         }
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
         let nib = UINib.init(nibName: ArticleReviewCVCell.reuseIdentifier, bundle: nil)
         self.collectionView.register(nib, forCellWithReuseIdentifier: ArticleReviewCVCell.reuseIdentifier)
         view.addSubview(collectionView)
@@ -91,7 +95,7 @@ extension ArticleReviewVC : UICollectionViewDelegate, UICollectionViewDataSource
         if indexPath.row == lastItemIdx {
             DispatchQueue.global(qos: .userInitiated).async { [weak self] in
                 guard let `self` = self else { return }
-                self.getArticleReviewData(url: self.url("reviews/last/\(itemIdx)/course/\(self.selectedMap!.mapType)"))
+                self.getArticleReviewData(url: self.url("reviews/last/\(itemIdx)/course/\(self.selectedMap!.mapType)"), isFirst: false)
             }
         }
     }
@@ -100,7 +104,7 @@ extension ArticleReviewVC : UICollectionViewDelegate, UICollectionViewDataSource
 
 
 extension ArticleReviewVC {
-    func getArticleReviewData(url : String){
+    func getArticleReviewData(url : String, isFirst : Bool = true){
         GetArticleReviewService.shareInstance.getMainData(url: url,completion: { [weak self] (result) in
             guard let `self` = self else { return }
             switch result {
@@ -108,7 +112,11 @@ extension ArticleReviewVC {
                 let articleData = data as? ArticleReviewVO
                 guard let articleData_ = articleData else {return}
                 if articleData_.count > 0 {
-                    self.articleReviewArr.append(contentsOf: articleData_)
+                    if isFirst {
+                        self.articleReviewArr = articleData_
+                    } else {
+                         self.articleReviewArr.append(contentsOf: articleData_)
+                    }
                 }
             case .networkFail :
                 self.networkSimpleAlert()
