@@ -55,17 +55,20 @@ class PhotoReviewVC : UIViewController, LTTableViewProtocal, APIService  {
         self.popupView.removeFromSuperview()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            guard let `self` = self else { return }
+            self.getPhotoReviewData(url: self.url("reviews/photo/last/0/course/\(self.selectedMap!.mapType)"))
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         let nib = UINib.init(nibName: PhotoReviewCVCell.reuseIdentifier, bundle: nil)
         self.collectionView.register(nib, forCellWithReuseIdentifier: PhotoReviewCVCell.reuseIdentifier)
         view.addSubview(collectionView)
         glt_scrollView = collectionView
-        
-        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
-            guard let `self` = self else { return }
-            self.getPhotoReviewData(url: self.url("reviews/photo/last/0/course/\(self.selectedMap!.mapType)"))
-        }
+    
         //        if #available(iOS 11.0, *) {
         //            collectionView.contentInsetAdjustmentBehavior = .never
         //
@@ -112,14 +115,14 @@ extension PhotoReviewVC : UICollectionViewDelegate, UICollectionViewDataSource  
         if indexPath.row == lastItemIdx {
             DispatchQueue.global(qos: .userInitiated).async { [weak self] in
                 guard let `self` = self else { return }
-                self.getPhotoReviewData(url: self.url("reviews/photo/last/\(itemIdx)/course/\(self.selectedMap!.mapType)"))
+                self.getPhotoReviewData(url: self.url("reviews/photo/last/\(itemIdx)/course/\(self.selectedMap!.mapType)"), isFirst: false)
             }
         }
     }
 }
 
 extension PhotoReviewVC {
-    func getPhotoReviewData(url : String){
+    func getPhotoReviewData(url : String, isFirst : Bool = true){
         GetPhotoReviewService.shareInstance.getMainData(url: url,completion: { [weak self] (result) in
             guard let `self` = self else { return }
             switch result {
@@ -127,7 +130,11 @@ extension PhotoReviewVC {
                 let photoData = data as? PhotoReviewVO
                 guard let photoData_ = photoData else {return}
                 if photoData_.count > 0 {
-                    self.photoReviewData.append(contentsOf: photoData_)
+                    if isFirst {
+                        self.photoReviewData = photoData_
+                    } else {
+                        self.photoReviewData.append(contentsOf: photoData_)
+                    }
                 }
             case .networkFail :
                 self.networkSimpleAlert()
