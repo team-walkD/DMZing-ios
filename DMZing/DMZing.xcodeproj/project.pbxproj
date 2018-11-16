@@ -11,7 +11,6 @@
 		222EEC6C2198364D00FB15C6 /* PlaceInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222EEC6B2198364D00FB15C6 /* PlaceInfoViewController.swift */; };
 		222EEC6E2199BFE500FB15C6 /* CourseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222EEC6D2199BFE500FB15C6 /* CourseDetailViewController.swift */; };
 		222EECDD219C910D00FB15C6 /* TopLib_Op.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 222EECD7219C910D00FB15C6 /* TopLib_Op.a */; };
-		222EECE1219D4BDC00FB15C6 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222EECE0219D4BDC00FB15C6 /* APIKey.swift */; };
 		222EECE5219D65E800FB15C6 /* PlaceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222EECE4219D65E800FB15C6 /* PlaceDetailViewController.swift */; };
 		222EECE7219D671800FB15C6 /* PlaceDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222EECE6219D671800FB15C6 /* PlaceDetailTableViewCell.swift */; };
 		22F3025D2195515F00152700 /* MainMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F3025C2195515F00152700 /* MainMapViewController.swift */; };
@@ -108,6 +107,7 @@
 		CC529164219AD75300F58603 /* LastCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC529163219AD75300F58603 /* LastCVCell.swift */; };
 		CC529167219AE3BD00F58603 /* FirstModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC529166219AE3BD00F58603 /* FirstModel.swift */; };
 		CC529169219AE4CD00F58603 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC529168219AE4CD00F58603 /* MainModel.swift */; };
+		CC62367E219EE9A7006B2C79 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC62367D219EE9A7006B2C79 /* APIKey.swift */; };
 		CCB3CC9C218AF97A0033B9F9 /* Sign.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCB3CC9B218AF97A0033B9F9 /* Sign.storyboard */; };
 		CCB3CC9E218AF9D40033B9F9 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB3CC9D218AF9D40033B9F9 /* SignInViewController.swift */; };
 		CCB3CCA0218B01430033B9F9 /* SignUp1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB3CC9F218B01430033B9F9 /* SignUp1ViewController.swift */; };
@@ -141,7 +141,6 @@
 		222EECDA219C910D00FB15C6 /* TMapMarkerItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMapMarkerItem.h; sourceTree = "<group>"; };
 		222EECDB219C910D00FB15C6 /* TMapCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMapCircle.h; sourceTree = "<group>"; };
 		222EECDC219C910D00FB15C6 /* TMapTapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMapTapi.h; sourceTree = "<group>"; };
-		222EECE0219D4BDC00FB15C6 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		222EECE4219D65E800FB15C6 /* PlaceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailViewController.swift; sourceTree = "<group>"; };
 		222EECE6219D671800FB15C6 /* PlaceDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailTableViewCell.swift; sourceTree = "<group>"; };
 		22F3025C2195515F00152700 /* MainMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapViewController.swift; sourceTree = "<group>"; };
@@ -242,6 +241,7 @@
 		CC529163219AD75300F58603 /* LastCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastCVCell.swift; sourceTree = "<group>"; };
 		CC529166219AE3BD00F58603 /* FirstModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstModel.swift; sourceTree = "<group>"; };
 		CC529168219AE4CD00F58603 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
+		CC62367D219EE9A7006B2C79 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		CCB3CC9B218AF97A0033B9F9 /* Sign.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sign.storyboard; sourceTree = "<group>"; };
 		CCB3CC9D218AF9D40033B9F9 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		CCB3CC9F218B01430033B9F9 /* SignUp1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp1ViewController.swift; sourceTree = "<group>"; };
@@ -851,10 +851,10 @@
 		CC31AC6E217C922A00A02388 /* Course */ = {
 			isa = PBXGroup;
 			children = (
-				222EECE0219D4BDC00FB15C6 /* APIKey.swift */,
 				222EECC8219C90D600FB15C6 /* TMap-SDK */,
 				22F3025B2195513B00152700 /* Storyboard */,
 				22F3025A2195512C00152700 /* ViewController */,
+				CC62367D219EE9A7006B2C79 /* APIKey.swift */,
 			);
 			path = Course;
 			sourceTree = "<group>";
@@ -1102,7 +1102,6 @@
 				3BAF0ED5219C24CE00C3CF31 /* MyCourseService.swift in Sources */,
 				3B872CBC2180943D00498F97 /* CustomView.swift in Sources */,
 				3B872CD02180B12100498F97 /* MyReviewTVCell.swift in Sources */,
-				222EECE1219D4BDC00FB15C6 /* APIKey.swift in Sources */,
 				3BB0500B217CAA410096BF4D /* Storyboard.swift in Sources */,
 				3B800591218B55790003EA5C /* ArticleReviewCVCell.swift in Sources */,
 				3BB0500D217CAA890096BF4D /* NetworkConfiguration.swift in Sources */,
@@ -1150,6 +1149,7 @@
 				3BAF0EDB219C39A800C3CF31 /* MypageDPService.swift in Sources */,
 				3B872CD52180B40900498F97 /* MyDPPointTVCell.swift in Sources */,
 				3B80058F218B54F10003EA5C /* ReviewMainVC.swift in Sources */,
+				CC62367E219EE9A7006B2C79 /* APIKey.swift in Sources */,
 				3B6697C521980BB2008789E3 /* MypageReviewVO.swift in Sources */,
 				3BA7ED352198933B00BAC493 /* Gallery.swift in Sources */,
 				CC3D43BC2185A9F8003171C0 /* ThemeCollectionViewCell.swift in Sources */,
@@ -1237,7 +1237,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1291,7 +1291,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -1305,7 +1305,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = T5Y35W5FL6;
 				INFOPLIST_FILE = DMZing/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1343,7 +1343,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = T5Y35W5FL6;
 				INFOPLIST_FILE = DMZing/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
