@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
-class SignUpViewController: UIViewController {
-
+class SignUpViewController: UIViewController, APIService {
+    
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var alertEmailLabel: UILabel!
     @IBOutlet weak var alertPwLabel: UILabel!
     @IBOutlet weak var alertPhoneLabel: UILabel!
@@ -17,12 +20,25 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var pwTextField: UITextField!
     @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var nicknameTextField: UITextField!
+    var keyboardDismissGesture: UITapGestureRecognizer?
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
+        setKeyboardSetting()
+        addScrollViewEndEditing()
     }
-
+    
+    func addScrollViewEndEditing(){
+        let singleTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(scrollTapMethod))
+        singleTapGestureRecognizer.numberOfTapsRequired = 1
+        singleTapGestureRecognizer.isEnabled = true
+        singleTapGestureRecognizer.cancelsTouchesInView = false
+        scrollView.addGestureRecognizer(singleTapGestureRecognizer)
+    }
+    
+    @objc func scrollTapMethod(sender: UITapGestureRecognizer) {
+        self.view.endEditing(true)
+    }
+    
     @IBAction func submitAction(_ sender: Any) {
         if(emailTextField.text != "" && pwTextField.text != "" && phoneTextField.text != "" && nicknameTextField.text != ""){
             guard let email = emailTextField.text else {return}
@@ -37,18 +53,36 @@ class SignUpViewController: UIViewController {
             if(!validEmail){
                 emailTextField.shake()
                 alertEmailLabel.isHidden = false
+            }else{
+                alertEmailLabel.isHidden = true
             }
             if(!validPassword){
                 pwTextField.shake()
                 alertPwLabel.isHidden = false
+            }else{
+                alertPwLabel.isHidden = true
             }
             if(!validPhone){
                 phoneTextField.shake()
                 alertPhoneLabel.isHidden = false
+            }else{
+                alertPhoneLabel.isHidden = true
             }
             
+            
             if(validEmail && validPassword && validPhone){
-                self.simpleAlert(title: "회원가입 gogo", message: "gogo")
+                SignService.signup(email: email, pwd: password, nickname: nickname, phone: phone) { message in
+                    if message == "success"{
+                        print("signup success")
+                        self.simpleAlertwithHandler(title: "회원가입 성공", message: "축하드립니다!", okHandler: { action in
+                            self.dismiss(animated: true, completion: nil)
+                        })
+                    }else if message == "already exist"{
+                        self.simpleAlert(title: "회원가입 오류", message: "이미 가입된 이메일입니다.")
+                    }else if message == "error"{
+                        self.simpleAlert(title: "회원가입 오류", message: "에러")
+                    }
+                }
             }
         }else{
             self.simpleAlert(title: "회원가입 오류", message: "모두 입력해주세요")
@@ -66,7 +100,7 @@ class SignUpViewController: UIViewController {
     
     func isValidPhoneNumber(phone: String) -> Bool {
         
-        let phoneRegEx = "^01([0|1|6|7|8|9]?)?([0-9]{3,4})?([0-9]{4})$"
+        let phoneRegEx = "^01([0|1|6|7|8|9]?)-?([0-9]{4})-?([0-9]{4})$"
         let emailTest = NSPredicate(format:"SELF MATCHES %@", phoneRegEx)
         return emailTest.evaluate(with: phone)
         
@@ -86,3 +120,48 @@ class SignUpViewController: UIViewController {
     
 }
 
+
+
+//MARK: - 키보드 대응
+extension SignUpViewController {
+    func setKeyboardSetting() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
+    }
+    
+    @objc func keyboardWillShow(_ notification: Notification) {
+        adjustKeyboardDismissGesture(isKeyboardVisible: true)
+        
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            let keyboardEndframe = self.view.convert(keyboardSize, from: nil)
+            self.scrollView.contentInset.bottom = keyboardEndframe.height
+            self.scrollView.layoutIfNeeded()
+        }
+    }
+    
+    @objc func keyboardWillHide(_ notification: Notification) {
+        adjustKeyboardDismissGesture(isKeyboardVisible: false)
+        
+        let contentInset:UIEdgeInsets = UIEdgeInsets.zero
+        scrollView.contentInset = contentInset
+        self.view.layoutIfNeeded()
+    }
+    
+    func adjustKeyboardDismissGesture(isKeyboardVisible: Bool) {
+        if isKeyboardVisible {
+            if keyboardDismissGesture == nil {
+                keyboardDismissGesture = UITapGestureRecognizer(target: self, action: #selector(tapBackground))
+                view.addGestureRecognizer(keyboardDismissGesture!)
+            }
+        } else {
+            if keyboardDismissGesture != nil {
+                view.removeGestureRecognizer(keyboardDismissGesture!)
+                keyboardDismissGesture = nil
+            }
+        }
+    }
+    
+    @objc func tapBackground() {
+        self.view.endEditing(true)
+    }
+}
