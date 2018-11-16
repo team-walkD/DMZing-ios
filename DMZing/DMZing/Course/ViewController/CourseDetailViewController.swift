@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import Kingfisher
 
-class CourseDetailViewController: UIViewController {
+class CourseDetailViewController: UIViewController, APIService {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -24,16 +25,35 @@ class CourseDetailViewController: UIViewController {
     
     @IBOutlet weak var backView2: UIView!
     @IBOutlet weak var mapContainerView: UIView!
+    @IBOutlet weak var courseLabel1: UILabel!
+    @IBOutlet weak var courseLabel2: UILabel!
+    @IBOutlet weak var courseLabel3: UILabel!
+    @IBOutlet weak var courseLabel4: UILabel!
+    @IBOutlet weak var courseImageView1: UIImageView!
+    @IBOutlet weak var courseImageView2: UIImageView!
+    @IBOutlet weak var courseImageView3: UIImageView!
+    @IBOutlet weak var courseImageView4: UIImageView!
+    
+    
     @IBOutlet weak var totalTimeLabel: UILabel!
     @IBOutlet weak var detailButton: UIButton!
     @IBOutlet weak var navi: UINavigationBar!
+    
+    var courseDetails : CourseDetail?
+    var courseNameArr: [String] = []
+    var courseImageArr: [String] = []
+    
+    var cid: Int = 0
     
     private var tMapView: TMapView? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        print("dd\(gsno(courseDetails?.level))")
+        detailInit()
         
-        tableView.contentInset = UIEdgeInsets(top: -88, left: 0, bottom: 0, right: 0)
+        tableView.contentInset = UIEdgeInsets(top: -44, left: 0, bottom: 0, right: 0)
         setNavigationBar()
         
         backView1.makeRounded(cornerRadius: 10)
@@ -45,8 +65,32 @@ class CourseDetailViewController: UIViewController {
         detailButton.makeRounded(cornerRadius: 20)
         
         createTmapView()
-
-        // Do any additional setup after loading the view.
+        
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            guard let `self` = self else { return }
+            self.getCourseDetailData(url: self.url("course/\(self.cid)"))
+        }
+        
+    }
+    
+    func detailInit() {
+        mainTitleLabel.text = courseDetails?.subDescription
+        subTitleLabel.text = courseDetails?.mainDescription
+        titleLabel.text = courseDetails?.title
+        levelLabel.text = courseDetails?.level
+        timeLabel.text = String(gino(courseDetails?.estimatedTime))
+        reviewLabel.text = String(gino(courseDetails?.reviewCount))
+    
+        
+        courseLabel1.text = courseDetails?.places[0].title
+        courseLabel2.text = courseDetails?.places[1].title
+        courseLabel3.text = courseDetails?.places[2].title
+        courseLabel4.text = courseDetails?.places[3].title
+        courseImageView1.kf.setImage(with: URL(string: gsno(courseDetails?.places[0].mainImageUrl)), placeholder: UIImage())
+        courseImageView2.kf.setImage(with: URL(string: gsno(courseDetails?.places[1].mainImageUrl)), placeholder: UIImage())
+        courseImageView3.kf.setImage(with: URL(string: gsno(courseDetails?.places[2].mainImageUrl)), placeholder: UIImage())
+        courseImageView4.kf.setImage(with: URL(string: gsno(courseDetails?.places[3].mainImageUrl)), placeholder: UIImage())
+        
     }
     
     //MARK: navigationBar transparent
@@ -73,10 +117,46 @@ class CourseDetailViewController: UIViewController {
     @IBAction func rightBtnAction(_ sender: UIBarButtonItem) {
     }
     
-    
-    
+}
 
+//MARK: Server
+extension CourseDetailViewController {
     
+    func getCourseDetailData(url : String) {
+        
+        CourseDetailService.shareInstance.getCourseDetailData(url: url,completion: { [weak self] (result) in
+            guard let `self` = self else { return }
+            
+            switch result {
+                
+            case .networkSuccess(let data):
+                
+                let courseDetailData = data as? CourseDetailData
+        
+                self.mainTitleLabel.text = courseDetailData?.subDescription
+                self.subTitleLabel.text = courseDetailData?.title
+                self.titleLabel.text = courseDetailData?.title
+                self.contentTextView.text = courseDetailData?.mainDescription
+                self.levelLabel.text = courseDetailData?.level
+                self.timeLabel.text = String(self.gino(courseDetailData?.estimatedTime))
+                self.reviewLabel.text = String(self.gino(courseDetailData?.reviewCount))
+                self.courseLabel1.text = courseDetailData?.places[0].title
+                self.courseLabel2.text = courseDetailData?.places[1].title
+                self.courseLabel3.text = courseDetailData?.places[2].title
+                self.courseLabel4.text = courseDetailData?.places[3].title
+                self.courseImageView1.kf.setImage(with: URL(string: self.gsno(courseDetailData?.places[0].mainImageUrl)), placeholder: UIImage())
+                self.courseImageView2.kf.setImage(with: URL(string: self.gsno(courseDetailData?.places[1].mainImageUrl)), placeholder: UIImage())
+                self.courseImageView3.kf.setImage(with: URL(string: self.gsno(courseDetailData?.places[2].mainImageUrl)), placeholder: UIImage())
+                self.courseImageView4.kf.setImage(with: URL(string: self.gsno(courseDetailData?.places[3].mainImageUrl)), placeholder: UIImage())
+
+            case .networkFail :
+                self.networkSimpleAlert()
+            default :
+                self.simpleAlert(title: "오류", message: "다시 시도해주세요")
+                break
+            }
+        })
+    }
 }
 
 //MARK: - TMap extension

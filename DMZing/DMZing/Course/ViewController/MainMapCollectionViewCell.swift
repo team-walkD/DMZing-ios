@@ -14,6 +14,7 @@ class MainMapCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var smallLabel: UILabel!
     @IBOutlet weak var largeLabel: UILabel!
     @IBOutlet weak var pageLabel: UILabel!
+    @IBOutlet weak var totalPageLabel: UILabel!
     @IBOutlet weak var courseImageView: UIImageView!
     @IBOutlet weak var nextButton: UIButton!
     
