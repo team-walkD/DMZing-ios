@@ -24,5 +24,3 @@
 #import "TMapTapi.h"
 #import "TMapType.h"
 #import "TMapView.h"
-
-

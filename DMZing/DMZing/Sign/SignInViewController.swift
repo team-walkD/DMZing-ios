@@ -10,8 +10,10 @@ import UIKit
 
 class SignInViewController: UIViewController {
     
-    @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var nicknameTextField: UITextField!
+
+    @IBOutlet weak var emailTextField: UITextField!
+    
+    @IBOutlet weak var pwTextField: UITextField!
     
     @IBOutlet weak var signinButton: UIButton!
     
@@ -23,7 +25,12 @@ class SignInViewController: UIViewController {
     }
 
     @IBAction func signinAction(_ sender: Any) {
-        print("signin")
+        if(emailTextField.text != "" && pwTextField.text != ""){
+            guard let email = emailTextField.text else {return}
+            guard let password = pwTextField.text else {return}
+        }else{
+            self.simpleAlert(title: "로그인 오류", message: "모두 입력해주세요")
+        }
     }
     
     @IBAction func signupAction(_ sender: Any) {

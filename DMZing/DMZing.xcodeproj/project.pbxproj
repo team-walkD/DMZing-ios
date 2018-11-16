@@ -11,6 +11,8 @@
 		222EEC6C2198364D00FB15C6 /* PlaceInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222EEC6B2198364D00FB15C6 /* PlaceInfoViewController.swift */; };
 		222EEC6E2199BFE500FB15C6 /* CourseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222EEC6D2199BFE500FB15C6 /* CourseDetailViewController.swift */; };
 		222EECDD219C910D00FB15C6 /* TopLib_Op.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 222EECD7219C910D00FB15C6 /* TopLib_Op.a */; };
+		222EECE5219D65E800FB15C6 /* PlaceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222EECE4219D65E800FB15C6 /* PlaceDetailViewController.swift */; };
+		222EECE7219D671800FB15C6 /* PlaceDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222EECE6219D671800FB15C6 /* PlaceDetailTableViewCell.swift */; };
 		22F3025D2195515F00152700 /* MainMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F3025C2195515F00152700 /* MainMapViewController.swift */; };
 		22F3025F2195518B00152700 /* MainMapCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F3025E2195518B00152700 /* MainMapCollectionViewCell.swift */; };
 		3B3A85CE2198836B00D1A835 /* MypageMainVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3A85CD2198836B00D1A835 /* MypageMainVO.swift */; };
@@ -86,7 +88,6 @@
 		3BB05018217CADEF0096BF4D /* PostSampleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB05017217CADEF0096BF4D /* PostSampleService.swift */; };
 		3BB0501A217CADFA0096BF4D /* PhotoSampleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB05019217CADFA0096BF4D /* PhotoSampleService.swift */; };
 		3BB0501C217CAE1E0096BF4D /* SampleVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB0501B217CAE1E0096BF4D /* SampleVO.swift */; };
-		3BCA4A48219D5696003E77A5 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCA4A47219D5696003E77A5 /* APIKey.swift */; };
 		3BD63A052180B873007F5972 /* MyPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD63A042180B873007F5972 /* MyPostVC.swift */; };
 		3BD63A072180B88B007F5972 /* MyPostCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD63A062180B88B007F5972 /* MyPostCVCell.swift */; };
 		3BD63A202185E308007F5972 /* MainCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD63A1F2185E308007F5972 /* MainCVCell.swift */; };
@@ -100,10 +101,13 @@
 		CC31AC74217C92AF00A02388 /* Community.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC31AC73217C92AF00A02388 /* Community.storyboard */; };
 		CC31AC76217C92BD00A02388 /* Mypage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC31AC75217C92BD00A02388 /* Mypage.storyboard */; };
 		CC3D43BC2185A9F8003171C0 /* ThemeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3D43BB2185A9F8003171C0 /* ThemeCollectionViewCell.swift */; };
+		CC4178E2219D4E8000E0CD3E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4178E1219D4E8000E0CD3E /* SignUpViewController.swift */; };
+		CC4497B9219DAE0C000DE7C5 /* SignService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4497B8219DAE0C000DE7C5 /* SignService.swift */; };
 		CC529162219AD69500F58603 /* FirstCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC529161219AD69500F58603 /* FirstCVCell.swift */; };
 		CC529164219AD75300F58603 /* LastCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC529163219AD75300F58603 /* LastCVCell.swift */; };
 		CC529167219AE3BD00F58603 /* FirstModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC529166219AE3BD00F58603 /* FirstModel.swift */; };
 		CC529169219AE4CD00F58603 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC529168219AE4CD00F58603 /* MainModel.swift */; };
+		CC62367E219EE9A7006B2C79 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC62367D219EE9A7006B2C79 /* APIKey.swift */; };
 		CCB3CC9C218AF97A0033B9F9 /* Sign.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCB3CC9B218AF97A0033B9F9 /* Sign.storyboard */; };
 		CCB3CC9E218AF9D40033B9F9 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB3CC9D218AF9D40033B9F9 /* SignInViewController.swift */; };
 		CCB3CCA0218B01430033B9F9 /* SignUp1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB3CC9F218B01430033B9F9 /* SignUp1ViewController.swift */; };
@@ -137,6 +141,8 @@
 		222EECDA219C910D00FB15C6 /* TMapMarkerItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMapMarkerItem.h; sourceTree = "<group>"; };
 		222EECDB219C910D00FB15C6 /* TMapCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMapCircle.h; sourceTree = "<group>"; };
 		222EECDC219C910D00FB15C6 /* TMapTapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMapTapi.h; sourceTree = "<group>"; };
+		222EECE4219D65E800FB15C6 /* PlaceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailViewController.swift; sourceTree = "<group>"; };
+		222EECE6219D671800FB15C6 /* PlaceDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailTableViewCell.swift; sourceTree = "<group>"; };
 		22F3025C2195515F00152700 /* MainMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapViewController.swift; sourceTree = "<group>"; };
 		22F3025E2195518B00152700 /* MainMapCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapCollectionViewCell.swift; sourceTree = "<group>"; };
 		31A78C13C32CCDE3112EE612 /* Pods-DMZing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DMZing.release.xcconfig"; path = "Target Support Files/Pods-DMZing/Pods-DMZing.release.xcconfig"; sourceTree = "<group>"; };
@@ -213,7 +219,6 @@
 		3BB05017217CADEF0096BF4D /* PostSampleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSampleService.swift; sourceTree = "<group>"; };
 		3BB05019217CADFA0096BF4D /* PhotoSampleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSampleService.swift; sourceTree = "<group>"; };
 		3BB0501B217CAE1E0096BF4D /* SampleVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleVO.swift; sourceTree = "<group>"; };
-		3BCA4A47219D5696003E77A5 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		3BD63A042180B873007F5972 /* MyPostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostVC.swift; sourceTree = "<group>"; };
 		3BD63A062180B88B007F5972 /* MyPostCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostCVCell.swift; sourceTree = "<group>"; };
 		3BD63A1F2185E308007F5972 /* MainCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCVCell.swift; sourceTree = "<group>"; };
@@ -230,10 +235,13 @@
 		CC31AC73217C92AF00A02388 /* Community.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Community.storyboard; sourceTree = "<group>"; };
 		CC31AC75217C92BD00A02388 /* Mypage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mypage.storyboard; sourceTree = "<group>"; };
 		CC3D43BB2185A9F8003171C0 /* ThemeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCollectionViewCell.swift; sourceTree = "<group>"; };
+		CC4178E1219D4E8000E0CD3E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		CC4497B8219DAE0C000DE7C5 /* SignService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignService.swift; sourceTree = "<group>"; };
 		CC529161219AD69500F58603 /* FirstCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstCVCell.swift; sourceTree = "<group>"; };
 		CC529163219AD75300F58603 /* LastCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastCVCell.swift; sourceTree = "<group>"; };
 		CC529166219AE3BD00F58603 /* FirstModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstModel.swift; sourceTree = "<group>"; };
 		CC529168219AE4CD00F58603 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
+		CC62367D219EE9A7006B2C79 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		CCB3CC9B218AF97A0033B9F9 /* Sign.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sign.storyboard; sourceTree = "<group>"; };
 		CCB3CC9D218AF9D40033B9F9 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		CCB3CC9F218B01430033B9F9 /* SignUp1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp1ViewController.swift; sourceTree = "<group>"; };
@@ -291,6 +299,8 @@
 				222EEC69219828C800FB15C6 /* MapCoverViewController.swift */,
 				222EEC6B2198364D00FB15C6 /* PlaceInfoViewController.swift */,
 				222EEC6D2199BFE500FB15C6 /* CourseDetailViewController.swift */,
+				222EECE4219D65E800FB15C6 /* PlaceDetailViewController.swift */,
+				222EECE6219D671800FB15C6 /* PlaceDetailTableViewCell.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -841,10 +851,10 @@
 		CC31AC6E217C922A00A02388 /* Course */ = {
 			isa = PBXGroup;
 			children = (
-				3BCA4A47219D5696003E77A5 /* APIKey.swift */,
 				222EECC8219C90D600FB15C6 /* TMap-SDK */,
 				22F3025B2195513B00152700 /* Storyboard */,
 				22F3025A2195512C00152700 /* ViewController */,
+				CC62367D219EE9A7006B2C79 /* APIKey.swift */,
 			);
 			path = Course;
 			sourceTree = "<group>";
@@ -877,6 +887,13 @@
 			path = Mypage;
 			sourceTree = "<group>";
 		};
+		CC4497B6219DADB7000DE7C5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		CC529165219AE2C400F58603 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -889,12 +906,15 @@
 		CCB3CC9A218AF95B0033B9F9 /* Sign */ = {
 			isa = PBXGroup;
 			children = (
+				CC4497B6219DADB7000DE7C5 /* Model */,
 				CCB3CC9B218AF97A0033B9F9 /* Sign.storyboard */,
 				CCB3CC9D218AF9D40033B9F9 /* SignInViewController.swift */,
 				CCB3CC9F218B01430033B9F9 /* SignUp1ViewController.swift */,
 				CCB3CCA1218B035B0033B9F9 /* SignUp2ViewController.swift */,
 				CCB3CCA3218B041B0033B9F9 /* SignUp3ViewController.swift */,
 				CCB3CCA5218B061A0033B9F9 /* InitialViewController.swift */,
+				CC4178E1219D4E8000E0CD3E /* SignUpViewController.swift */,
+				CC4497B8219DAE0C000DE7C5 /* SignService.swift */,
 			);
 			path = Sign;
 			sourceTree = "<group>";
@@ -1071,6 +1091,7 @@
 				CCB3CC9E218AF9D40033B9F9 /* SignInViewController.swift in Sources */,
 				3BB05004217CA6650096BF4D /* PostableService.swift in Sources */,
 				CCB3CCA0218B01430033B9F9 /* SignUp1ViewController.swift in Sources */,
+				CC4178E2219D4E8000E0CD3E /* SignUpViewController.swift in Sources */,
 				3BA7ED392198AC2E00BAC493 /* ArticleStruct.swift in Sources */,
 				3B799396219ABD3400DBF5B2 /* ReviewContentVO.swift in Sources */,
 				3B6697B721959405008789E3 /* WriteArticleReviewVC.swift in Sources */,
@@ -1081,7 +1102,6 @@
 				3BAF0ED5219C24CE00C3CF31 /* MyCourseService.swift in Sources */,
 				3B872CBC2180943D00498F97 /* CustomView.swift in Sources */,
 				3B872CD02180B12100498F97 /* MyReviewTVCell.swift in Sources */,
-				3BCA4A48219D5696003E77A5 /* APIKey.swift in Sources */,
 				3BB0500B217CAA410096BF4D /* Storyboard.swift in Sources */,
 				3B800591218B55790003EA5C /* ArticleReviewCVCell.swift in Sources */,
 				3BB0500D217CAA890096BF4D /* NetworkConfiguration.swift in Sources */,
@@ -1107,16 +1127,19 @@
 				3BD63A072180B88B007F5972 /* MyPostCVCell.swift in Sources */,
 				3B6697B121949DBA008789E3 /* WriteEntryTVCell.swift in Sources */,
 				3B6697BF21980410008789E3 /* MypageMainService.swift in Sources */,
+				222EECE7219D671800FB15C6 /* PlaceDetailTableViewCell.swift in Sources */,
 				3BAF0EDF219C48C200C3CF31 /* MyPostVO.swift in Sources */,
 				3BB05016217CADE80096BF4D /* GetSampleService.swift in Sources */,
 				CC529167219AE3BD00F58603 /* FirstModel.swift in Sources */,
 				CC529162219AD69500F58603 /* FirstCVCell.swift in Sources */,
 				3BAF0ED9219C38D400C3CF31 /* MypageDPVO.swift in Sources */,
+				222EECE5219D65E800FB15C6 /* PlaceDetailViewController.swift in Sources */,
 				3B800580218B213F0003EA5C /* PhotoReviewCVCell.swift in Sources */,
 				3BB0501A217CADFA0096BF4D /* PhotoSampleService.swift in Sources */,
 				3B800598218B81080003EA5C /* PhotoReviewPopupView.swift in Sources */,
 				3B79939D219AD8B200DBF5B2 /* SpotVO.swift in Sources */,
 				3B6697D7219825DB008789E3 /* PostArticleService.swift in Sources */,
+				CC4497B9219DAE0C000DE7C5 /* SignService.swift in Sources */,
 				3B872CBA2180905000498F97 /* MyPageTVCell.swift in Sources */,
 				3BB05000217CA6540096BF4D /* Extensions.swift in Sources */,
 				3B8364F2219461EE000BD706 /* ReviewContentVC.swift in Sources */,
@@ -1126,6 +1149,7 @@
 				3BAF0EDB219C39A800C3CF31 /* MypageDPService.swift in Sources */,
 				3B872CD52180B40900498F97 /* MyDPPointTVCell.swift in Sources */,
 				3B80058F218B54F10003EA5C /* ReviewMainVC.swift in Sources */,
+				CC62367E219EE9A7006B2C79 /* APIKey.swift in Sources */,
 				3B6697C521980BB2008789E3 /* MypageReviewVO.swift in Sources */,
 				3BA7ED352198933B00BAC493 /* Gallery.swift in Sources */,
 				CC3D43BC2185A9F8003171C0 /* ThemeCollectionViewCell.swift in Sources */,
@@ -1213,7 +1237,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1267,7 +1291,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -1281,7 +1305,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+
 				DEVELOPMENT_TEAM = Y4XABUQ539;
+
 				INFOPLIST_FILE = DMZing/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1319,7 +1345,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+
 				DEVELOPMENT_TEAM = Y4XABUQ539;
+
 				INFOPLIST_FILE = DMZing/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
