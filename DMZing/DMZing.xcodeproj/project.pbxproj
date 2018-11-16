@@ -17,6 +17,7 @@
 		222EECF1219DC6D900FB15C6 /* MainMapService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222EECF0219DC6D900FB15C6 /* MainMapService.swift */; };
 		222EECF3219F054500FB15C6 /* CourseDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222EECF2219F054500FB15C6 /* CourseDetail.swift */; };
 		222EECF5219F07F700FB15C6 /* CourseDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222EECF4219F07F700FB15C6 /* CourseDetailService.swift */; };
+		222EECF9219F402C00FB15C6 /* PlaceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222EECF8219F402C00FB15C6 /* PlaceService.swift */; };
 		22F3025D2195515F00152700 /* MainMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F3025C2195515F00152700 /* MainMapViewController.swift */; };
 		22F3025F2195518B00152700 /* MainMapCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F3025E2195518B00152700 /* MainMapCollectionViewCell.swift */; };
 		3B3A85CE2198836B00D1A835 /* MypageMainVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3A85CD2198836B00D1A835 /* MypageMainVO.swift */; };
@@ -153,6 +154,7 @@
 		222EECF0219DC6D900FB15C6 /* MainMapService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapService.swift; sourceTree = "<group>"; };
 		222EECF2219F054500FB15C6 /* CourseDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetail.swift; sourceTree = "<group>"; };
 		222EECF4219F07F700FB15C6 /* CourseDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailService.swift; sourceTree = "<group>"; };
+		222EECF8219F402C00FB15C6 /* PlaceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceService.swift; sourceTree = "<group>"; };
 		22F3025C2195515F00152700 /* MainMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapViewController.swift; sourceTree = "<group>"; };
 		22F3025E2195518B00152700 /* MainMapCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapCollectionViewCell.swift; sourceTree = "<group>"; };
 		31A78C13C32CCDE3112EE612 /* Pods-DMZing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DMZing.release.xcconfig"; path = "Target Support Files/Pods-DMZing/Pods-DMZing.release.xcconfig"; sourceTree = "<group>"; };
@@ -308,6 +310,7 @@
 			children = (
 				222EECF0219DC6D900FB15C6 /* MainMapService.swift */,
 				222EECF4219F07F700FB15C6 /* CourseDetailService.swift */,
+				222EECF8219F402C00FB15C6 /* PlaceService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -1142,6 +1145,7 @@
 				3BB0500B217CAA410096BF4D /* Storyboard.swift in Sources */,
 				3B800591218B55790003EA5C /* ArticleReviewCVCell.swift in Sources */,
 				3BB0500D217CAA890096BF4D /* NetworkConfiguration.swift in Sources */,
+				222EECF9219F402C00FB15C6 /* PlaceService.swift in Sources */,
 				222EECF1219DC6D900FB15C6 /* MainMapService.swift in Sources */,
 				3BCA4B3D219F3C20003E77A5 /* CalculateTimeVO.swift in Sources */,
 				222EECF5219F07F700FB15C6 /* CourseDetailService.swift in Sources */,
