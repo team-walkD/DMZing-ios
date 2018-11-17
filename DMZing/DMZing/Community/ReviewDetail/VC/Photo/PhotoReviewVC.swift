@@ -10,6 +10,13 @@ import UIKit
 import LTScrollView
 import SnapKit
 
+extension Int{
+    func getPortionalLength() -> CGFloat {
+        let screenSize: CGRect = UIScreen.main.bounds
+        return (CGFloat(self)/375)*screenSize.width
+    }
+}
+
 private let glt_iphoneX = (UIScreen.main.bounds.height == 812.0)
 class PhotoReviewVC : UIViewController, LTTableViewProtocal, APIService  {
 
@@ -33,10 +40,10 @@ class PhotoReviewVC : UIViewController, LTTableViewProtocal, APIService  {
         //  let H: CGFloat = glt_iphoneX ? (view.bounds.height - 64 - 24 - 34) : view.bounds.height  - 20
         
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 159, height: 237)
-        layout.minimumLineSpacing = 20
-        layout.minimumInteritemSpacing = 11
-        layout.sectionInset = UIEdgeInsetsMake(29, 22, 29, 22)
+        layout.itemSize = CGSize(width: 159.getPortionalLength(), height: 237.getPortionalLength())
+        layout.minimumLineSpacing = 20.getPortionalLength()
+        layout.minimumInteritemSpacing = 11.getPortionalLength()
+        layout.sectionInset = UIEdgeInsetsMake(29.getPortionalLength(), 22.getPortionalLength(), 29.getPortionalLength(), 22.getPortionalLength())
         
         let collectionView = collectionViewConfig(CGRect(x: 0, y: 0, width: view.bounds.width, height: H), layout, self, self)
         collectionView.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9647058824, blue: 0.9725490196, alpha: 1)

@@ -17,12 +17,12 @@ class ReviewContentTVCell: UITableViewCell {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var bottomWhiteView: UIView!
-
+    
+    @IBOutlet weak var collectionViewHeightConstraint: NSLayoutConstraint!
+    
     var imgUrlArr : [String] = [] {
         didSet {
-            if collectionView != nil {
-                  collectionView.reloadData()
-            }
+            collectionView.reloadData()
         }
     }
     var finalOffset : CGFloat = 0
@@ -34,7 +34,11 @@ class ReviewContentTVCell: UITableViewCell {
         titleLbl.text = data.title
         contentLbl.text = data.content
         if data.postImgURL.count > 0 {
-           imgUrlArr = data.postImgURL
+            imgUrlArr = data.postImgURL
+            collectionViewHeightConstraint.constant = 303
+        } else {
+            imgUrlArr = []
+            collectionViewHeightConstraint.constant = 0
         }
     }
     override func awakeFromNib() {
@@ -44,15 +48,7 @@ class ReviewContentTVCell: UITableViewCell {
         bottomWhiteView.layer.applySketchShadow(alpha : 0.06, x : 0, y : 5, blur : 6, spread : 0)
         contentLbl.setLineSpacing(lineSpacing: 0, lineHeightMultiple: 1.25)
     }
-    
-    override func prepareForReuse() {
-        if imgUrlArr.count == 0 {
-            if collectionView != nil {
-                collectionView.removeFromSuperview()
-                collectionView.setNeedsDisplay()
-            }
-        }
-    }
+
 }
 //MARK: - UICollectionViewDataSource, UICollectionViewDelegate
 extension ReviewContentTVCell : UICollectionViewDataSource, UICollectionViewDelegate {
@@ -91,7 +87,7 @@ extension ReviewContentTVCell: UICollectionViewDelegateFlowLayout {
     //cell size
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let size : Double = glt_iphoneX ? 300/812*812 : 300/812*667
-         return CGSize(width: size, height: size)
+        return CGSize(width: size, height: size)
     }
     
 }

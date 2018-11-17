@@ -7,6 +7,53 @@
 //
 
 import UIKit
+import Photos
+
+extension UIViewController  {
+    // Gallery Method
+    func checkPermission() {
+        let photoAuthorizationStatus = PHPhotoLibrary.authorizationStatus()
+        switch photoAuthorizationStatus {
+        case .authorized:
+            openGallery()
+        case .notDetermined:
+            PHPhotoLibrary.requestAuthorization({
+                (newStatus) in
+                if newStatus ==  PHAuthorizationStatus.authorized {
+                    self.openGallery()
+                }
+            })
+            print("It is not determined until now")
+        case .restricted:
+            showAlbumDisableAlert()
+        case .denied:
+            showAlbumDisableAlert()
+        }
+    }
+
+    func openGallery() {
+        let imagePicker : UIImagePickerController = UIImagePickerController()
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.delegate = self as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
+        imagePicker.allowsEditing = true
+        self.present(imagePicker, animated: true, completion: nil)
+    }
+    
+    func showAlbumDisableAlert() {
+        let alertController = UIAlertController(title: "앨범 접근이 제한되었습니다.", message: "앨범 접근 권한이 필요합니다.", preferredStyle: .alert)
+        let openAction = UIAlertAction(title: "설정으로 가기", style: .default) { (action) in
+            if let url = URL(string: UIApplicationOpenSettingsURLString) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+        }
+        
+        alertController.addAction(openAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+   @objc func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        self.dismiss(animated: true)
+    }
+}
 
 class WritePhotoReviewVC: UIViewController, APIService {
     let datePickerView = UIDatePicker()
@@ -17,7 +64,7 @@ class WritePhotoReviewVC: UIViewController, APIService {
     }
     
     @IBAction func touchImgAction(_ sender: Any) {
-        self.openGallery()
+        self.checkPermission()
     }
     @IBOutlet weak var myImgView: UIImageView!
     @IBOutlet weak var doneBtn: UIButton!
@@ -47,35 +94,21 @@ class WritePhotoReviewVC: UIViewController, APIService {
 extension WritePhotoReviewVC : UIImagePickerControllerDelegate,
 UINavigationControllerDelegate  {
     
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        self.dismiss(animated: true)
-    }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
         //크롭한 이미지
         if let editedImage: UIImage = info[UIImagePickerControllerEditedImage] as? UIImage {
-            let image = UIImageJPEGRepresentation(editedImage, 0.1)
+            let image = UIImageJPEGRepresentation(editedImage, 1.0)
             addImage(url: url("reviews/images"), image: image)
         } else if let originalImage: UIImage = info[UIImagePickerControllerOriginalImage] as? UIImage{
-            let image = UIImageJPEGRepresentation(originalImage, 0.1)
+            let image = UIImageJPEGRepresentation(originalImage, 1.0)
             addImage(url: url("reviews/images"), image: image)
             
         }
         self.dismiss(animated: true)
     }
     
-    // Method
-    func openGallery() {
-        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-            let imagePicker : UIImagePickerController = UIImagePickerController()
-            imagePicker.sourceType = .photoLibrary
-            imagePicker.delegate = self
-            imagePicker.allowsEditing = true
-            
-            self.present(imagePicker, animated: true, completion: nil)
-        }
-    }
 }
 
 extension WritePhotoReviewVC {

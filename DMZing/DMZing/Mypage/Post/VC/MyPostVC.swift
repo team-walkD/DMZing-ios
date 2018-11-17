@@ -20,6 +20,7 @@ class MyPostVC: UIViewController, APIService {
         super.viewDidLoad()
         setupCollectionView()
         setupNavBar()
+        setBackBtn()
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             guard let `self` = self else { return }
             self.getMyPostData(url: self.url("users/\(self.courseId)/mail"))
