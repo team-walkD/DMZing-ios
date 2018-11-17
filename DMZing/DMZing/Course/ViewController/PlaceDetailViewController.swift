@@ -21,7 +21,7 @@ class PlaceDetailViewController: UIViewController, APIService {
         }
     }
     var cid: Int = 0
-    var imageArr = [#imageLiteral(resourceName: "map_one_mark"), #imageLiteral(resourceName: "map_two_mark"), #imageLiteral(resourceName: "map_three_mark"), #imageLiteral(resourceName: "map_four_mark"), #imageLiteral(resourceName: "map_four_mark")]
+    var imageArr = [#imageLiteral(resourceName: "map_one_mark"), #imageLiteral(resourceName: "map_two_mark"), #imageLiteral(resourceName: "map_three_mark"), #imageLiteral(resourceName: "map_four_mark")]
     
     private var tMapView: TMapView? = nil
     
@@ -33,8 +33,6 @@ class PlaceDetailViewController: UIViewController, APIService {
         
         setTableView()
         setNavigationBar()
-        createTmapView()
-        
         
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             guard let `self` = self else { return }
@@ -81,6 +79,7 @@ extension PlaceDetailViewController {
                 
                 if let placeData_ = placeData {
                     self.places = placeData_
+                    self.createTmapView()
                 }
             case .networkFail :
                 self.networkSimpleAlert()
@@ -110,8 +109,7 @@ extension PlaceDetailViewController: UITableViewDelegate, UITableViewDataSource 
         cell.numImageView.image = imageArr[indexPath.row]
         cell.mainImageView.kf.setImage(with: URL(string: places[indexPath.row].mainImageUrl), placeholder: UIImage())
         cell.placeLabel.text = places[indexPath.row].title
-        cell.amLabel.text = "8:00"
-        cell.pmLabel.text = "7:00"
+
         cell.busLabel.text = "20분"
         cell.walkLabel.text = "30분"
         cell.carLabel.text = "10분"
@@ -161,19 +159,11 @@ extension PlaceDetailViewController: TMapViewDelegate {
             print("TMap을 생성하는데 실패하였습니다")
             return
         }
-        
-        let minLat: Double = 37.5536067
-        let maxLat: Double = 37.5662952
-        let minLon: Double = 126.96961950000002
-        let maxLon: Double = 126.97794509999994
-        let centerCoord = CLLocationCoordinate2D(latitude: (minLat + maxLat) / 2, longitude: (minLon + maxLon) / 2)
-        
-        
-        mapView.zoom(toLatSpan: maxLat - minLat, lonSpan: maxLon - minLon)
+
+        let centerCoord = CLLocationCoordinate2D(latitude: places[0].latitude, longitude: places[0].longitude)
+        mapView.zoom(toLatSpan: places[0].latitude, lonSpan: places[0].longitude)
         mapView.setCenter(centerCoord)
-        
-        mapView.setZoomLevel(12)
-        
+        mapView.setZoomLevel(7)
         
         mapView.setSKTMapApiKey(tMapKey)// 발급 받은 apiKey 설정
         mapContainerView.addSubview(mapView)
@@ -185,31 +175,42 @@ extension PlaceDetailViewController: TMapViewDelegate {
     
     func addMarker() {
         
-        let mapPoint = TMapPoint(coordinate: CLLocationCoordinate2D(latitude: 37.5662952, longitude: 126.97794509999994))
+        let mapPoint1 = TMapPoint(coordinate: CLLocationCoordinate2D(latitude: places[0].latitude, longitude: places[0].longitude))
         let marker1 = TMapMarkerItem()
-        marker1.setTMapPoint(mapPoint)
-        marker1.setIcon(#imageLiteral(resourceName: "heart_fill_icon.png"), anchorPoint: CGPoint(x: 0.5, y: 1.0))
-        
+        marker1.setTMapPoint(mapPoint1)
+        marker1.setIcon(#imageLiteral(resourceName: "map_one_mark"), anchorPoint: CGPoint(x: 0.5, y: 1.0))
         marker1.enableClustering = true
         tMapView?.addTMapMarkerItemID("1", marker: marker1, animated: true)
         
-        let mapPoint1 = TMapPoint(coordinate: CLLocationCoordinate2D(latitude: 37.5536067, longitude: 126.96961950000002))
+        let mapPoint2 = TMapPoint(coordinate: CLLocationCoordinate2D(latitude:  places[1].latitude, longitude: places[1].longitude))
         let marker2 = TMapMarkerItem()
-        marker2.setTMapPoint(mapPoint1)
-        marker2.setIcon(#imageLiteral(resourceName: "heart_fill_icon.png"), anchorPoint: CGPoint(x: 0.5, y: 1.0))
-        
+        marker2.setTMapPoint(mapPoint2)
+        marker2.setIcon(#imageLiteral(resourceName: "map_two_mark"), anchorPoint: CGPoint(x: 0.5, y: 1.0))
         marker2.enableClustering = true
         tMapView?.addTMapMarkerItemID("22ㅇㄹㅁ", marker: marker2, animated: true)
+        
+        let mapPoint3 = TMapPoint(coordinate: CLLocationCoordinate2D(latitude: places[2].latitude, longitude: places[2].longitude))
+        let marker3 = TMapMarkerItem()
+        marker3.setTMapPoint(mapPoint3)
+        marker3.setIcon(#imageLiteral(resourceName: "map_three_mark"), anchorPoint: CGPoint(x: 0.5, y: 1.0))
+        marker3.enableClustering = true
+        tMapView?.addTMapMarkerItemID("3", marker: marker3, animated: true)
+        
+        let mapPoint4 = TMapPoint(coordinate: CLLocationCoordinate2D(latitude: places[3].latitude, longitude: places[3].longitude))
+        let marker4 = TMapMarkerItem()
+        marker4.setTMapPoint(mapPoint4)
+        marker4.setIcon(#imageLiteral(resourceName: "map_four_mark"), anchorPoint: CGPoint(x: 0.5, y: 1.0))
+        marker4.enableClustering = true
+        tMapView?.addTMapMarkerItemID("4", marker: marker4, animated: true)
     }
     
     func addPolyLine() {
         
-        var array = [TMapPoint(coordinate: CLLocationCoordinate2D(latitude: 37.5662952, longitude: 126.97794509999994)), TMapPoint(coordinate: CLLocationCoordinate2D(latitude: 37.5536067, longitude: 126.96961950000002))]
+        var array = [TMapPoint(coordinate: CLLocationCoordinate2D(latitude: places[0].latitude, longitude: places[0].longitude)), TMapPoint(coordinate: CLLocationCoordinate2D(latitude: places[1].latitude, longitude: places[1].longitude)), TMapPoint(coordinate: CLLocationCoordinate2D(latitude: places[2].latitude, longitude: places[2].longitude)), TMapPoint(coordinate: CLLocationCoordinate2D(latitude: places[3].latitude, longitude: places[3].longitude))]
         
         let line = TMapPolyLine()
         line.setLineColor(#colorLiteral(red: 0.4268620908, green: 0.6586153507, blue: 0.781027019, alpha: 1))
-        line.setLineWidth(5)
-        
+        line.setLineWidth(2)
         
         for i in 0..<array.count {
             let point = array[i]
