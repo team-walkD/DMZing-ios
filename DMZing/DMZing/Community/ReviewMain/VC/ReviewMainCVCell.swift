@@ -20,11 +20,11 @@ class ReviewMainCVCell: UICollectionViewCell {
         cntLbl.text = data.conut.description
         titleLbl.text = "\(data.typeName)"
         mainImgView.setImgWithKF(url: data.imageUrl, defaultImg: #imageLiteral(resourceName: "review_default_img"))
+        backView.makeRounded(cornerRadius: nil)
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        backView.makeRounded(cornerRadius: nil)
         backView.makeViewBorder(width: 0.5, color: #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1))
         blueView.makeRounded(cornerRadius: nil)
     }
