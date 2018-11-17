@@ -27,7 +27,6 @@ class MainMapViewController: UIViewController, APIService {
     
     @IBOutlet weak var mapCollectionView: UICollectionView!
     @IBOutlet weak var mapImageView: UIImageView!
-
     
     let arr = [#imageLiteral(resourceName: "ccc"), #imageLiteral(resourceName: "walk_d_icon"), #imageLiteral(resourceName: "ccc")]
     
@@ -74,28 +73,7 @@ extension MainMapViewController {
             }
         })
     }
-    
-//    func putPick(url : String){
-//        
-//        PickService.shareInstance.putPick(url: url, completion: { [weak self] (result) in
-//            guard let `self` = self else { return }
-//            switch result {
-//            case .networkSuccess(let data):
-//                self.simpleAlert(title: "", message: """
-//                데이트하기 좋은 코스를
-//                구매하셨습니다!
-//                """)
-//
-//                break
-//            case .networkFail :
-//                self.networkSimpleAlert()
-//            default :
-//                self.simpleAlert(title: "오류", message: "다시 시도해주세요")
-//                break
-//            }
-//        })
-//    }
-    
+
     func postOrder(url : String){
         let params : [String : Any] = [:]
 
@@ -162,6 +140,7 @@ extension MainMapViewController: UICollectionViewDelegate, UICollectionViewDataS
             coverVC.main = courses[indexPath.row].mainDescription
             coverVC.pick = courses[indexPath.row].pickCount
             coverVC.id = courses[indexPath.row].id
+            coverVC.imageUrl = courses[indexPath.row].imageUrl
             
             self.navigationController?.pushViewController(coverVC, animated: true)
             

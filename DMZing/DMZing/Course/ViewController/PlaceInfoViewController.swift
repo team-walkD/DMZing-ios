@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import Kingfisher
 
 class PlaceInfoViewController: UIViewController {
 
     @IBOutlet weak var numberLabel: UILabel!
     @IBOutlet weak var placeLabel: UILabel!
+    @IBOutlet weak var backImageView: UIImageView!
     
     @IBOutlet weak var contentTextView: UITextView!
     @IBOutlet weak var closedLabel: UILabel!
@@ -27,6 +29,7 @@ class PlaceInfoViewController: UIViewController {
     var restDay: String = ""
     var parking: String = ""
     var infoCenter: String = ""
+    var imageUrl: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +44,7 @@ class PlaceInfoViewController: UIViewController {
         closedLabel.text = restDay
         parkingLabel.text = parking
         phoneLabel.text = infoCenter
+        backImageView.kf.setImage(with: URL(string: imageUrl), placeholder: UIImage())
 
     }
     

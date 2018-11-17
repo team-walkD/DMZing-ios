@@ -15,6 +15,7 @@ class CourseDetailViewController: UIViewController, APIService {
     
     @IBOutlet weak var mainTitleLabel: UILabel!
     @IBOutlet weak var subTitleLabel: UILabel!
+    @IBOutlet weak var backImageView: UIImageView!
     
     @IBOutlet weak var backView1: UIView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -42,6 +43,7 @@ class CourseDetailViewController: UIViewController, APIService {
     var courseImageArr: [String] = []
     
     var cid: Int = 0
+    var timeArr: [Int] = []
     
     private var tMapView: TMapView? = nil
     
@@ -63,6 +65,7 @@ class CourseDetailViewController: UIViewController, APIService {
             guard let `self` = self else { return }
             self.getCourseDetailData(url: self.url("course/\(self.cid)"))
         }
+        
 
     }
     
@@ -97,8 +100,8 @@ class CourseDetailViewController: UIViewController, APIService {
 //MARK: Server
 extension CourseDetailViewController {
     
+    //MARK: api/course/cid - 코스 상세보기 GET
     func getCourseDetailData(url : String) {
-        
         CourseDetailService.shareInstance.getCourseDetailData(url: url,completion: { [weak self] (result) in
             guard let `self` = self else { return }
             
@@ -108,6 +111,7 @@ extension CourseDetailViewController {
                 
                 let courseDetailData = data as? CourseDetailData
         
+                self.backImageView.kf.setImage(with: URL(string: self.gsno(courseDetailData?.imageUrl)), placeholder: UIImage())
                 self.mainTitleLabel.text = courseDetailData?.subDescription
                 self.subTitleLabel.text = courseDetailData?.title
                 self.titleLabel.text = courseDetailData?.title
@@ -125,6 +129,8 @@ extension CourseDetailViewController {
                 self.courseImageView4.kf.setImage(with: URL(string: self.gsno(courseDetailData?.places[3].mainImageUrl)), placeholder: UIImage())
                 
                 self.createTmapView(lat1: self.gdno(courseDetailData?.places[0].latitude), lat2: self.gdno(courseDetailData?.places[1].latitude), lat3: self.gdno(courseDetailData?.places[2].latitude), lat4: self.gdno(courseDetailData?.places[3].latitude), lon1: self.gdno(courseDetailData?.places[0].longitude), lon2: self.gdno(courseDetailData?.places[1].longitude), lon3: self.gdno(courseDetailData?.places[2].longitude), lon4: self.gdno(courseDetailData?.places[3].longitude))
+                
+                self.totalTimeLabel.text = self.totalTime(lat1: self.gdno(courseDetailData?.places[0].latitude), lat2: self.gdno(courseDetailData?.places[1].latitude), lat3: self.gdno(courseDetailData?.places[2].latitude), lat4: self.gdno(courseDetailData?.places[3].latitude), lon1: self.gdno(courseDetailData?.places[0].longitude), lon2: self.gdno(courseDetailData?.places[1].longitude), lon3: self.gdno(courseDetailData?.places[2].longitude), lon4: self.gdno(courseDetailData?.places[3].longitude))
 
             case .networkFail :
                 self.networkSimpleAlert()
@@ -133,6 +139,42 @@ extension CourseDetailViewController {
                 break
             }
         })
+    }
+    
+    //MARK: Tmap 소요시간
+    func calculateCarTime(startLat : Double, startLong : Double, endLat : Double, endLong : Double) -> Int{
+        let version = 1
+        let tollgateFareOption = 1
+        let url = "http://api2.sktelecom.com/tmap/routes?version=\(version)&appKey=\(tMapKey)&tollgateFareOption=\(tollgateFareOption)&endX=\(endLong)&endY=\(endLat)&startX=\(startLong)&startY=\(startLat)"
+
+        CalculateTimeService.shareInstance.calculateTimeToNext(url: url, params: [:], completion: { [weak self] (result) in
+            
+            guard let `self` = self else { return}
+            switch result {
+            case .networkSuccess(let data):
+                guard let data_ = data as? CalculateTimeVO else {return}
+                guard let time = data_.features.first?.properties.carTime else {return}
+                print("dd\(time)")
+
+                UserDefaults.standard.set(time, forKey: "time")
+            case .networkFail :
+                self.networkSimpleAlert()
+            default :
+                self.simpleAlert(title: "오류", message: "다시 시도해주세요")
+            }
+        })
+        
+        return UserDefaults.standard.integer(forKey: "time")
+    }
+    
+    func totalTime(lat1: Double, lat2: Double, lat3: Double, lat4: Double, lon1: Double, lon2: Double, lon3: Double, lon4: Double) -> String {
+            let a = self.calculateCarTime(startLat: lat1, startLong: lon1, endLat: lat2, endLong: lon2)
+            let b = self.calculateCarTime(startLat: lat2, startLong: lon2, endLat: lat3, endLong: lon3)
+            let c = self.calculateCarTime(startLat: lat3, startLong: lon3, endLat: lat4, endLong: lon4)
+
+            let total:Double = Double((a + b + c) / 3600)
+
+            return String(total)
     }
     
     func gdno(_ value : Double?) -> Double{

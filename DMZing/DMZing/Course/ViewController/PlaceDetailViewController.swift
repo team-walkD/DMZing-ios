@@ -161,6 +161,7 @@ extension PlaceDetailViewController: UITableViewDelegate, UITableViewDataSource 
         infoVC.restDay = gsno(places[indexPath.row].restDate)
         infoVC.parking = gsno(places[indexPath.row].parking)
         infoVC.infoCenter = gsno(places[indexPath.row].infoCenter)
+        infoVC.imageUrl = gsno(places[indexPath.row].mainImageUrl)
         
         self.present(infoVC, animated: true, completion: nil)
     }
