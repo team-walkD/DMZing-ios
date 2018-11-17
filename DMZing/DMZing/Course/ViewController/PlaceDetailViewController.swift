@@ -21,12 +21,14 @@ class PlaceDetailViewController: UIViewController, APIService {
         }
     }
     var cid: Int = 0
-    var imageArr = [#imageLiteral(resourceName: "map_one_mark"), #imageLiteral(resourceName: "map_two_mark"), #imageLiteral(resourceName: "map_three_mark"), #imageLiteral(resourceName: "map_four_mark")]
+    var imageArr = [#imageLiteral(resourceName: "map_one_mark"), #imageLiteral(resourceName: "map_two_mark"), #imageLiteral(resourceName: "map_three_mark"), #imageLiteral(resourceName: "map_four_mark"), #imageLiteral(resourceName: "map_four_mark")]
     
     private var tMapView: TMapView? = nil
     
     var expandedRows = Set<Int>()
     var initialTouchPoint: CGPoint = CGPoint(x: 0, y: 0)
+    
+    let center = NotificationCenter.default
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +40,31 @@ class PlaceDetailViewController: UIViewController, APIService {
             guard let `self` = self else { return }
             self.getPlaceData(url: self.url("course/\(self.cid)/places"))
         }
+        
+        center.addObserver(self, selector: #selector(reverseAction), name: Notification.Name("reverseAction"), object: nil)
     
+    }
+    
+    @objc func reverseAction(noti: Notification) {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PlaceDetailTableViewCell") as! PlaceDetailTableViewCell
+        
+        if let placeTag = noti.object as?  Int {
+            
+            switch cell.isExpanded {
+            
+            case true:
+                self.expandedRows.remove(placeTag)
+                
+            case false:
+                self.expandedRows.insert(placeTag)
+            }
+            
+            cell.isExpanded = !cell.isExpanded
+            
+            self.tableView.beginUpdates()
+            self.tableView.endUpdates()
+        }
     }
     
     func setTableView() {
@@ -61,8 +87,6 @@ class PlaceDetailViewController: UIViewController, APIService {
     @IBAction func dismissAction(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
     }
-    
-    
 }
 
 //MARK: Server
@@ -91,7 +115,6 @@ extension PlaceDetailViewController {
     }
 }
 
-
 //MARK: - TableView extension
 extension PlaceDetailViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -119,6 +142,7 @@ extension PlaceDetailViewController: UITableViewDelegate, UITableViewDataSource 
         cell.nextImageView1.kf.setImage(with: URL(string: gsno(places[indexPath.row].peripheries[0].firstimage)), placeholder: UIImage())
         cell.nextImageView2.kf.setImage(with: URL(string: gsno(places[indexPath.row].peripheries[1].firstimage)), placeholder: UIImage())
         cell.nextImageView3.kf.setImage(with: URL(string: gsno(places[indexPath.row].peripheries[2].firstimage)), placeholder: UIImage())
+        cell.tag = indexPath.row
         
         if indexPath.row == 0 {
             cell.lineView.isHidden = true
@@ -129,22 +153,16 @@ extension PlaceDetailViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        guard let cell = tableView.cellForRow(at: indexPath) as? PlaceDetailTableViewCell else { return }
-
-        switch cell.isExpanded {
-            
-            case true:
-                self.expandedRows.remove(indexPath.row)
-            
-            case false:
-                self.expandedRows.insert(indexPath.row)
-            
-        }
+        let infoVC = UIStoryboard(name: "Course", bundle: nil).instantiateViewController(withIdentifier: "PlaceInfoViewController") as! PlaceInfoViewController
         
-        cell.isExpanded = !cell.isExpanded
+        infoVC.cid = cid
+        infoVC.content = places[indexPath.row].description
+        infoVC.num = String(places[indexPath.row].id)
+        infoVC.restDay = gsno(places[indexPath.row].restDate)
+        infoVC.parking = gsno(places[indexPath.row].parking)
+        infoVC.infoCenter = gsno(places[indexPath.row].infoCenter)
         
-        self.tableView.beginUpdates()
-        self.tableView.endUpdates()
+        self.present(infoVC, animated: true, completion: nil)
     }
     
 }

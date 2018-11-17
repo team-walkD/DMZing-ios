@@ -16,7 +16,10 @@ class MainMapCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var pageLabel: UILabel!
     @IBOutlet weak var totalPageLabel: UILabel!
     @IBOutlet weak var courseImageView: UIImageView!
-    @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var hiddenImageView: UIImageView!
+    @IBOutlet weak var hiddenLockImageView: UIImageView!
+    @IBOutlet weak var hiddenStackView: UIStackView!
+    @IBOutlet weak var dpLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,5 +29,7 @@ class MainMapCollectionViewCell: UICollectionViewCell {
         courseImageView.clipsToBounds = true
         courseImageView.layer.cornerRadius = 10
         courseImageView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+        
+        hiddenImageView.makeRounded(cornerRadius: 10)
     }
 }
