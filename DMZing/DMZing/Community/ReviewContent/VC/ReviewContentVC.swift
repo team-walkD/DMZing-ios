@@ -97,6 +97,10 @@ extension ReviewContentVC : UITableViewDelegate, UITableViewDataSource{
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if (scrollView.contentOffset.y + 1) >= (scrollView.contentSize.height - scrollView.frame.size.height) {
+            //reach bottom
+            return
+        }
         let height : CGFloat = glt_iphoneX ? 359/812*812 : 359/812*667
         let minHeight : CGFloat = glt_iphoneX ? 292/812*812 : 292/812*667
         let y = height - (scrollView.contentOffset.y)
@@ -107,8 +111,6 @@ extension ReviewContentVC : UITableViewDelegate, UITableViewDataSource{
         
         topView.frame = rect
         makeConstraint()
-        
-        
     }
     
 }
