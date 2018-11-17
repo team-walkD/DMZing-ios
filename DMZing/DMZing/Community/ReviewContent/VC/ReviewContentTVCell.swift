@@ -37,6 +37,7 @@ class ReviewContentTVCell: UITableViewCell {
             imgUrlArr = data.postImgURL
             collectionViewHeightConstraint.constant = 303
         } else {
+            imgUrlArr = []
             collectionViewHeightConstraint.constant = 0
         }
     }
