@@ -47,4 +47,12 @@ class PlaceDetailTableViewCell: UITableViewCell {
         }
     }
     
+    @IBAction func reverseAction(_ sender: UIButton) {
+        
+        isExpanded = !isExpanded
+        
+        NotificationCenter.default.post(name: Notification.Name("reverseAction"), object: tag)
+    }
+    
+    
 }
