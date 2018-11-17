@@ -411,6 +411,7 @@ tOyVmOuLpC4LCuyerOuvuCDsl4bsnYQg6rKDIOqwmeuLpOqzoOunjCDsg53qsIHtlojripTrjbAg7IOd
                                         <connections>
                                             <outlet property="bottomWhiteView" destination="yyI-k3-tkD" id="hYl-AD-lbg"/>
                                             <outlet property="collectionView" destination="f87-7Z-gtb" id="U8k-MF-xr0"/>
+                                            <outlet property="collectionViewHeightConstraint" destination="WMj-92-c9b" id="D5I-oH-yro"/>
                                             <outlet property="contentLbl" destination="S8I-dI-Doq" id="1yB-XV-IS0"/>
                                             <outlet property="dateLbl" destination="L28-jM-uLy" id="2bo-2m-nFc"/>
                                             <outlet property="dayLbl" destination="wMv-PG-M4d" id="31q-Ry-YhQ"/>
