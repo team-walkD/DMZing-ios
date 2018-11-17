@@ -19,36 +19,44 @@ class PlaceInfoViewController: UIViewController {
     @IBOutlet weak var phoneLabel: UILabel!
     
     @IBOutlet weak var backView: UIView!
+    @IBOutlet weak var navi: UINavigationBar!
+    
+    var cid: Int = 0
+    var num: String = ""
+    var content: String = ""
+    var restDay: String = ""
+    var parking: String = ""
+    var infoCenter: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        setBackBtn(color: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
-        setRightBarButtonItem()
+        
+        setNavigationBar()
         
         backView.makeRounded(cornerRadius: 10)
         backView.dropShadow(color: #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1), opacity: 0.3, offSet: CGSize(width: -0.5, height: 0.5), radius: 10, scale: true)
+        
+        numberLabel.text = "0\(num)"
+        contentTextView.text = content
+        closedLabel.text = restDay
+        parkingLabel.text = parking
+        phoneLabel.text = infoCenter
 
     }
     
-    //MARK: rightBarButtonItem Setting
-    func setRightBarButtonItem() {
-        let rightButtonItem = UIBarButtonItem.init(
-            title: "",
-            style: .done,
-            target: self,
-            action: #selector(rightButtonAction(sender:))
-        )
+    //MARK: navigationBar transparent
+    func setNavigationBar() {
         
-        rightButtonItem.image = #imageLiteral(resourceName: "walk_d_white_icon.png")
-        rightButtonItem.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        self.navigationItem.rightBarButtonItem = rightButtonItem
+        navi.isTranslucent = true
+        navi.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        navi.shadowImage = UIImage()
+        navi.backgroundColor = UIColor.clear
     }
     
-    //MARK: rightBarButtonItem Action
-    @objc func rightButtonAction(sender: UIBarButtonItem) {
+    @IBAction func backAction(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
     }
-    
+
 }
 
 //MARK: - UIView Shadow extension
