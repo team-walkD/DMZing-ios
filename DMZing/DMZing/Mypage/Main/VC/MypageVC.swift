@@ -47,6 +47,11 @@ class MypageVC: UIViewController, APIService {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        super.viewWillDisappear(animated)
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            guard let `self` = self else { return }
+            self.getMainData(url: self.url("users/info"))
+        }
         setupNavBar(color: .white)
     }
     
@@ -57,11 +62,6 @@ class MypageVC: UIViewController, APIService {
     }
 
     override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
-            guard let `self` = self else { return }
-            self.getMainData(url: self.url("users/info"))
-        }
         setupNavBar(color: UIColor.FlatColor.Blue.lightBlue)
     }
     func setupTableView(){
