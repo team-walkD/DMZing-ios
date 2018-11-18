@@ -411,6 +411,7 @@ tOyVmOuLpC4LCuyerOuvuCDsl4bsnYQg6rKDIOqwmeuLpOqzoOunjCDsg53qsIHtlojripTrjbAg7IOd
                                         <connections>
                                             <outlet property="bottomWhiteView" destination="yyI-k3-tkD" id="hYl-AD-lbg"/>
                                             <outlet property="collectionView" destination="f87-7Z-gtb" id="U8k-MF-xr0"/>
+                                            <outlet property="collectionViewHeightConstraint" destination="WMj-92-c9b" id="D5I-oH-yro"/>
                                             <outlet property="contentLbl" destination="S8I-dI-Doq" id="1yB-XV-IS0"/>
                                             <outlet property="dateLbl" destination="L28-jM-uLy" id="2bo-2m-nFc"/>
                                             <outlet property="dayLbl" destination="wMv-PG-M4d" id="31q-Ry-YhQ"/>
@@ -450,7 +451,14 @@ tOyVmOuLpC4LCuyerOuvuCDsl4bsnYQg6rKDIOqwmeuLpOqzoOunjCDsg53qsIHtlojripTrjbAg7IOd
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="i6V-LU-OgW"/>
                     </view>
-                    <navigationItem key="navigationItem" id="RK8-Q6-KEb"/>
+                    <navigationItem key="navigationItem" id="RK8-Q6-KEb">
+                        <barButtonItem key="rightBarButtonItem" image="walk_d_icon" id="aTZ-H5-ffs">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="reportAction:" destination="Ubf-5B-Vid" id="hxH-5I-AgL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <size key="freeformSize" width="375" height="1500"/>
                     <connections>
@@ -1058,6 +1066,7 @@ tOyVmOuLpC4LCuyerOuvuCDsl4bsnYQg6rKDIOqwmeuLpOqzoOunjCDsg53qsIHtlojripTrjbAg7IOd
         <image name="review_default_img" width="375" height="263"/>
         <image name="review_write_icon" width="23" height="24"/>
         <image name="thumbnail_plus_icon" width="19" height="19"/>
+        <image name="walk_d_icon" width="25" height="25"/>
         <image name="x_btn" width="24" height="24"/>
         <image name="x_white_btn" width="24" height="24"/>
     </resources>

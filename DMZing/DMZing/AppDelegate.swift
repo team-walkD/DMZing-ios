@@ -15,11 +15,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         UINavigationBar.appearance().barTintColor = UIColor.FlatColor.Blue.lightBlue
         UINavigationBar.appearance().isTranslucent = false
         UINavigationBar.appearance().shadowImage = UIImage()
         return true
+    }
+    
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?)
+        -> UIInterfaceOrientationMask {
+            return [.portrait]
+            
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

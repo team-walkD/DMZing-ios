@@ -83,7 +83,7 @@ extension WriteArticleReviewVC :  UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedPhotoIdx = indexPath.row
-        openGallery()
+        checkAlbumPermission()
     }
   
 }
@@ -172,36 +172,21 @@ extension WriteArticleReviewVC : UITextViewDelegate{
 //MARK: - 앨범 열기 위함
 extension WriteArticleReviewVC : UIImagePickerControllerDelegate,
 UINavigationControllerDelegate  {
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        self.dismiss(animated: true)
-    }
-    
+  
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
         //크롭한 이미지
         if let editedImage: UIImage = info[UIImagePickerControllerEditedImage] as? UIImage {
-            let image = UIImageJPEGRepresentation(editedImage, 0.1)
+            let image = UIImageJPEGRepresentation(editedImage, 1.0)
             addImage(url: url("reviews/images"), image: image)
         } else if let originalImage: UIImage = info[UIImagePickerControllerOriginalImage] as? UIImage{
-            let image = UIImageJPEGRepresentation(originalImage, 0.1)
+            let image = UIImageJPEGRepresentation(originalImage, 1.0)
             addImage(url: url("reviews/images"), image: image)
             
         }
         self.dismiss(animated: true)
     }
-    
-    // Method
-    func openGallery() {
-        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-            let imagePicker : UIImagePickerController = UIImagePickerController()
-            imagePicker.sourceType = .photoLibrary
-            imagePicker.delegate = self
-            imagePicker.allowsEditing = true
-            
-            self.present(imagePicker, animated: true, completion: nil)
-        }
-    }
+
 }
 
 //통신

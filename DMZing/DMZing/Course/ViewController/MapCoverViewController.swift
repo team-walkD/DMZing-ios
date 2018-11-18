@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MapCoverViewController: UIViewController {
     
     @IBOutlet weak var smallLabel: UILabel!
     @IBOutlet weak var largeLabel: UILabel!
     @IBOutlet weak var pickLabel: UILabel!
+    @IBOutlet weak var backImageView: UIImageView!
     
     var initialTouchPoint: CGPoint = CGPoint(x: 0, y: 0)
     
@@ -20,6 +22,7 @@ class MapCoverViewController: UIViewController {
     var sub: String?
     var main: String?
     var pick: Int?
+    var imageUrl: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +34,7 @@ class MapCoverViewController: UIViewController {
         smallLabel.text = sub
         largeLabel.text = main
         pickLabel.text = String(gino(pick))
+        backImageView.kf.setImage(with: URL(string: gsno(imageUrl)), placeholder: UIImage())
     }
     
     //MARK: navigationBar transparent

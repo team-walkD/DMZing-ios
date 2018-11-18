@@ -76,6 +76,12 @@ class ReviewContentVC: UIViewController, UIGestureRecognizerDelegate, APIService
     @IBAction func likeAction(_ sender: Any) {
         likeContent(url: url("reviews/like/\(selectedRId)"))
     }
+    
+    @IBAction func reportAction(_ sender: Any) {
+        simpleAlertwithHandler(title: "신고", message: "해당 게시물을 신고하시겠습니까?") { (_) in
+            self.reportContent(url: self.url("reviews/like/\(self.selectedRId)"))
+        }
+    }
 }
 
 extension ReviewContentVC : UITableViewDelegate, UITableViewDataSource{
@@ -97,6 +103,10 @@ extension ReviewContentVC : UITableViewDelegate, UITableViewDataSource{
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if (scrollView.contentOffset.y + 1) >= (scrollView.contentSize.height - scrollView.frame.size.height) {
+            //reach bottom
+            return
+        }
         let height : CGFloat = glt_iphoneX ? 359/812*812 : 359/812*667
         let minHeight : CGFloat = glt_iphoneX ? 292/812*812 : 292/812*667
         let y = height - (scrollView.contentOffset.y)
@@ -107,8 +117,6 @@ extension ReviewContentVC : UITableViewDelegate, UITableViewDataSource{
         
         topView.frame = rect
         makeConstraint()
-        
-        
     }
     
 }
@@ -239,6 +247,10 @@ extension ReviewContentVC {
                 break
             }
         })
+    }
+    
+    func reportContent(url : String){
+        
     }
    
 }

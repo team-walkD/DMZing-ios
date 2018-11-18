@@ -28,12 +28,18 @@ class ArticleReviewCVCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        outerView.frame = CGRect(x: 0, y: 0, width: 327.getPortionalLength(), height: 200.getPortionalLength())
         outerView.clipsToBounds = false
         outerView.layer.applySketchShadow(alpha : 0.06, x : 0, y : 0, blur : 6, spread : 0)
         outerView.backgroundColor = UIColor.clear
+        
         mainImgView.frame = outerView.bounds
         mainImgView.clipsToBounds = true
         mainImgView.layer.cornerRadius = 5
+        blackOpacityView.frame = outerView.bounds
+        blackOpacityView.clipsToBounds = true
+        blackOpacityView.layer.cornerRadius = 5
+        
         outerView.addSubview(mainImgView)
         mainImgView.addSubview(blackOpacityView)
     }

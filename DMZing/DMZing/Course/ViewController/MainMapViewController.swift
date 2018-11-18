@@ -19,13 +19,16 @@ class MainMapViewController: UIViewController, APIService {
     var courses : [Course] = [] {
         didSet {
             //TODO: 이미지 변경 확인
-            mapImageView.kf.setImage(with: URL(string: courses[currentIdx].lineImageUrl), placeholder: UIImage())
+//            mapImageView.kf.setImage(with: URL(string: courses[currentIdx].lineImageUrl), placeholder: UIImage())
+            mapImageView.image = arr[currentIdx]
             mapCollectionView.reloadData()
         }
     }
     
     @IBOutlet weak var mapCollectionView: UICollectionView!
     @IBOutlet weak var mapImageView: UIImageView!
+    
+    let arr = [#imageLiteral(resourceName: "ccc"), #imageLiteral(resourceName: "walk_d_icon"), #imageLiteral(resourceName: "ccc")]
     
     var finalOffset : CGFloat = 0
     var startOffset  : CGFloat = 0
@@ -45,6 +48,7 @@ class MainMapViewController: UIViewController, APIService {
         
     }
 }
+
 
 //MARK: Server
 extension MainMapViewController {
@@ -69,6 +73,30 @@ extension MainMapViewController {
             }
         })
     }
+
+    func postOrder(url : String){
+        let params : [String : Any] = [:]
+
+        OrderService.shareInstance.orderCourse(url: url, params: params,completion: { [weak self] (result) in
+            guard let `self` = self else { return }
+            switch result {
+            case .networkSuccess(let data):
+                self.simpleAlert(title: "", message: """
+                데이트하기 좋은 코스를
+                구매하셨습니다!
+                """)
+                
+                break
+            case .networkFail :
+                self.networkSimpleAlert()
+            case .duplicated :
+                self.simpleAlert(title: "", message: "DP가 부족합니다.")
+            default :
+                self.simpleAlert(title: "오류", message: "다시 시도해주세요")
+                break
+            }
+        })
+    }
 }
 
 //MARK: - CollectionView Method
@@ -87,19 +115,58 @@ extension MainMapViewController: UICollectionViewDelegate, UICollectionViewDataS
         cell.largeLabel.text = courses[indexPath.row].mainDescription
         cell.pageLabel.text = String(courses[indexPath.row].id)
         cell.totalPageLabel.text = String(courses.count)
+        cell.dpLabel.text = String("\(courses[indexPath.row].price)DP")
+        
+        if courses[indexPath.row].isPurchased {
+            cell.hiddenImageView.isHidden = true
+            cell.hiddenStackView.isHidden = true
+            cell.hiddenLockImageView.isHidden = true
+        } else {
+            cell.hiddenImageView.isHidden = false
+            cell.hiddenStackView.isHidden = false
+            cell.hiddenLockImageView.isHidden = false
+        }
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let coverVC = UIStoryboard(name: "Course", bundle: nil).instantiateViewController(withIdentifier: "MapCoverViewController") as! MapCoverViewController
         
-        coverVC.sub = courses[indexPath.row].subDescription
-        coverVC.main = courses[indexPath.row].mainDescription
-        coverVC.pick = courses[indexPath.row].pickCount
-        coverVC.id = courses[indexPath.row].id
-        
-        self.navigationController?.pushViewController(coverVC, animated: true)
+        if courses[indexPath.row].isPurchased {
+            
+            let coverVC = UIStoryboard(name: "Course", bundle: nil).instantiateViewController(withIdentifier: "MapCoverViewController") as! MapCoverViewController
+            
+            coverVC.sub = courses[indexPath.row].subDescription
+            coverVC.main = courses[indexPath.row].mainDescription
+            coverVC.pick = courses[indexPath.row].pickCount
+            coverVC.id = courses[indexPath.row].id
+            coverVC.imageUrl = courses[indexPath.row].imageUrl
+            
+            self.navigationController?.pushViewController(coverVC, animated: true)
+            
+        } else {
+            mapAlertwithHandler(title: "", message: """
+            데이트하기 좋은 코스를
+            구매하시겠습니까?
+            """) { (okHandler) in
+                
+                DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+                    guard let `self` = self else { return }
+                    self.postOrder(url: self.url("order/course/\(indexPath.row+1)"))
+                }
+
+            }
+        }
+
+    }
+    
+    func mapAlertwithHandler(title: String, message: String, okHandler : ((UIAlertAction) -> Void)?){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "구매하기",style: .default, handler: okHandler)
+        let cancelAction = UIAlertAction(title: "닫기",style: .cancel, handler: nil)
+        alert.addAction(okAction)
+        alert.addAction(cancelAction)
+        present(alert, animated: true, completion: nil)
     }
     
 }
@@ -141,14 +208,16 @@ extension MainMapViewController : UIScrollViewDelegate {
             let indexPath = IndexPath(row: majorIdx, section: 0)
             mapCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
             //TODO: 이미지 변경 확인
-            mapImageView.kf.setImage(with: URL(string: courses[currentIdx].lineImageUrl), placeholder: UIImage())
+//            mapImageView.kf.setImage(with: URL(string: courses[currentIdx].lineImageUrl), placeholder: UIImage())
+             mapImageView.image = arr[currentIdx]
         } else if finalOffset < startOffset {
             //앞으로 가기
             let majorIdx = indexOfMajorCell(direction: .left)
             let indexPath = IndexPath(row: majorIdx, section: 0)
             mapCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
             //TODO: 이미지 변경 확인
-            mapImageView.kf.setImage(with: URL(string: courses[currentIdx].lineImageUrl), placeholder: UIImage())
+//            mapImageView.kf.setImage(with: URL(string: courses[currentIdx].lineImageUrl), placeholder: UIImage())
+             mapImageView.image = arr[currentIdx]
         } else {
             print("둘다 아님")
         }

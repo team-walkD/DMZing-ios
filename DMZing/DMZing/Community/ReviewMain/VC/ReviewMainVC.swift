@@ -30,6 +30,7 @@ class ReviewMainVC: UIViewController, APIService {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setLogoButton()
         collectionView.delegate = self
         collectionView.dataSource = self
        
@@ -75,12 +76,12 @@ extension ReviewMainVC: UICollectionViewDelegateFlowLayout {
     
     //cell size
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 143, height: 143)
+        return CGSize(width: 143.getPortionalLength(), height: 143.getPortionalLength())
     }
     
     //-간격 위아래
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 27
+        return 27.getPortionalLength()
     }
     //-간격 왼쪽오른쪽
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
