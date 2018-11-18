@@ -93,8 +93,8 @@ class MainViewController: UIViewController, APIService {
                 self.places = (self.firstData?.places)!
                 print(self.places.count)
                 
-                //print(self.places)
-                //print(self.purchaseList)
+                self.userDefault.set(self.firstData?.id, forKey: "cid")
+            
                 
             case .networkFail:
                 self.networkSimpleAlert()
@@ -109,28 +109,23 @@ class MainViewController: UIViewController, APIService {
         PutCourseService.shareInstance.putCourse(url: url,completion: { [weak self] (result) in
             guard let `self` = self else { return }
             switch result {
-            case .networkSuccess:
+            case .networkSuccess(let data):
                 
-                print("@@@@@@@@@@@@@@@@@@@1")
-                //self.getMainData(url: "http://52.79.50.98:8080/api/mission")
-//                guard let secondmodel = data as? SecondDataPickCourse else {return}
-//
-//                //print(firstmodel)
-//                print("@@@@@@@@@@@@@@@@@@@2")
-//                self.secondData = secondmodel
-//                print(self.secondData)
-//
-//                //print(self.firstData)
-//                self.places.removeAll()
-//                self.places = (self.secondData?.places)!
-//                print(self.places.count)
+                guard let firstmodel = data as? FirstDataPickCourse else {return}
+                for i in 0..<self.purchaseList.count{
+                    self.purchaseList[i].isPicked = false
+                }
+                self.purchaseList[firstmodel.id-1].isPicked = true
+                self.firstData = nil
+                self.places.removeAll()
+                //print(firstmodel)
+                self.firstData = firstmodel
+                //print(self.firstData)
+                self.places = (self.firstData?.places)!
+                print(self.places.count)
                 
-                //self.getMainData(url: "http://52.79.50.98:8080/api/mission")
-                
-                //print(self.places)
-                //print(self.purchaseList)
-//                                self.themeCollectionView.reloadData()
-//                                self.mainCollectionView.reloadData()
+                self.userDefault.set(self.firstData?.id, forKey: "cid")
+            
                 
             case .networkFail:
                 self.networkSimpleAlert()
@@ -218,6 +213,8 @@ extension MainViewController : UICollectionViewDelegate,UICollectionViewDataSour
                 if places[indexPath.row-1].letterImageURL != nil{
                     cell.findLetterButton.titleLabel?.text = "편지 보기"
                 }
+                
+                cell.findLetterButton.tag = indexPath.row
                 
                 return cell
 
