@@ -126,8 +126,10 @@
 		CC62367E219EE9A7006B2C79 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC62367D219EE9A7006B2C79 /* APIKey.swift */; };
 		CCB3CC9C218AF97A0033B9F9 /* Sign.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCB3CC9B218AF97A0033B9F9 /* Sign.storyboard */; };
 		CCB3CC9E218AF9D40033B9F9 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB3CC9D218AF9D40033B9F9 /* SignInViewController.swift */; };
+
 		CCEBEB4421A1E34200AC8166 /* PostableMissionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEBEB4321A1E34200AC8166 /* PostableMissionService.swift */; };
 		CCEBEB4621A1E3B500AC8166 /* MissionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEBEB4521A1E3B500AC8166 /* MissionModel.swift */; };
+
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -274,8 +276,10 @@
 		CC62367D219EE9A7006B2C79 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		CCB3CC9B218AF97A0033B9F9 /* Sign.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sign.storyboard; sourceTree = "<group>"; };
 		CCB3CC9D218AF9D40033B9F9 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+
 		CCEBEB4321A1E34200AC8166 /* PostableMissionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostableMissionService.swift; sourceTree = "<group>"; };
 		CCEBEB4521A1E3B500AC8166 /* MissionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionModel.swift; sourceTree = "<group>"; };
+
 		FA082A16820F4FD6F8F63662 /* Pods-DMZing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DMZing.debug.xcconfig"; path = "Target Support Files/Pods-DMZing/Pods-DMZing.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -967,7 +971,9 @@
 			children = (
 				CC3E1AF021A1689D00E376D3 /* GetMissionService.swift */,
 				CC3E1AF221A1A17300E376D3 /* PutCourseService.swift */,
+
 				CCEBEB4321A1E34200AC8166 /* PostableMissionService.swift */,
+
 			);
 			path = Service;
 			sourceTree = "<group>";

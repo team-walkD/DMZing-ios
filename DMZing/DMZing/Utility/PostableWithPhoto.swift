@@ -39,7 +39,7 @@ extension PostablewithPhoto {
         
         if userToken != "-1" {
             headers = [
-                "authorization" : userToken
+                "jwt" : userToken
             ]
         }
  
