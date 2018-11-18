@@ -65,6 +65,15 @@ class CourseDetailViewController: UIViewController, APIService {
             guard let `self` = self else { return }
             self.getCourseDetailData(url: self.url("course/\(self.cid)"))
         }
+    
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            guard let `self` = self else { return }
+            self.getCourseDetailData(url: self.url("course/\(self.cid)"))
+        }
     }
     
     //MARK: navigationBar transparent

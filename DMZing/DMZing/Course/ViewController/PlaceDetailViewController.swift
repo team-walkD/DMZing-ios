@@ -42,7 +42,14 @@ class PlaceDetailViewController: UIViewController, APIService {
         }
         
         center.addObserver(self, selector: #selector(reverseAction), name: Notification.Name("reverseAction"), object: nil)
+    }
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            guard let `self` = self else { return }
+            self.getPlaceData(url: self.url("course/\(self.cid)/places"))
+        }
     }
     
     @objc func reverseAction(noti: Notification) {

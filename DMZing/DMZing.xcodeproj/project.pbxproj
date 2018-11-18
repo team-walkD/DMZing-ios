@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		221AA23021A18CB0001E8BBB /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221AA22F21A18CB0001E8BBB /* LocationViewController.swift */; };
 		222EEC6A219828C800FB15C6 /* MapCoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222EEC69219828C800FB15C6 /* MapCoverViewController.swift */; };
 		222EEC6C2198364D00FB15C6 /* PlaceInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222EEC6B2198364D00FB15C6 /* PlaceInfoViewController.swift */; };
 		222EEC6E2199BFE500FB15C6 /* CourseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222EEC6D2199BFE500FB15C6 /* CourseDetailViewController.swift */; };
@@ -133,6 +134,7 @@
 
 /* Begin PBXFileReference section */
 		03429F00E6D01CE48BFFF5D1 /* Pods_DMZing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DMZing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		221AA22F21A18CB0001E8BBB /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		222EEC69219828C800FB15C6 /* MapCoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCoverViewController.swift; sourceTree = "<group>"; };
 		222EEC6B2198364D00FB15C6 /* PlaceInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceInfoViewController.swift; sourceTree = "<group>"; };
 		222EEC6D2199BFE500FB15C6 /* CourseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailViewController.swift; sourceTree = "<group>"; };
@@ -353,6 +355,7 @@
 				222EEC6D2199BFE500FB15C6 /* CourseDetailViewController.swift */,
 				222EECE4219D65E800FB15C6 /* PlaceDetailViewController.swift */,
 				222EECE6219D671800FB15C6 /* PlaceDetailTableViewCell.swift */,
+				221AA22F21A18CB0001E8BBB /* LocationViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1141,6 +1144,7 @@
 				CC529164219AD75300F58603 /* LastCVCell.swift in Sources */,
 				222EECF3219F054500FB15C6 /* CourseDetail.swift in Sources */,
 				3B6697C721980BE6008789E3 /* MypageReviewService.swift in Sources */,
+				221AA23021A18CB0001E8BBB /* LocationViewController.swift in Sources */,
 				3BCA4B3B219F3C13003E77A5 /* CalculateTimeService.swift in Sources */,
 				3B6697D5219825D0008789E3 /* PostImageService.swift in Sources */,
 				CC3E1AE621A152A500E376D3 /* ServiceInfoViewController.swift in Sources */,
@@ -1215,7 +1219,6 @@
 				CC529162219AD69500F58603 /* FirstCVCell.swift in Sources */,
 				3BCA4B3F219F3CBC003E77A5 /* TimeVC.swift in Sources */,
 				3BAF0ED9219C38D400C3CF31 /* MypageDPVO.swift in Sources */,
-
 				CC3E1AEC21A15BA600E376D3 /* FAQTableViewCell.swift in Sources */,
 				222EED1B21A0610F00FB15C6 /* PickService.swift in Sources */,
 				222EECE5219D65E800FB15C6 /* PlaceDetailViewController.swift in Sources */,
