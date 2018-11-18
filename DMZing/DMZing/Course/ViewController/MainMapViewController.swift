@@ -19,8 +19,8 @@ class MainMapViewController: UIViewController, APIService {
     var courses : [Course] = [] {
         didSet {
             //TODO: 이미지 변경 확인
-//            mapImageView.kf.setImage(with: URL(string: courses[currentIdx].lineImageUrl), placeholder: UIImage())
-            mapImageView.image = arr[currentIdx]
+            mapImageView.kf.setImage(with: URL(string: courses[currentIdx].lineImageUrl), placeholder: UIImage())
+//            mapImageView.image = arr[currentIdx]
             mapCollectionView.reloadData()
         }
     }
@@ -37,16 +37,25 @@ class MainMapViewController: UIViewController, APIService {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         //CollectionView
         mapCollectionView.delegate = self
         mapCollectionView.dataSource = self
+        
+        setLogoButton()
         
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             guard let `self` = self else { return }
             self.getMainCourseData(url: self.url("course"))
         }
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            guard let `self` = self else { return }
+            self.getMainCourseData(url: self.url("course"))
+        }
     }
 }
 
@@ -158,8 +167,6 @@ extension MainMapViewController: UICollectionViewDelegate, UICollectionViewDataS
 
             }
         }
-        
-    
     }
     
     func mapAlertwithHandler(title: String, message: String, okHandler : ((UIAlertAction) -> Void)?){
@@ -226,16 +233,16 @@ extension MainMapViewController : UIScrollViewDelegate {
             let indexPath = IndexPath(row: majorIdx, section: 0)
             mapCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
             //TODO: 이미지 변경 확인
-//            mapImageView.kf.setImage(with: URL(string: courses[currentIdx].lineImageUrl), placeholder: UIImage())
-             mapImageView.image = arr[currentIdx]
+            mapImageView.kf.setImage(with: URL(string: courses[currentIdx].lineImageUrl), placeholder: UIImage())
+//             mapImageView.image = arr[currentIdx]
         } else if finalOffset < startOffset {
             //앞으로 가기
             let majorIdx = indexOfMajorCell(direction: .left)
             let indexPath = IndexPath(row: majorIdx, section: 0)
             mapCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
             //TODO: 이미지 변경 확인
-//            mapImageView.kf.setImage(with: URL(string: courses[currentIdx].lineImageUrl), placeholder: UIImage())
-             mapImageView.image = arr[currentIdx]
+            mapImageView.kf.setImage(with: URL(string: courses[currentIdx].lineImageUrl), placeholder: UIImage())
+//             mapImageView.image = arr[currentIdx]
         } else {
             print("둘다 아님")
         }

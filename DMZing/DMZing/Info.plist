@@ -14,9 +14,9 @@
 		<true/>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string>위치정보를 사용합니다.</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string></string>
+	<string>백그라운드에서도 위치정보를 사용합니다.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>

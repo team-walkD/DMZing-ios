@@ -29,7 +29,7 @@ class MapCoverViewController: UIViewController {
         
         setNavigationBar()
         setBackBtn(color: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
-        setRightBarButtonItem()
+//        setRightBarButtonItem()
         
         smallLabel.text = sub
         largeLabel.text = main
@@ -49,25 +49,25 @@ class MapCoverViewController: UIViewController {
         bar.backgroundColor = UIColor.clear
     }
     
-    //MARK: rightBarButtonItem Setting
-    func setRightBarButtonItem() {
-        let rightButtonItem = UIBarButtonItem.init(
-            title: "",
-            style: .done,
-            target: self,
-            action: #selector(rightButtonAction(sender:))
-        )
-        
-        rightButtonItem.image = #imageLiteral(resourceName: "walk_d_white_icon.png")
-        rightButtonItem.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        self.navigationItem.rightBarButtonItem = rightButtonItem
-    }
-    
-    //MARK: rightBarButtonItem Action
-    @objc func rightButtonAction(sender: UIBarButtonItem) {
-        
-    }
-    
+//    //MARK: rightBarButtonItem Setting
+//    func setRightBarButtonItem() {
+//        let rightButtonItem = UIBarButtonItem.init(
+//            title: "",
+//            style: .done,
+//            target: self,
+//            action: #selector(rightButtonAction(sender:))
+//        )
+//
+//        rightButtonItem.image = #imageLiteral(resourceName: "walk_d_white_icon.png")
+//        rightButtonItem.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+//        self.navigationItem.rightBarButtonItem = rightButtonItem
+//    }
+//
+//    //MARK: rightBarButtonItem Action
+//    @objc func rightButtonAction(sender: UIBarButtonItem) {
+//
+//    }
+//
     @IBAction func presentAction(_ sender: UIPanGestureRecognizer) {
         let touchPoint = sender.location(in: self.view?.window)
         
