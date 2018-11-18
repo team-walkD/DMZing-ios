@@ -108,6 +108,11 @@
 		CC31AC74217C92AF00A02388 /* Community.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC31AC73217C92AF00A02388 /* Community.storyboard */; };
 		CC31AC76217C92BD00A02388 /* Mypage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC31AC75217C92BD00A02388 /* Mypage.storyboard */; };
 		CC3D43BC2185A9F8003171C0 /* ThemeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3D43BB2185A9F8003171C0 /* ThemeCollectionViewCell.swift */; };
+		CC3E1AE421A1528200E376D3 /* ManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3E1AE321A1528200E376D3 /* ManageViewController.swift */; };
+		CC3E1AE621A152A500E376D3 /* ServiceInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3E1AE521A152A500E376D3 /* ServiceInfoViewController.swift */; };
+		CC3E1AE821A1560A00E376D3 /* ServiceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3E1AE721A1560A00E376D3 /* ServiceDetailViewController.swift */; };
+		CC3E1AEA21A15B0B00E376D3 /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3E1AE921A15B0B00E376D3 /* FAQViewController.swift */; };
+		CC3E1AEC21A15BA600E376D3 /* FAQTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3E1AEB21A15BA600E376D3 /* FAQTableViewCell.swift */; };
 		CC4178E2219D4E8000E0CD3E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4178E1219D4E8000E0CD3E /* SignUpViewController.swift */; };
 		CC4497B9219DAE0C000DE7C5 /* SignService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4497B8219DAE0C000DE7C5 /* SignService.swift */; };
 		CC529162219AD69500F58603 /* FirstCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC529161219AD69500F58603 /* FirstCVCell.swift */; };
@@ -249,6 +254,11 @@
 		CC31AC73217C92AF00A02388 /* Community.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Community.storyboard; sourceTree = "<group>"; };
 		CC31AC75217C92BD00A02388 /* Mypage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mypage.storyboard; sourceTree = "<group>"; };
 		CC3D43BB2185A9F8003171C0 /* ThemeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCollectionViewCell.swift; sourceTree = "<group>"; };
+		CC3E1AE321A1528200E376D3 /* ManageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageViewController.swift; sourceTree = "<group>"; };
+		CC3E1AE521A152A500E376D3 /* ServiceInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceInfoViewController.swift; sourceTree = "<group>"; };
+		CC3E1AE721A1560A00E376D3 /* ServiceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailViewController.swift; sourceTree = "<group>"; };
+		CC3E1AE921A15B0B00E376D3 /* FAQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
+		CC3E1AEB21A15BA600E376D3 /* FAQTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQTableViewCell.swift; sourceTree = "<group>"; };
 		CC4178E1219D4E8000E0CD3E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		CC4497B8219DAE0C000DE7C5 /* SignService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignService.swift; sourceTree = "<group>"; };
 		CC529161219AD69500F58603 /* FirstCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstCVCell.swift; sourceTree = "<group>"; };
@@ -921,6 +931,7 @@
 		CC31AC70217C923800A02388 /* Mypage */ = {
 			isa = PBXGroup;
 			children = (
+				CC3E1AE221A1526800E376D3 /* Manage */,
 				CC31AC75217C92BD00A02388 /* Mypage.storyboard */,
 				3B872CBB2180943D00498F97 /* CustomView.swift */,
 				3B872CBD21809A0B00498F97 /* Main */,
@@ -930,6 +941,18 @@
 				3B872CD12180B3DF00498F97 /* DPPoint */,
 			);
 			path = Mypage;
+			sourceTree = "<group>";
+		};
+		CC3E1AE221A1526800E376D3 /* Manage */ = {
+			isa = PBXGroup;
+			children = (
+				CC3E1AE321A1528200E376D3 /* ManageViewController.swift */,
+				CC3E1AE521A152A500E376D3 /* ServiceInfoViewController.swift */,
+				CC3E1AE721A1560A00E376D3 /* ServiceDetailViewController.swift */,
+				CC3E1AE921A15B0B00E376D3 /* FAQViewController.swift */,
+				CC3E1AEB21A15BA600E376D3 /* FAQTableViewCell.swift */,
+			);
+			path = Manage;
 			sourceTree = "<group>";
 		};
 		CC529165219AE2C400F58603 /* Model */ = {
@@ -1111,11 +1134,13 @@
 				3B6697C721980BE6008789E3 /* MypageReviewService.swift in Sources */,
 				3BCA4B3B219F3C13003E77A5 /* CalculateTimeService.swift in Sources */,
 				3B6697D5219825D0008789E3 /* PostImageService.swift in Sources */,
+				CC3E1AE621A152A500E376D3 /* ServiceInfoViewController.swift in Sources */,
 				3B6697B92195A266008789E3 /* WriteArticleCVCell.swift in Sources */,
 				3B8364F421946279000BD706 /* ReviewContentTVCell.swift in Sources */,
 				3BB0501C217CAE1E0096BF4D /* SampleVO.swift in Sources */,
 				3B79937F2199D09700DBF5B2 /* DefaultVO.swift in Sources */,
 				3B872CCE2180B10A00498F97 /* MyReviewVC.swift in Sources */,
+				CC3E1AE821A1560A00E376D3 /* ServiceDetailViewController.swift in Sources */,
 				3B80057C218B1FFA0003EA5C /* ReviewDetailVC.swift in Sources */,
 				3BB05006217CA66F0096BF4D /* PostableWithPhoto.swift in Sources */,
 				3B6697DC21985C5D008789E3 /* WritePhotoReviewVC.swift in Sources */,
@@ -1127,6 +1152,7 @@
 				222EECED219DC5FB00FB15C6 /* Course.swift in Sources */,
 				3B872CD72180B41800498F97 /* MyDPPointVC.swift in Sources */,
 				CCB3CCA6218B061A0033B9F9 /* InitialViewController.swift in Sources */,
+				CC3E1AE421A1528200E376D3 /* ManageViewController.swift in Sources */,
 				CC31AC5E217C8D3200A02388 /* MainViewController.swift in Sources */,
 				CCB3CC9E218AF9D40033B9F9 /* SignInViewController.swift in Sources */,
 				3BB05004217CA6650096BF4D /* PostableService.swift in Sources */,
@@ -1156,6 +1182,7 @@
 				3B3A85CE2198836B00D1A835 /* MypageMainVO.swift in Sources */,
 				3BAF0EE2219C4A1200C3CF31 /* MyPostService.swift in Sources */,
 				22F3025D2195515F00152700 /* MainMapViewController.swift in Sources */,
+				CC3E1AEA21A15B0B00E376D3 /* FAQViewController.swift in Sources */,
 				3B7993A1219AEBE200DBF5B2 /* WriteArticleService.swift in Sources */,
 				222EEC6C2198364D00FB15C6 /* PlaceInfoViewController.swift in Sources */,
 				3BB05014217CAD6C0096BF4D /* Font.swift in Sources */,
@@ -1178,6 +1205,7 @@
 				CC529162219AD69500F58603 /* FirstCVCell.swift in Sources */,
 				3BCA4B3F219F3CBC003E77A5 /* TimeVC.swift in Sources */,
 				3BAF0ED9219C38D400C3CF31 /* MypageDPVO.swift in Sources */,
+				CC3E1AEC21A15BA600E376D3 /* FAQTableViewCell.swift in Sources */,
 				222EECE5219D65E800FB15C6 /* PlaceDetailViewController.swift in Sources */,
 				3B800580218B213F0003EA5C /* PhotoReviewCVCell.swift in Sources */,
 				3BB0501A217CADFA0096BF4D /* PhotoSampleService.swift in Sources */,
@@ -1349,7 +1377,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = T5Y35W5FL6;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = DMZing/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1387,7 +1415,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = T5Y35W5FL6;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = DMZing/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

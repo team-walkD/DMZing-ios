@@ -92,8 +92,12 @@ extension MypageVC : UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0{
             //FnQ로 이동
+            let vc = UIStoryboard(name: "Mypage", bundle: nil).instantiateViewController(withIdentifier: "FAQViewController") as! FAQViewController
+            self.present(vc, animated: true, completion: nil)
         } else {
             //설정 및 관리로 이동
+            let vc = UIStoryboard(name: "Mypage", bundle: nil).instantiateViewController(withIdentifier: "manageNavi")
+            self.present(vc, animated: true, completion: nil)
         }
         tableView.deselectRow(at: indexPath, animated: true)
     }
