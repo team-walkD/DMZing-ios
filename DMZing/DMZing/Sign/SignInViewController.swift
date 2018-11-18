@@ -18,7 +18,8 @@ class SignInViewController: UIViewController,APIService {
     @IBOutlet weak var pwTextField: UITextField!
     
     @IBOutlet weak var signinButton: UIButton!
-    
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -56,10 +57,5 @@ class SignInViewController: UIViewController,APIService {
     @IBAction func signupAction(_ sender: Any) {
         print("signup")
     }
-    
-    @IBAction func cancelAction(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
     
 }

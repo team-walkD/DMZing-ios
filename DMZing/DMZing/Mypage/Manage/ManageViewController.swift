@@ -23,8 +23,10 @@ class ManageViewController: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     @IBAction func logoutAction(_ sender: Any) {
-    }
-    @IBAction func leaveAction(_ sender: Any) {
+        simpleAlertwithHandler(title: "로그아웃", message: "정말로 로그아웃 하시겠습니까?") { (_) in
+            UserDefaults.standard.set(nil, forKey: "userToken")
+            self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil);
+        }
     }
     
     @IBAction func cancelAction(_ sender: Any) {
