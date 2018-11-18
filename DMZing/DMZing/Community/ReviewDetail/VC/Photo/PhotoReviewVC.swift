@@ -102,6 +102,7 @@ extension PhotoReviewVC : UICollectionViewDelegate, UICollectionViewDataSource  
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoReviewCVCell.reuseIdentifier, for: indexPath) as! PhotoReviewCVCell
         cell.configure(data: photoReviewData[indexPath.row])
+        cell.reportHandler = reportContent
         return cell
     }
     
@@ -150,6 +151,11 @@ extension PhotoReviewVC {
                 break
             }
         })
+    }
+    
+    func reportContent(reportIdx : Int){
+        let url : String = self.url("reviews/like/\(reportIdx)")
+        print(url)
     }
 }
 
