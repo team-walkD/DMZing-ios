@@ -20,8 +20,8 @@ struct OrderService: PostableService{
                 switch networkResult.resCode{
                 case HttpResponseCode.postSuccess.rawValue :
                     completion(.networkSuccess(""))
-                case HttpResponseCode.accessDenied.rawValue :
-                    completion(.accessDenied)
+//                case HttpResponseCode.accessDenied.rawValue :
+//                    completion(.accessDenied)
                 case HttpResponseCode.serverErr.rawValue :
                     completion(.serverErr)
                 case HttpResponseCode.badRequest.rawValue :

@@ -37,7 +37,7 @@ extension PostableService {
         
         if userToken != "-1" {
                     headers = [
-                            "authorization" : userToken
+                            "jwt" : userToken
                         ]
         }
 
