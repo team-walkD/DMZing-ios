@@ -67,7 +67,7 @@ class ReviewContentVC: UIViewController, UIGestureRecognizerDelegate, APIService
         titleLbl.text = data.title
         startDateLbl.text = data.startAt.timeStampToDate()
         endDateLbl.text = data.endAt.timeStampToDate()
-        topImgView.setImgWithKF(url: data.thumbnailURL, defaultImg: #imageLiteral(resourceName: "review_default_img"))
+        topImgView.setImgWithKF(url: data.thumbnailURL, defaultImg: #imageLiteral(resourceName: "review_default_basic_img"))
         heartCntLbl.text = data.likeCount.description
         heartImgView.image = data.like ? #imageLiteral(resourceName: "heart_fill_icon") : #imageLiteral(resourceName: "heart_icon")
         isSelected = data.like
@@ -79,7 +79,12 @@ class ReviewContentVC: UIViewController, UIGestureRecognizerDelegate, APIService
     
     @IBAction func reportAction(_ sender: Any) {
         simpleAlertwithHandler(title: "신고", message: "해당 게시물을 신고하시겠습니까?") { (_) in
-            self.reportContent(url: self.url("reviews/like/\(self.selectedRId)"))
+            let params : [String : Any] = [
+                "reviewId": self.selectedRId,
+                "reportType": "DETAIL",
+                "content": "글 리뷰 신고"
+            ]
+            self.reportContent(url: self.url("report"), params: params)
         }
     }
 }
@@ -249,9 +254,21 @@ extension ReviewContentVC {
         })
     }
     
-    func reportContent(url : String){
-        
+    func reportContent(url : String, params : [String : Any]){
+        WriteArticleService.shareInstance.writeArticleReview(url: url, params: params, completion: { [weak self] (result) in
+            guard let `self` = self else { return }
+            switch result {
+            case .networkSuccess(_):
+                self.simpleAlert(title: "성공", message: "해당 게시물을 신고했습니다")
+                break
+            case .networkFail :
+                self.networkSimpleAlert()
+            default :
+                self.simpleAlert(title: "오류", message: "다시 시도해주세요")
+                break
+            }
+        })
     }
-   
+    
 }
 

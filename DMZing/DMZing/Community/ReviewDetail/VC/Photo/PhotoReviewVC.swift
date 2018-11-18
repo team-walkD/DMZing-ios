@@ -86,9 +86,13 @@ class PhotoReviewVC : UIViewController, LTTableViewProtocal, APIService  {
     }
     
     func reportAction(reportIdx : Int){
-        let url : String = self.url("reviews/like/\(reportIdx)")
+        let params : [String : Any] = [
+            "reviewId": reportIdx,
+            "reportType": "PHOTO",
+            "content": "사진 리뷰 신고"
+        ]
         simpleAlertwithHandler(title: "신고", message: "해당 게시물을 신고하시겠습니까?") { (_) in
-            
+            self.reportContent(url: self.url("report"), params: params)
         }
     }
 }
@@ -115,7 +119,7 @@ extension PhotoReviewVC : UICollectionViewDelegate, UICollectionViewDataSource  
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         UIApplication.shared.keyWindow!.addSubview(popupView)
-        popupView.mainImgView.setImgWithKF(url: photoReviewData[indexPath.row].imageURL, defaultImg: #imageLiteral(resourceName: "review_default_img"))
+        popupView.mainImgView.setImgWithKF(url: photoReviewData[indexPath.row].imageURL, defaultImg: #imageLiteral(resourceName: "review_default_basic_img"))
         popupView.snp.makeConstraints { (make) in
             make.top.bottom.leading.trailing.equalToSuperview()
         }
@@ -160,6 +164,22 @@ extension PhotoReviewVC {
         })
     }
     
+   
+    func reportContent(url : String, params : [String : Any]){
+        WriteArticleService.shareInstance.writeArticleReview(url: url, params: params, completion: { [weak self] (result) in
+            guard let `self` = self else { return }
+            switch result {
+            case .networkSuccess(_):
+                self.simpleAlert(title: "성공", message: "해당 게시물을 신고했습니다")
+                break
+            case .networkFail :
+                self.networkSimpleAlert()
+            default :
+                self.simpleAlert(title: "오류", message: "다시 시도해주세요")
+                break
+            }
+        })
+    }
    
 }
 
