@@ -452,7 +452,7 @@ tOyVmOuLpC4LCuyerOuvuCDsl4bsnYQg6rKDIOqwmeuLpOqzoOunjCDsg53qsIHtlojripTrjbAg7IOd
                         <viewLayoutGuide key="safeArea" id="i6V-LU-OgW"/>
                     </view>
                     <navigationItem key="navigationItem" id="RK8-Q6-KEb">
-                        <barButtonItem key="rightBarButtonItem" image="walk_d_icon" id="aTZ-H5-ffs">
+                        <barButtonItem key="rightBarButtonItem" image="siren_icon" id="aTZ-H5-ffs">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="reportAction:" destination="Ubf-5B-Vid" id="hxH-5I-AgL"/>
@@ -1065,8 +1065,8 @@ tOyVmOuLpC4LCuyerOuvuCDsl4bsnYQg6rKDIOqwmeuLpOqzoOunjCDsg53qsIHtlojripTrjbAg7IOd
         <image name="reviewHeartShadowBtn" width="71" height="71"/>
         <image name="review_default_img" width="375" height="263"/>
         <image name="review_write_icon" width="23" height="24"/>
+        <image name="siren_icon" width="22" height="25"/>
         <image name="thumbnail_plus_icon" width="19" height="19"/>
-        <image name="walk_d_icon" width="25" height="25"/>
         <image name="x_btn" width="24" height="24"/>
         <image name="x_white_btn" width="24" height="24"/>
     </resources>
