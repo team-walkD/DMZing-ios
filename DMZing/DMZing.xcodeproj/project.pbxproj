@@ -126,7 +126,8 @@
 		CC62367E219EE9A7006B2C79 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC62367D219EE9A7006B2C79 /* APIKey.swift */; };
 		CCB3CC9C218AF97A0033B9F9 /* Sign.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCB3CC9B218AF97A0033B9F9 /* Sign.storyboard */; };
 		CCB3CC9E218AF9D40033B9F9 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB3CC9D218AF9D40033B9F9 /* SignInViewController.swift */; };
-
+		CCEBEB4421A1E34200AC8166 /* PostableMissionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEBEB4321A1E34200AC8166 /* PostableMissionService.swift */; };
+		CCEBEB4621A1E3B500AC8166 /* MissionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEBEB4521A1E3B500AC8166 /* MissionModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -273,7 +274,8 @@
 		CC62367D219EE9A7006B2C79 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		CCB3CC9B218AF97A0033B9F9 /* Sign.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sign.storyboard; sourceTree = "<group>"; };
 		CCB3CC9D218AF9D40033B9F9 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
-
+		CCEBEB4321A1E34200AC8166 /* PostableMissionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostableMissionService.swift; sourceTree = "<group>"; };
+		CCEBEB4521A1E3B500AC8166 /* MissionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionModel.swift; sourceTree = "<group>"; };
 		FA082A16820F4FD6F8F63662 /* Pods-DMZing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DMZing.debug.xcconfig"; path = "Target Support Files/Pods-DMZing/Pods-DMZing.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -965,7 +967,7 @@
 			children = (
 				CC3E1AF021A1689D00E376D3 /* GetMissionService.swift */,
 				CC3E1AF221A1A17300E376D3 /* PutCourseService.swift */,
-				CCEBEB4121A1DBF200AC8166 /* PostMissionService.swift */,
+				CCEBEB4321A1E34200AC8166 /* PostableMissionService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -975,6 +977,7 @@
 			children = (
 				CC529166219AE3BD00F58603 /* FirstModel.swift */,
 				CC529168219AE4CD00F58603 /* MainModel.swift */,
+				CCEBEB4521A1E3B500AC8166 /* MissionModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1147,6 +1150,7 @@
 				3BCA4B3B219F3C13003E77A5 /* CalculateTimeService.swift in Sources */,
 				3B6697D5219825D0008789E3 /* PostImageService.swift in Sources */,
 				CC3E1AE621A152A500E376D3 /* ServiceInfoViewController.swift in Sources */,
+				CCEBEB4421A1E34200AC8166 /* PostableMissionService.swift in Sources */,
 				3B6697B92195A266008789E3 /* WriteArticleCVCell.swift in Sources */,
 				3B8364F421946279000BD706 /* ReviewContentTVCell.swift in Sources */,
 				3BB0501C217CAE1E0096BF4D /* SampleVO.swift in Sources */,
@@ -1205,13 +1209,13 @@
 				222EEC6A219828C800FB15C6 /* MapCoverViewController.swift in Sources */,
 				CC529169219AE4CD00F58603 /* MainModel.swift in Sources */,
 				222EEC6E2199BFE500FB15C6 /* CourseDetailViewController.swift in Sources */,
+				CCEBEB4621A1E3B500AC8166 /* MissionModel.swift in Sources */,
 				3BB05018217CADEF0096BF4D /* PostSampleService.swift in Sources */,
 				3B800584218B26D50003EA5C /* RoundShadowView.swift in Sources */,
 				3BD63A072180B88B007F5972 /* MyPostCVCell.swift in Sources */,
 				3B6697B121949DBA008789E3 /* WriteEntryTVCell.swift in Sources */,
 				3B6697BF21980410008789E3 /* MypageMainService.swift in Sources */,
 				222EECE7219D671800FB15C6 /* PlaceDetailTableViewCell.swift in Sources */,
-				CCEBEB4221A1DBF200AC8166 /* PostMissionService.swift in Sources */,
 				3BAF0EDF219C48C200C3CF31 /* MyPostVO.swift in Sources */,
 				3BB05016217CADE80096BF4D /* GetSampleService.swift in Sources */,
 				CC529167219AE3BD00F58603 /* FirstModel.swift in Sources */,

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainCVCell: UICollectionViewCell {
+class MainCVCell: UICollectionViewCell,APIService {
     
     @IBOutlet weak var titleImgView: UIImageView!
     
@@ -17,9 +17,27 @@ class MainCVCell: UICollectionViewCell {
     @IBOutlet weak var contentTextView: UITextView!
     @IBOutlet weak var findLetterButton: UIButton!
     
+    let userDefault = UserDefaults.standard
+    
     override func awakeFromNib() {
         findLetterButton.layer.cornerRadius = findLetterButton.frame.height/2
         titleImgView.roundCorners(corners: [.topLeft,.topRight], radius: 0.2)
         self.makeCellCornerRound(corners: [.topLeft,.topRight], cornerRadius: 10)
+        
+        findLetterButton.addTarget(self, action: #selector(find(_:)), for: .touchUpInside)
+    }
+    
+    @objc func find(_ sender: UIButton){
+        var cid = userDefault.data(forKey: "cid")
+        var pid = sender.tag
+        
+        let URL = url("mission")
+        
+        let body: [String: Any] = [
+            "cid": cid,
+            "pid": pid,
+            "latitude": 38.1879930099,
+            "longitude": 127.2182962522
+        ]
     }
 }

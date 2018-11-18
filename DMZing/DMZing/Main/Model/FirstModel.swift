@@ -85,7 +85,7 @@ struct FirstDataPickCoursePlacePeriphery: Codable {
 
 struct FirstDataPurchaseList: Codable {
     let title: String
-    let isPicked: Bool
+    var isPicked: Bool
     let id: Int
     let mainDescription: String
 }
