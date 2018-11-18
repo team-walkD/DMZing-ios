@@ -67,7 +67,7 @@ class ReviewContentVC: UIViewController, UIGestureRecognizerDelegate, APIService
         titleLbl.text = data.title
         startDateLbl.text = data.startAt.timeStampToDate()
         endDateLbl.text = data.endAt.timeStampToDate()
-        topImgView.setImgWithKF(url: data.thumbnailURL, defaultImg: #imageLiteral(resourceName: "review_default_img"))
+        topImgView.setImgWithKF(url: data.thumbnailURL, defaultImg: #imageLiteral(resourceName: "review_default_basic_img"))
         heartCntLbl.text = data.likeCount.description
         heartImgView.image = data.like ? #imageLiteral(resourceName: "heart_fill_icon") : #imageLiteral(resourceName: "heart_icon")
         isSelected = data.like

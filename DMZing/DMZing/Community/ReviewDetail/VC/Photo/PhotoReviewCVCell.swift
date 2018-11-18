@@ -23,7 +23,7 @@ class PhotoReviewCVCell: UICollectionViewCell {
         titleLbl.text = data.placeName
        // firstTagLbl.text = data.tag[0]
        // secondTagLbl.text = data.tag[1]
-        mainImgView.setImgWithKF(url: data.imageURL, defaultImg: #imageLiteral(resourceName: "review_default_img"))
+        mainImgView.setImgWithKF(url: data.imageURL, defaultImg: #imageLiteral(resourceName: "review_default_basic_img"))
         reportBtn.addTarget(self, action: #selector(reportAction(_:)), for: .touchUpInside)
         reportBtn.tag = data.id
     }

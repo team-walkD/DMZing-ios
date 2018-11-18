@@ -19,7 +19,7 @@ class ReviewMainCVCell: UICollectionViewCell {
     func configure(data : ReviewMainVOData){
         cntLbl.text = data.conut.description
         titleLbl.text = "\(data.typeName)"
-        mainImgView.setImgWithKF(url: data.imageUrl, defaultImg: #imageLiteral(resourceName: "review_default_img"))
+        mainImgView.setImgWithKF(url: data.imageUrl, defaultImg: #imageLiteral(resourceName: "review_default_basic_img"))
         backView.makeRounded(cornerRadius: nil)
     }
     

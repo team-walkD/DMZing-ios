@@ -23,7 +23,7 @@ class ArticleReviewCVCell: UICollectionViewCell {
         endDateLbl.text = data.endAt.timeStampToDate()
         likeCntLbl.text = data.likeCount.description
         titleLbl.text = data.title
-        mainImgView.setImgWithKF(url: data.thumbnailURL, defaultImg: #imageLiteral(resourceName: "review_default_img"))
+        mainImgView.setImgWithKF(url: data.thumbnailURL, defaultImg: #imageLiteral(resourceName: "review_default_basic_img"))
     }
     
     override func awakeFromNib() {
