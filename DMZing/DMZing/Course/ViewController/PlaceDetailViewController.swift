@@ -40,40 +40,8 @@ class PlaceDetailViewController: UIViewController, APIService {
             guard let `self` = self else { return }
             self.getPlaceData(url: self.url("course/\(self.cid)/places"))
         }
-        
-        center.addObserver(self, selector: #selector(reverseAction), name: Notification.Name("reverseAction"), object: nil)
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        
-        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
-            guard let `self` = self else { return }
-            self.getPlaceData(url: self.url("course/\(self.cid)/places"))
-        }
-    }
-    
-    @objc func reverseAction(noti: Notification) {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PlaceDetailTableViewCell") as! PlaceDetailTableViewCell
-        
-        if let placeTag = noti.object as?  Int {
-            
-            switch cell.isExpanded {
-            
-            case true:
-                self.expandedRows.remove(placeTag)
-                
-            case false:
-                self.expandedRows.insert(placeTag)
-            }
-            
-            cell.isExpanded = !cell.isExpanded
-            
-            self.tableView.beginUpdates()
-            self.tableView.endUpdates()
-        }
-    }
-    
+
     func setTableView() {
         
         tableView.delegate = self
@@ -111,6 +79,9 @@ extension PlaceDetailViewController {
                 if let placeData_ = placeData {
                     self.places = placeData_
                     self.createTmapView()
+                    for i in 0..<placeData_.count - 1 {
+                        self.calculateCarTime(startLat: placeData_[i].latitude, startLong: placeData_[i].longitude, endLat: placeData_[i+1].latitude, endLong: placeData_[i+1].longitude, idx : i)
+                    }
                 }
             case .networkFail :
                 self.networkSimpleAlert()
@@ -122,7 +93,7 @@ extension PlaceDetailViewController {
     }
     
     //MARK: Tmap 소요시간
-    func calculateCarTime(startLat : Double, startLong : Double, endLat : Double, endLong : Double) -> Int {
+    func calculateCarTime(startLat : Double, startLong : Double, endLat : Double, endLong : Double, idx : Int){
         
         let version = 1
         let tollgateFareOption = 1
@@ -135,28 +106,17 @@ extension PlaceDetailViewController {
             case .networkSuccess(let data):
                 guard let data_ = data as? CalculateTimeVO else {return}
                 guard let time = data_.features.first?.properties.carTime else {return}
-                print("dd\(time)")
-                
-                UserDefaults.standard.set(time, forKey: "carTime")
+                self.places[idx].timeToNextPlace = time
+
             case .networkFail :
                 self.networkSimpleAlert()
             default :
                 self.simpleAlert(title: "오류", message: "다시 시도해주세요")
             }
         })
-        
-        var car = UserDefaults.standard.integer(forKey: "carTime") / 60
-        
-        return car
     }
-    
-    func getCatTime(lat1: Double, lat2: Double, lon1: Double, lon2: Double) -> Double {
-        var time: Double = 0.0
-        
-        time = Double(self.calculateCarTime(startLat: lat1, startLong: lon1, endLat: lat2, endLong: lon2) / 3600)
-        
-        return time
-    }
+
+
 }
 
 //MARK: - TableView extension
@@ -176,15 +136,13 @@ extension PlaceDetailViewController: UITableViewDelegate, UITableViewDataSource 
         cell.numImageView.image = imageArr[indexPath.row]
         cell.mainImageView.kf.setImage(with: URL(string: places[indexPath.row].mainImageUrl), placeholder: UIImage())
         cell.placeLabel.text = places[indexPath.row].title
-        cell.carLabel.text = "10분"
         cell.nextLabel1.text = places[indexPath.row].peripheries[0].title
         cell.nextLabel2.text = places[indexPath.row].peripheries[1].title
         cell.nextLabel3.text = places[indexPath.row].peripheries[2].title
         cell.nextImageView1.kf.setImage(with: URL(string: gsno(places[indexPath.row].peripheries[0].firstimage)), placeholder: UIImage())
         cell.nextImageView2.kf.setImage(with: URL(string: gsno(places[indexPath.row].peripheries[1].firstimage)), placeholder: UIImage())
         cell.nextImageView3.kf.setImage(with: URL(string: gsno(places[indexPath.row].peripheries[2].firstimage)), placeholder: UIImage())
-        cell.tag = indexPath.row
-        
+
         if indexPath.row == 0 {
             cell.lineView.isHidden = true
         } else {
@@ -197,7 +155,7 @@ extension PlaceDetailViewController: UITableViewDelegate, UITableViewDataSource 
         } else {
             cell.hiddenTimeLabel.isHidden = false
             cell.hiddenStackView.isHidden = false
-            cell.carLabel.text = String("\(self.calculateCarTime(startLat: places[indexPath.row].latitude, startLong: places[indexPath.row].longitude, endLat: places[indexPath.row + 1].latitude, endLong: places[indexPath.row + 1].longitude))분")
+            cell.carLabel.text = (gino(places[indexPath.row].timeToNextPlace)/60).description + "분"
         }
     
         return cell
@@ -214,6 +172,7 @@ extension PlaceDetailViewController: UITableViewDelegate, UITableViewDataSource 
         infoVC.parking = gsno(places[indexPath.row].parking)
         infoVC.infoCenter = gsno(places[indexPath.row].infoCenter)
         infoVC.imageUrl = gsno(places[indexPath.row].mainImageUrl)
+        infoVC.name = gsno(places[indexPath.row].title)
         
         self.present(infoVC, animated: true, completion: nil)
     }

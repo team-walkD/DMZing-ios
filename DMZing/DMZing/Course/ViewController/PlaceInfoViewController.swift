@@ -16,7 +16,8 @@ class PlaceInfoViewController: UIViewController {
     @IBOutlet weak var backImageView: UIImageView!
     
     @IBOutlet weak var contentTextView: UITextView!
-    @IBOutlet weak var closedLabel: UILabel!
+
+    @IBOutlet weak var closedTextView: UITextView!
     @IBOutlet weak var parkingLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
     
@@ -30,6 +31,7 @@ class PlaceInfoViewController: UIViewController {
     var parking: String = ""
     var infoCenter: String = ""
     var imageUrl: String = ""
+    var name: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,12 +47,13 @@ class PlaceInfoViewController: UIViewController {
         contentTextView.attributedText = attr
         
         
-        closedLabel.text = restDay
+        closedTextView.text = restDay
         parkingLabel.text = parking
         phoneLabel.text = infoCenter
+        placeLabel.text = name
         backImageView.kf.setImage(with: URL(string: imageUrl), placeholder: UIImage())
         
-        closedLabel.adjustsFontSizeToFitWidth = true
+
         parkingLabel.adjustsFontSizeToFitWidth = true
         phoneLabel.adjustsFontSizeToFitWidth = true
 
