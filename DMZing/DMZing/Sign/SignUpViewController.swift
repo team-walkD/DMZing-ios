@@ -71,6 +71,7 @@ class SignUpViewController: UIViewController, APIService {
             
             
             if(validEmail && validPassword && validPhone){
+                print("phone:"+phone)
                 SignService.signup(email: email, pwd: password, nickname: nickname, phone: phone) { message in
                     if message == "success"{
                         print("signup success")

@@ -10,8 +10,8 @@ import Foundation
 
 struct PutCourseService: GettableService {
     
-    //MARK: 코스 구매 목록 및 픽된 코스 상세 정보 보기  /api/mission
-    typealias NetworkData = FirstVO
+    //MARK: 코스 픽 하기 /api/pick
+    typealias NetworkData = SecondVO
     static let shareInstance = PutCourseService()
     
     func putCourse(url : String, completion : @escaping (NetworkResult<Any>) -> Void) {
@@ -33,6 +33,7 @@ struct PutCourseService: GettableService {
                 }
                 break
             case .error(let errMsg) :
+                print("hhhhhH")
                 print(errMsg)
                 break
             case .failure(_) :
