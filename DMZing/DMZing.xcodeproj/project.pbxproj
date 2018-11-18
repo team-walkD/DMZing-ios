@@ -125,9 +125,6 @@
 		CC62367E219EE9A7006B2C79 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC62367D219EE9A7006B2C79 /* APIKey.swift */; };
 		CCB3CC9C218AF97A0033B9F9 /* Sign.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCB3CC9B218AF97A0033B9F9 /* Sign.storyboard */; };
 		CCB3CC9E218AF9D40033B9F9 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB3CC9D218AF9D40033B9F9 /* SignInViewController.swift */; };
-		CCB3CCA0218B01430033B9F9 /* SignUp1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB3CC9F218B01430033B9F9 /* SignUp1ViewController.swift */; };
-		CCB3CCA2218B035B0033B9F9 /* SignUp2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB3CCA1218B035B0033B9F9 /* SignUp2ViewController.swift */; };
-		CCB3CCA4218B041B0033B9F9 /* SignUp3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB3CCA3218B041B0033B9F9 /* SignUp3ViewController.swift */; };
 		CCB3CCA6218B061A0033B9F9 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB3CCA5218B061A0033B9F9 /* InitialViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -274,9 +271,6 @@
 		CC62367D219EE9A7006B2C79 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		CCB3CC9B218AF97A0033B9F9 /* Sign.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sign.storyboard; sourceTree = "<group>"; };
 		CCB3CC9D218AF9D40033B9F9 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
-		CCB3CC9F218B01430033B9F9 /* SignUp1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp1ViewController.swift; sourceTree = "<group>"; };
-		CCB3CCA1218B035B0033B9F9 /* SignUp2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp2ViewController.swift; sourceTree = "<group>"; };
-		CCB3CCA3218B041B0033B9F9 /* SignUp3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp3ViewController.swift; sourceTree = "<group>"; };
 		CCB3CCA5218B061A0033B9F9 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		FA082A16820F4FD6F8F63662 /* Pods-DMZing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DMZing.debug.xcconfig"; path = "Target Support Files/Pods-DMZing/Pods-DMZing.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -978,9 +972,6 @@
 			children = (
 				CCB3CC9B218AF97A0033B9F9 /* Sign.storyboard */,
 				CCB3CC9D218AF9D40033B9F9 /* SignInViewController.swift */,
-				CCB3CC9F218B01430033B9F9 /* SignUp1ViewController.swift */,
-				CCB3CCA1218B035B0033B9F9 /* SignUp2ViewController.swift */,
-				CCB3CCA3218B041B0033B9F9 /* SignUp3ViewController.swift */,
 				CCB3CCA5218B061A0033B9F9 /* InitialViewController.swift */,
 				CC4178E1219D4E8000E0CD3E /* SignUpViewController.swift */,
 				CC4497B8219DAE0C000DE7C5 /* SignService.swift */,
@@ -1165,7 +1156,6 @@
 				CC31AC5E217C8D3200A02388 /* MainViewController.swift in Sources */,
 				CCB3CC9E218AF9D40033B9F9 /* SignInViewController.swift in Sources */,
 				3BB05004217CA6650096BF4D /* PostableService.swift in Sources */,
-				CCB3CCA0218B01430033B9F9 /* SignUp1ViewController.swift in Sources */,
 				CC4178E2219D4E8000E0CD3E /* SignUpViewController.swift in Sources */,
 				3BA7ED392198AC2E00BAC493 /* ArticleStruct.swift in Sources */,
 				3B799396219ABD3400DBF5B2 /* ReviewContentVO.swift in Sources */,
@@ -1215,7 +1205,6 @@
 				CC529162219AD69500F58603 /* FirstCVCell.swift in Sources */,
 				3BCA4B3F219F3CBC003E77A5 /* TimeVC.swift in Sources */,
 				3BAF0ED9219C38D400C3CF31 /* MypageDPVO.swift in Sources */,
-
 				CC3E1AEC21A15BA600E376D3 /* FAQTableViewCell.swift in Sources */,
 				222EED1B21A0610F00FB15C6 /* PickService.swift in Sources */,
 				222EECE5219D65E800FB15C6 /* PlaceDetailViewController.swift in Sources */,
@@ -1239,8 +1228,6 @@
 				CC3D43BC2185A9F8003171C0 /* ThemeCollectionViewCell.swift in Sources */,
 				222EED1D21A068A300FB15C6 /* PuttableService.swift in Sources */,
 				3B6697D92198275F008789E3 /* PostImageVO.swift in Sources */,
-				CCB3CCA4218B041B0033B9F9 /* SignUp3ViewController.swift in Sources */,
-				CCB3CCA2218B035B0033B9F9 /* SignUp2ViewController.swift in Sources */,
 				3BB05009217CA9D20096BF4D /* ColorChip.swift in Sources */,
 				3B800572218B1F160003EA5C /* PhotoReviewVC.swift in Sources */,
 				3B79937D2199CFD100DBF5B2 /* WritePhotoReviewService.swift in Sources */,

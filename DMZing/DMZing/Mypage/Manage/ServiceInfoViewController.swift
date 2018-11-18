@@ -15,6 +15,7 @@ class ServiceInfoViewController: UIViewController {
     @IBOutlet weak var policyView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        setBackBtn()
 
         let introduceTap = UITapGestureRecognizer(target: self, action: #selector(gointroduce))
         let roleTap = UITapGestureRecognizer(target: self, action: #selector(gorole))

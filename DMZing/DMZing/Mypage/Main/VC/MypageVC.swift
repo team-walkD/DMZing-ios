@@ -11,18 +11,13 @@ import UIKit
 class MypageVC: UIViewController, APIService {
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var profileImgView: UIImageView!
     @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var emailLbl: UILabel!
     @IBOutlet weak var courseCntLbl:
     UILabel!
     @IBOutlet weak var reviewCntLbl: UILabel!
     @IBOutlet weak var pointCntLbl: UILabel!
-    let cellTitleArr = ["FnQ", "설정 및 관리"]
-    
-    @IBAction func settingAction(_ sender: Any) {
-        
-    }
+    let cellTitleArr = ["FAQ", "설정 및 관리"]
     
     @IBAction func mailMoreAction(_ sender: Any) {
         let mypageStoryboard = Storyboard.shared().mypageStoryboard
@@ -57,15 +52,16 @@ class MypageVC: UIViewController, APIService {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setLogoButton()
         setupTableView()
-        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
-            guard let `self` = self else { return }
-            self.getMainData(url: self.url("users/info"))
-        }
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            guard let `self` = self else { return }
+            self.getMainData(url: self.url("users/info"))
+        }
         setupNavBar(color: UIColor.FlatColor.Blue.lightBlue)
     }
     func setupTableView(){
