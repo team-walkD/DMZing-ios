@@ -31,5 +31,7 @@ class MainMapCollectionViewCell: UICollectionViewCell {
         courseImageView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
         
         hiddenImageView.makeRounded(cornerRadius: 10)
+        
+        largeLabel.adjustsFontSizeToFitWidth = true
     }
 }

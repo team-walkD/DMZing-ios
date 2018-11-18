@@ -17,13 +17,11 @@ class PlaceDetailTableViewCell: UITableViewCell {
     @IBOutlet weak var hideView: UIView!
     @IBOutlet weak var hideViewHeight: NSLayoutConstraint!
     
-    @IBOutlet weak var amLabel: UILabel!
-    @IBOutlet weak var pmLabel: UILabel!
     @IBOutlet weak var mainImageView: UIImageView!
     
-    @IBOutlet weak var busLabel: UILabel!
-    @IBOutlet weak var walkLabel: UILabel!
     @IBOutlet weak var carLabel: UILabel!
+    @IBOutlet weak var hiddenTimeLabel: UILabel!
+    @IBOutlet weak var hiddenStackView: UIStackView!
     
     @IBOutlet weak var nextImageView1: UIImageView!
     @IBOutlet weak var nextImageView2: UIImageView!
