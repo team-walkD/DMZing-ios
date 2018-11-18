@@ -86,7 +86,7 @@
                                     <inset key="sectionInset" minX="26" minY="0.0" maxX="26" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <view key="backgroundView" contentMode="scaleToFill" id="gnD-cL-ERy">
-                                    <rect key="frame" x="602" y="0.0" width="414" height="494"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="494"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="0.86666666670000003" green="0.86666666670000003" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
@@ -656,7 +656,7 @@
         <image name="tab_map_icon" width="25" height="21"/>
         <image name="tab_my_fill_icon" width="25" height="25"/>
         <image name="tab_my_icon" width="25" height="25"/>
-        <image name="tab_review_fill_icon" width="19" height="24"/>
+        <image name="tab_review_fill_icon" width="50" height="50"/>
         <image name="tab_review_icon" width="19" height="24"/>
         <image name="walk_d_icon" width="25" height="25"/>
     </resources>
