@@ -9,14 +9,37 @@ struct FirstVO : Codable {
     let purchaseList: [FirstDataPurchaseList]
 }
 
+struct SecondVO : Codable {
+    let pickCourse: SecondDataPickCourse
+}
+
 struct FirstDataPickCourse: Codable {
+    let reviewCount, estimatedTime: Int
+    let lineImageUrl: String
+    let id: Int
+    let places: [FirstDataPickCoursePlace]
+    let mainDescription, title: String
+    let imageUrl: String
+    let level: String
+    let price: Int
+    let subDescription, backgroundImageUrl: String
+    
+    enum CodingKeys: String, CodingKey {
+        case reviewCount, estimatedTime
+        case lineImageUrl = "lineImageUrl"
+        case id, places, mainDescription, title
+        case imageUrl = "imageUrl"
+        case level, price, subDescription
+        case backgroundImageUrl = "backgroundImageUrl"
+    }
+}
+
+struct SecondDataPickCourse: Codable {
     let reviewCount, estimatedTime: Int
     let lineImageURL: String
     let id: Int
     let places: [FirstDataPickCoursePlace]
-    let mainDescription, title: String
-    let imageURL: String
-    let level: String
+    let mainDescription, title, imageURL, level: String
     let price: Int
     let subDescription, backgroundImageURL: String
     
@@ -27,24 +50,6 @@ struct FirstDataPickCourse: Codable {
         case imageURL = "imageUrl"
         case level, price, subDescription
         case backgroundImageURL = "backgroundImageUrl"
-    }
-}
-
-struct SecondDataPickCourse: Codable {
-    let backgroundImageURL: String
-    let estimatedTime, id: Int
-    let imageURL, level, lineImageURL, mainDescription: String
-    let places: [FirstDataPickCoursePlace]
-    let price, reviewCount: Int
-    let subDescription, title: String
-    
-    enum CodingKeys: String, CodingKey {
-        case backgroundImageURL = "backgroundImageUrl"
-        case estimatedTime, id
-        case imageURL = "imageUrl"
-        case level
-        case lineImageURL = "lineImageUrl"
-        case mainDescription, places, price, reviewCount, subDescription, title
     }
 }
 

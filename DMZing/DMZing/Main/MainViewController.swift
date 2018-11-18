@@ -37,6 +37,12 @@ class MainViewController: UIViewController, APIService {
         }
     }
     
+    var secondData : SecondDataPickCourse?{
+        didSet{
+            mainCollectionView.reloadData()
+        }
+    }
+    
     var places : [FirstDataPickCoursePlace] = []{
         didSet{
             mainCollectionView.reloadData()
@@ -58,6 +64,7 @@ class MainViewController: UIViewController, APIService {
     
     override func viewWillAppear(_ animated: Bool) {
         getMainData(url: url("mission"))
+
     }
     
     
@@ -75,6 +82,9 @@ class MainViewController: UIViewController, APIService {
             case .networkSuccess(let data):
                 
                 guard let firstmodel = data as? FirstVO else {return}
+                self.purchaseList.removeAll()
+                self.firstData = nil
+                self.places.removeAll()
                 self.purchaseList = firstmodel.purchaseList
                 //print(firstmodel)
                 print("//////////////////////")
@@ -85,8 +95,6 @@ class MainViewController: UIViewController, APIService {
                 
                 //print(self.places)
                 //print(self.purchaseList)
-//                self.themeCollectionView.reloadData()
-//                self.mainCollectionView.reloadData()
                 
             case .networkFail:
                 self.networkSimpleAlert()
@@ -101,19 +109,23 @@ class MainViewController: UIViewController, APIService {
         PutCourseService.shareInstance.putCourse(url: url,completion: { [weak self] (result) in
             guard let `self` = self else { return }
             switch result {
-            case .networkSuccess(let data):
+            case .networkSuccess:
                 
-                guard let firstmodel = data as? FirstVO else {return}
-                self.purchaseList = firstmodel.purchaseList
-                //print(firstmodel)
-                print("@@@@@@@@@@@@@@@@@@@")
-                print(firstmodel)
-                self.firstData = firstmodel.pickCourse
-                //print(self.firstData)
-                self.places = (self.firstData?.places)!
-                print(self.places.count)
+                print("@@@@@@@@@@@@@@@@@@@1")
+                //self.getMainData(url: "http://52.79.50.98:8080/api/mission")
+//                guard let secondmodel = data as? SecondDataPickCourse else {return}
+//
+//                //print(firstmodel)
+//                print("@@@@@@@@@@@@@@@@@@@2")
+//                self.secondData = secondmodel
+//                print(self.secondData)
+//
+//                //print(self.firstData)
+//                self.places.removeAll()
+//                self.places = (self.secondData?.places)!
+//                print(self.places.count)
                 
-                self.getMainData(url: "http://52.79.50.98:8080/api/mission")
+                //self.getMainData(url: "http://52.79.50.98:8080/api/mission")
                 
                 //print(self.places)
                 //print(self.purchaseList)
@@ -189,6 +201,9 @@ extension MainViewController : UICollectionViewDelegate,UICollectionViewDataSour
                 cell.titleLabel.text = firstData?.mainDescription
                 cell.titleLabel.adjustsFontSizeToFitWidth = true
                 cell.difficultyLabel.text = firstData?.level
+                if let imageurl = firstData?.imageUrl{
+                    cell.titleImgView.setImgWithKF(url: imageurl, defaultImg: #imageLiteral(resourceName: "ccc"))
+                }
                 cell.timeLabel.text = "\(firstData?.estimatedTime ?? 0)"
                 cell.peopleLabel.text = "\(firstData?.reviewCount ?? 0)"
               
@@ -231,9 +246,7 @@ extension MainViewController : UICollectionViewDelegate,UICollectionViewDataSour
             //collectionView.reloadData()
         }
         
-        
-//        let selectedCell = self.themeCollectionView.cellForItem(at: indexPath) as! ThemeCollectionViewCell
-//        selectedCell.backView.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+
         
         
     }
@@ -296,7 +309,7 @@ extension MainViewController : UIScrollViewDelegate {
             let indexPath = IndexPath(row: majorIdx, section: 0)
             mainCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
         } else {
-            print("둘다 아님")
+            //print("둘다 아님")
         }
     }
 }
