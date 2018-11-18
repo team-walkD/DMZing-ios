@@ -7,20 +7,41 @@
 //
 
 import UIKit
+import Kingfisher
+
 enum Direction {
     case right
     case left
 }
 
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, APIService {
 
     @IBOutlet weak var themeCollectionView: UICollectionView!
     @IBOutlet weak var mainCollectionView: UICollectionView!
+    
     var finalOffset : CGFloat = 0
     var startOffset  : CGFloat = 0
     var currentIdx = 0
+    let userDefault = UserDefaults.standard
     
+    var purchaseList : [FirstDataPurchaseList] = [] {
+        didSet {
+            themeCollectionView.reloadData()
+        }
+    }
+    
+    var firstData : FirstDataPickCourse?{
+        didSet {
+            mainCollectionView.reloadData()
+        }
+    }
+    
+    var places : [FirstDataPickCoursePlace] = []{
+        didSet{
+            mainCollectionView.reloadData()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,23 +50,90 @@ class MainViewController: UIViewController {
         themeCollectionView.dataSource = self
         mainCollectionView.delegate = self
         mainCollectionView.dataSource = self
-       
-
+        setLogoButton()
         setupNavBar()
         
         
-        //themeCollectionView.selectItem(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: UICollectionViewScrollPosition.centeredVertically)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        getMainData(url: url("mission"))
     }
     
     
     func setupNavBar(){
-        self.navigationController?.navigationBar.barTintColor = ColorChip.shared().lightBlue
+        self.navigationController?.navigationBar.barTintColor = UIColor.FlatColor.Blue.lightBlue
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.shadowImage = UIImage()
     }
 
+    
+    func getMainData(url : String){
+        GetMissionService.shareInstance.getFirstData(url: url,completion: { [weak self] (result) in
+            guard let `self` = self else { return }
+            switch result {
+            case .networkSuccess(let data):
+                
+                guard let firstmodel = data as? FirstVO else {return}
+                self.purchaseList = firstmodel.purchaseList
+                //print(firstmodel)
+                print("//////////////////////")
+                self.firstData = firstmodel.pickCourse
+                //print(self.firstData)
+                self.places = (self.firstData?.places)!
+                print(self.places.count)
+                
+                //print(self.places)
+                //print(self.purchaseList)
+//                self.themeCollectionView.reloadData()
+//                self.mainCollectionView.reloadData()
+                
+            case .networkFail:
+                self.networkSimpleAlert()
+            default :
+                self.simpleAlert(title: "오류", message: "다시 시도해주세요")
+                break
+            }
+        })
+    }
+    
+    func putCourseData(url : String){
+        PutCourseService.shareInstance.putCourse(url: url,completion: { [weak self] (result) in
+            guard let `self` = self else { return }
+            switch result {
+            case .networkSuccess(let data):
+                
+                guard let firstmodel = data as? FirstVO else {return}
+                self.purchaseList = firstmodel.purchaseList
+                //print(firstmodel)
+                print("@@@@@@@@@@@@@@@@@@@")
+                print(firstmodel)
+                self.firstData = firstmodel.pickCourse
+                //print(self.firstData)
+                self.places = (self.firstData?.places)!
+                print(self.places.count)
+                
+                self.getMainData(url: "http://52.79.50.98:8080/api/mission")
+                
+                //print(self.places)
+                //print(self.purchaseList)
+//                                self.themeCollectionView.reloadData()
+//                                self.mainCollectionView.reloadData()
+                
+            case .networkFail:
+                self.networkSimpleAlert()
+            default :
+                self.simpleAlert(title: "오류", message: "다시 시도해주세요")
+                break
+            }
+        })
+    }
 
 }
+
+
+
+
 
 extension MainViewController : UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     
@@ -55,9 +143,28 @@ extension MainViewController : UICollectionViewDelegate,UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.themeCollectionView {
-             return 7
+             return purchaseList.count
         } else {
-             return 5
+            if let lastSequence = self.firstData?.places.last?.sequence {
+                let letterImageUrl = self.firstData?.places.last?.letterImageURL
+                
+                if lastSequence == 100{
+                    if(letterImageUrl == nil){
+                        return 1+self.places.count
+                    }else{
+                        return 2+self.places.count
+                    }
+                }else{
+                    return 1+self.places.count
+                }
+                
+                
+             
+            }else{
+                return 1
+            }
+        
+            
         }
     }
     
@@ -65,34 +172,44 @@ extension MainViewController : UICollectionViewDelegate,UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == self.themeCollectionView {
             let cell = self.themeCollectionView.dequeueReusableCell(withReuseIdentifier: "ThemeCollectionViewCell", for: indexPath) as! ThemeCollectionViewCell
+            guard purchaseList.count > 0 else {return cell}
+            cell.titleLabel.text = purchaseList[indexPath.row].title
             
-            if(indexPath.row == 0){
-                cell.isSelected = true
+            if(purchaseList[indexPath.row].isPicked){
+                cell.backView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
             }else{
-                cell.isSelected = false
+                cell.backView.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
             }
-            
-            cell.titleLabel.text = "theme\(indexPath.row)"
-            
             
             return cell
         } else {
             if indexPath.row == 0{
                 let cell = self.mainCollectionView.dequeueReusableCell(withReuseIdentifier: FirstCVCell.reuseIdentifier, for: indexPath) as! FirstCVCell
-                cell.subtitleLabel.text = "사진 찍기 좋은 핫스팟"
-                cell.titleLabel.text = "데이트 하기 좋은 코스"
+                cell.subtitleLabel.text = firstData?.subDescription
+                cell.titleLabel.text = firstData?.mainDescription
                 cell.titleLabel.adjustsFontSizeToFitWidth = true
-                cell.difficultyLabel.text = "중"
-                cell.timeLabel.text = "3"
-                cell.peopleLabel.text = "50"
+                cell.difficultyLabel.text = firstData?.level
+                cell.timeLabel.text = "\(firstData?.estimatedTime ?? 0)"
+                cell.peopleLabel.text = "\(firstData?.reviewCount ?? 0)"
+              
                 return cell
-            }else if indexPath.row == 4{
-                let cell = self.mainCollectionView.dequeueReusableCell(withReuseIdentifier: LastCVCell.reuseIdentifier, for: indexPath) as! LastCVCell
-                return cell
-            }else{
+            }else if indexPath.row > 0 && indexPath.row <= places.count{
                 let cell = self.mainCollectionView.dequeueReusableCell(withReuseIdentifier: MainCVCell.reuseIdentifier, for: indexPath) as! MainCVCell
-                cell.subtitleLabel.text = "첫 번째 장소,"
-                cell.titleLabel.text = "평화 전망대"
+                cell.titleImgView.setImgWithKF(url: places[indexPath.row-1].mainImageURL, defaultImg: #imageLiteral(resourceName: "ccc"))
+                cell.subtitleLabel.text = ""
+                cell.titleLabel.text = places[indexPath.row-1].title
+                cell.contentTextView.text = places[indexPath.row-1].hint
+                
+                if places[indexPath.row-1].letterImageURL != nil{
+                    cell.findLetterButton.titleLabel?.text = "편지 보기"
+                }
+                
+                return cell
+
+            }else{
+                
+                let cell = self.mainCollectionView.dequeueReusableCell(withReuseIdentifier: LastCVCell.reuseIdentifier, for: indexPath) as! LastCVCell
+                
                 return cell
             }
             
@@ -107,8 +224,10 @@ extension MainViewController : UICollectionViewDelegate,UICollectionViewDataSour
             
             let cell = self.themeCollectionView.dequeueReusableCell(withReuseIdentifier: ThemeCollectionViewCell.reuseIdentifier, for: indexPath) as! ThemeCollectionViewCell
             
-            cell.isSelected = !cell.isSelected
-        
+            putCourseData(url: url("course/pick/\(indexPath.row+1)"))
+            
+            
+            
             //collectionView.reloadData()
         }
         

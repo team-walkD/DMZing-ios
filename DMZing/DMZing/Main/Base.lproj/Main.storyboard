@@ -24,7 +24,7 @@
                                 <rect key="frame" x="38" y="98" width="27" height="23"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="다른 맵을 통해 다양한 미션을 수행해보세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pjT-JN-7dd">
-                                <rect key="frame" x="38" y="146" width="278.66666666666669" height="17"/>
+                                <rect key="frame" x="38" y="146" width="376" height="17"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
                                 <color key="textColor" red="0.10980392160000001" green="0.2156862745" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -49,22 +49,31 @@
                                             <rect key="frame" x="0.0" y="0.0" width="118" height="41"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EJJ-Ww-1bV">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EJJ-Ww-1bV">
                                                     <rect key="frame" x="0.0" y="0.0" width="118" height="41"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="voH-8c-Dbf">
-                                                            <rect key="frame" x="43" y="12" width="32" height="16"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="voH-8c-Dbf">
+                                                            <rect key="frame" x="8" y="12" width="102" height="16"/>
                                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="13"/>
                                                             <color key="textColor" red="0.10980392160000001" green="0.2156862745" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="voH-8c-Dbf" firstAttribute="leading" secondItem="EJJ-Ww-1bV" secondAttribute="leading" constant="8" id="8lx-Qg-Lwu"/>
+                                                        <constraint firstAttribute="trailing" secondItem="voH-8c-Dbf" secondAttribute="trailing" constant="8" id="9VL-KR-hWF"/>
+                                                        <constraint firstItem="voH-8c-Dbf" firstAttribute="centerY" secondItem="EJJ-Ww-1bV" secondAttribute="centerY" id="Sdk-NG-Sr2"/>
+                                                    </constraints>
                                                 </view>
                                             </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="EJJ-Ww-1bV" secondAttribute="bottom" id="7ec-ku-OdK"/>
+                                            <constraint firstItem="EJJ-Ww-1bV" firstAttribute="top" secondItem="cSn-g7-WSg" secondAttribute="top" id="YY1-BM-bA8"/>
+                                            <constraint firstItem="EJJ-Ww-1bV" firstAttribute="leading" secondItem="cSn-g7-WSg" secondAttribute="leading" id="xQt-lH-ZsP"/>
+                                            <constraint firstAttribute="trailing" secondItem="EJJ-Ww-1bV" secondAttribute="trailing" id="yie-03-Ies"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="backView" destination="EJJ-Ww-1bV" id="j56-sn-sYh"/>
                                             <outlet property="titleLabel" destination="voH-8c-Dbf" id="NxA-I8-wlX"/>
@@ -333,7 +342,7 @@
                                                     <color key="textColor" red="0.10980392160000001" green="0.2156862745" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PwI-vB-Oa6">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PwI-vB-Oa6">
                                                     <rect key="frame" x="20" y="237.33333333333337" width="285" height="183.66666666666663"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -489,7 +498,7 @@
                             <constraint firstItem="QEy-in-jqO" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="3QV-IA-nXd"/>
                             <constraint firstItem="sMK-bP-h4w" firstAttribute="centerY" secondItem="9Bt-AU-AdM" secondAttribute="centerY" id="8XT-hv-0CW"/>
                             <constraint firstItem="Oa5-6S-kqo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Bcz-j2-pfr"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pjT-JN-7dd" secondAttribute="trailing" constant="97.333333333333371" id="La9-yV-qal"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pjT-JN-7dd" secondAttribute="trailing" id="La9-yV-qal"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9Bt-AU-AdM" secondAttribute="trailing" id="OT0-by-goO"/>
                             <constraint firstItem="QEy-in-jqO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ssl-fk-LpD"/>
                             <constraint firstItem="sMK-bP-h4w" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="38" id="apG-pI-szn"/>
@@ -502,12 +511,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="BSv-e3-Eik">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="9jM-cX-VJz"/>
-                        <barButtonItem key="rightBarButtonItem" image="walk_d_icon" id="Y9Y-C2-bfv">
-                            <color key="tintColor" red="0.10980392156862745" green="0.21568627450980393" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="BSv-e3-Eik"/>
                     <connections>
                         <outlet property="mainCollectionView" destination="Oa5-6S-kqo" id="9fp-HV-GeW"/>
                         <outlet property="themeCollectionView" destination="9Bt-AU-AdM" id="oY5-uk-ErQ"/>
@@ -515,7 +519,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="949.60000000000002" y="-653.20197044334975"/>
+            <point key="canvasLocation" x="949.27536231884062" y="-653.804347826087"/>
         </scene>
         <!--Course-->
         <scene sceneID="XW6-rX-Vdf">
@@ -539,11 +543,11 @@
             </objects>
             <point key="canvasLocation" x="896" y="751"/>
         </scene>
-        <!--코스-->
+        <!--맵-->
         <scene sceneID="5mW-6b-Q86">
             <objects>
                 <navigationController id="Jgd-8u-WyB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="코스" image="tab_map_icon" selectedImage="tab_map_fill_icon" id="ZDV-ZB-Lg5"/>
+                    <tabBarItem key="tabBarItem" title="맵" image="tab_map_icon" id="ZDV-ZB-Lg5"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yVe-Rr-H6X">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -556,11 +560,11 @@
             </objects>
             <point key="canvasLocation" x="262" y="55"/>
         </scene>
-        <!--커뮤니티-->
+        <!--리뷰-->
         <scene sceneID="2px-qg-4An">
             <objects>
                 <navigationController id="iBh-U1-rgB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="커뮤니티" image="tab_review_icon" selectedImage="tab_review_fill_icon" id="YuI-IQ-Ca8"/>
+                    <tabBarItem key="tabBarItem" title="리뷰" image="tab_review_icon" id="YuI-IQ-Ca8"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ah0-P4-6Qt">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -577,7 +581,7 @@
         <scene sceneID="Dfc-6S-goP">
             <objects>
                 <navigationController id="c8m-bj-goi" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="마이" image="tab_my_icon" selectedImage="tab_my_fill_icon" id="BXN-oz-Yx0"/>
+                    <tabBarItem key="tabBarItem" title="마이" image="tab_my_icon" id="BXN-oz-Yx0"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hk9-St-QiL">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -605,7 +609,7 @@
         <scene sceneID="Skj-BT-78p">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JOB-9H-nzf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="홈" image="tab_home_icon" selectedImage="tab_home_fill_icon" id="cum-nv-bUK"/>
+                    <tabBarItem key="tabBarItem" title="홈" image="tab_home_icon" id="cum-nv-bUK"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Au3-Uw-JNV">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
@@ -623,7 +627,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="Jt3-dV-pKd">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="sad-6A-qml" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="mainTab" automaticallyAdjustsScrollViewInsets="NO" id="sad-6A-qml" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GwH-XM-Fy8">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -650,14 +654,9 @@
         <image name="heart_icon" width="18" height="16"/>
         <image name="home_map_icon" width="27" height="23"/>
         <image name="home_mission_circle_img" width="60" height="60"/>
-        <image name="tab_home_fill_icon" width="26" height="24"/>
         <image name="tab_home_icon" width="26" height="24"/>
-        <image name="tab_map_fill_icon" width="25" height="21"/>
         <image name="tab_map_icon" width="25" height="21"/>
-        <image name="tab_my_fill_icon" width="25" height="25"/>
         <image name="tab_my_icon" width="25" height="25"/>
-        <image name="tab_review_fill_icon" width="50" height="50"/>
         <image name="tab_review_icon" width="19" height="24"/>
-        <image name="walk_d_icon" width="25" height="25"/>
     </resources>
 </document>
