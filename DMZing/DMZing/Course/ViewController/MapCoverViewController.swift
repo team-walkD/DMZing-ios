@@ -16,8 +16,6 @@ class MapCoverViewController: UIViewController {
     @IBOutlet weak var pickLabel: UILabel!
     @IBOutlet weak var backImageView: UIImageView!
     
-    var initialTouchPoint: CGPoint = CGPoint(x: 0, y: 0)
-    
     var id: Int?
     var sub: String?
     var main: String?
@@ -68,27 +66,7 @@ class MapCoverViewController: UIViewController {
 //
 //    }
 //
-    @IBAction func presentAction(_ sender: UIPanGestureRecognizer) {
-        let touchPoint = sender.location(in: self.view?.window)
-        
-        if sender.state == UIGestureRecognizerState.began {
-            initialTouchPoint = touchPoint
-        } else if sender.state == UIGestureRecognizerState.changed {
-            if touchPoint.y - initialTouchPoint.y > 0 {
-                self.view.frame = CGRect(x: 0, y: touchPoint.y - initialTouchPoint.y, width: self.view.frame.size.width, height: self.view.frame.size.height)
-            }
-        } else if sender.state == UIGestureRecognizerState.ended || sender.state == UIGestureRecognizerState.cancelled {
-            if touchPoint.y - initialTouchPoint.y < 100 {
-                let vc = UIStoryboard(name: "Course", bundle: nil).instantiateViewController(withIdentifier: "CourseDetailViewController") as! CourseDetailViewController
-                
-                self.present(vc, animated: true, completion: nil)
-            } else {
-                UIView.animate(withDuration: 0.3, animations: {
-                    self.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
-                })
-            }
-        }
-    }
+
     
     //MARK: 보러가기 액션
     @IBAction func detailAction(_ sender: UIButton) {

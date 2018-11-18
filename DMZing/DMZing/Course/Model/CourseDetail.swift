@@ -43,6 +43,7 @@ struct Place: Codable {
     let reward: Int
     let sequence: Int
     let title: String
+    var timeToNextPlace : Int?
 }
 
 struct Peripheries: Codable {
