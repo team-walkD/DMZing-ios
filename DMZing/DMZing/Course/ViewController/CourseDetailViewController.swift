@@ -65,8 +65,6 @@ class CourseDetailViewController: UIViewController, APIService {
             guard let `self` = self else { return }
             self.getCourseDetailData(url: self.url("course/\(self.cid)"))
         }
-        
-
     }
     
     //MARK: navigationBar transparent
