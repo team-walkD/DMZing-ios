@@ -28,6 +28,7 @@ class FAQViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
         
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.tableFooterView = UIView(frame : .zero)
         
         let q1 = Question(title: "디엠징은 어떤 앱인가요?", content: "'디엠징(DMZING)’은 디엠지라는 특수한 지역을 대상으로, 맵과 챗봇을 통해 정보를 얻거나, 미션을 통해 즐거움 얻을 수 있도록 하는 관광 어플리케이션 입니다.")
         let q2 = Question(title: "dp는 어떻게 사용하는 건가요?", content: "지정된 장소에서 편지를 찾으면 DP(DMZING Point)가 제공됩니다. 해당 DP를 이용하여 잠겨있는 맵을 구매할 수 있습니다")

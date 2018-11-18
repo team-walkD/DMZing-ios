@@ -15,7 +15,7 @@ class ServiceDetailViewController: UIViewController {
     var contentvalue : String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setBackBtn()
         
     }
     
