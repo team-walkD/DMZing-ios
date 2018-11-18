@@ -41,6 +41,20 @@ extension UIViewController {
 }
 
 extension UIViewController {
+    func setLogoButton(){
+        let menuBtn = UIButton(type: .custom)
+        menuBtn.frame = CGRect(x: 0.0, y: 0.0, width: 118, height: 26)
+        menuBtn.setImage(#imageLiteral(resourceName: "dmzing_logo_img"), for: .normal)
+        let menuBarItem = UIBarButtonItem(customView: menuBtn)
+        let currWidth = menuBarItem.customView?.widthAnchor.constraint(equalToConstant: 118)
+        currWidth?.isActive = true
+        let currHeight = menuBarItem.customView?.heightAnchor.constraint(equalToConstant: 26)
+        currHeight?.isActive = true
+        self.navigationItem.leftBarButtonItem = menuBarItem
+    }
+}
+
+extension UIViewController {
     
     func setImgWithKF(url : String, imgView : UIImageView, defaultImg : UIImage){
         if let url = URL(string: url){
@@ -165,14 +179,16 @@ extension UIButton{
 
 /*---------------------UIBarButtonItem---------------------------*/
 extension UIBarButtonItem {
-    class func itemWith(colorfulImage: UIImage?, target: AnyObject, action: Selector) -> UIBarButtonItem {
+    class func itemWith(colorfulImage: UIImage?, target: AnyObject, action: Selector?) -> UIBarButtonItem {
         let button = UIButton(type: .custom)
         button.setImage(colorfulImage, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.widthAnchor.constraint(equalToConstant: 48).isActive = true
         button.heightAnchor.constraint(equalToConstant: 48).isActive = true
-        button.addTarget(target, action: action, for: .touchUpInside)
-        
+        if let action_ = action {
+            button.addTarget(target, action: action_, for: .touchUpInside)
+            
+        }
         let barButtonItem = UIBarButtonItem(customView: button)
         return barButtonItem
     }

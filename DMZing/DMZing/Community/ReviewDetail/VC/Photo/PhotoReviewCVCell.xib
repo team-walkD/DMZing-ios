@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -37,7 +38,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2018.08.01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e2L-KD-aoP">
-                                <rect key="frame" x="8" y="152" width="133" height="14.5"/>
+                                <rect key="frame" x="8" y="152" width="92.5" height="14.5"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="12"/>
                                 <color key="textColor" red="0.10980392156862745" green="0.21568627450980393" blue="0.28235294117647058" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -48,18 +49,28 @@
                                 <color key="textColor" red="0.10980392160000001" green="0.2156862745" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="74V-TV-ykZ">
+                                <rect key="frame" x="105.5" y="142" width="35.5" height="35.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="74V-TV-ykZ" secondAttribute="height" multiplier="1:1" id="2u9-cJ-HdH"/>
+                                </constraints>
+                                <state key="normal" image="review_picture_more_btn"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="e2L-KD-aoP" firstAttribute="leading" secondItem="a73-VR-c3m" secondAttribute="leading" id="BdC-Sj-kbs"/>
                             <constraint firstItem="a73-VR-c3m" firstAttribute="top" secondItem="lA3-gs-IeH" secondAttribute="top" constant="8" id="Gs2-P4-1bH"/>
+                            <constraint firstItem="jph-eV-BUR" firstAttribute="trailing" secondItem="a73-VR-c3m" secondAttribute="trailing" id="JbS-vj-MLZ"/>
                             <constraint firstItem="a73-VR-c3m" firstAttribute="leading" secondItem="lA3-gs-IeH" secondAttribute="leading" constant="8" id="Kdu-9a-SFt"/>
+                            <constraint firstItem="74V-TV-ykZ" firstAttribute="trailing" secondItem="a73-VR-c3m" secondAttribute="trailing" id="Loa-U5-rFv"/>
+                            <constraint firstItem="74V-TV-ykZ" firstAttribute="centerY" secondItem="e2L-KD-aoP" secondAttribute="centerY" id="MBE-vr-H6Z"/>
                             <constraint firstItem="jph-eV-BUR" firstAttribute="leading" secondItem="e2L-KD-aoP" secondAttribute="leading" id="TJZ-u9-lfr"/>
                             <constraint firstItem="e2L-KD-aoP" firstAttribute="top" secondItem="a73-VR-c3m" secondAttribute="bottom" constant="11" id="WDJ-9U-4YM"/>
-                            <constraint firstItem="jph-eV-BUR" firstAttribute="trailing" secondItem="e2L-KD-aoP" secondAttribute="trailing" id="X0N-J5-urX"/>
-                            <constraint firstItem="e2L-KD-aoP" firstAttribute="trailing" secondItem="a73-VR-c3m" secondAttribute="trailing" id="ZwN-Zi-27Q"/>
                             <constraint firstItem="jph-eV-BUR" firstAttribute="top" secondItem="e2L-KD-aoP" secondAttribute="bottom" constant="5" id="er2-Kh-hR6"/>
                             <constraint firstAttribute="trailing" secondItem="a73-VR-c3m" secondAttribute="trailing" constant="8" id="fFl-Kb-0s8"/>
+                            <constraint firstItem="74V-TV-ykZ" firstAttribute="width" secondItem="a73-VR-c3m" secondAttribute="width" multiplier="36:138" constant="1" id="jUK-Ov-Io1"/>
+                            <constraint firstItem="74V-TV-ykZ" firstAttribute="leading" secondItem="e2L-KD-aoP" secondAttribute="trailing" constant="5" id="q9H-wr-npV"/>
                             <constraint firstAttribute="height" constant="208" id="uG9-6d-fPS"/>
                         </constraints>
                     </view>
@@ -97,6 +108,7 @@
                 <outlet property="dateLbl" destination="e2L-KD-aoP" id="v0L-cs-jd6"/>
                 <outlet property="firstTagLbl" destination="MVp-P2-dF5" id="XeE-uX-64O"/>
                 <outlet property="mainImgView" destination="a73-VR-c3m" id="h8b-Bz-oKD"/>
+                <outlet property="reportBtn" destination="74V-TV-ykZ" id="BBg-vL-MUk"/>
                 <outlet property="secondTagLbl" destination="u2X-ia-3ln" id="9vv-5I-JBP"/>
                 <outlet property="titleLbl" destination="jph-eV-BUR" id="jvu-lV-04A"/>
                 <outlet property="whiteBGView" destination="lA3-gs-IeH" id="vVh-xe-fGw"/>
@@ -106,5 +118,6 @@
     </objects>
     <resources>
         <image name="ccc" width="99" height="99"/>
+        <image name="review_picture_more_btn" width="36" height="36"/>
     </resources>
 </document>

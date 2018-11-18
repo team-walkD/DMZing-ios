@@ -52,7 +52,7 @@ class WriteEntryVC: UIViewController, APIService{
     
     @IBOutlet weak var tableViewBgView: UIView!
     @IBAction func selectThumbnailAction(_ sender: Any) {
-        checkPermission()
+        checkAlbumPermission()
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -84,6 +84,13 @@ class PhotoReviewVC : UIViewController, LTTableViewProtocal, APIService  {
         //        }
     
     }
+    
+    func reportAction(reportIdx : Int){
+        let url : String = self.url("reviews/like/\(reportIdx)")
+        simpleAlertwithHandler(title: "신고", message: "해당 게시물을 신고하시겠습니까?") { (_) in
+            
+        }
+    }
 }
 
 //CollectionView Delegate, Datasource
@@ -102,6 +109,7 @@ extension PhotoReviewVC : UICollectionViewDelegate, UICollectionViewDataSource  
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoReviewCVCell.reuseIdentifier, for: indexPath) as! PhotoReviewCVCell
         cell.configure(data: photoReviewData[indexPath.row])
+        cell.reportHandler = reportAction
         return cell
     }
     
@@ -151,6 +159,8 @@ extension PhotoReviewVC {
             }
         })
     }
+    
+   
 }
 
 

@@ -11,7 +11,7 @@ import Photos
 
 extension UIViewController  {
     // Gallery Method
-    func checkPermission() {
+    func checkAlbumPermission() {
         let photoAuthorizationStatus = PHPhotoLibrary.authorizationStatus()
         switch photoAuthorizationStatus {
         case .authorized:
@@ -46,6 +46,9 @@ extension UIViewController  {
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
             }
         }
+        let cancelTitle = "취소"
+        let cancelAction = UIAlertAction(title: cancelTitle,style: .cancel, handler: nil)
+        alertController.addAction(cancelAction)
         
         alertController.addAction(openAction)
         self.present(alertController, animated: true, completion: nil)
@@ -64,7 +67,7 @@ class WritePhotoReviewVC: UIViewController, APIService {
     }
     
     @IBAction func touchImgAction(_ sender: Any) {
-        self.checkPermission()
+        self.checkAlbumPermission()
     }
     @IBOutlet weak var myImgView: UIImageView!
     @IBOutlet weak var doneBtn: UIButton!

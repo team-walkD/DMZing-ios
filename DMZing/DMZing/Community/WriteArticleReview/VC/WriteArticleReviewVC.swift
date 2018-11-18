@@ -83,7 +83,7 @@ extension WriteArticleReviewVC :  UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedPhotoIdx = indexPath.row
-        checkPermission()
+        checkAlbumPermission()
     }
   
 }
