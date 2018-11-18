@@ -496,49 +496,17 @@
                                     <action selector="logoutAction:" destination="V5b-jR-9lQ" eventType="touchUpInside" id="WXD-c9-Wvd"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="디엠징을 탈퇴하려면" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Vv-VS-XUk">
-                                <rect key="frame" x="77" y="320" width="105" height="16"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="13"/>
-                                <color key="textColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yru-Kj-cUd">
-                                <rect key="frame" x="190" y="314" width="30" height="28"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Yru-Kj-cUd" secondAttribute="height" multiplier="15:14" id="OsM-Gg-VeM"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="13"/>
-                                <state key="normal" title="여기">
-                                    <color key="titleColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="leaveAction:" destination="V5b-jR-9lQ" eventType="touchUpInside" id="EiW-am-MGW"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="를 눌러주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tGs-Do-6e2">
-                                <rect key="frame" x="223" y="320" width="71" height="16"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="13"/>
-                                <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.95686274509803915" green="0.96470588235294119" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="eQz-5N-VKp" firstAttribute="centerX" secondItem="7DQ-SD-ZgU" secondAttribute="centerX" id="08J-y8-5Rv"/>
                             <constraint firstItem="eQz-5N-VKp" firstAttribute="top" secondItem="7DQ-SD-ZgU" secondAttribute="bottom" constant="8" id="0rO-cR-UoB"/>
-                            <constraint firstItem="0Vv-VS-XUk" firstAttribute="leading" secondItem="I2D-99-Jyb" secondAttribute="leading" constant="77" id="1YE-7a-7Gt"/>
                             <constraint firstItem="maw-Gc-IAw" firstAttribute="width" secondItem="yHW-qK-lrh" secondAttribute="width" multiplier="301:375" id="Bkl-rT-A6J"/>
-                            <constraint firstItem="tGs-Do-6e2" firstAttribute="centerY" secondItem="Yru-Kj-cUd" secondAttribute="centerY" id="Gsh-6d-omm"/>
-                            <constraint firstItem="Yru-Kj-cUd" firstAttribute="centerY" secondItem="0Vv-VS-XUk" secondAttribute="centerY" id="Hve-pd-0ev"/>
                             <constraint firstItem="7DQ-SD-ZgU" firstAttribute="top" secondItem="I2D-99-Jyb" secondAttribute="top" id="Phl-bU-cor"/>
-                            <constraint firstItem="0Vv-VS-XUk" firstAttribute="top" secondItem="maw-Gc-IAw" secondAttribute="bottom" constant="23.333333333333371" id="Pvu-ZQ-J7F"/>
                             <constraint firstItem="7DQ-SD-ZgU" firstAttribute="width" secondItem="yHW-qK-lrh" secondAttribute="width" id="Swo-Oc-lKY"/>
                             <constraint firstItem="maw-Gc-IAw" firstAttribute="centerX" secondItem="eQz-5N-VKp" secondAttribute="centerX" id="Thj-CG-qpm"/>
-                            <constraint firstItem="Yru-Kj-cUd" firstAttribute="width" secondItem="yHW-qK-lrh" secondAttribute="width" multiplier="30:375" id="UP0-vu-ZKg"/>
                             <constraint firstItem="7DQ-SD-ZgU" firstAttribute="leading" secondItem="I2D-99-Jyb" secondAttribute="leading" id="gdu-Ns-iWA"/>
                             <constraint firstItem="7DQ-SD-ZgU" firstAttribute="trailing" secondItem="I2D-99-Jyb" secondAttribute="trailing" id="qcL-hP-sgd"/>
-                            <constraint firstItem="Yru-Kj-cUd" firstAttribute="leading" secondItem="0Vv-VS-XUk" secondAttribute="trailing" constant="8" id="sxf-lR-DoT"/>
-                            <constraint firstItem="tGs-Do-6e2" firstAttribute="leading" secondItem="Yru-Kj-cUd" secondAttribute="trailing" constant="3" id="taU-lr-bcJ"/>
                             <constraint firstItem="maw-Gc-IAw" firstAttribute="centerY" secondItem="I2D-99-Jyb" secondAttribute="centerY" multiplier="2.5:4" id="v5V-0v-2gq"/>
                             <constraint firstItem="eQz-5N-VKp" firstAttribute="width" secondItem="7DQ-SD-ZgU" secondAttribute="width" id="xyh-lw-Ljf"/>
                         </constraints>
@@ -558,7 +526,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hea-yH-wz8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3733" y="-75"/>
+            <point key="canvasLocation" x="3676" y="-506"/>
         </scene>
         <!--서비스 정보-->
         <scene sceneID="b0A-f5-3Tc">
@@ -661,7 +629,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vli-QK-jar" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4429" y="-75"/>
+            <point key="canvasLocation" x="4372" y="-506"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="L3a-UP-mwx">
@@ -853,7 +821,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rHP-2x-JjY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5241" y="-75"/>
+            <point key="canvasLocation" x="5185" y="-506"/>
         </scene>
         <!--My ReviewVC-->
         <scene sceneID="Izs-Zj-mzf">
@@ -1319,7 +1287,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A27-KY-FWa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3072" y="-75"/>
+            <point key="canvasLocation" x="2961" y="-494"/>
         </scene>
     </scenes>
     <resources>

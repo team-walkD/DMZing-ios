@@ -19,8 +19,6 @@
 		222EECF3219F054500FB15C6 /* CourseDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222EECF2219F054500FB15C6 /* CourseDetail.swift */; };
 		222EECF5219F07F700FB15C6 /* CourseDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222EECF4219F07F700FB15C6 /* CourseDetailService.swift */; };
 		222EECF9219F402C00FB15C6 /* PlaceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222EECF8219F402C00FB15C6 /* PlaceService.swift */; };
-		222EED1B21A0610F00FB15C6 /* PickService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222EED1A21A0610F00FB15C6 /* PickService.swift */; };
-		222EED1D21A068A300FB15C6 /* PuttableService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222EED1C21A068A300FB15C6 /* PuttableService.swift */; };
 		222EED1F21A06BDF00FB15C6 /* OrderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222EED1E21A06BDF00FB15C6 /* OrderService.swift */; };
 		22F3025D2195515F00152700 /* MainMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F3025C2195515F00152700 /* MainMapViewController.swift */; };
 		22F3025F2195518B00152700 /* MainMapCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F3025E2195518B00152700 /* MainMapCollectionViewCell.swift */; };
@@ -128,7 +126,6 @@
 		CC62367E219EE9A7006B2C79 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC62367D219EE9A7006B2C79 /* APIKey.swift */; };
 		CCB3CC9C218AF97A0033B9F9 /* Sign.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCB3CC9B218AF97A0033B9F9 /* Sign.storyboard */; };
 		CCB3CC9E218AF9D40033B9F9 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB3CC9D218AF9D40033B9F9 /* SignInViewController.swift */; };
-		CCB3CCA6218B061A0033B9F9 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB3CCA5218B061A0033B9F9 /* InitialViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -164,8 +161,6 @@
 		222EECF2219F054500FB15C6 /* CourseDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetail.swift; sourceTree = "<group>"; };
 		222EECF4219F07F700FB15C6 /* CourseDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailService.swift; sourceTree = "<group>"; };
 		222EECF8219F402C00FB15C6 /* PlaceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceService.swift; sourceTree = "<group>"; };
-		222EED1A21A0610F00FB15C6 /* PickService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickService.swift; sourceTree = "<group>"; };
-		222EED1C21A068A300FB15C6 /* PuttableService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuttableService.swift; sourceTree = "<group>"; };
 		222EED1E21A06BDF00FB15C6 /* OrderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderService.swift; sourceTree = "<group>"; };
 		22F3025C2195515F00152700 /* MainMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapViewController.swift; sourceTree = "<group>"; };
 		22F3025E2195518B00152700 /* MainMapCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -277,7 +272,6 @@
 		CC62367D219EE9A7006B2C79 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		CCB3CC9B218AF97A0033B9F9 /* Sign.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sign.storyboard; sourceTree = "<group>"; };
 		CCB3CC9D218AF9D40033B9F9 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
-		CCB3CCA5218B061A0033B9F9 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		FA082A16820F4FD6F8F63662 /* Pods-DMZing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DMZing.debug.xcconfig"; path = "Target Support Files/Pods-DMZing/Pods-DMZing.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -324,11 +318,9 @@
 		222EECE8219DC4F700FB15C6 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				222EED1C21A068A300FB15C6 /* PuttableService.swift */,
 				222EECF0219DC6D900FB15C6 /* MainMapService.swift */,
 				222EECF4219F07F700FB15C6 /* CourseDetailService.swift */,
 				222EECF8219F402C00FB15C6 /* PlaceService.swift */,
-				222EED1A21A0610F00FB15C6 /* PickService.swift */,
 				222EED1E21A06BDF00FB15C6 /* OrderService.swift */,
 			);
 			path = Service;
@@ -989,7 +981,6 @@
 			children = (
 				CCB3CC9B218AF97A0033B9F9 /* Sign.storyboard */,
 				CCB3CC9D218AF9D40033B9F9 /* SignInViewController.swift */,
-				CCB3CCA5218B061A0033B9F9 /* InitialViewController.swift */,
 				CC4178E1219D4E8000E0CD3E /* SignUpViewController.swift */,
 				CC4497B8219DAE0C000DE7C5 /* SignService.swift */,
 			);
@@ -1170,7 +1161,6 @@
 				222EECED219DC5FB00FB15C6 /* Course.swift in Sources */,
 				CC3E1AF121A1689D00E376D3 /* GetMissionService.swift in Sources */,
 				3B872CD72180B41800498F97 /* MyDPPointVC.swift in Sources */,
-				CCB3CCA6218B061A0033B9F9 /* InitialViewController.swift in Sources */,
 				CC3E1AE421A1528200E376D3 /* ManageViewController.swift in Sources */,
 				CC31AC5E217C8D3200A02388 /* MainViewController.swift in Sources */,
 				CCB3CC9E218AF9D40033B9F9 /* SignInViewController.swift in Sources */,
@@ -1225,7 +1215,6 @@
 				3BCA4B3F219F3CBC003E77A5 /* TimeVC.swift in Sources */,
 				3BAF0ED9219C38D400C3CF31 /* MypageDPVO.swift in Sources */,
 				CC3E1AEC21A15BA600E376D3 /* FAQTableViewCell.swift in Sources */,
-				222EED1B21A0610F00FB15C6 /* PickService.swift in Sources */,
 				222EECE5219D65E800FB15C6 /* PlaceDetailViewController.swift in Sources */,
 				3B800580218B213F0003EA5C /* PhotoReviewCVCell.swift in Sources */,
 				3BB0501A217CADFA0096BF4D /* PhotoSampleService.swift in Sources */,
@@ -1246,7 +1235,6 @@
 				3B6697C521980BB2008789E3 /* MypageReviewVO.swift in Sources */,
 				3BA7ED352198933B00BAC493 /* Gallery.swift in Sources */,
 				CC3D43BC2185A9F8003171C0 /* ThemeCollectionViewCell.swift in Sources */,
-				222EED1D21A068A300FB15C6 /* PuttableService.swift in Sources */,
 				3B6697D92198275F008789E3 /* PostImageVO.swift in Sources */,
 				3BB05009217CA9D20096BF4D /* ColorChip.swift in Sources */,
 				3B800572218B1F160003EA5C /* PhotoReviewVC.swift in Sources */,

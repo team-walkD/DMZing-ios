@@ -38,14 +38,11 @@ extension PostablewithPhoto {
         var headers: HTTPHeaders?
         
         if userToken != "-1" {
-//            headers = [
-//                "authorization" : userToken
-//            ]
+            headers = [
+                "authorization" : userToken
+            ]
         }
-        headers = [
-            "jwt" : sampleJWT
-        ]
-        
+ 
         
         
         Alamofire.upload(multipartFormData: { multipartFormData in
