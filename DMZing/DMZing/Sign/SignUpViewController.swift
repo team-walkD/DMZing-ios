@@ -79,7 +79,7 @@ class SignUpViewController: UIViewController, APIService {
                 SignService.signup(email: email, pwd: password, nickname: nickname, phone: phone) { message in
                     if message == "success"{
                         print("signup success")
-                        self.simpleAlertwithHandler(title: "회원가입 성공", message: "축하드립니다!", okHandler: { action in
+                        self.simpleAlertwithHandler(title: "회원가입 성공", message: "축하드립니다!", isCancleBtnExist: false, okHandler: { (_) in
                             self.dismiss(animated: true, completion: nil)
                         })
                     }else if message == "already exist"{

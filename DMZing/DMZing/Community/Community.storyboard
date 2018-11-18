@@ -55,7 +55,7 @@
                                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="데이트 맵" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nDq-ad-08j">
-                                                            <rect key="frame" x="41" y="61.000000000000007" width="59.666666666666657" height="19.333333333333336"/>
+                                                            <rect key="frame" x="10" y="61.000000000000007" width="123" height="19.333333333333336"/>
                                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="16"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
@@ -72,7 +72,6 @@
                                                         <constraint firstItem="f89-Zr-ZXg" firstAttribute="top" secondItem="AyW-bt-d9F" secondAttribute="top" id="eAd-Cf-DfP"/>
                                                         <constraint firstAttribute="trailing" secondItem="f89-Zr-ZXg" secondAttribute="trailing" id="mf8-r0-kmh"/>
                                                         <constraint firstItem="3qS-UB-bCR" firstAttribute="leading" secondItem="AyW-bt-d9F" secondAttribute="leading" id="xoq-GU-1Hs"/>
-                                                        <constraint firstItem="nDq-ad-08j" firstAttribute="centerX" secondItem="AyW-bt-d9F" secondAttribute="centerX" id="yIQ-Tk-6qi"/>
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IOn-Mn-u3V">
@@ -99,9 +98,11 @@
                                         </view>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="AyW-bt-d9F" secondAttribute="trailing" id="3JZ-UX-hSw"/>
+                                            <constraint firstAttribute="trailing" secondItem="nDq-ad-08j" secondAttribute="trailing" constant="10" id="GRx-Yc-JQ7"/>
                                             <constraint firstItem="AyW-bt-d9F" firstAttribute="top" secondItem="s4h-Rz-iTf" secondAttribute="top" id="YHf-t6-bPy"/>
                                             <constraint firstItem="IOn-Mn-u3V" firstAttribute="top" secondItem="s4h-Rz-iTf" secondAttribute="top" id="bH7-yq-9vE"/>
                                             <constraint firstAttribute="bottom" secondItem="AyW-bt-d9F" secondAttribute="bottom" id="hfy-J7-B7b"/>
+                                            <constraint firstItem="nDq-ad-08j" firstAttribute="leading" secondItem="s4h-Rz-iTf" secondAttribute="leading" constant="10" id="oyh-yh-LA7"/>
                                             <constraint firstItem="AyW-bt-d9F" firstAttribute="leading" secondItem="s4h-Rz-iTf" secondAttribute="leading" id="tcm-l2-Cf5"/>
                                             <constraint firstAttribute="trailing" secondItem="IOn-Mn-u3V" secondAttribute="trailing" id="xwS-7k-RQY"/>
                                         </constraints>
