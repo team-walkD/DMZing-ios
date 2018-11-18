@@ -20,6 +20,10 @@ class SignUpViewController: UIViewController, APIService {
     @IBOutlet weak var pwTextField: UITextField!
     @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var nicknameTextField: UITextField!
+    
+    @IBAction func dismissAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     var keyboardDismissGesture: UITapGestureRecognizer?
     override func viewDidLoad() {
         super.viewDidLoad()
