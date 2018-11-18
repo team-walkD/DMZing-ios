@@ -96,6 +96,12 @@ extension MainMapViewController {
                 구매하셨습니다!
                 """)
                 
+                DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+                    guard let `self` = self else { return }
+                    self.getMainCourseData(url: self.url("course"))
+                }
+                
+                
                 break
             case .networkFail :
                 self.networkSimpleAlert()

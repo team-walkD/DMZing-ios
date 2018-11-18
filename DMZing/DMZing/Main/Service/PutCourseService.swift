@@ -11,7 +11,7 @@ import Foundation
 struct PutCourseService: GettableService {
     
     //MARK: 코스 픽 하기 /api/pick
-    typealias NetworkData = SecondVO
+    typealias NetworkData = FirstDataPickCourse
     static let shareInstance = PutCourseService()
     
     func putCourse(url : String, completion : @escaping (NetworkResult<Any>) -> Void) {

@@ -12,7 +12,6 @@ class PlaceDetailTableViewCell: UITableViewCell {
     
     @IBOutlet weak var numImageView: UIImageView!
     @IBOutlet weak var placeLabel: UILabel!
-    @IBOutlet weak var reverseButton: UIButton!
     
     @IBOutlet weak var hideView: UIView!
     @IBOutlet weak var hideViewHeight: NSLayoutConstraint!
@@ -31,26 +30,5 @@ class PlaceDetailTableViewCell: UITableViewCell {
     @IBOutlet weak var nextLabel3: UILabel!
     
     @IBOutlet weak var lineView: UIView!
-    
-    var isExpanded:Bool = false
-    {
-        didSet
-        {
-            if !isExpanded {
-                self.hideViewHeight.constant = 386
-                
-            } else {
-                self.hideViewHeight.constant = 0.0
-            }
-        }
-    }
-    
-    @IBAction func reverseAction(_ sender: UIButton) {
-        
-        isExpanded = !isExpanded
-        
-        NotificationCenter.default.post(name: Notification.Name("reverseAction"), object: tag)
-    }
-    
-    
+
 }
