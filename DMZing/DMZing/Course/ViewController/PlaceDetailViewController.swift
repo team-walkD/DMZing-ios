@@ -92,7 +92,7 @@ class PlaceDetailViewController: UIViewController, APIService {
 //MARK: Server
 extension PlaceDetailViewController {
     
-    func getPlaceData(url : String){
+    func getPlaceData(url : String) {
         PlaceService.shareInstance.getPlaceData(url: url,completion: { [weak self] (result) in
             guard let `self` = self else { return }
             
@@ -113,6 +113,43 @@ extension PlaceDetailViewController {
             }
         })
     }
+    
+    //MARK: Tmap 소요시간
+    func calculateCarTime(startLat : Double, startLong : Double, endLat : Double, endLong : Double) -> Int {
+        
+        let version = 1
+        let tollgateFareOption = 1
+        let url = "http://api2.sktelecom.com/tmap/routes?version=\(version)&appKey=\(tMapKey)&tollgateFareOption=\(tollgateFareOption)&endX=\(endLong)&endY=\(endLat)&startX=\(startLong)&startY=\(startLat)"
+        
+        CalculateTimeService.shareInstance.calculateTimeToNext(url: url, params: [:], completion: { [weak self] (result) in
+            
+            guard let `self` = self else { return }
+            switch result {
+            case .networkSuccess(let data):
+                guard let data_ = data as? CalculateTimeVO else {return}
+                guard let time = data_.features.first?.properties.carTime else {return}
+                print("dd\(time)")
+                
+                UserDefaults.standard.set(time, forKey: "carTime")
+            case .networkFail :
+                self.networkSimpleAlert()
+            default :
+                self.simpleAlert(title: "오류", message: "다시 시도해주세요")
+            }
+        })
+        
+        var car = UserDefaults.standard.integer(forKey: "carTime") / 60
+        
+        return car
+    }
+    
+    func getCatTime(lat1: Double, lat2: Double, lon1: Double, lon2: Double) -> Double {
+        var time: Double = 0.0
+        
+        time = Double(self.calculateCarTime(startLat: lat1, startLong: lon1, endLat: lat2, endLong: lon2) / 3600)
+        
+        return time
+    }
 }
 
 //MARK: - TableView extension
@@ -132,9 +169,6 @@ extension PlaceDetailViewController: UITableViewDelegate, UITableViewDataSource 
         cell.numImageView.image = imageArr[indexPath.row]
         cell.mainImageView.kf.setImage(with: URL(string: places[indexPath.row].mainImageUrl), placeholder: UIImage())
         cell.placeLabel.text = places[indexPath.row].title
-
-        cell.busLabel.text = "20분"
-        cell.walkLabel.text = "30분"
         cell.carLabel.text = "10분"
         cell.nextLabel1.text = places[indexPath.row].peripheries[0].title
         cell.nextLabel2.text = places[indexPath.row].peripheries[1].title
@@ -146,8 +180,19 @@ extension PlaceDetailViewController: UITableViewDelegate, UITableViewDataSource 
         
         if indexPath.row == 0 {
             cell.lineView.isHidden = true
+        } else {
+            cell.lineView.isHidden = false
         }
-
+        
+        if indexPath.row == places.count - 1 {
+            cell.hiddenTimeLabel.isHidden = true
+            cell.hiddenStackView.isHidden = true
+        } else {
+            cell.hiddenTimeLabel.isHidden = false
+            cell.hiddenStackView.isHidden = false
+            cell.carLabel.text = String("\(self.calculateCarTime(startLat: places[indexPath.row].latitude, startLong: places[indexPath.row].longitude, endLat: places[indexPath.row + 1].latitude, endLong: places[indexPath.row + 1].longitude))분")
+        }
+    
         return cell
     }
     

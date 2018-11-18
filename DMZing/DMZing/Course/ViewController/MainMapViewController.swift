@@ -37,6 +37,7 @@ class MainMapViewController: UIViewController, APIService {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         //CollectionView
         mapCollectionView.delegate = self
         mapCollectionView.dataSource = self
@@ -100,7 +101,7 @@ extension MainMapViewController {
 }
 
 //MARK: - CollectionView Method
-extension MainMapViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension MainMapViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return courses.count
@@ -157,7 +158,8 @@ extension MainMapViewController: UICollectionViewDelegate, UICollectionViewDataS
 
             }
         }
-
+        
+    
     }
     
     func mapAlertwithHandler(title: String, message: String, okHandler : ((UIAlertAction) -> Void)?){
@@ -169,6 +171,22 @@ extension MainMapViewController: UICollectionViewDelegate, UICollectionViewDataS
         present(alert, animated: true, completion: nil)
     }
     
+}
+
+extension MainMapViewController : UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 327.getPortionalLength(), height: 344.getPortionalLength())
+    }
+    
+    //-간격 위아래
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 14.getPortionalLength()
+    }
+    //-간격 왼쪽오른쪽
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
 }
 
 //MARK: - CollectionView drag
