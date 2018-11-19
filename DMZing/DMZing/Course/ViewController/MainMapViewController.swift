@@ -128,7 +128,7 @@ extension MainMapViewController: UICollectionViewDelegate, UICollectionViewDataS
         
         cell.courseImageView.kf.setImage(with: URL(string: courses[indexPath.row].imageUrl), placeholder: UIImage())
         cell.smallLabel.text = courses[indexPath.row].subDescription
-        cell.largeLabel.text = courses[indexPath.row].mainDescription
+        cell.largeLabel.text = courses[indexPath.row].title
         cell.pageLabel.text = String(courses[indexPath.row].id)
         cell.totalPageLabel.text = String(courses.count)
         cell.dpLabel.text = String("\(courses[indexPath.row].price)DP")
@@ -153,7 +153,7 @@ extension MainMapViewController: UICollectionViewDelegate, UICollectionViewDataS
             let coverVC = UIStoryboard(name: "Course", bundle: nil).instantiateViewController(withIdentifier: "MapCoverViewController") as! MapCoverViewController
             
             coverVC.sub = courses[indexPath.row].subDescription
-            coverVC.main = courses[indexPath.row].mainDescription
+            coverVC.main = courses[indexPath.row].title
             coverVC.pick = courses[indexPath.row].pickCount
             coverVC.id = courses[indexPath.row].id
             coverVC.imageUrl = courses[indexPath.row].imageUrl
