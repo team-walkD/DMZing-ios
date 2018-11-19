@@ -287,7 +287,7 @@ extension MainViewController : UICollectionViewDelegate,UICollectionViewDataSour
             let body: [String: Any] = [
                 "cid": cid,
                 "pid": pid,
-                "latitude": lat
+                "latitude": lat,
                 "longitude": long
             ]
             findLetterNetworking(url: URL , params: body)
