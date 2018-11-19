@@ -816,7 +816,7 @@ tOyVmOuLpC4LCuyerOuvuCDsl4bsnYQg6rKDIOqwmeuLpOqzoOunjCDsg53qsIHtlojripTrjbAg7IOd
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="제목을 작성해주세요" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="29G-Bg-DdG">
-                                <rect key="frame" x="117" y="202" width="141" height="21"/>
+                                <rect key="frame" x="10" y="202" width="355" height="21"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -987,33 +987,34 @@ tOyVmOuLpC4LCuyerOuvuCDsl4bsnYQg6rKDIOqwmeuLpOqzoOunjCDsg53qsIHtlojripTrjbAg7IOd
                             <constraint firstItem="IKY-3k-T1y" firstAttribute="bottom" secondItem="bvq-Xs-lZN" secondAttribute="bottom" id="8aG-yy-rEz"/>
                             <constraint firstItem="QEv-dm-w6w" firstAttribute="leading" secondItem="ZVn-TH-aId" secondAttribute="leading" id="8l0-tN-vXd"/>
                             <constraint firstItem="Anc-48-ibe" firstAttribute="leading" secondItem="ZVn-TH-aId" secondAttribute="leading" id="AHW-eL-1HI"/>
+                            <constraint firstItem="ZVn-TH-aId" firstAttribute="trailing" secondItem="29G-Bg-DdG" secondAttribute="trailing" constant="10" id="Bnf-Dh-gdR"/>
                             <constraint firstItem="QEv-dm-w6w" firstAttribute="top" secondItem="bvq-Xs-lZN" secondAttribute="bottom" id="Bzq-Yv-QPh"/>
                             <constraint firstItem="IKY-3k-T1y" firstAttribute="leading" secondItem="bvq-Xs-lZN" secondAttribute="leading" id="Dcg-QG-6yB"/>
-                            <constraint firstItem="29G-Bg-DdG" firstAttribute="centerX" secondItem="Anc-48-ibe" secondAttribute="centerX" id="Fuy-FV-V7b"/>
                             <constraint firstItem="ozw-vE-2wj" firstAttribute="bottom" secondItem="Anc-48-ibe" secondAttribute="bottom" constant="-15" id="JvS-eo-RsZ"/>
                             <constraint firstItem="Xaq-J5-N0w" firstAttribute="centerY" secondItem="ozw-vE-2wj" secondAttribute="centerY" id="L9i-05-ax4"/>
                             <constraint firstItem="EBs-1j-dNx" firstAttribute="leading" secondItem="Anc-48-ibe" secondAttribute="leading" id="OEh-8s-WqX"/>
                             <constraint firstItem="Anc-48-ibe" firstAttribute="top" secondItem="WRE-9d-tVA" secondAttribute="top" id="P6O-8d-Rv8"/>
+                            <constraint firstItem="29G-Bg-DdG" firstAttribute="centerY" secondItem="EBs-1j-dNx" secondAttribute="centerY" id="ROw-Ls-wft"/>
                             <constraint firstItem="IKY-3k-T1y" firstAttribute="trailing" secondItem="bvq-Xs-lZN" secondAttribute="trailing" id="RfU-jo-PJf"/>
                             <constraint firstItem="JGs-tG-Ffe" firstAttribute="top" secondItem="29G-Bg-DdG" secondAttribute="bottom" constant="30" id="Uuy-Kr-TUh"/>
                             <constraint firstItem="9Vn-At-a1W" firstAttribute="leading" secondItem="G0A-Oj-Qh8" secondAttribute="trailing" constant="3" id="Vdi-xd-sRG"/>
+                            <constraint firstItem="29G-Bg-DdG" firstAttribute="leading" secondItem="ZVn-TH-aId" secondAttribute="leading" constant="10" id="VhB-Ur-Qbr"/>
                             <constraint firstItem="ozw-vE-2wj" firstAttribute="trailing" secondItem="Anc-48-ibe" secondAttribute="trailing" constant="-24" id="YdN-bU-Te8"/>
                             <constraint firstAttribute="trailing" secondItem="Anc-48-ibe" secondAttribute="trailing" id="a5I-8D-8Pf"/>
                             <constraint firstItem="EBs-1j-dNx" firstAttribute="top" secondItem="Anc-48-ibe" secondAttribute="top" id="c4C-J6-I8C"/>
                             <constraint firstItem="ZVn-TH-aId" firstAttribute="bottom" secondItem="QEv-dm-w6w" secondAttribute="bottom" id="cKj-Zx-Jgd"/>
-                            <constraint firstItem="29G-Bg-DdG" firstAttribute="centerY" secondItem="Anc-48-ibe" secondAttribute="centerY" id="d48-5t-ahf"/>
                             <constraint firstItem="EBs-1j-dNx" firstAttribute="trailing" secondItem="Anc-48-ibe" secondAttribute="trailing" id="hm2-Mf-1LD"/>
                             <constraint firstItem="G0A-Oj-Qh8" firstAttribute="centerY" secondItem="9Vn-At-a1W" secondAttribute="centerY" id="iBd-zE-6Ka"/>
                             <constraint firstItem="6qx-61-cbz" firstAttribute="centerY" secondItem="9Vn-At-a1W" secondAttribute="centerY" id="kyi-XK-6S5"/>
                             <constraint firstItem="EBs-1j-dNx" firstAttribute="bottom" secondItem="Anc-48-ibe" secondAttribute="bottom" id="mLC-Rs-bn3"/>
                             <constraint firstItem="Anc-48-ibe" firstAttribute="height" secondItem="WRE-9d-tVA" secondAttribute="height" multiplier="425:812" id="mPA-cF-tCz"/>
                             <constraint firstItem="9Vn-At-a1W" firstAttribute="centerX" secondItem="JGs-tG-Ffe" secondAttribute="centerX" id="nLO-22-S4g"/>
+                            <constraint firstItem="JGs-tG-Ffe" firstAttribute="centerX" secondItem="29G-Bg-DdG" secondAttribute="centerX" id="oh3-pB-2qf"/>
                             <constraint firstItem="6qx-61-cbz" firstAttribute="leading" secondItem="9Vn-At-a1W" secondAttribute="trailing" constant="3" id="qnU-7b-YoS"/>
                             <constraint firstItem="IKY-3k-T1y" firstAttribute="top" secondItem="bvq-Xs-lZN" secondAttribute="top" id="r2S-vB-aoY"/>
                             <constraint firstItem="bvq-Xs-lZN" firstAttribute="top" secondItem="Anc-48-ibe" secondAttribute="bottom" id="rAi-Ng-6fQ"/>
                             <constraint firstItem="bvq-Xs-lZN" firstAttribute="leading" secondItem="ZVn-TH-aId" secondAttribute="leading" id="uEp-JW-faC"/>
                             <constraint firstItem="ZVn-TH-aId" firstAttribute="trailing" secondItem="QEv-dm-w6w" secondAttribute="trailing" id="y6F-dP-VXu"/>
-                            <constraint firstItem="JGs-tG-Ffe" firstAttribute="centerX" secondItem="29G-Bg-DdG" secondAttribute="centerX" id="yr9-EC-MkX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZVn-TH-aId"/>
                     </view>
