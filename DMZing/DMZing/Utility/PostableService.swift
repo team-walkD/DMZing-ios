@@ -67,7 +67,8 @@ extension PostableService {
                         let result : networkResult = (resCode, data)
                         completion(.success(result))
                     }catch{
-                        completion(.error("error post"))
+                        print("error post")
+                        completion(.error("\(resCode)"))
                     }
                 }
                 break

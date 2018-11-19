@@ -25,6 +25,10 @@ class MainViewController: UIViewController, APIService {
     var currentIdx = 0
     let userDefault = UserDefaults.standard
     
+    //수진
+    var locationManager = CLLocationManager()
+    var currentLocation : CLLocation?
+    
     var purchaseList : [FirstDataPurchaseList] = [] {
         didSet {
             themeCollectionView.reloadData()
@@ -58,8 +62,7 @@ class MainViewController: UIViewController, APIService {
         mainCollectionView.dataSource = self
         setLogoButton()
         setupNavBar()
-        
-        
+        locationInit()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -180,7 +183,20 @@ extension MainViewController : UICollectionViewDelegate,UICollectionViewDataSour
         if collectionView == self.themeCollectionView {
             let cell = self.themeCollectionView.dequeueReusableCell(withReuseIdentifier: "ThemeCollectionViewCell", for: indexPath) as! ThemeCollectionViewCell
             guard purchaseList.count > 0 else {return cell}
-            cell.titleLabel.text = purchaseList[indexPath.row].title
+           
+            var themeTitle = ""
+            switch purchaseList[indexPath.row].id {
+            case 1 :
+                themeTitle = "데이트 코스"
+            case 2 :
+                themeTitle = "역사기행 코스"
+            case 3 :
+                themeTitle = "자연탐방 코스"
+            default :
+                themeTitle = ""
+             
+            }
+             cell.titleLabel.text = themeTitle
             
             if(purchaseList[indexPath.row].isPicked){
                 cell.backView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
@@ -209,12 +225,15 @@ extension MainViewController : UICollectionViewDelegate,UICollectionViewDataSour
                 cell.subtitleLabel.text = ""
                 cell.titleLabel.text = places[indexPath.row-1].title
                 cell.contentTextView.text = places[indexPath.row-1].hint
+                //수진
+                cell.findLetterButton.tag = indexPath.row-1
+                cell.findLetterHandler = getLocation
                 
                 if places[indexPath.row-1].letterImageURL != nil{
                     cell.findLetterButton.titleLabel?.text = "편지 보기"
                 }
                 
-                cell.findLetterButton.tag = indexPath.row
+               /* cell.findLetterButton.tag = indexPath.row*/
                 
                 return cell
 
@@ -226,6 +245,27 @@ extension MainViewController : UICollectionViewDelegate,UICollectionViewDataSour
             }
             
         }
+    }
+    
+    //수진
+    func findLetteAction(index : Int, lat : Double, long : Double){
+            let URL = url("mission")
+            let cid = self.firstData?.id ?? 0
+            let pid = places[index].id
+            let lat = places[index].latitude ?? 0 //37.8895234711
+            let long = places[index].longitude ?? 0 //126.7405308247
+            
+            let body: [String: Any] = [
+                "cid": cid,
+                "pid": pid,
+                "latitude": 37.8895234711,
+                "longitude": 126.7405308247
+            ]
+            findLetter(url: URL , params: body)
+    }
+    
+    func checkLocationPermission() -> Bool{
+        return false
     }
 
     
@@ -310,4 +350,68 @@ extension MainViewController : UIScrollViewDelegate {
         }
     }
 }
-
+//수진
+extension MainViewController : CLLocationManagerDelegate{
+    func locationInit(){
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.startUpdatingLocation()
+    }
+    
+    func getLocation(index : Int){
+        let loacationAuthorizationStatus =  CLLocationManager.authorizationStatus()
+        switch loacationAuthorizationStatus {
+        case .authorizedWhenInUse:
+            currentLocation = locationManager.location
+            guard let latitude = currentLocation?.coordinate.latitude,
+                let longitude = currentLocation?.coordinate.longitude else {return}
+            findLetteAction(index: index, lat : latitude , long : longitude)
+        case .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+        case .restricted:
+            showLocationDisableAlert()
+        case .denied:
+            showLocationDisableAlert()
+        default :
+            break
+        }
+    }
+    
+    func showLocationDisableAlert() {
+        let alertController = UIAlertController(title: "위치 접근이 제한되었습니다.", message: "위치 접근 권한이 필요합니다.", preferredStyle: .alert)
+        let openAction = UIAlertAction(title: "설정으로 가기", style: .default) { (action) in
+            if let url = URL(string: UIApplicationOpenSettingsURLString) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+        }
+        let cancelTitle = "취소"
+        let cancelAction = UIAlertAction(title: cancelTitle,style: .cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        
+        alertController.addAction(openAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+}
+//수진
+extension MainViewController {
+    func findLetter(url : String, params : [String : Any]){
+        PostableMissionService.shareInstance.sendMission(url: url, params: params, completion: { [weak self] (result) in
+            guard let `self` = self else { return }
+            switch result {
+            case .networkSuccess(let data):
+                guard let data = data as? MissionVO else{return}
+                //용뱀 - 여기서 이제 데이터 두개 오니까 그거 빼다 쓰면 됨!
+                //용뱀 찾은 편지에 대해서 '편지 찾기' -> '편지 보기'로 바꿔야하고 편지 찾기일때는 getLoaction 호출해야하고 아닐때는 편지 보기 호출
+                print(data.first?.description)
+                break
+            case .badRequest :
+                self.simpleAlert(title: "편지 찾기 실패", message: "해당 코스와 매칭되지 않는 장소입니다")
+            case .networkFail :
+                self.networkSimpleAlert()
+            default :
+                self.simpleAlert(title: "오류", message: "다시 시도해주세요")
+                break
+            }
+        })
+    }
+}

@@ -33,4 +33,5 @@ enum NetworkResult<T> {
     case duplicated
     case networkFail
     case wrongInput
+    case badRequest
 }

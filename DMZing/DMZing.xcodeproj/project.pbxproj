@@ -23,6 +23,7 @@
 		22F3025D2195515F00152700 /* MainMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F3025C2195515F00152700 /* MainMapViewController.swift */; };
 		22F3025F2195518B00152700 /* MainMapCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F3025E2195518B00152700 /* MainMapCollectionViewCell.swift */; };
 		3B3A85CE2198836B00D1A835 /* MypageMainVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3A85CD2198836B00D1A835 /* MypageMainVO.swift */; };
+		3B5A4EA321A2AF1400C53E78 /* MessageVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5A4EA221A2AF1400C53E78 /* MessageVO.swift */; };
 		3B6697B121949DBA008789E3 /* WriteEntryTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6697B021949DBA008789E3 /* WriteEntryTVCell.swift */; };
 		3B6697B721959405008789E3 /* WriteArticleReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6697B621959405008789E3 /* WriteArticleReviewVC.swift */; };
 		3B6697B92195A266008789E3 /* WriteArticleCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6697B82195A266008789E3 /* WriteArticleCVCell.swift */; };
@@ -126,10 +127,8 @@
 		CC62367E219EE9A7006B2C79 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC62367D219EE9A7006B2C79 /* APIKey.swift */; };
 		CCB3CC9C218AF97A0033B9F9 /* Sign.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCB3CC9B218AF97A0033B9F9 /* Sign.storyboard */; };
 		CCB3CC9E218AF9D40033B9F9 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB3CC9D218AF9D40033B9F9 /* SignInViewController.swift */; };
-
 		CCEBEB4421A1E34200AC8166 /* PostableMissionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEBEB4321A1E34200AC8166 /* PostableMissionService.swift */; };
 		CCEBEB4621A1E3B500AC8166 /* MissionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEBEB4521A1E3B500AC8166 /* MissionModel.swift */; };
-
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -170,6 +169,7 @@
 		22F3025E2195518B00152700 /* MainMapCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapCollectionViewCell.swift; sourceTree = "<group>"; };
 		31A78C13C32CCDE3112EE612 /* Pods-DMZing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DMZing.release.xcconfig"; path = "Target Support Files/Pods-DMZing/Pods-DMZing.release.xcconfig"; sourceTree = "<group>"; };
 		3B3A85CD2198836B00D1A835 /* MypageMainVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageMainVO.swift; sourceTree = "<group>"; };
+		3B5A4EA221A2AF1400C53E78 /* MessageVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageVO.swift; sourceTree = "<group>"; };
 		3B6697B021949DBA008789E3 /* WriteEntryTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteEntryTVCell.swift; sourceTree = "<group>"; };
 		3B6697B621959405008789E3 /* WriteArticleReviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteArticleReviewVC.swift; sourceTree = "<group>"; };
 		3B6697B82195A266008789E3 /* WriteArticleCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteArticleCVCell.swift; sourceTree = "<group>"; };
@@ -276,10 +276,8 @@
 		CC62367D219EE9A7006B2C79 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		CCB3CC9B218AF97A0033B9F9 /* Sign.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sign.storyboard; sourceTree = "<group>"; };
 		CCB3CC9D218AF9D40033B9F9 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
-
 		CCEBEB4321A1E34200AC8166 /* PostableMissionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostableMissionService.swift; sourceTree = "<group>"; };
 		CCEBEB4521A1E3B500AC8166 /* MissionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionModel.swift; sourceTree = "<group>"; };
-
 		FA082A16820F4FD6F8F63662 /* Pods-DMZing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DMZing.debug.xcconfig"; path = "Target Support Files/Pods-DMZing/Pods-DMZing.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -971,9 +969,7 @@
 			children = (
 				CC3E1AF021A1689D00E376D3 /* GetMissionService.swift */,
 				CC3E1AF221A1A17300E376D3 /* PutCourseService.swift */,
-
 				CCEBEB4321A1E34200AC8166 /* PostableMissionService.swift */,
-
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -984,6 +980,7 @@
 				CC529166219AE3BD00F58603 /* FirstModel.swift */,
 				CC529168219AE4CD00F58603 /* MainModel.swift */,
 				CCEBEB4521A1E3B500AC8166 /* MissionModel.swift */,
+				3B5A4EA221A2AF1400C53E78 /* MessageVO.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1209,6 +1206,7 @@
 				222EEC6C2198364D00FB15C6 /* PlaceInfoViewController.swift in Sources */,
 				3BB05014217CAD6C0096BF4D /* Font.swift in Sources */,
 				3B799398219ABE3900DBF5B2 /* GetReviewContentService.swift in Sources */,
+				3B5A4EA321A2AF1400C53E78 /* MessageVO.swift in Sources */,
 				3B799392219AB3AB00DBF5B2 /* GetArticleReviewService.swift in Sources */,
 				3B79938D219A9EEA00DBF5B2 /* ReviewMainVO.swift in Sources */,
 				3B800588218B2AC40003EA5C /* ReviewDetailHeaderView.swift in Sources */,
@@ -1399,7 +1397,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = Y4XABUQ539;
 				INFOPLIST_FILE = DMZing/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1437,7 +1435,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = Y4XABUQ539;
 				INFOPLIST_FILE = DMZing/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
