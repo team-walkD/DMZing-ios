@@ -8,7 +8,7 @@
 
 import Foundation
 
-typealias MissionVO = [MissionElement]
+typealias MissionVO = [FirstDataPickCoursePlace]
 
 struct MissionElement: Codable {
     let address, description, hint: String
@@ -34,3 +34,5 @@ struct MissionElement: Codable {
         case title
     }
 }
+
+

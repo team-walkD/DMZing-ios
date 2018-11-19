@@ -52,6 +52,20 @@ class MainViewController: UIViewController, APIService {
             mainCollectionView.reloadData()
         }
     }
+    
+    var currentMission : FirstDataPickCoursePlace?{
+        didSet{
+            mainCollectionView.reloadData()
+        }
+    }
+    
+    var nextMission : FirstDataPickCoursePlace?{
+        didSet{
+            mainCollectionView.reloadData()
+        }
+    }
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,7 +104,6 @@ class MainViewController: UIViewController, APIService {
                 self.places.removeAll()
                 self.purchaseList = firstmodel.purchaseList
                 //print(firstmodel)
-                print("//////////////////////")
                 self.firstData = firstmodel.pickCourse
                 //print(self.firstData)
                 self.places = (self.firstData?.places)!
@@ -155,8 +168,8 @@ extension MainViewController : UICollectionViewDelegate,UICollectionViewDataSour
         if collectionView == self.themeCollectionView {
              return purchaseList.count
         } else {
-            if let lastSequence = self.firstData?.places.last?.sequence {
-                let letterImageUrl = self.firstData?.places.last?.letterImageURL
+            if let lastSequence = self.places.last?.sequence {
+                let letterImageUrl = self.places.last?.letterImageURL
                 
                 if lastSequence == 100{
                     if(letterImageUrl == nil){
@@ -171,6 +184,7 @@ extension MainViewController : UICollectionViewDelegate,UICollectionViewDataSour
                 
              
             }else{
+                
                 return 1
             }
         
@@ -244,6 +258,14 @@ extension MainViewController : UICollectionViewDelegate,UICollectionViewDataSour
                 
                 let cell = self.mainCollectionView.dequeueReusableCell(withReuseIdentifier: LastCVCell.reuseIdentifier, for: indexPath) as! LastCVCell
                 
+                var currentTitle = ""
+                
+                for i in 0..<self.purchaseList.count{
+                    if purchaseList[i].isPicked == true{
+                        currentTitle = purchaseList[i].title
+                    }
+                }
+                cell.titleLabel.text = currentTitle
                 return cell
             }
             
@@ -255,8 +277,13 @@ extension MainViewController : UICollectionViewDelegate,UICollectionViewDataSour
             let URL = url("mission")
             let cid = self.firstData?.id ?? 0
             let pid = places[index].id
+        
             //임진각 lat 37.8895234711
             //임진각 long 126.7405308247
+        
+        // 데이트코스 마지막 lat 37.7689256453
+        // 데이트코스 마지막 long 126.6964910575
+        
             let body: [String: Any] = [
                 "cid": cid,
                 "pid": pid,
@@ -277,15 +304,9 @@ extension MainViewController : UICollectionViewDelegate,UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if(collectionView == themeCollectionView){
-            print(indexPath.row)
-            
-            let cell = self.themeCollectionView.dequeueReusableCell(withReuseIdentifier: ThemeCollectionViewCell.reuseIdentifier, for: indexPath) as! ThemeCollectionViewCell
             
             putCourseData(url: url("course/pick/\(indexPath.row+1)"))
-            
-            
-            
-            //collectionView.reloadData()
+
         }
         
 
@@ -418,10 +439,15 @@ extension MainViewController {
             switch result {
             case .networkSuccess(let data):
                 guard let data = data as? MissionVO else{return}
-                //용뱀 - 여기서 이제 데이터 두개 오니까 그거 빼다 쓰면 됨!
-                //찾은 편지에 대해서 '편지 찾기' -> '편지 보기'로 바꿔야하고 편지 찾기일때는 getLoaction 호출해야하고 아닐때는 편지 보기 호출
-                //cell.findLetterButton.setTitle("편지 보기", for: .normal ) 이런식으로 setTitle 이용해서 설정해!
-                print(data.first?.description)
+                
+               
+                self.currentMission = data.first
+                self.nextMission = data.last
+                self.places.remove(at: self.places.count-1)
+                self.places.append(self.currentMission!)
+                self.places.append(self.nextMission!)
+                self.simpleAlert(title: "편지 찾기 성공", message: "숨겨진 편지를 \n 발견했어요!\n +\((self.currentMission?.reward)!)DP")
+                //print(self.currentMission)
                 break
             case .badRequest :
                 self.simpleAlert(title: "편지 찾기 실패", message: "편지가 없어요! \n 다른 위치로 이동하세요")
