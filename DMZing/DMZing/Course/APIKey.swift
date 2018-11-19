@@ -8,4 +8,4 @@
 
 import Foundation
 
-let tMapKey: String = "29112de9-01e7-4fc6-92f3-c712f600f7e3"
+let tMapKey: String = ""
