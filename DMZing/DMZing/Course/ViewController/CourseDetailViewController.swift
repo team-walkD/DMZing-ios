@@ -117,7 +117,7 @@ extension CourseDetailViewController {
                 self.titleLabel.text = courseDetailData?.title
                 self.contentTextView.text = courseDetailData?.mainDescription
                 self.levelLabel.text = courseDetailData?.level
-                self.timeLabel.text = String(self.gino(courseDetailData?.estimatedTime))
+                self.timeLabel.text = String(Int(self.gdno(courseDetailData?.estimatedTime)))
                 self.reviewLabel.text = String(self.gino(courseDetailData?.reviewCount))
                 self.courseLabel1.text = courseDetailData?.places[0].title
                 self.courseLabel2.text = courseDetailData?.places[1].title
@@ -130,7 +130,7 @@ extension CourseDetailViewController {
                 
                 self.createTmapView(lat1: self.gdno(courseDetailData?.places[0].latitude), lat2: self.gdno(courseDetailData?.places[1].latitude), lat3: self.gdno(courseDetailData?.places[2].latitude), lat4: self.gdno(courseDetailData?.places[3].latitude), lon1: self.gdno(courseDetailData?.places[0].longitude), lon2: self.gdno(courseDetailData?.places[1].longitude), lon3: self.gdno(courseDetailData?.places[2].longitude), lon4: self.gdno(courseDetailData?.places[3].longitude))
                 
-                self.totalTimeLabel.text = String(self.gino(courseDetailData?.estimatedTime))
+                self.totalTimeLabel.text = String(self.gdno(courseDetailData?.estimatedTime))
 
             case .networkFail :
                 self.networkSimpleAlert()
@@ -162,7 +162,7 @@ extension CourseDetailViewController: TMapViewDelegate {
 
         mapView.zoom(toLatSpan: lat1, lonSpan: lon1)
         mapView.setCenter(centerCoord)
-        mapView.setZoomLevel(7)
+        mapView.setZoomLevel(8)
         
         mapView.setSKTMapApiKey(tMapKey)// 발급 받은 apiKey 설정
         mapContainerView.addSubview(mapView)

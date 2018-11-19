@@ -12,7 +12,7 @@ typealias CourseDetailData = CourseDetail
 
 struct CourseDetail: Codable {
     let backgroundImageUrl: String 
-    let estimatedTime: Int
+    let estimatedTime: Double
     let id: Int
     let imageUrl: String
     let level: String
