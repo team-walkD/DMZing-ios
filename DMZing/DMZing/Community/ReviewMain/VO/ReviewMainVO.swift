@@ -22,7 +22,7 @@ struct ReviewMainVOData: Codable {
         case 2:
             return "역사기행"
         case 3:
-            return "탐험"
+            return "자연 탐방"
         default:
             return ""
         }

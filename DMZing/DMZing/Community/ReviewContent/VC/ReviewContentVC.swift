@@ -160,7 +160,9 @@ extension ReviewContentVC {
             make.height.equalTo(0.5)
         }
         titleLbl.snp.makeConstraints { (make) in
-            make.centerX.equalToSuperview()
+           
+            make.leading.equalToSuperview().offset(10)
+            make.trailing.equalToSuperview().offset(-10)
             make.bottom.equalTo(centerWhiteView.snp.top).offset(-30)
         }
         smallWhiteView.snp.makeConstraints { (make) in

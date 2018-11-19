@@ -41,6 +41,7 @@ class WriteEntryVC: UIViewController, APIService{
         }
     }
     
+    @IBOutlet weak var writeDescLbl: UILabel!
     @IBOutlet weak var bgImgView: UIImageView!
     @IBOutlet weak var titleTxt: UITextField!
     @IBOutlet weak var startTxt: UITextField!
@@ -67,6 +68,7 @@ class WriteEntryVC: UIViewController, APIService{
         initDatePicker()
         setKeyboardSetting()
         setUpTableView()
+        writeDescLbl.adjustsFontSizeToFitWidth = true
         titleTxt.addTarget(self, action: #selector(isBtnValid), for: .editingChanged)
         doneBtn.addTarget(self, action: #selector(doneAction), for: .touchUpInside)
         titleTxt.attributedPlaceholder = NSAttributedString(string: "제목을 입력해주세요", attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
