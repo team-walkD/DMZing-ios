@@ -1,22 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sad-6A-qml">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sad-6A-qml">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="AppleSDGothicNeo.ttc">
-            <string>AppleSDGothicNeo-Bold</string>
-            <string>AppleSDGothicNeo-Regular</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -101,7 +95,7 @@
                                     <inset key="sectionInset" minX="26" minY="0.0" maxX="26" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <view key="backgroundView" contentMode="scaleToFill" id="gnD-cL-ERy">
-                                    <rect key="frame" x="273" y="0.0" width="375" height="512"/>
+                                    <rect key="frame" x="672" y="0.0" width="375" height="512"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
@@ -434,8 +428,8 @@
                                                     <color key="textColor" red="0.10980392160000001" green="0.2156862745" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="하단의 버튼을 통해" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c54-hq-v5t">
-                                                    <rect key="frame" x="110" y="307.66666666666669" width="105" height="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="해당 미션 이외의" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c54-hq-v5t">
+                                                    <rect key="frame" x="116.33333333333334" y="307.66666666666669" width="92.333333333333343" height="17"/>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
                                                     <color key="textColor" red="0.10980392160000001" green="0.2156862745" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -448,17 +442,6 @@
                                                         <constraint firstAttribute="width" secondItem="XjN-yt-LpY" secondAttribute="height" multiplier="285:1" id="j6A-BT-Pfr"/>
                                                     </constraints>
                                                 </view>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Obk-Od-be2">
-                                                    <rect key="frame" x="58.666666666666671" y="453" width="206.66666666666663" height="32"/>
-                                                    <color key="backgroundColor" red="0.42745098040000001" green="0.6588235294" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="Obk-Od-be2" secondAttribute="height" multiplier="84:13" id="xAn-pO-3kK"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="16"/>
-                                                    <state key="normal" title="다른 미션 찾기">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </state>
-                                                </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="더 다양한 미션을 만나보세요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q5I-JQ-b9A">
                                                     <rect key="frame" x="82" y="327" width="160" height="17"/>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
@@ -477,18 +460,15 @@
                                             <constraint firstItem="Cpr-ey-f4B" firstAttribute="centerY" secondItem="y7b-XK-KCk" secondAttribute="centerY" multiplier="11:12" id="EsY-s6-mzP"/>
                                             <constraint firstItem="q5I-JQ-b9A" firstAttribute="top" secondItem="c54-hq-v5t" secondAttribute="bottom" constant="2.3333333333333144" id="FGv-BB-Eqm"/>
                                             <constraint firstItem="q5I-JQ-b9A" firstAttribute="centerX" secondItem="c54-hq-v5t" secondAttribute="centerX" id="NcQ-4M-GD9"/>
+                                            <constraint firstAttribute="bottom" secondItem="XjN-yt-LpY" secondAttribute="bottom" constant="69" id="QgX-yJ-ngj"/>
                                             <constraint firstItem="Hhx-oG-igE" firstAttribute="width" secondItem="y7b-XK-KCk" secondAttribute="width" multiplier="142:375" id="Rav-dU-xwN"/>
                                             <constraint firstItem="8Hh-IU-EMZ" firstAttribute="top" secondItem="Cpr-ey-f4B" secondAttribute="bottom" constant="0.66666666666665719" id="SOU-bJ-ilR"/>
-                                            <constraint firstItem="Obk-Od-be2" firstAttribute="centerX" secondItem="y7b-XK-KCk" secondAttribute="centerX" id="bUW-D2-s7v"/>
                                             <constraint firstItem="c54-hq-v5t" firstAttribute="centerY" secondItem="y7b-XK-KCk" secondAttribute="centerY" multiplier="5:4" id="cxD-de-Hcp"/>
                                             <constraint firstItem="c54-hq-v5t" firstAttribute="centerX" secondItem="y7b-XK-KCk" secondAttribute="centerX" id="kjQ-H1-zoA"/>
-                                            <constraint firstItem="Obk-Od-be2" firstAttribute="centerY" secondItem="y7b-XK-KCk" secondAttribute="centerY" multiplier="5.56:3" id="qgP-YW-4sx"/>
                                             <constraint firstItem="JCz-7L-Fq2" firstAttribute="centerX" secondItem="y7b-XK-KCk" secondAttribute="centerX" id="x4F-Xq-NBG"/>
-                                            <constraint firstItem="Obk-Od-be2" firstAttribute="top" secondItem="XjN-yt-LpY" secondAttribute="bottom" constant="16" id="ye8-vs-g0l"/>
                                             <constraint firstItem="Hhx-oG-igE" firstAttribute="centerY" secondItem="y7b-XK-KCk" secondAttribute="centerY" multiplier="1:2" id="zSj-8c-2cN"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="findAnotherButton" destination="Obk-Od-be2" id="sfF-79-liS"/>
                                             <outlet property="titleImgView" destination="Hhx-oG-igE" id="kgd-8V-0lI"/>
                                             <outlet property="titleLabel" destination="Cpr-ey-f4B" id="SdL-Jc-cV6"/>
                                         </connections>
