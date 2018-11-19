@@ -139,6 +139,7 @@ extension PlaceDetailViewController: UITableViewDelegate, UITableViewDataSource 
         cell.nextLabel1.text = places[indexPath.row].peripheries[0].title
         cell.nextLabel2.text = places[indexPath.row].peripheries[1].title
         cell.nextLabel3.text = places[indexPath.row].peripheries[2].title
+        
         cell.nextImageView1.kf.setImage(with: URL(string: gsno(places[indexPath.row].peripheries[0].firstimage)), placeholder: UIImage())
         cell.nextImageView2.kf.setImage(with: URL(string: gsno(places[indexPath.row].peripheries[1].firstimage)), placeholder: UIImage())
         cell.nextImageView3.kf.setImage(with: URL(string: gsno(places[indexPath.row].peripheries[2].firstimage)), placeholder: UIImage())
@@ -167,7 +168,7 @@ extension PlaceDetailViewController: UITableViewDelegate, UITableViewDataSource 
         
         infoVC.cid = cid
         infoVC.content = places[indexPath.row].description
-        infoVC.num = String(places[indexPath.row].sequence)
+        infoVC.num = String(indexPath.row + 1)
         infoVC.restDay = gsno(places[indexPath.row].restDate)
         infoVC.parking = gsno(places[indexPath.row].parking)
         infoVC.infoCenter = gsno(places[indexPath.row].infoCenter)
@@ -193,7 +194,7 @@ extension PlaceDetailViewController: TMapViewDelegate {
         let centerCoord = CLLocationCoordinate2D(latitude: places[0].latitude, longitude: places[0].longitude)
         mapView.zoom(toLatSpan: places[0].latitude, lonSpan: places[0].longitude)
         mapView.setCenter(centerCoord)
-        mapView.setZoomLevel(7)
+        mapView.setZoomLevel(9)
         
         mapView.setSKTMapApiKey(tMapKey)// 발급 받은 apiKey 설정
         mapContainerView.addSubview(mapView)

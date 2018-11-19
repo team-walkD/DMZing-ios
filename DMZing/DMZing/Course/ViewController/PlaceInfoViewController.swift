@@ -18,8 +18,8 @@ class PlaceInfoViewController: UIViewController {
     @IBOutlet weak var contentTextView: UITextView!
 
     @IBOutlet weak var closedTextView: UITextView!
-    @IBOutlet weak var parkingLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
+    @IBOutlet weak var parkingTextView: UITextView!
     
     @IBOutlet weak var backView: UIView!
     @IBOutlet weak var navi: UINavigationBar!
@@ -40,24 +40,22 @@ class PlaceInfoViewController: UIViewController {
         
         backView.makeRounded(cornerRadius: 10)
         backView.dropShadow(color: #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1), opacity: 0.3, offSet: CGSize(width: -0.5, height: 0.5), radius: 10, scale: true)
-        
+
         numberLabel.text = "0\(num)"
         
         let attr = try? NSAttributedString(htmlString: content, font: UIFont(name: "AppleSDGothicNeo-Regular", size: 16))
         contentTextView.attributedText = attr
         
-        
         closedTextView.text = restDay
-        parkingLabel.text = parking
+        parkingTextView.text = parking
         phoneLabel.text = infoCenter
         placeLabel.text = name
         backImageView.kf.setImage(with: URL(string: imageUrl), placeholder: UIImage())
         
-
-        parkingLabel.adjustsFontSizeToFitWidth = true
         phoneLabel.adjustsFontSizeToFitWidth = true
-
+        placeLabel.adjustsFontSizeToFitWidth = true
     }
+
     
     //MARK: navigationBar transparent
     func setNavigationBar() {
@@ -74,6 +72,18 @@ class PlaceInfoViewController: UIViewController {
 
 }
 
+//MARK: - TextView Scroll to Top
+extension UITextView {
+    
+    override open func draw(_ rect: CGRect)
+    {
+        super.draw(rect)
+        setContentOffset(CGPoint.zero, animated: false)
+    }
+    
+}
+
+//MARK: - Html
 extension String {
     func htmlAttributed(family: String?, size: CGFloat, color: UIColor) -> NSAttributedString? {
         do {
