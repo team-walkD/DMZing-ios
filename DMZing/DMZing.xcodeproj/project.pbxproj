@@ -1374,6 +1374,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = DMZing/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1397,7 +1398,7 @@
 					"\"SwiftyJSON\"",
 					"-all_load",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = hi.com.DMZing;
+				PRODUCT_BUNDLE_IDENTIFIER = com.walkD.DMZing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "./DMZing/Course/TMap-SDK/Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
@@ -1412,6 +1413,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = DMZing/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1435,7 +1437,7 @@
 					"\"SwiftyJSON\"",
 					"-all_load",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = hi.com.DMZing;
+				PRODUCT_BUNDLE_IDENTIFIER = com.walkD.DMZing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "./DMZing/Course/TMap-SDK/Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
