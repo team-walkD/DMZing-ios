@@ -101,7 +101,7 @@
                                     <inset key="sectionInset" minX="26" minY="0.0" maxX="26" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <view key="backgroundView" contentMode="scaleToFill" id="gnD-cL-ERy">
-                                    <rect key="frame" x="672" y="0.0" width="375" height="512"/>
+                                    <rect key="frame" x="651" y="0.0" width="375" height="512"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
