@@ -247,6 +247,8 @@ extension MainViewController : UICollectionViewDelegate,UICollectionViewDataSour
              
                     cell.findLetterButton.setTitle("편지 보기", for: .normal )
                   
+                }else{
+                    cell.findLetterButton.setTitle("편지 찾기", for: .normal)
                 }
             
                 return cell
