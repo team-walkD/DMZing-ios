@@ -918,7 +918,7 @@ tOyVmOuLpC4LCuyerOuvuCDsl4bsnYQg6rKDIOqwmeuLpOqzoOunjCDsg53qsIHtlojripTrjbAg7IOd
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DAY를 선택하여 해당 날짜의 이야기를 들려주세요! " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j1h-GJ-7fy">
-                                            <rect key="frame" x="23" y="22" width="322" height="19.333333333333329"/>
+                                            <rect key="frame" x="23" y="22" width="329" height="19.333333333333329"/>
                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
                                             <color key="textColor" red="0.10980392160000001" green="0.2156862745" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -926,6 +926,7 @@ tOyVmOuLpC4LCuyerOuvuCDsl4bsnYQg6rKDIOqwmeuLpOqzoOunjCDsg53qsIHtlojripTrjbAg7IOd
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="j1h-GJ-7fy" secondAttribute="trailing" constant="23" id="80d-L4-HgX"/>
                                         <constraint firstItem="j1h-GJ-7fy" firstAttribute="top" secondItem="Xtc-81-5sp" secondAttribute="top" constant="22" id="9d2-Oa-aKH"/>
                                         <constraint firstItem="j1h-GJ-7fy" firstAttribute="leading" secondItem="Xtc-81-5sp" secondAttribute="leading" constant="23" id="W5s-Ga-EGs"/>
                                     </constraints>
@@ -1036,6 +1037,7 @@ tOyVmOuLpC4LCuyerOuvuCDsl4bsnYQg6rKDIOqwmeuLpOqzoOunjCDsg53qsIHtlojripTrjbAg7IOd
                         <outlet property="tableView" destination="bvq-Xs-lZN" id="DIE-42-83I"/>
                         <outlet property="tableViewBgView" destination="IKY-3k-T1y" id="irS-N9-Wdo"/>
                         <outlet property="titleTxt" destination="29G-Bg-DdG" id="y8C-Z1-mXD"/>
+                        <outlet property="writeDescLbl" destination="j1h-GJ-7fy" id="IeI-Bi-Jk9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2No-2P-N7R" userLabel="First Responder" sceneMemberID="firstResponder"/>
