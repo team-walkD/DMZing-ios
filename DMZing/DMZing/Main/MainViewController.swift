@@ -25,7 +25,6 @@ class MainViewController: UIViewController, APIService {
     var currentIdx = 0
     let userDefault = UserDefaults.standard
     
-    //수진
     var locationManager = CLLocationManager()
     var currentLocation : CLLocation?
     
@@ -240,18 +239,16 @@ extension MainViewController : UICollectionViewDelegate,UICollectionViewDataSour
                 cell.subtitleLabel.text = ""
                 cell.titleLabel.text = places[indexPath.row-1].title
                 cell.contentTextView.text = places[indexPath.row-1].hint
-                //수진
+        
                 cell.findLetterButton.tag = indexPath.row-1
                 cell.findLetterHandler = touchLetterBtn
                 
                 if places[indexPath.row-1].letterImageURL != nil{
-                    //수진
+             
                     cell.findLetterButton.setTitle("편지 보기", for: .normal )
-                    /*cell.findLetterButton.titleLabel?.text = "편지 보기"*/
+                  
                 }
-                
-               /* cell.findLetterButton.tag = indexPath.row*/
-                
+            
                 return cell
 
             }else{
@@ -272,22 +269,25 @@ extension MainViewController : UICollectionViewDelegate,UICollectionViewDataSour
         }
     }
     
-    //수진
+    
     func findLetteAction(index : Int, lat : Double, long : Double){
             let URL = url("mission")
             let cid = self.firstData?.id ?? 0
             let pid = places[index].id
         
-            //임진각 lat 37.8895234711
-            //임진각 long 126.7405308247
-        
-        // 데이트코스 마지막 lat 37.7689256453
-        // 데이트코스 마지막 long 126.6964910575
+        /*임진각 lat 37.8895234711
+        임진각 long 126.7405308247
+         
+         통일공원 lat 37.8513232698,
+         통일공원 long 126.7905662159
+   
+        데이트코스 마지막 lat 37.7689256453
+        데이트코스 마지막 long 126.6964910575*/
         
             let body: [String: Any] = [
                 "cid": cid,
                 "pid": pid,
-                "latitude": lat,
+                "latitude": lat
                 "longitude": long
             ]
             findLetterNetworking(url: URL , params: body)
@@ -377,7 +377,7 @@ extension MainViewController : UIScrollViewDelegate {
     }
 }
 
-//수진
+
 extension MainViewController : CLLocationManagerDelegate{
     func locationInit(){
         locationManager.delegate = self
@@ -431,7 +431,7 @@ extension MainViewController : CLLocationManagerDelegate{
         self.present(alertController, animated: true, completion: nil)
     }
 }
-//수진
+
 extension MainViewController {
     func findLetterNetworking(url : String, params : [String : Any]){
         PostableMissionService.shareInstance.sendMission(url: url, params: params, completion: { [weak self] (result) in

@@ -28,7 +28,6 @@ class MainMapViewController: UIViewController, APIService {
     @IBOutlet weak var mapCollectionView: UICollectionView!
     @IBOutlet weak var mapImageView: UIImageView!
     
-    let arr = [#imageLiteral(resourceName: "ccc"), #imageLiteral(resourceName: "walk_d_icon"), #imageLiteral(resourceName: "ccc")]
     
     var finalOffset : CGFloat = 0
     var startOffset  : CGFloat = 0
