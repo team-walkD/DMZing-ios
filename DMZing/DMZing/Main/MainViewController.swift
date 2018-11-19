@@ -255,9 +255,8 @@ extension MainViewController : UICollectionViewDelegate,UICollectionViewDataSour
             let URL = url("mission")
             let cid = self.firstData?.id ?? 0
             let pid = places[index].id
-            let lat = places[index].latitude ?? 0 //37.8895234711
-            let long = places[index].longitude ?? 0 //126.7405308247
-            
+            //임진각 lat 37.8895234711
+            //임진각 long 126.7405308247
             let body: [String: Any] = [
                 "cid": cid,
                 "pid": pid,
