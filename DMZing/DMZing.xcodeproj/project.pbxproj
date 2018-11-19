@@ -25,6 +25,7 @@
 		3B3A85CE2198836B00D1A835 /* MypageMainVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3A85CD2198836B00D1A835 /* MypageMainVO.swift */; };
 		3B5A4EA321A2AF1400C53E78 /* MessageVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5A4EA221A2AF1400C53E78 /* MessageVO.swift */; };
 		3B5A4EA621A2CF2D00C53E78 /* LetterPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5A4EA521A2CF2D00C53E78 /* LetterPopupVC.swift */; };
+		3B5A4EA921A2D3BE00C53E78 /* PhotoReviewPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5A4EA821A2D3BE00C53E78 /* PhotoReviewPopupVC.swift */; };
 		3B6697B121949DBA008789E3 /* WriteEntryTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6697B021949DBA008789E3 /* WriteEntryTVCell.swift */; };
 		3B6697B721959405008789E3 /* WriteArticleReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6697B621959405008789E3 /* WriteArticleReviewVC.swift */; };
 		3B6697B92195A266008789E3 /* WriteArticleCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6697B82195A266008789E3 /* WriteArticleCVCell.swift */; };
@@ -59,8 +60,6 @@
 		3B800591218B55790003EA5C /* ArticleReviewCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B800590218B55790003EA5C /* ArticleReviewCVCell.swift */; };
 		3B800593218B56BC0003EA5C /* ArticleReviewCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B800592218B56BC0003EA5C /* ArticleReviewCVCell.xib */; };
 		3B800595218B73650003EA5C /* ReviewMainCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B800594218B73650003EA5C /* ReviewMainCVCell.swift */; };
-		3B800598218B81080003EA5C /* PhotoReviewPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B800597218B81080003EA5C /* PhotoReviewPopupView.swift */; };
-		3B80059A218B81340003EA5C /* PhotoReviewPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B800599218B81340003EA5C /* PhotoReviewPopupView.xib */; };
 		3B8364EE219425FB000BD706 /* WriteEntryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8364ED219425FB000BD706 /* WriteEntryVC.swift */; };
 		3B8364F2219461EE000BD706 /* ReviewContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8364F1219461EE000BD706 /* ReviewContentVC.swift */; };
 		3B8364F421946279000BD706 /* ReviewContentTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8364F321946279000BD706 /* ReviewContentTVCell.swift */; };
@@ -172,6 +171,7 @@
 		3B3A85CD2198836B00D1A835 /* MypageMainVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageMainVO.swift; sourceTree = "<group>"; };
 		3B5A4EA221A2AF1400C53E78 /* MessageVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageVO.swift; sourceTree = "<group>"; };
 		3B5A4EA521A2CF2D00C53E78 /* LetterPopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterPopupVC.swift; sourceTree = "<group>"; };
+		3B5A4EA821A2D3BE00C53E78 /* PhotoReviewPopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoReviewPopupVC.swift; sourceTree = "<group>"; };
 		3B6697B021949DBA008789E3 /* WriteEntryTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteEntryTVCell.swift; sourceTree = "<group>"; };
 		3B6697B621959405008789E3 /* WriteArticleReviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteArticleReviewVC.swift; sourceTree = "<group>"; };
 		3B6697B82195A266008789E3 /* WriteArticleCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteArticleCVCell.swift; sourceTree = "<group>"; };
@@ -206,8 +206,6 @@
 		3B800590218B55790003EA5C /* ArticleReviewCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleReviewCVCell.swift; sourceTree = "<group>"; };
 		3B800592218B56BC0003EA5C /* ArticleReviewCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleReviewCVCell.xib; sourceTree = "<group>"; };
 		3B800594218B73650003EA5C /* ReviewMainCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewMainCVCell.swift; sourceTree = "<group>"; };
-		3B800597218B81080003EA5C /* PhotoReviewPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoReviewPopupView.swift; sourceTree = "<group>"; };
-		3B800599218B81340003EA5C /* PhotoReviewPopupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoReviewPopupView.xib; sourceTree = "<group>"; };
 		3B8364ED219425FB000BD706 /* WriteEntryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteEntryVC.swift; sourceTree = "<group>"; };
 		3B8364F1219461EE000BD706 /* ReviewContentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewContentVC.swift; sourceTree = "<group>"; };
 		3B8364F321946279000BD706 /* ReviewContentTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewContentTVCell.swift; sourceTree = "<group>"; };
@@ -372,6 +370,14 @@
 				3B3A85CD2198836B00D1A835 /* MypageMainVO.swift */,
 			);
 			path = VO;
+			sourceTree = "<group>";
+		};
+		3B5A4EA721A2D39C00C53E78 /* PhotoReviewPopup */ = {
+			isa = PBXGroup;
+			children = (
+				3B5A4EA821A2D3BE00C53E78 /* PhotoReviewPopupVC.swift */,
+			);
+			path = PhotoReviewPopup;
 			sourceTree = "<group>";
 		};
 		3B6697BD21980401008789E3 /* Service */ = {
@@ -616,18 +622,9 @@
 				3B800571218B1F160003EA5C /* PhotoReviewVC.swift */,
 				3B80057F218B213F0003EA5C /* PhotoReviewCVCell.swift */,
 				3B800581218B21560003EA5C /* PhotoReviewCVCell.xib */,
-				3B800596218B80D00003EA5C /* Popup */,
+				3B5A4EA721A2D39C00C53E78 /* PhotoReviewPopup */,
 			);
 			path = Photo;
-			sourceTree = "<group>";
-		};
-		3B800596218B80D00003EA5C /* Popup */ = {
-			isa = PBXGroup;
-			children = (
-				3B800597218B81080003EA5C /* PhotoReviewPopupView.swift */,
-				3B800599218B81340003EA5C /* PhotoReviewPopupView.xib */,
-			);
-			path = Popup;
 			sourceTree = "<group>";
 		};
 		3B872CB52180901500498F97 /* VC */ = {
@@ -1079,7 +1076,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B80059A218B81340003EA5C /* PhotoReviewPopupView.xib in Resources */,
 				3B80058A218B2D9E0003EA5C /* ReviewDetailHeaderView.xib in Resources */,
 				CCB3CC9C218AF97A0033B9F9 /* Sign.storyboard in Resources */,
 				CC31AC66217C8D3600A02388 /* LaunchScreen.storyboard in Resources */,
@@ -1154,6 +1150,7 @@
 				3B6697C721980BE6008789E3 /* MypageReviewService.swift in Sources */,
 				221AA23021A18CB0001E8BBB /* LocationViewController.swift in Sources */,
 				3BCA4B3B219F3C13003E77A5 /* CalculateTimeService.swift in Sources */,
+				3B5A4EA921A2D3BE00C53E78 /* PhotoReviewPopupVC.swift in Sources */,
 				3B5A4EA621A2CF2D00C53E78 /* LetterPopupVC.swift in Sources */,
 				3B6697D5219825D0008789E3 /* PostImageService.swift in Sources */,
 				CC3E1AE621A152A500E376D3 /* ServiceInfoViewController.swift in Sources */,
@@ -1234,7 +1231,6 @@
 				222EECE5219D65E800FB15C6 /* PlaceDetailViewController.swift in Sources */,
 				3B800580218B213F0003EA5C /* PhotoReviewCVCell.swift in Sources */,
 				3BB0501A217CADFA0096BF4D /* PhotoSampleService.swift in Sources */,
-				3B800598218B81080003EA5C /* PhotoReviewPopupView.swift in Sources */,
 				3B79939D219AD8B200DBF5B2 /* SpotVO.swift in Sources */,
 				CC4497B9219DAE0C000DE7C5 /* SignService.swift in Sources */,
 				3B872CBA2180905000498F97 /* MyPageTVCell.swift in Sources */,
@@ -1401,7 +1397,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Y4XABUQ539;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = DMZing/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1439,7 +1435,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Y4XABUQ539;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = DMZing/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
