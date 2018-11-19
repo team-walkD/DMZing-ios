@@ -16,10 +16,8 @@ struct PostableMissionService: PostableService{
             switch result {
             case .success(let networkResult):
                 switch networkResult.resCode{
-                case HttpResponseCode.postSuccess.rawValue :
-                    
+                case HttpResponseCode.getSuccess.rawValue :
                     completion(.networkSuccess(networkResult.resResult))
-                    
                 case HttpResponseCode.serverErr.rawValue :
                     completion(.serverErr)
                 default :
@@ -28,8 +26,14 @@ struct PostableMissionService: PostableService{
                 }
                 
                 break
-            case .error(let errMsg) :
-                print(errMsg)
+            case .error(let resCode) :
+                switch resCode{
+                case HttpResponseCode.badRequest.rawValue.description :
+                     completion(.badRequest)
+                default :
+                    print("no 400 rescode")
+                    break
+                }
                 break
             case .failure(_) :
                 completion(.networkFail)

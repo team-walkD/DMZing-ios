@@ -16,8 +16,9 @@ class MainCVCell: UICollectionViewCell,APIService {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var contentTextView: UITextView!
     @IBOutlet weak var findLetterButton: UIButton!
-    
-    let userDefault = UserDefaults.standard
+    //수진
+    var findLetterHandler : ((_ idx : Int)->Void)?
+    /*let userDefault = UserDefaults.standard*/
     
     override func awakeFromNib() {
         findLetterButton.layer.cornerRadius = findLetterButton.frame.height/2
@@ -28,7 +29,10 @@ class MainCVCell: UICollectionViewCell,APIService {
     }
     
     @objc func find(_ sender: UIButton){
-        var cid = userDefault.data(forKey: "cid")
+        //수진
+        findLetterHandler!(sender.tag)
+        /*var cid = userDefault.data(forKey: "cid")
+        
         var pid = sender.tag
         
         let URL = url("mission")
@@ -38,6 +42,6 @@ class MainCVCell: UICollectionViewCell,APIService {
             "pid": pid,
             "latitude": 38.1879930099,
             "longitude": 127.2182962522
-        ]
+        ]*/
     }
 }

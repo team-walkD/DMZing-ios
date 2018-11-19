@@ -14,9 +14,9 @@ struct MissionElement: Codable {
     let address, description, hint: String
     let id: Int
     let infoCenter: String
-    let latitude: Int
-    let letterImageURL: String
-    let longitude: Int
+    let latitude: Double?
+    let letterImageURL: String?
+    let longitude: Double?
     let mainImageURL, parking: String
     let peripheries: [FirstDataPickCoursePlacePeriphery]
     let restDate: String
@@ -24,9 +24,10 @@ struct MissionElement: Codable {
     let subImageURL, title: String
     
     enum CodingKeys: String, CodingKey {
-        case address, description, hint, id, infoCenter, latitude
+        case address, description, hint, id, infoCenter
+        case latitude
         case letterImageURL = "letterImageUrl"
-        case longitude
+       case longitude
         case mainImageURL = "mainImageUrl"
         case parking, peripheries, restDate, reward, sequence
         case subImageURL = "subImageUrl"

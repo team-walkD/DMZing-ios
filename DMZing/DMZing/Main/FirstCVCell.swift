@@ -22,10 +22,15 @@ class FirstCVCell: UICollectionViewCell {
     @IBOutlet weak var peopleLabel: UILabel!
     
     @IBOutlet weak var courseDetailButton: UIButton!
+    var courseDetailHandler : (()->Void)?
     
+    @objc func courseDetail(_ sender: UIButton){
+        courseDetailHandler!()
+    }
     override func awakeFromNib() {
       courseDetailButton.layer.cornerRadius = courseDetailButton.frame.height/2
 
+        courseDetailButton.addTarget(self, action: #selector(courseDetail(_:)), for: .touchUpInside)
        // titleImgView.roundCorners(corners: [.topLeft,.topRight], radius: 0.2)
        // self.makeCellCornerRound(corners: [.topLeft,.topRight], cornerRadius: 10)
     }

@@ -12,6 +12,6 @@ class ReviewContentCVCell: UICollectionViewCell {
     @IBOutlet weak var mainImgView: UIImageView!
    
     func configure(data : String){
-        mainImgView.setImgWithKF(url: data, defaultImg: #imageLiteral(resourceName: "ccc"))
+        mainImgView.setImgWithKF(url: data, defaultImg: UIImage())
     }
 }
