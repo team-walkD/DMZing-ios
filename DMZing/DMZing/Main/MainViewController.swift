@@ -212,8 +212,9 @@ extension MainViewController : UICollectionViewDelegate,UICollectionViewDataSour
                 cell.titleLabel.text = firstData?.mainDescription
                 cell.titleLabel.adjustsFontSizeToFitWidth = true
                 cell.difficultyLabel.text = firstData?.level
+                cell.courseDetailHandler = goToCourseDetail
                 if let imageurl = firstData?.imageUrl{
-                    cell.titleImgView.setImgWithKF(url: imageurl, defaultImg: #imageLiteral(resourceName: "ccc"))
+                    cell.titleImgView.setImgWithKF(url: imageurl, defaultImg: UIImage())
                 }
                 cell.timeLabel.text = "\(firstData?.estimatedTime ?? 0)"
                 cell.peopleLabel.text = "\(firstData?.reviewCount ?? 0)"
@@ -221,7 +222,7 @@ extension MainViewController : UICollectionViewDelegate,UICollectionViewDataSour
                 return cell
             }else if indexPath.row > 0 && indexPath.row <= places.count{
                 let cell = self.mainCollectionView.dequeueReusableCell(withReuseIdentifier: MainCVCell.reuseIdentifier, for: indexPath) as! MainCVCell
-                cell.titleImgView.setImgWithKF(url: places[indexPath.row-1].mainImageURL, defaultImg: #imageLiteral(resourceName: "ccc"))
+                cell.titleImgView.setImgWithKF(url: places[indexPath.row-1].mainImageURL, defaultImg: UIImage())
                 cell.subtitleLabel.text = ""
                 cell.titleLabel.text = places[indexPath.row-1].title
                 cell.contentTextView.text = places[indexPath.row-1].hint
@@ -258,14 +259,17 @@ extension MainViewController : UICollectionViewDelegate,UICollectionViewDataSour
             let body: [String: Any] = [
                 "cid": cid,
                 "pid": pid,
-                "latitude": 37.8895234711,
-                "longitude": 126.7405308247
+                "latitude": lat,
+                "longitude": long
             ]
             findLetter(url: URL , params: body)
     }
     
-    func checkLocationPermission() -> Bool{
-        return false
+    func goToCourseDetail(){
+       let cid = self.firstData?.id ?? 0
+        let infoVC = UIStoryboard(name: "Course", bundle: nil).instantiateViewController(withIdentifier: "CourseDetailViewController") as! CourseDetailViewController
+        infoVC.cid = cid
+        self.present(infoVC, animated: true, completion: nil)
     }
 
     
@@ -350,6 +354,7 @@ extension MainViewController : UIScrollViewDelegate {
         }
     }
 }
+
 //수진
 extension MainViewController : CLLocationManagerDelegate{
     func locationInit(){
@@ -401,7 +406,7 @@ extension MainViewController {
             case .networkSuccess(let data):
                 guard let data = data as? MissionVO else{return}
                 //용뱀 - 여기서 이제 데이터 두개 오니까 그거 빼다 쓰면 됨!
-                //용뱀 찾은 편지에 대해서 '편지 찾기' -> '편지 보기'로 바꿔야하고 편지 찾기일때는 getLoaction 호출해야하고 아닐때는 편지 보기 호출
+                //찾은 편지에 대해서 '편지 찾기' -> '편지 보기'로 바꿔야하고 편지 찾기일때는 getLoaction 호출해야하고 아닐때는 편지 보기 호출
                 print(data.first?.description)
                 break
             case .badRequest :
