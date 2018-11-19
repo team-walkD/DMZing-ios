@@ -17,7 +17,7 @@ class MainCVCell: UICollectionViewCell,APIService {
     @IBOutlet weak var contentTextView: UITextView!
     @IBOutlet weak var findLetterButton: UIButton!
     //수진
-    var findLetterHandler : ((_ idx : Int)->Void)?
+    var findLetterHandler : ((_ idx : Int, _ sender : UIButton)->Void)?
     /*let userDefault = UserDefaults.standard*/
     
     override func awakeFromNib() {
@@ -30,7 +30,7 @@ class MainCVCell: UICollectionViewCell,APIService {
     
     @objc func find(_ sender: UIButton){
         //수진
-        findLetterHandler!(sender.tag)
+        findLetterHandler!(sender.tag, sender)
         /*var cid = userDefault.data(forKey: "cid")
         
         var pid = sender.tag
