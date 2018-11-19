@@ -26,13 +26,7 @@ class PhotoReviewVC : UIViewController, LTTableViewProtocal, APIService  {
             self.collectionView.reloadData()
         }
     }
-    private lazy var popupView : PhotoReviewPopupView = {
-        
-        let popView = PhotoReviewPopupView.instanceFromNib()
-        popView.cancleBtn.addTarget(self, action: #selector(popupCancleAction), for: .touchUpInside)
-        return popView
-    }()
-    
+
     private lazy var collectionView: UICollectionView = {
         let statusBarH = UIApplication.shared.statusBarFrame.size.height
         let Y: CGFloat = statusBarH + 44
@@ -57,10 +51,7 @@ class PhotoReviewVC : UIViewController, LTTableViewProtocal, APIService  {
         collectionView.dataSource = dataSource
         return collectionView
     }
-    
-    @objc func popupCancleAction(){
-        self.popupView.removeFromSuperview()
-    }
+
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -118,11 +109,13 @@ extension PhotoReviewVC : UICollectionViewDelegate, UICollectionViewDataSource  
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        UIApplication.shared.keyWindow!.addSubview(popupView)
-        popupView.mainImgView.setImgWithKF(url: photoReviewData[indexPath.row].imageURL, defaultImg: #imageLiteral(resourceName: "review_default_basic_img"))
-        popupView.snp.makeConstraints { (make) in
-            make.top.bottom.leading.trailing.equalToSuperview()
+        let reviewStoryboard = Storyboard.shared().reviewStoryboard
+        if let photoReviewPopupVC = reviewStoryboard.instantiateViewController(withIdentifier:PhotoReviewPopupVC.reuseIdentifier) as? PhotoReviewPopupVC {
+            photoReviewPopupVC.photoImgUrl = photoReviewData[indexPath.row].imageURL
+            self.present(photoReviewPopupVC, animated: true, completion: nil)
         }
+        
+        
     }
     
     //페이지네이션

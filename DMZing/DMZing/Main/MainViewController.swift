@@ -228,10 +228,12 @@ extension MainViewController : UICollectionViewDelegate,UICollectionViewDataSour
                 cell.contentTextView.text = places[indexPath.row-1].hint
                 //수진
                 cell.findLetterButton.tag = indexPath.row-1
-                cell.findLetterHandler = getLocation
+                cell.findLetterHandler = touchLetterBtn
                 
                 if places[indexPath.row-1].letterImageURL != nil{
-                    cell.findLetterButton.titleLabel?.text = "편지 보기"
+                    //수진
+                    cell.findLetterButton.setTitle("편지 보기", for: .normal )
+                    /*cell.findLetterButton.titleLabel?.text = "편지 보기"*/
                 }
                 
                /* cell.findLetterButton.tag = indexPath.row*/
@@ -253,16 +255,15 @@ extension MainViewController : UICollectionViewDelegate,UICollectionViewDataSour
             let URL = url("mission")
             let cid = self.firstData?.id ?? 0
             let pid = places[index].id
-            let lat = places[index].latitude ?? 0 //37.8895234711
-            let long = places[index].longitude ?? 0 //126.7405308247
-            
+            //임진각 lat 37.8895234711
+            //임진각 long 126.7405308247
             let body: [String: Any] = [
                 "cid": cid,
                 "pid": pid,
                 "latitude": lat,
                 "longitude": long
             ]
-            findLetter(url: URL , params: body)
+            findLetterNetworking(url: URL , params: body)
     }
     
     func goToCourseDetail(){
@@ -363,6 +364,18 @@ extension MainViewController : CLLocationManagerDelegate{
         locationManager.startUpdatingLocation()
     }
     
+    func touchLetterBtn(index : Int, sender : UIButton){
+        if sender.currentTitle == "편지 보기"{
+            let mainStoryboard = Storyboard.shared().mainStoryboard
+            if let letterPopupVC = mainStoryboard.instantiateViewController(withIdentifier:LetterPopupVC.reuseIdentifier) as? LetterPopupVC {
+                letterPopupVC.letterImgUrl = places[index].letterImageURL ?? ""
+                self.present(letterPopupVC, animated: true, completion: nil)
+            }
+        } else {
+          getLocation(index: index)
+        }
+    }
+    
     func getLocation(index : Int){
         let loacationAuthorizationStatus =  CLLocationManager.authorizationStatus()
         switch loacationAuthorizationStatus {
@@ -399,7 +412,7 @@ extension MainViewController : CLLocationManagerDelegate{
 }
 //수진
 extension MainViewController {
-    func findLetter(url : String, params : [String : Any]){
+    func findLetterNetworking(url : String, params : [String : Any]){
         PostableMissionService.shareInstance.sendMission(url: url, params: params, completion: { [weak self] (result) in
             guard let `self` = self else { return }
             switch result {
@@ -407,10 +420,11 @@ extension MainViewController {
                 guard let data = data as? MissionVO else{return}
                 //용뱀 - 여기서 이제 데이터 두개 오니까 그거 빼다 쓰면 됨!
                 //찾은 편지에 대해서 '편지 찾기' -> '편지 보기'로 바꿔야하고 편지 찾기일때는 getLoaction 호출해야하고 아닐때는 편지 보기 호출
+                //cell.findLetterButton.setTitle("편지 보기", for: .normal ) 이런식으로 setTitle 이용해서 설정해!
                 print(data.first?.description)
                 break
             case .badRequest :
-                self.simpleAlert(title: "편지 찾기 실패", message: "해당 코스와 매칭되지 않는 장소입니다")
+                self.simpleAlert(title: "편지 찾기 실패", message: "편지가 없어요! \n 다른 위치로 이동하세요")
             case .networkFail :
                 self.networkSimpleAlert()
             default :

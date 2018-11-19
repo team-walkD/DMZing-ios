@@ -101,7 +101,7 @@
                                     <inset key="sectionInset" minX="26" minY="0.0" maxX="26" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <view key="backgroundView" contentMode="scaleToFill" id="gnD-cL-ERy">
-                                    <rect key="frame" x="375" y="0.0" width="375" height="512"/>
+                                    <rect key="frame" x="273" y="0.0" width="375" height="512"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
@@ -526,6 +526,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="949.27536231884062" y="-653.804347826087"/>
+        </scene>
+        <!--Letter PopupVC-->
+        <scene sceneID="TqP-dz-ze5">
+            <objects>
+                <viewController storyboardIdentifier="LetterPopupVC" modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" id="7Ba-Pz-Dl5" customClass="LetterPopupVC" customModule="DMZing" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pSw-8s-MUZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qsr-qQ-b9g">
+                                <rect key="frame" x="24" y="229.66666666666663" width="327" height="363"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="qsr-qQ-b9g" secondAttribute="height" multiplier="327:363" id="fA7-2L-NST"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nK6-Su-ixa">
+                                <rect key="frame" x="24" y="610" width="327" height="36"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="20"/>
+                                <state key="normal" title="확인">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="okAction:" destination="7Ba-Pz-Dl5" eventType="touchUpInside" id="GFF-6d-eAY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.55000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="nK6-Su-ixa" firstAttribute="top" secondItem="qsr-qQ-b9g" secondAttribute="bottom" constant="17.333333333333371" id="31h-HO-yDY"/>
+                            <constraint firstItem="nK6-Su-ixa" firstAttribute="leading" secondItem="qsr-qQ-b9g" secondAttribute="leading" id="8BF-My-2lB"/>
+                            <constraint firstItem="qsr-qQ-b9g" firstAttribute="leading" secondItem="e7h-xL-ZoD" secondAttribute="leading" constant="24" id="Cu5-Nc-389"/>
+                            <constraint firstItem="e7h-xL-ZoD" firstAttribute="trailing" secondItem="qsr-qQ-b9g" secondAttribute="trailing" constant="24" id="TVC-i0-nJ1"/>
+                            <constraint firstItem="qsr-qQ-b9g" firstAttribute="centerY" secondItem="e7h-xL-ZoD" secondAttribute="centerY" id="XFI-sW-YTa"/>
+                            <constraint firstItem="nK6-Su-ixa" firstAttribute="trailing" secondItem="qsr-qQ-b9g" secondAttribute="trailing" id="zYW-bj-EWt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="e7h-xL-ZoD"/>
+                    </view>
+                    <connections>
+                        <outlet property="letterImgView" destination="qsr-qQ-b9g" id="CqP-AG-woH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RV0-dW-T4l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1682.4000000000001" y="-623.64532019704438"/>
         </scene>
         <!--Course-->
         <scene sceneID="XW6-rX-Vdf">
