@@ -167,7 +167,7 @@ extension PlaceDetailViewController: UITableViewDelegate, UITableViewDataSource 
         
         infoVC.cid = cid
         infoVC.content = places[indexPath.row].description
-        infoVC.num = String(places[indexPath.row].id)
+        infoVC.num = String(places[indexPath.row].sequence)
         infoVC.restDay = gsno(places[indexPath.row].restDate)
         infoVC.parking = gsno(places[indexPath.row].parking)
         infoVC.infoCenter = gsno(places[indexPath.row].infoCenter)
