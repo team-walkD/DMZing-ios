@@ -221,9 +221,9 @@ extension MainViewController : UICollectionViewDelegate,UICollectionViewDataSour
         } else {
             if indexPath.row == 0{
                 let cell = self.mainCollectionView.dequeueReusableCell(withReuseIdentifier: FirstCVCell.reuseIdentifier, for: indexPath) as! FirstCVCell
-                cell.subtitleLabel.text = firstData?.mainDescription
+                cell.subtitleLabel.text = firstData?.subDescription
                cell.subtitleLabel.adjustsFontSizeToFitWidth = true
-                cell.titleLabel.text = firstData?.subDescription
+                cell.titleLabel.text = firstData?.title
                 cell.titleLabel.adjustsFontSizeToFitWidth = true
                 
                 cell.difficultyLabel.text = firstData?.level
