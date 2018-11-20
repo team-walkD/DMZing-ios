@@ -221,9 +221,11 @@ extension MainViewController : UICollectionViewDelegate,UICollectionViewDataSour
         } else {
             if indexPath.row == 0{
                 let cell = self.mainCollectionView.dequeueReusableCell(withReuseIdentifier: FirstCVCell.reuseIdentifier, for: indexPath) as! FirstCVCell
-                cell.subtitleLabel.text = firstData?.subDescription
-                cell.titleLabel.text = firstData?.mainDescription
+                cell.subtitleLabel.text = firstData?.mainDescription
+               cell.subtitleLabel.adjustsFontSizeToFitWidth = true
+                cell.titleLabel.text = firstData?.subDescription
                 cell.titleLabel.adjustsFontSizeToFitWidth = true
+                
                 cell.difficultyLabel.text = firstData?.level
                 cell.courseDetailHandler = goToCourseDetail
                 if let imageurl = firstData?.imageUrl{
@@ -325,7 +327,7 @@ extension MainViewController : UICollectionViewDelegate,UICollectionViewDataSour
         } else {
            return CGSize(width: 325/375*UIScreen.main.bounds.width, height: self.mainCollectionView.frame.height)
         }
-       
+
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

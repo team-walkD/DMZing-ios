@@ -8,6 +8,14 @@
 
 import UIKit
 
+extension UIView{
+    func makeRoundOnlyTop(radius : CGFloat){
+        self.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        self.layer.cornerRadius = radius
+        self.layer.masksToBounds = true
+    }
+}
+
 class MainCVCell: UICollectionViewCell,APIService {
     
     @IBOutlet weak var titleImgView: UIImageView!
@@ -22,10 +30,8 @@ class MainCVCell: UICollectionViewCell,APIService {
     
     override func awakeFromNib() {
         findLetterButton.layer.cornerRadius = findLetterButton.frame.height/2
-        titleImgView.roundCorners(corners: [.topLeft,.topRight], radius: 0.2)
-        self.makeCellCornerRound(corners: [.topLeft,.topRight], cornerRadius: 10)
-        
         findLetterButton.addTarget(self, action: #selector(find(_:)), for: .touchUpInside)
+        titleImgView.makeRoundOnlyTop(radius: 10)
     }
     
     @objc func find(_ sender: UIButton){
