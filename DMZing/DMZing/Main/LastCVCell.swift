@@ -9,11 +9,11 @@
 import UIKit
 
 class LastCVCell: UICollectionViewCell {
-    
+     @IBOutlet weak var backWhiteView : UIView!
     @IBOutlet weak var titleImgView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
    
     override func awakeFromNib() {
-        self.makeCellCornerRound(corners: [.topLeft,.topRight], cornerRadius: 10)
+         backWhiteView.makeRoundOnlyTop(radius: 10)
     }
 }
