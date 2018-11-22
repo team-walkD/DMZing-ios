@@ -26,6 +26,17 @@
 		3B5A4EA321A2AF1400C53E78 /* MessageVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5A4EA221A2AF1400C53E78 /* MessageVO.swift */; };
 		3B5A4EA621A2CF2D00C53E78 /* LetterPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5A4EA521A2CF2D00C53E78 /* LetterPopupVC.swift */; };
 		3B5A4EA921A2D3BE00C53E78 /* PhotoReviewPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5A4EA821A2D3BE00C53E78 /* PhotoReviewPopupVC.swift */; };
+		3B5B55B921A69A7300DEBB26 /* Chatbot.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B5B55B821A69A7300DEBB26 /* Chatbot.storyboard */; };
+		3B5B55BD21A69B7D00DEBB26 /* GetMajorChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5B55BC21A69B7D00DEBB26 /* GetMajorChatService.swift */; };
+		3B5B55BF21A69B8700DEBB26 /* GetMiddleChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5B55BE21A69B8700DEBB26 /* GetMiddleChatService.swift */; };
+		3B5B55C121A69B9100DEBB26 /* GetSubChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5B55C021A69B9100DEBB26 /* GetSubChatService.swift */; };
+		3B5B55C321A69BFA00DEBB26 /* MajorChatVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5B55C221A69BFA00DEBB26 /* MajorChatVO.swift */; };
+		3B5B55C521A69C0500DEBB26 /* MiddleChatVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5B55C421A69C0500DEBB26 /* MiddleChatVO.swift */; };
+		3B5B55C721A69C0C00DEBB26 /* SubChatVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5B55C621A69C0C00DEBB26 /* SubChatVO.swift */; };
+		3B5B55CA21A69DE900DEBB26 /* ChatbotVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5B55C921A69DE900DEBB26 /* ChatbotVC.swift */; };
+		3B5B55CF21A6A1FD00DEBB26 /* ChatbotCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5B55CE21A6A1FD00DEBB26 /* ChatbotCVCell.swift */; };
+		3B5B55D121A6BE9A00DEBB26 /* WalkDTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5B55D021A6BE9A00DEBB26 /* WalkDTVCell.swift */; };
+		3B5B55D321A6BF0D00DEBB26 /* MyChatTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5B55D221A6BF0D00DEBB26 /* MyChatTVCell.swift */; };
 		3B6697B121949DBA008789E3 /* WriteEntryTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6697B021949DBA008789E3 /* WriteEntryTVCell.swift */; };
 		3B6697B721959405008789E3 /* WriteArticleReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6697B621959405008789E3 /* WriteArticleReviewVC.swift */; };
 		3B6697B92195A266008789E3 /* WriteArticleCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6697B82195A266008789E3 /* WriteArticleCVCell.swift */; };
@@ -168,6 +179,17 @@
 		3B5A4EA221A2AF1400C53E78 /* MessageVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageVO.swift; sourceTree = "<group>"; };
 		3B5A4EA521A2CF2D00C53E78 /* LetterPopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterPopupVC.swift; sourceTree = "<group>"; };
 		3B5A4EA821A2D3BE00C53E78 /* PhotoReviewPopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoReviewPopupVC.swift; sourceTree = "<group>"; };
+		3B5B55B821A69A7300DEBB26 /* Chatbot.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chatbot.storyboard; sourceTree = "<group>"; };
+		3B5B55BC21A69B7D00DEBB26 /* GetMajorChatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMajorChatService.swift; sourceTree = "<group>"; };
+		3B5B55BE21A69B8700DEBB26 /* GetMiddleChatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMiddleChatService.swift; sourceTree = "<group>"; };
+		3B5B55C021A69B9100DEBB26 /* GetSubChatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSubChatService.swift; sourceTree = "<group>"; };
+		3B5B55C221A69BFA00DEBB26 /* MajorChatVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MajorChatVO.swift; sourceTree = "<group>"; };
+		3B5B55C421A69C0500DEBB26 /* MiddleChatVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiddleChatVO.swift; sourceTree = "<group>"; };
+		3B5B55C621A69C0C00DEBB26 /* SubChatVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubChatVO.swift; sourceTree = "<group>"; };
+		3B5B55C921A69DE900DEBB26 /* ChatbotVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatbotVC.swift; sourceTree = "<group>"; };
+		3B5B55CE21A6A1FD00DEBB26 /* ChatbotCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatbotCVCell.swift; sourceTree = "<group>"; };
+		3B5B55D021A6BE9A00DEBB26 /* WalkDTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkDTVCell.swift; sourceTree = "<group>"; };
+		3B5B55D221A6BF0D00DEBB26 /* MyChatTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChatTVCell.swift; sourceTree = "<group>"; };
 		3B6697B021949DBA008789E3 /* WriteEntryTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteEntryTVCell.swift; sourceTree = "<group>"; };
 		3B6697B621959405008789E3 /* WriteArticleReviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteArticleReviewVC.swift; sourceTree = "<group>"; };
 		3B6697B82195A266008789E3 /* WriteArticleCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteArticleCVCell.swift; sourceTree = "<group>"; };
@@ -370,6 +392,56 @@
 				3B5A4EA821A2D3BE00C53E78 /* PhotoReviewPopupVC.swift */,
 			);
 			path = PhotoReviewPopup;
+			sourceTree = "<group>";
+		};
+		3B5B55B721A69A5B00DEBB26 /* Chatbot */ = {
+			isa = PBXGroup;
+			children = (
+				3B5B55C821A69DD800DEBB26 /* VC */,
+				3B5B55BB21A69A9500DEBB26 /* VO */,
+				3B5B55BA21A69A8900DEBB26 /* Service */,
+				3B5B55B821A69A7300DEBB26 /* Chatbot.storyboard */,
+			);
+			path = Chatbot;
+			sourceTree = "<group>";
+		};
+		3B5B55BA21A69A8900DEBB26 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				3B5B55BC21A69B7D00DEBB26 /* GetMajorChatService.swift */,
+				3B5B55BE21A69B8700DEBB26 /* GetMiddleChatService.swift */,
+				3B5B55C021A69B9100DEBB26 /* GetSubChatService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		3B5B55BB21A69A9500DEBB26 /* VO */ = {
+			isa = PBXGroup;
+			children = (
+				3B5B55C221A69BFA00DEBB26 /* MajorChatVO.swift */,
+				3B5B55C421A69C0500DEBB26 /* MiddleChatVO.swift */,
+				3B5B55C621A69C0C00DEBB26 /* SubChatVO.swift */,
+			);
+			path = VO;
+			sourceTree = "<group>";
+		};
+		3B5B55C821A69DD800DEBB26 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				3B5B55C921A69DE900DEBB26 /* ChatbotVC.swift */,
+				3B5B55CB21A6A1DA00DEBB26 /* Cell */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		3B5B55CB21A6A1DA00DEBB26 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				3B5B55CE21A6A1FD00DEBB26 /* ChatbotCVCell.swift */,
+				3B5B55D021A6BE9A00DEBB26 /* WalkDTVCell.swift */,
+				3B5B55D221A6BF0D00DEBB26 /* MyChatTVCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		3B6697BD21980401008789E3 /* Service */ = {
@@ -858,6 +930,7 @@
 		CC31AC5A217C8D3200A02388 /* DMZing */ = {
 			isa = PBXGroup;
 			children = (
+				3B5B55B721A69A5B00DEBB26 /* Chatbot */,
 				CCB3CC9A218AF95B0033B9F9 /* Sign */,
 				3BB05007217CA9C70096BF4D /* Singleton */,
 				3BB04FFE217CA63F0096BF4D /* Utility */,
@@ -1062,6 +1135,7 @@
 				CC31AC76217C92BD00A02388 /* Mypage.storyboard in Resources */,
 				3B800582218B21560003EA5C /* PhotoReviewCVCell.xib in Resources */,
 				3B800593218B56BC0003EA5C /* ArticleReviewCVCell.xib in Resources */,
+				3B5B55B921A69A7300DEBB26 /* Chatbot.storyboard in Resources */,
 				CC31AC72217C929000A02388 /* Course.storyboard in Resources */,
 				CC31AC63217C8D3600A02388 /* Assets.xcassets in Resources */,
 				CC31AC74217C92AF00A02388 /* Community.storyboard in Resources */,
@@ -1139,6 +1213,7 @@
 				3B8364F421946279000BD706 /* ReviewContentTVCell.swift in Sources */,
 				3B79937F2199D09700DBF5B2 /* DefaultVO.swift in Sources */,
 				3B872CCE2180B10A00498F97 /* MyReviewVC.swift in Sources */,
+				3B5B55C321A69BFA00DEBB26 /* MajorChatVO.swift in Sources */,
 				CC3E1AE821A1560A00E376D3 /* ServiceDetailViewController.swift in Sources */,
 				3B80057C218B1FFA0003EA5C /* ReviewDetailVC.swift in Sources */,
 				3BB05006217CA66F0096BF4D /* PostableWithPhoto.swift in Sources */,
@@ -1167,22 +1242,27 @@
 				3BAF0ED5219C24CE00C3CF31 /* MyCourseService.swift in Sources */,
 				3B872CBC2180943D00498F97 /* CustomView.swift in Sources */,
 				3B872CD02180B12100498F97 /* MyReviewTVCell.swift in Sources */,
+				3B5B55D321A6BF0D00DEBB26 /* MyChatTVCell.swift in Sources */,
 				3BB0500B217CAA410096BF4D /* Storyboard.swift in Sources */,
 				3B800591218B55790003EA5C /* ArticleReviewCVCell.swift in Sources */,
 				3BB0500D217CAA890096BF4D /* NetworkConfiguration.swift in Sources */,
 				222EECF9219F402C00FB15C6 /* PlaceService.swift in Sources */,
 				222EECF1219DC6D900FB15C6 /* MainMapService.swift in Sources */,
+				3B5B55CA21A69DE900DEBB26 /* ChatbotVC.swift in Sources */,
 				3BCA4B3D219F3C20003E77A5 /* CalculateTimeVO.swift in Sources */,
 				222EECF5219F07F700FB15C6 /* CourseDetailService.swift in Sources */,
 				3BB0500F217CAAFC0096BF4D /* APIService.swift in Sources */,
 				3B8364EE219425FB000BD706 /* WriteEntryVC.swift in Sources */,
 				3B79939B219AD89000DBF5B2 /* GetSpotService.swift in Sources */,
+				3B5B55D121A6BE9A00DEBB26 /* WalkDTVCell.swift in Sources */,
 				3B872CC121809A5500498F97 /* MyCourseVC.swift in Sources */,
 				3B3A85CE2198836B00D1A835 /* MypageMainVO.swift in Sources */,
 				3BAF0EE2219C4A1200C3CF31 /* MyPostService.swift in Sources */,
+				3B5B55BD21A69B7D00DEBB26 /* GetMajorChatService.swift in Sources */,
 				22F3025D2195515F00152700 /* MainMapViewController.swift in Sources */,
 				CC3E1AEA21A15B0B00E376D3 /* FAQViewController.swift in Sources */,
 				3B7993A1219AEBE200DBF5B2 /* WriteArticleService.swift in Sources */,
+				3B5B55CF21A6A1FD00DEBB26 /* ChatbotCVCell.swift in Sources */,
 				222EEC6C2198364D00FB15C6 /* PlaceInfoViewController.swift in Sources */,
 				3BB05014217CAD6C0096BF4D /* Font.swift in Sources */,
 				3B799398219ABE3900DBF5B2 /* GetReviewContentService.swift in Sources */,
@@ -1200,14 +1280,17 @@
 				3B6697BF21980410008789E3 /* MypageMainService.swift in Sources */,
 				222EECE7219D671800FB15C6 /* PlaceDetailTableViewCell.swift in Sources */,
 				3BAF0EDF219C48C200C3CF31 /* MyPostVO.swift in Sources */,
+				3B5B55C121A69B9100DEBB26 /* GetSubChatService.swift in Sources */,
 				CC529167219AE3BD00F58603 /* FirstModel.swift in Sources */,
 				CC529162219AD69500F58603 /* FirstCVCell.swift in Sources */,
 				3BCA4B3F219F3CBC003E77A5 /* TimeVC.swift in Sources */,
+				3B5B55BF21A69B8700DEBB26 /* GetMiddleChatService.swift in Sources */,
 				3BAF0ED9219C38D400C3CF31 /* MypageDPVO.swift in Sources */,
 				CC3E1AEC21A15BA600E376D3 /* FAQTableViewCell.swift in Sources */,
 				222EECE5219D65E800FB15C6 /* PlaceDetailViewController.swift in Sources */,
 				3B800580218B213F0003EA5C /* PhotoReviewCVCell.swift in Sources */,
 				3B79939D219AD8B200DBF5B2 /* SpotVO.swift in Sources */,
+				3B5B55C721A69C0C00DEBB26 /* SubChatVO.swift in Sources */,
 				CC4497B9219DAE0C000DE7C5 /* SignService.swift in Sources */,
 				3B872CBA2180905000498F97 /* MyPageTVCell.swift in Sources */,
 				3BB05000217CA6540096BF4D /* Extensions.swift in Sources */,
@@ -1226,6 +1309,7 @@
 				3B6697D92198275F008789E3 /* PostImageVO.swift in Sources */,
 				3BB05009217CA9D20096BF4D /* ColorChip.swift in Sources */,
 				3B800572218B1F160003EA5C /* PhotoReviewVC.swift in Sources */,
+				3B5B55C521A69C0500DEBB26 /* MiddleChatVO.swift in Sources */,
 				3B79937D2199CFD100DBF5B2 /* WritePhotoReviewService.swift in Sources */,
 				3BD63A202185E308007F5972 /* MainCVCell.swift in Sources */,
 				3BAF0ED3219C24C300C3CF31 /* MyCourseVO.swift in Sources */,
