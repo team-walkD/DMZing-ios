@@ -9,10 +9,19 @@
 import UIKit
 
 class ChatbotVC: UIViewController {
-    
-    var content = ["워크디에게 뭐든 물어봐! \n  뭐가 궁금해?"]
+   
+    var content = ["워크디에게 뭐든 물어봐! \n  뭐가 궁금해?"]  {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+//    @IBAction func myBtnAction(_ sender: Any) {
+//        content.append("DMZ의 맛집 정보가 궁금해")
+//    }
+
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var collectionView: UICollectionView!
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -25,9 +34,15 @@ extension ChatbotVC : UITableViewDataSource, UITableViewDelegate {
         return content.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: WalkDTVCell.reuseIdentifier) as! WalkDTVCell
-        cell.textLbl.text = content[indexPath.row]
-        return cell
+        if indexPath.row % 2 == 0 {
+            let walkDCell = tableView.dequeueReusableCell(withIdentifier: WalkDTVCell.reuseIdentifier) as! WalkDTVCell
+            walkDCell.textLbl.text = content[indexPath.row]
+            return walkDCell
+        }  else {
+            let myChatCell = tableView.dequeueReusableCell(withIdentifier: MyChatTVCell.reuseIdentifier) as! MyChatTVCell
+            myChatCell.textLbl.text = content[indexPath.row]
+            return myChatCell
+        }
     }
 }
 
