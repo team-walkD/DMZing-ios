@@ -11,6 +11,7 @@ class NetworkConfiguration {
     //나중에 실제 TMapAPIKey 변경하면 됨
     //let TMapAPIKey = "AIzaSyDHQ6FCyfyqU79K6J0l0gv18J_D3h81ZHc"
     let baseURL = "http://52.79.50.98:8080/api/"
+    let chatbotURL = "http://52.79.252.44:3001/chat/"
     
     struct StaticInstance {
         static var instance: NetworkConfiguration?
