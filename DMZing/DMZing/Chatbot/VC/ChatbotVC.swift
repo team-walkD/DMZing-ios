@@ -81,20 +81,20 @@ extension ChatbotVC : UITableViewDataSource, UITableViewDelegate {
         return isFinal ? content.count + 1 : content.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row % 2 == 0 && indexPath.row <= 4{
-            let walkDCell = tableView.dequeueReusableCell(withIdentifier: WalkDTVCell.reuseIdentifier) as! WalkDTVCell
-            walkDCell.textLbl.text = content[indexPath.row]
-            return walkDCell
-           
-        }  else if indexPath.row % 2 == 1 && indexPath.row <= 4{
-            let myChatCell = tableView.dequeueReusableCell(withIdentifier: MyChatTVCell.reuseIdentifier) as! MyChatTVCell
-            myChatCell.textLbl.text = content[indexPath.row]
-            return myChatCell
-        } else {
+        
+        if isFinal && indexPath.row == content.count {
             let linkTVCell = tableView.dequeueReusableCell(withIdentifier: LinkTableViewCell.reuseIdentifier) as! LinkTableViewCell
             guard subData.count > 0 else {return linkTVCell}
             linkTVCell.configure(data : subData, selectedMajor : selectedMajor, selectedMiddle : selectedMiddle)
             return linkTVCell
+        } else if indexPath.row % 2 == 0 {
+            let walkDCell = tableView.dequeueReusableCell(withIdentifier: WalkDTVCell.reuseIdentifier) as! WalkDTVCell
+            walkDCell.textLbl.text = content[indexPath.row]
+            return walkDCell
+        } else {
+            let myChatCell = tableView.dequeueReusableCell(withIdentifier: MyChatTVCell.reuseIdentifier) as! MyChatTVCell
+            myChatCell.textLbl.text = content[indexPath.row]
+            return myChatCell
         }
     }
 }
