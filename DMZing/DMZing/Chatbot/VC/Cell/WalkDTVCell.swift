@@ -10,7 +10,6 @@ import UIKit
 
 class WalkDTVCell: UITableViewCell {
     @IBOutlet weak var textLbl: UILabel!
-    
     @IBOutlet weak var walkDImg: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()

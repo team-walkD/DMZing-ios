@@ -16,7 +16,8 @@ struct SubChatVO: Codable {
 
 struct SubChatVOResult: Codable {
     let title, description: String
-    let imgURL, webURL: String
+    let imgURL : String
+    let webURL: String
     
     enum CodingKeys: String, CodingKey {
         case title, description

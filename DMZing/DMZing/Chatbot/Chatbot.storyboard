@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HDg-cZ-O9P">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HDg-cZ-O9P">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="AppleSDGothicNeo.ttc">
+            <string>AppleSDGothicNeo-Bold</string>
+            <string>AppleSDGothicNeo-SemiBold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--ChatbotVC-->
         <scene sceneID="CI6-N3-DLg">
@@ -19,9 +25,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="laQ-WB-a6C">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="laQ-WB-a6C">
                                 <rect key="frame" x="0.0" y="88" width="375" height="637"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.7725490196" green="0.86274509799999999" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="WalkDTVCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WalkDTVCell" rowHeight="96" id="ZfW-pb-3eX" customClass="WalkDTVCell" customModule="DMZing" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="96"/>
@@ -104,7 +110,7 @@
                                                     <color key="textColor" red="0.10980392160000001" green="0.2156862745" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수진날진" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CFG-TR-0SI">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CFG-TR-0SI">
                                                     <rect key="frame" x="10" y="7" width="346" height="17"/>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="14"/>
                                                     <color key="textColor" red="0.10980392160000001" green="0.2156862745" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -138,7 +144,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="296"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kko-Mf-mSq">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kko-Mf-mSq" customClass="CustomView" customModule="DMZing" customModuleProvider="target">
                                                     <rect key="frame" x="73" y="15" width="210" height="266"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ewx-9y-ofj">
@@ -164,13 +170,14 @@
                                                                 <constraint firstItem="gCf-d0-D3K" firstAttribute="leading" secondItem="ewx-9y-ofj" secondAttribute="leading" constant="8" id="Gyk-WI-NoN"/>
                                                                 <constraint firstItem="gCf-d0-D3K" firstAttribute="centerY" secondItem="ewx-9y-ofj" secondAttribute="centerY" id="T34-F4-46K"/>
                                                                 <constraint firstItem="nJt-hR-5QE" firstAttribute="centerY" secondItem="gCf-d0-D3K" secondAttribute="centerY" id="UN6-jq-p6K"/>
+                                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="nJt-hR-5QE" secondAttribute="trailing" constant="5" id="pNo-1j-Saw"/>
                                                             </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2uH-6S-OWQ">
                                                             <rect key="frame" x="0.0" y="42" width="210" height="74"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iL8-ZP-dXR">
-                                                                    <rect key="frame" x="12" y="11" width="41" height="21"/>
+                                                                    <rect key="frame" x="12" y="11" width="124" height="21"/>
                                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="17"/>
                                                                     <color key="textColor" red="0.1356025934" green="0.2144114375" blue="0.27451848979999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                     <nil key="highlightedColor"/>
@@ -190,7 +197,9 @@
                                                                 </imageView>
                                                             </subviews>
                                                             <color key="backgroundColor" red="0.98039883375167847" green="0.9803803563117981" blue="0.98039287328720093" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <gestureRecognizers/>
                                                             <constraints>
+                                                                <constraint firstItem="iL8-ZP-dXR" firstAttribute="trailing" secondItem="4Pk-x3-m3b" secondAttribute="trailing" id="0kG-dE-vxR"/>
                                                                 <constraint firstAttribute="trailing" secondItem="LLX-6D-AOV" secondAttribute="trailing" constant="12" id="7Sa-qM-GTp"/>
                                                                 <constraint firstItem="iL8-ZP-dXR" firstAttribute="leading" secondItem="2uH-6S-OWQ" secondAttribute="leading" constant="12" id="8Gg-tS-wfT"/>
                                                                 <constraint firstItem="iL8-ZP-dXR" firstAttribute="top" secondItem="2uH-6S-OWQ" secondAttribute="top" constant="11" id="LPC-zy-YQo"/>
@@ -201,12 +210,15 @@
                                                                 <constraint firstAttribute="height" constant="74" id="v3H-lw-Hja"/>
                                                                 <constraint firstItem="4Pk-x3-m3b" firstAttribute="top" secondItem="iL8-ZP-dXR" secondAttribute="bottom" constant="5" id="ydw-K1-9RX"/>
                                                             </constraints>
+                                                            <connections>
+                                                                <outletCollection property="gestureRecognizers" destination="uN0-44-YP3" appends="YES" id="mVj-mx-15Y"/>
+                                                            </connections>
                                                         </view>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q2w-Yu-Cqq">
+                                                        <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q2w-Yu-Cqq">
                                                             <rect key="frame" x="0.0" y="117" width="210" height="74"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oaI-fg-RPS">
-                                                                    <rect key="frame" x="12" y="11" width="41" height="21"/>
+                                                                    <rect key="frame" x="12" y="11" width="124" height="21"/>
                                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="17"/>
                                                                     <color key="textColor" red="0.1356025934" green="0.2144114375" blue="0.27451848979999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                     <nil key="highlightedColor"/>
@@ -226,9 +238,11 @@
                                                                 </imageView>
                                                             </subviews>
                                                             <color key="backgroundColor" red="0.98039883380000004" green="0.98038035629999998" blue="0.98039287330000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <gestureRecognizers/>
                                                             <constraints>
                                                                 <constraint firstAttribute="bottom" secondItem="1k7-T4-Bdh" secondAttribute="bottom" constant="4" id="7ej-Jn-PFb"/>
                                                                 <constraint firstItem="WGN-XE-Uty" firstAttribute="centerY" secondItem="Q2w-Yu-Cqq" secondAttribute="centerY" id="8E0-A0-OLe"/>
+                                                                <constraint firstItem="oaI-fg-RPS" firstAttribute="trailing" secondItem="1k7-T4-Bdh" secondAttribute="trailing" id="8df-ea-WvJ"/>
                                                                 <constraint firstItem="oaI-fg-RPS" firstAttribute="top" secondItem="Q2w-Yu-Cqq" secondAttribute="top" constant="11" id="H14-ts-awe"/>
                                                                 <constraint firstItem="1k7-T4-Bdh" firstAttribute="leading" secondItem="oaI-fg-RPS" secondAttribute="leading" id="J3u-pK-cpO"/>
                                                                 <constraint firstItem="1k7-T4-Bdh" firstAttribute="top" secondItem="oaI-fg-RPS" secondAttribute="bottom" constant="5" id="Qri-2M-ayy"/>
@@ -237,12 +251,15 @@
                                                                 <constraint firstAttribute="trailing" secondItem="WGN-XE-Uty" secondAttribute="trailing" constant="12" id="dYd-El-gSF"/>
                                                                 <constraint firstItem="oaI-fg-RPS" firstAttribute="leading" secondItem="Q2w-Yu-Cqq" secondAttribute="leading" constant="12" id="f7q-qr-fN3"/>
                                                             </constraints>
+                                                            <connections>
+                                                                <outletCollection property="gestureRecognizers" destination="lCr-iP-bix" appends="YES" id="2WF-la-O5F"/>
+                                                            </connections>
                                                         </view>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hh1-dW-1Ux">
+                                                        <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hh1-dW-1Ux">
                                                             <rect key="frame" x="0.0" y="192" width="210" height="74"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IJ7-zU-M8l">
-                                                                    <rect key="frame" x="12" y="11" width="41" height="21"/>
+                                                                    <rect key="frame" x="12" y="11" width="124" height="21"/>
                                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="17"/>
                                                                     <color key="textColor" red="0.1356025934" green="0.2144114375" blue="0.27451848979999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                     <nil key="highlightedColor"/>
@@ -262,6 +279,7 @@
                                                                 </imageView>
                                                             </subviews>
                                                             <color key="backgroundColor" red="0.98039883380000004" green="0.98038035629999998" blue="0.98039287330000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <gestureRecognizers/>
                                                             <constraints>
                                                                 <constraint firstAttribute="trailing" secondItem="S4e-ot-CQ7" secondAttribute="trailing" constant="12" id="1tM-oh-FBD"/>
                                                                 <constraint firstItem="1LA-7c-QPa" firstAttribute="top" secondItem="IJ7-zU-M8l" secondAttribute="bottom" constant="5" id="3Jq-l5-P7I"/>
@@ -270,9 +288,13 @@
                                                                 <constraint firstAttribute="bottom" secondItem="1LA-7c-QPa" secondAttribute="bottom" constant="4" id="FTG-fU-jgw"/>
                                                                 <constraint firstAttribute="height" constant="74" id="JFI-GV-08R"/>
                                                                 <constraint firstItem="S4e-ot-CQ7" firstAttribute="leading" secondItem="1LA-7c-QPa" secondAttribute="trailing" constant="12" id="UhK-wQ-UPG"/>
+                                                                <constraint firstItem="IJ7-zU-M8l" firstAttribute="trailing" secondItem="1LA-7c-QPa" secondAttribute="trailing" id="asZ-3W-EbM"/>
                                                                 <constraint firstItem="1LA-7c-QPa" firstAttribute="leading" secondItem="IJ7-zU-M8l" secondAttribute="leading" id="g96-6d-Qkl"/>
                                                                 <constraint firstItem="IJ7-zU-M8l" firstAttribute="top" secondItem="Hh1-dW-1Ux" secondAttribute="top" constant="11" id="zuJ-8k-hrK"/>
                                                             </constraints>
+                                                            <connections>
+                                                                <outletCollection property="gestureRecognizers" destination="XfG-YO-Ca6" appends="YES" id="w9E-me-j0C"/>
+                                                            </connections>
                                                         </view>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.92549639940261841" green="0.92547911405563354" blue="0.92549079656600952" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -291,6 +313,11 @@
                                                         <constraint firstItem="Hh1-dW-1Ux" firstAttribute="leading" secondItem="Kko-Mf-mSq" secondAttribute="leading" id="szU-mx-2Td"/>
                                                         <constraint firstAttribute="bottom" secondItem="Hh1-dW-1Ux" secondAttribute="bottom" id="xLI-Vu-c2G"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
                                             <constraints>
@@ -325,15 +352,15 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="53" id="4R7-ez-O0D"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="iw4-Uf-2jj">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="12" id="iw4-Uf-2jj">
                                     <size key="itemSize" width="131" height="37"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="24" minY="0.0" maxX="24" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="ChatbotCVCell" reuseIdentifier="ChatbotCVCell" id="326-gC-yHo" customClass="ChatbotCVCell" customModule="DMZing" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="131" height="37"/>
+                                        <rect key="frame" x="24" y="8" width="131" height="37"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="131" height="37"/>
@@ -385,7 +412,7 @@
                                 </items>
                             </navigationBar>
                         </subviews>
-                        <color key="backgroundColor" red="0.95686274510000002" green="0.96470588239999999" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.7725490196" green="0.86274509799999999" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="tAQ-VI-M7V" firstAttribute="bottom" secondItem="3Id-sP-Dzp" secondAttribute="bottom" id="12Q-ig-jNT"/>
                             <constraint firstItem="GgA-O8-TJv" firstAttribute="top" secondItem="tAQ-VI-M7V" secondAttribute="top" id="16G-ou-Dhf"/>
@@ -402,10 +429,26 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="3Id-sP-Dzp" id="Bhi-RE-YMp"/>
+                        <outlet property="collectionViewHeightConstraint" destination="4R7-ez-O0D" id="FHy-Pd-z3v"/>
                         <outlet property="tableView" destination="laQ-WB-a6C" id="CoC-dS-gaX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wAv-I0-R20" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="uN0-44-YP3">
+                    <connections>
+                        <action selector="touchFirstTap:" destination="HDg-cZ-O9P" id="9h3-6w-hTd"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="lCr-iP-bix">
+                    <connections>
+                        <action selector="touchSecondTap:" destination="HDg-cZ-O9P" id="c9l-mH-r7o"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="XfG-YO-Ca6">
+                    <connections>
+                        <action selector="touchThirdTap:" destination="HDg-cZ-O9P" id="Vg2-4s-sCb"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="68" y="168.4729064039409"/>
         </scene>

@@ -11,8 +11,12 @@ import Foundation
 protocol APIService {}
 
 extension APIService {
-    func url(_ path: String) -> String {
-        return "\(NetworkConfiguration.shared().baseURL)" + path
+    func url(_ path: String, isChatbot : Bool = false) -> String {
+        if isChatbot {
+            return "\(NetworkConfiguration.shared().chatbotURL)" + path
+        } else {
+            return "\(NetworkConfiguration.shared().baseURL)" + path
+        }
     }
     
     func gsno(_ value : String?) -> String{
