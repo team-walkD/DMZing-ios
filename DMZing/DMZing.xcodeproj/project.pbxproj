@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		221AA23021A18CB0001E8BBB /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221AA22F21A18CB0001E8BBB /* LocationViewController.swift */; };
+		221AA28421A6CEB0001E8BBB /* LinkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221AA28321A6CEB0001E8BBB /* LinkTableViewCell.swift */; };
 		222EEC6A219828C800FB15C6 /* MapCoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222EEC69219828C800FB15C6 /* MapCoverViewController.swift */; };
 		222EEC6C2198364D00FB15C6 /* PlaceInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222EEC6B2198364D00FB15C6 /* PlaceInfoViewController.swift */; };
 		222EEC6E2199BFE500FB15C6 /* CourseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222EEC6D2199BFE500FB15C6 /* CourseDetailViewController.swift */; };
@@ -141,6 +142,7 @@
 /* Begin PBXFileReference section */
 		03429F00E6D01CE48BFFF5D1 /* Pods_DMZing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DMZing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		221AA22F21A18CB0001E8BBB /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		221AA28321A6CEB0001E8BBB /* LinkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkTableViewCell.swift; sourceTree = "<group>"; };
 		222EEC69219828C800FB15C6 /* MapCoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCoverViewController.swift; sourceTree = "<group>"; };
 		222EEC6B2198364D00FB15C6 /* PlaceInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceInfoViewController.swift; sourceTree = "<group>"; };
 		222EEC6D2199BFE500FB15C6 /* CourseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailViewController.swift; sourceTree = "<group>"; };
@@ -440,6 +442,7 @@
 				3B5B55CE21A6A1FD00DEBB26 /* ChatbotCVCell.swift */,
 				3B5B55D021A6BE9A00DEBB26 /* WalkDTVCell.swift */,
 				3B5B55D221A6BF0D00DEBB26 /* MyChatTVCell.swift */,
+				221AA28321A6CEB0001E8BBB /* LinkTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1271,6 +1274,7 @@
 				3B79938D219A9EEA00DBF5B2 /* ReviewMainVO.swift in Sources */,
 				3B800588218B2AC40003EA5C /* ReviewDetailHeaderView.swift in Sources */,
 				222EEC6A219828C800FB15C6 /* MapCoverViewController.swift in Sources */,
+				221AA28421A6CEB0001E8BBB /* LinkTableViewCell.swift in Sources */,
 				CC529169219AE4CD00F58603 /* MainModel.swift in Sources */,
 				222EEC6E2199BFE500FB15C6 /* CourseDetailViewController.swift in Sources */,
 				CCEBEB4621A1E3B500AC8166 /* MissionModel.swift in Sources */,
