@@ -52,14 +52,17 @@ class MypageVC: UIViewController, APIService {
             guard let `self` = self else { return }
             self.getMainData(url: self.url("users/info"))
         }
+        setupNavBarColor(color: .white)
+
     }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setLogoButton()
         setChatButton()
         setupTableView()
-        setupNavBarColor(color: .white)
     }
 
 

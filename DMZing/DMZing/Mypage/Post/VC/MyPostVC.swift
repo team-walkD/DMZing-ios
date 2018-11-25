@@ -16,11 +16,17 @@ class MyPostVC: UIViewController, APIService {
             collectionView.reloadData()
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupNavBarColor(color: UIColor.FlatColor.Blue.lightBlue)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
-        setupNavBar()
         setBackBtn()
+        
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             guard let `self` = self else { return }
             self.getMyPostData(url: self.url("users/\(self.courseId)/mail"))
@@ -30,10 +36,6 @@ class MyPostVC: UIViewController, APIService {
     func setupCollectionView(){
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
-    }
-    
-    func setupNavBar(){
-        navigationController?.navigationBar.barTintColor = UIColor.FlatColor.Blue.lightBlue
     }
 
 }
