@@ -24,7 +24,7 @@ struct FirstDataPickCourse: Codable {
     let level: String
     let price: Int
     let subDescription, backgroundImageUrl: String
-    let pickCount: Int
+    let pickCount: Int //추후 삭제
     
     enum CodingKeys: String, CodingKey {
         case reviewCount, estimatedTime

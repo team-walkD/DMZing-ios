@@ -23,7 +23,6 @@ class MapCoverViewController: UIViewController, APIService, UIScrollViewDelegate
     var cid: Int = 0
     var sub: String = ""
     var main: String = ""
-    var pick: Int = 0
     var imageUrl: String = ""
     
     //View2 var
@@ -136,7 +135,6 @@ extension MapCoverViewController {
     func coverViewInit() {
         smallLabel.text = sub
         largeLabel.text = main
-        pickLabel.text = String(pick)
         backImageView.kf.setImage(with: URL(string: imageUrl), placeholder: UIImage())
     }
 
@@ -156,6 +154,7 @@ extension MapCoverViewController {
                 
                 let courseDetailData = data as? CourseDetailData
                 
+                self.pickLabel.text = String(self.gino(courseDetailData?.pickCount))
                 self.courseImageView.kf.setImage(with: URL(string: self.gsno(courseDetailData?.imageUrl)), placeholder: UIImage())
                 self.subLabel.text = courseDetailData?.subDescription
                 self.mainLabel.text = courseDetailData?.title
