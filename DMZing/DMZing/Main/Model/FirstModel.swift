@@ -24,6 +24,7 @@ struct FirstDataPickCourse: Codable {
     let level: String
     let price: Int
     let subDescription, backgroundImageUrl: String
+    let pickCount: Int
     
     enum CodingKeys: String, CodingKey {
         case reviewCount, estimatedTime
@@ -32,6 +33,7 @@ struct FirstDataPickCourse: Codable {
         case imageUrl = "imageUrl"
         case level, price, subDescription
         case backgroundImageUrl = "backgroundImageUrl"
+        case pickCount
     }
 }
 
@@ -43,7 +45,8 @@ struct SecondDataPickCourse: Codable {
     let mainDescription, title, imageURL, level: String
     let price: Int
     let subDescription, backgroundImageURL: String
-    
+    let pickCount: Int
+
     enum CodingKeys: String, CodingKey {
         case reviewCount, estimatedTime
         case lineImageURL = "lineImageUrl"
@@ -51,6 +54,7 @@ struct SecondDataPickCourse: Codable {
         case imageURL = "imageUrl"
         case level, price, subDescription
         case backgroundImageURL = "backgroundImageUrl"
+        case pickCount
     }
 }
 
