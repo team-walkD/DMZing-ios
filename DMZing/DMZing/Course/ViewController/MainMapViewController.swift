@@ -41,6 +41,7 @@ class MainMapViewController: UIViewController, APIService {
         mapCollectionView.dataSource = self
         
         setLogoButton()
+        setChatButton()
         
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             guard let `self` = self else { return }

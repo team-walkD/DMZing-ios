@@ -31,6 +31,7 @@ class ReviewMainVC: UIViewController, APIService {
     override func viewDidLoad() {
         super.viewDidLoad()
         setLogoButton()
+        setChatButton()
         collectionView.delegate = self
         collectionView.dataSource = self
        

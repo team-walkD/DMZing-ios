@@ -36,7 +36,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="walk_d_icon" translatesAutoresizingMaskIntoConstraints="NO" id="SxE-HP-vJ0">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="walk_d_profile_img" translatesAutoresizingMaskIntoConstraints="NO" id="SxE-HP-vJ0">
                                                     <rect key="frame" x="19" y="7" width="45" height="45"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="45" id="3gh-5v-k4M"/>
@@ -346,7 +346,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3Id-sP-Dzp">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3Id-sP-Dzp">
                                 <rect key="frame" x="0.0" y="725" width="375" height="53"/>
                                 <color key="backgroundColor" red="0.95686274509803915" green="0.96470588235294119" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -407,6 +407,9 @@
                                     <navigationItem title="워크디" id="Zs6-q6-AuG">
                                         <barButtonItem key="rightBarButtonItem" image="x_btn" id="xzK-sr-uDb">
                                             <color key="tintColor" red="0.10980392160000001" green="0.2156862745" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="dismissAction:" destination="HDg-cZ-O9P" id="B5T-JQ-bMe"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -452,31 +455,9 @@
             </objects>
             <point key="canvasLocation" x="68" y="168.4729064039409"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="pR2-B0-7Xm">
-            <objects>
-                <viewController id="o3k-1M-byi" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="y4q-Zx-Yw1">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xYq-ry-fZN">
-                                <rect key="frame" x="97" y="274" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <viewLayoutGuide key="safeArea" id="k9e-b1-H0g"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iHA-3m-kxw" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="966" y="168"/>
-        </scene>
     </scenes>
     <resources>
-        <image name="walk_d_icon" width="25" height="25"/>
+        <image name="walk_d_profile_img" width="45" height="45"/>
         <image name="x_btn" width="24" height="24"/>
     </resources>
 </document>

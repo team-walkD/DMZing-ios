@@ -74,6 +74,10 @@ class ChatbotVC: UIViewController, APIService {
         openSafari(url: url)
     }
     
+    @IBAction func dismissAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }
 
 extension ChatbotVC : UITableViewDataSource, UITableViewDelegate {

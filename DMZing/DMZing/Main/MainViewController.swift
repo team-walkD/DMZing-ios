@@ -74,6 +74,7 @@ class MainViewController: UIViewController, APIService {
         mainCollectionView.delegate = self
         mainCollectionView.dataSource = self
         setLogoButton()
+        setChatButton()
         setupNavBar()
         locationInit()
     }

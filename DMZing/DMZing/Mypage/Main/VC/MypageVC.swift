@@ -52,26 +52,24 @@ class MypageVC: UIViewController, APIService {
             guard let `self` = self else { return }
             self.getMainData(url: self.url("users/info"))
         }
-        setupNavBar(color: .white)
+        setupNavBarColor(color: .white)
+
     }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setLogoButton()
+        setChatButton()
         setupTableView()
     }
 
-    override func viewWillDisappear(_ animated: Bool) {
-        setupNavBar(color: UIColor.FlatColor.Blue.lightBlue)
-    }
+
     func setupTableView(){
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.tableFooterView = UIView(frame : .zero)
-    }
-    
-    func setupNavBar(color : UIColor){
-        navigationController?.navigationBar.barTintColor = color
     }
     
 }
