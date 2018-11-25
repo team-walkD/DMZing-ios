@@ -43,6 +43,8 @@ class ChatbotVC: UIViewController, APIService {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    @IBOutlet weak var bottomGrayView: UIView!
     @IBOutlet weak var collectionViewHeightConstraint: NSLayoutConstraint!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -190,6 +192,7 @@ extension ChatbotVC {
                 self.isFinal = true
                 self.subData = chatSubData.result
                 self.collectionViewHeightConstraint.constant = 0
+                self.bottomGrayView.backgroundColor = UIColor.FlatColor.Blue.lightBlue
             case .networkFail :
                 self.networkSimpleAlert()
             default :

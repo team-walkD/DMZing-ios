@@ -414,6 +414,10 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tdf-9E-G4j">
+                                <rect key="frame" x="0.0" y="778" width="375" height="34"/>
+                                <color key="backgroundColor" red="0.95686274509803915" green="0.96470588235294119" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.7725490196" green="0.86274509799999999" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -423,14 +427,19 @@
                             <constraint firstItem="GgA-O8-TJv" firstAttribute="leading" secondItem="12y-3C-IhL" secondAttribute="leading" id="6Ig-FJ-ttx"/>
                             <constraint firstItem="tAQ-VI-M7V" firstAttribute="trailing" secondItem="laQ-WB-a6C" secondAttribute="trailing" id="84W-n4-EJe"/>
                             <constraint firstItem="laQ-WB-a6C" firstAttribute="leading" secondItem="tAQ-VI-M7V" secondAttribute="leading" id="95j-s4-bgZ"/>
+                            <constraint firstItem="tdf-9E-G4j" firstAttribute="top" secondItem="3Id-sP-Dzp" secondAttribute="bottom" id="AJw-Ru-nkZ"/>
                             <constraint firstItem="laQ-WB-a6C" firstAttribute="top" secondItem="GgA-O8-TJv" secondAttribute="bottom" id="KEc-x9-gH4"/>
                             <constraint firstItem="tAQ-VI-M7V" firstAttribute="trailing" secondItem="GgA-O8-TJv" secondAttribute="trailing" id="NU9-W5-vF0"/>
                             <constraint firstItem="3Id-sP-Dzp" firstAttribute="leading" secondItem="tAQ-VI-M7V" secondAttribute="leading" id="Q5q-gH-qMd"/>
                             <constraint firstItem="3Id-sP-Dzp" firstAttribute="top" secondItem="laQ-WB-a6C" secondAttribute="bottom" id="Rgt-wf-V3P"/>
+                            <constraint firstItem="tdf-9E-G4j" firstAttribute="trailing" secondItem="tAQ-VI-M7V" secondAttribute="trailing" id="Yar-jW-K5l"/>
+                            <constraint firstItem="tdf-9E-G4j" firstAttribute="bottom" secondItem="12y-3C-IhL" secondAttribute="bottom" id="fRi-gn-bHA"/>
+                            <constraint firstItem="tdf-9E-G4j" firstAttribute="leading" secondItem="tAQ-VI-M7V" secondAttribute="leading" id="rDk-CL-aGv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tAQ-VI-M7V"/>
                     </view>
                     <connections>
+                        <outlet property="bottomGrayView" destination="tdf-9E-G4j" id="6it-NL-hhA"/>
                         <outlet property="collectionView" destination="3Id-sP-Dzp" id="Bhi-RE-YMp"/>
                         <outlet property="collectionViewHeightConstraint" destination="4R7-ez-O0D" id="FHy-Pd-z3v"/>
                         <outlet property="tableView" destination="laQ-WB-a6C" id="CoC-dS-gaX"/>

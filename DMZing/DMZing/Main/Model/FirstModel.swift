@@ -9,9 +9,7 @@ struct FirstVO : Codable {
     let purchaseList: [FirstDataPurchaseList]
 }
 
-struct SecondVO : Codable {
-    let pickCourse: SecondDataPickCourse
-}
+
 
 
 struct FirstDataPickCourse: Codable {
@@ -24,7 +22,6 @@ struct FirstDataPickCourse: Codable {
     let level: String
     let price: Int
     let subDescription, backgroundImageUrl: String
-    let pickCount: Int //추후 삭제
     
     enum CodingKeys: String, CodingKey {
         case reviewCount, estimatedTime
@@ -33,28 +30,6 @@ struct FirstDataPickCourse: Codable {
         case imageUrl = "imageUrl"
         case level, price, subDescription
         case backgroundImageUrl = "backgroundImageUrl"
-        case pickCount
-    }
-}
-
-struct SecondDataPickCourse: Codable {
-    let reviewCount, estimatedTime: Int
-    let lineImageURL: String
-    let id: Int
-    let places: [FirstDataPickCoursePlace]
-    let mainDescription, title, imageURL, level: String
-    let price: Int
-    let subDescription, backgroundImageURL: String
-    let pickCount: Int
-
-    enum CodingKeys: String, CodingKey {
-        case reviewCount, estimatedTime
-        case lineImageURL = "lineImageUrl"
-        case id, places, mainDescription, title
-        case imageURL = "imageUrl"
-        case level, price, subDescription
-        case backgroundImageURL = "backgroundImageUrl"
-        case pickCount
     }
 }
 

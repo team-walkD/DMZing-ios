@@ -40,12 +40,6 @@ class MainViewController: UIViewController, APIService {
         }
     }
     
-    var secondData : SecondDataPickCourse?{
-        didSet{
-            mainCollectionView.reloadData()
-        }
-    }
-    
     var places : [FirstDataPickCoursePlace] = []{
         didSet{
             mainCollectionView.reloadData()
@@ -316,12 +310,11 @@ extension MainViewController : UICollectionViewDelegate,UICollectionViewDataSour
     
     func goToCourseDetail(){
        let cid = self.firstData?.id ?? 0
-        let infoVC = UIStoryboard(name: "Course", bundle: nil).instantiateViewController(withIdentifier: "MapCoverViewController") as! MapCoverViewController
-        infoVC.cid = cid
-        infoVC.sub = gsno(firstData?.subDescription)
-        infoVC.main = gsno(firstData?.title)
-        infoVC.imageUrl = gsno(firstData?.imageUrl)
-        self.navigationController?.pushViewController(infoVC, animated: true)
+        let mapCoverViewController = UIStoryboard(name: "Course", bundle: nil).instantiateViewController(withIdentifier: "MapCoverViewController") as! MapCoverViewController
+        mapCoverViewController.cid = cid
+        mapCoverViewController.sub = gsno(firstData?.subDescription)
+        mapCoverViewController.main = gsno(firstData?.title)
+        self.navigationController?.pushViewController(mapCoverViewController, animated: true)
     }
 
     

@@ -154,7 +154,6 @@ extension MainMapViewController: UICollectionViewDelegate, UICollectionViewDataS
             coverVC.sub = courses[indexPath.row].subDescription
             coverVC.main = courses[indexPath.row].title
             coverVC.cid = courses[indexPath.row].id
-            coverVC.imageUrl = courses[indexPath.row].imageUrl
             
             self.navigationController?.pushViewController(coverVC, animated: true)
             

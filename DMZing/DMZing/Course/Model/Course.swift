@@ -16,7 +16,6 @@ struct Course: Codable {
     let isPurchased: Bool
     let lineImageUrl: String
     let mainDescription: String
-    let pickCount: Int //추후 삭제
     let price: Int
     let subDescription: String
     let title: String

@@ -135,7 +135,6 @@ extension MapCoverViewController {
     func coverViewInit() {
         smallLabel.text = sub
         largeLabel.text = main
-        backImageView.kf.setImage(with: URL(string: imageUrl), placeholder: UIImage())
     }
 
 }
@@ -158,6 +157,7 @@ extension MapCoverViewController {
                 self.courseImageView.kf.setImage(with: URL(string: self.gsno(courseDetailData?.imageUrl)), placeholder: UIImage())
                 self.subLabel.text = courseDetailData?.subDescription
                 self.mainLabel.text = courseDetailData?.title
+                self.backImageView.kf.setImage(with: URL(string: self.gsno(courseDetailData?.backgroundGifUrl)), placeholder: UIImage())
                 self.titleLabel.text = courseDetailData?.title
                 self.contentTextView.text = courseDetailData?.mainDescription
                 self.levelLabel.text = courseDetailData?.level
