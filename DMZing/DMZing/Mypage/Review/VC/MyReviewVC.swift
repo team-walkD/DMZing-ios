@@ -17,10 +17,17 @@ class MyReviewVC: UIViewController, APIService {
             tableView.reloadData()
         }
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupNavBarColor(color: UIColor.FlatColor.Blue.lightBlue)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        setupNavBarColor(color: .white)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-        setupNavBar()
         setBackBtn()
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             guard let `self` = self else { return }
@@ -32,11 +39,6 @@ class MyReviewVC: UIViewController, APIService {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.tableFooterView = UIView(frame : .zero)
-    }
-    
-    func setupNavBar(){
-        navigationController?.navigationBar.barTintColor = UIColor.FlatColor.Blue.lightBlue
-        //navigationController?.navigationBar.isTranslucent = false
     }
 }
 

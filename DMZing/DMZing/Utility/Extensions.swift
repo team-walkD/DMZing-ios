@@ -41,6 +41,10 @@ extension UIViewController {
 }
 
 extension UIViewController {
+    func setupNavBarColor(color : UIColor){
+        navigationController?.navigationBar.barTintColor = color
+    }
+    
     func setLogoButton(){
         let menuBtn = UIButton(type: .custom)
         menuBtn.frame = CGRect(x: 0.0, y: 0.0, width: 118, height: 26)
@@ -51,6 +55,23 @@ extension UIViewController {
         let currHeight = menuBarItem.customView?.heightAnchor.constraint(equalToConstant: 26)
         currHeight?.isActive = true
         self.navigationItem.leftBarButtonItem = menuBarItem
+    }
+    
+    func setChatButton(){
+        let walkDIcon = UIBarButtonItem(image: UIImage(named: "walk_d_icon"),
+                                      style: .plain,
+                                      target: self,
+                                      action: #selector(self.toChatbotView))
+        navigationItem.rightBarButtonItem = walkDIcon
+        navigationItem.rightBarButtonItem?.tintColor = UIColor.FlatColor.Blue.deepBlue
+        
+    }
+    
+    @objc func toChatbotView(){
+        let chatbotVC = UIStoryboard(name: "Chatbot", bundle: nil)
+        if let chatbotVC = chatbotVC.instantiateViewController(withIdentifier:ChatbotVC.reuseIdentifier) as? ChatbotVC {
+             self.present(chatbotVC, animated: true, completion: nil)
+        }
     }
 }
 
