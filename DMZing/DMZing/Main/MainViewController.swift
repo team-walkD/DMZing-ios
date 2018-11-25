@@ -81,6 +81,7 @@ class MainViewController: UIViewController, APIService {
     
     override func viewWillAppear(_ animated: Bool) {
         getMainData(url: url("mission"))
+        self.tabBarController?.tabBar.isHidden = false
 
     }
     
@@ -315,9 +316,13 @@ extension MainViewController : UICollectionViewDelegate,UICollectionViewDataSour
     
     func goToCourseDetail(){
        let cid = self.firstData?.id ?? 0
-        let infoVC = UIStoryboard(name: "Course", bundle: nil).instantiateViewController(withIdentifier: "CourseDetailViewController") as! CourseDetailViewController
+        let infoVC = UIStoryboard(name: "Course", bundle: nil).instantiateViewController(withIdentifier: "MapCoverViewController") as! MapCoverViewController
         infoVC.cid = cid
-        self.present(infoVC, animated: true, completion: nil)
+        infoVC.sub = gsno(firstData?.subDescription)
+        infoVC.main = gsno(firstData?.title)
+        infoVC.pick = gino(firstData?.pickCount)
+        infoVC.imageUrl = gsno(firstData?.imageUrl)
+        self.navigationController?.pushViewController(infoVC, animated: true)
     }
 
     
