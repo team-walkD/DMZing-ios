@@ -137,7 +137,7 @@ extension ChatbotVC : UICollectionViewDelegate, UICollectionViewDataSource {
             selectedMajor = majorData[indexPath.row].description
             getMiddleData(url: url("division/\(majorData[indexPath.row].groups)", isChatbot: true), desc : majorData[indexPath.row].description)
         } else {
-            content.append("\(middleData[indexPath.row].description)에 대해 알려줘")
+            content.append("\(middleData[indexPath.row].description) 관련 장소에 대해 알려줘")
             selectedMiddle = middleData[indexPath.row].description
             getSubData(url: url("section/\(middleData[indexPath.row].id)", isChatbot: true), desc : middleData[indexPath.row].description)
         }
@@ -168,7 +168,7 @@ extension ChatbotVC {
             switch result {
             case .networkSuccess(let data):
                 guard let chatMiddleData = data as? MiddleChatVO else {return}
-                self.content.append("\(desc)에 대해 알려줄게! 어떤 정보를 알려줄까?")
+                self.content.append("\(desc)대해 알려줄게!\n어떤 정보를 알려줄까?")
                 self.isMajor = false
                 self.middleData = chatMiddleData.result
             case .networkFail :
@@ -186,7 +186,7 @@ extension ChatbotVC {
             switch result {
             case .networkSuccess(let data):
                 guard let chatSubData = data as? SubChatVO else {return}
-                self.content.append("\(desc)의 정보야!")
+                self.content.append("\(desc) 관련 장소들이야! 필요할땐 언제든 워크디를 찾아줘 :D")
                 self.isFinal = true
                 self.subData = chatSubData.result
                 self.collectionViewHeightConstraint.constant = 0

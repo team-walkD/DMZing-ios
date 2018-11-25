@@ -33,9 +33,9 @@ class LinkTableViewCell: UITableViewCell {
         linkLabel2.text = data[1].title
         linkTextView2.text = data[1].description
         linkImageView2.setImgWithKF(url: data[1].imgURL, defaultImg: UIImage())
-       /* linkLabel3.text = data[2].title
+        linkLabel3.text = data[2].title
         linkTextView3.text = data[2].description
-        linkImageView3.setImgWithKF(url: data[2].imgURL, defaultImg: UIImage())*/
+        linkImageView3.setImgWithKF(url: data[2].imgURL, defaultImg: UIImage())
       
     }
     
