@@ -18,9 +18,7 @@ class MainMapViewController: UIViewController, APIService {
     
     var courses : [Course] = [] {
         didSet {
-            //TODO: 이미지 변경 확인
             mapImageView.kf.setImage(with: URL(string: courses[currentIdx].lineImageUrl), placeholder: UIImage())
-//            mapImageView.image = arr[currentIdx]
             mapCollectionView.reloadData()
         }
     }
@@ -239,17 +237,15 @@ extension MainMapViewController : UIScrollViewDelegate {
             let majorIdx = indexOfMajorCell(direction: .right)
             let indexPath = IndexPath(row: majorIdx, section: 0)
             mapCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-            //TODO: 이미지 변경 확인
+            
             mapImageView.kf.setImage(with: URL(string: courses[currentIdx].lineImageUrl), placeholder: UIImage())
-//             mapImageView.image = arr[currentIdx]
         } else if finalOffset < startOffset {
             //앞으로 가기
             let majorIdx = indexOfMajorCell(direction: .left)
             let indexPath = IndexPath(row: majorIdx, section: 0)
             mapCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-            //TODO: 이미지 변경 확인
+            
             mapImageView.kf.setImage(with: URL(string: courses[currentIdx].lineImageUrl), placeholder: UIImage())
-//             mapImageView.image = arr[currentIdx]
         } else {
             print("둘다 아님")
         }
