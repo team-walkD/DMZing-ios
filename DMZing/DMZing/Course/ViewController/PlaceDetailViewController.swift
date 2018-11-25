@@ -13,7 +13,6 @@ class PlaceDetailViewController: UIViewController, APIService {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var mapContainerView: UIView!
-    @IBOutlet weak var navi: UINavigationBar!
 
     var places : [Place] = [] {
         didSet {
@@ -34,7 +33,7 @@ class PlaceDetailViewController: UIViewController, APIService {
         super.viewDidLoad()
         
         setTableView()
-        setNavigationBar()
+        setBackBtn()
         
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             guard let `self` = self else { return }
@@ -48,20 +47,7 @@ class PlaceDetailViewController: UIViewController, APIService {
         tableView.dataSource = self
         self.tableView.rowHeight = UITableViewAutomaticDimension
     }
-    
-    //MARK: navigationBar transparent
-    func setNavigationBar() {
-        
-        navi.isTranslucent = true
-        navi.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        navi.shadowImage = UIImage()
-        navi.backgroundColor = UIColor.clear
-    }
-    
-    //MARK: Dismiss Action
-    @IBAction func dismissAction(_ sender: UIBarButtonItem) {
-        self.dismiss(animated: true, completion: nil)
-    }
+
 }
 
 //MARK: Server
@@ -175,7 +161,7 @@ extension PlaceDetailViewController: UITableViewDelegate, UITableViewDataSource 
         infoVC.imageUrl = gsno(places[indexPath.row].mainImageUrl)
         infoVC.name = gsno(places[indexPath.row].title)
         
-        self.present(infoVC, animated: true, completion: nil)
+        self.navigationController?.pushViewController(infoVC, animated: true)
     }
     
 }
