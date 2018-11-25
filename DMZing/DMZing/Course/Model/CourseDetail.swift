@@ -11,6 +11,7 @@ import Foundation
 typealias CourseDetailData = CourseDetail
 
 struct CourseDetail: Codable {
+    let backgroundGifUrl: String
     let backgroundImageUrl: String 
     let estimatedTime: Double
     let id: Int
@@ -23,6 +24,7 @@ struct CourseDetail: Codable {
     let reviewCount: Int
     let subDescription: String
     let title: String
+    let pickCount: Int
 }
 
 typealias PlaceData = [Place]

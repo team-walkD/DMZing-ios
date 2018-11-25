@@ -320,7 +320,6 @@ extension MainViewController : UICollectionViewDelegate,UICollectionViewDataSour
         infoVC.cid = cid
         infoVC.sub = gsno(firstData?.subDescription)
         infoVC.main = gsno(firstData?.title)
-        infoVC.pick = gino(firstData?.pickCount)
         infoVC.imageUrl = gsno(firstData?.imageUrl)
         self.navigationController?.pushViewController(infoVC, animated: true)
     }
