@@ -20,7 +20,6 @@ class MapCoverViewController: UIViewController, APIService, UIScrollViewDelegate
     @IBOutlet weak var backImageView: UIImageView!
     @IBOutlet weak var shadowImageView: UIImageView!
     
-    
     var cid: Int = 0
     var sub: String = ""
     var main: String = ""
