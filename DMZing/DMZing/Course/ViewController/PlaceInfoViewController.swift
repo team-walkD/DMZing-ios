@@ -36,7 +36,7 @@ class PlaceInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setNavigationBar()
+        setBackBtn(color: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
         
         backView.makeRounded(cornerRadius: 10)
         backView.dropShadow(color: #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1), opacity: 0.3, offSet: CGSize(width: -0.5, height: 0.5), radius: 10, scale: true)
@@ -54,20 +54,6 @@ class PlaceInfoViewController: UIViewController {
         
         phoneLabel.adjustsFontSizeToFitWidth = true
         placeLabel.adjustsFontSizeToFitWidth = true
-    }
-
-    
-    //MARK: navigationBar transparent
-    func setNavigationBar() {
-        
-        navi.isTranslucent = true
-        navi.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        navi.shadowImage = UIImage()
-        navi.backgroundColor = UIColor.clear
-    }
-    
-    @IBAction func backAction(_ sender: UIBarButtonItem) {
-        self.dismiss(animated: true, completion: nil)
     }
 
 }

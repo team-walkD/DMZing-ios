@@ -28,7 +28,6 @@ class MainMapViewController: UIViewController, APIService {
     @IBOutlet weak var mapCollectionView: UICollectionView!
     @IBOutlet weak var mapImageView: UIImageView!
     
-    
     var finalOffset : CGFloat = 0
     var startOffset  : CGFloat = 0
     var currentIdx = 0
@@ -155,7 +154,7 @@ extension MainMapViewController: UICollectionViewDelegate, UICollectionViewDataS
             coverVC.sub = courses[indexPath.row].subDescription
             coverVC.main = courses[indexPath.row].title
             coverVC.pick = courses[indexPath.row].pickCount
-            coverVC.id = courses[indexPath.row].id
+            coverVC.cid = courses[indexPath.row].id
             coverVC.imageUrl = courses[indexPath.row].imageUrl
             
             self.navigationController?.pushViewController(coverVC, animated: true)
