@@ -79,6 +79,10 @@ class MainViewController: UIViewController, APIService {
         
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        self.clearAllNotice()
+    }
+    
     
     func setupNavBar(){
         self.navigationController?.navigationBar.barTintColor = UIColor.FlatColor.Blue.lightBlue
@@ -121,7 +125,7 @@ class MainViewController: UIViewController, APIService {
             guard let `self` = self else { return }
             switch result {
             case .networkSuccess(let data):
-                
+                self.clearAllNotice()
                 guard let firstmodel = data as? FirstDataPickCourse else {return}
                 for i in 0..<self.purchaseList.count{
                     self.purchaseList[i].isPicked = false
@@ -139,8 +143,10 @@ class MainViewController: UIViewController, APIService {
                 
                 
             case .networkFail:
+                self.clearAllNotice()
                 self.networkSimpleAlert()
             default :
+                self.clearAllNotice()
                 self.simpleAlert(title: "오류", message: "다시 시도해주세요")
                 break
             }
@@ -325,7 +331,7 @@ extension MainViewController : UICollectionViewDelegate,UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if(collectionView == themeCollectionView){
-            
+            self.pleaseWait()
             putCourseData(url: url("course/pick/\(indexPath.row+1)"))
             
         }
