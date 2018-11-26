@@ -56,6 +56,10 @@ class MainMapViewController: UIViewController, APIService {
             self.getMainCourseData(url: self.url("course"))
         }
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.clearAllNotice()
+    }
 }
 
 
@@ -90,6 +94,8 @@ extension MainMapViewController {
             guard let `self` = self else { return }
             switch result {
             case .networkSuccess(let data):
+                self.clearAllNotice()
+                
                 self.simpleAlert(title: "", message: """
                 데이트하기 좋은 코스를
                 구매하셨습니다!
@@ -103,10 +109,13 @@ extension MainMapViewController {
                 
                 break
             case .networkFail :
+                self.clearAllNotice()
                 self.networkSimpleAlert()
             case .duplicated :
+                self.clearAllNotice()
                 self.simpleAlert(title: "", message: "DP가 부족합니다.")
             default :
+                self.clearAllNotice()
                 self.simpleAlert(title: "오류", message: "다시 시도해주세요")
                 break
             }
@@ -163,6 +172,7 @@ extension MainMapViewController: UICollectionViewDelegate, UICollectionViewDataS
             구매하시겠습니까?
             """) { (okHandler) in
                 
+                self.pleaseWait()
                 DispatchQueue.global(qos: .userInitiated).async { [weak self] in
                     guard let `self` = self else { return }
                     self.postOrder(url: self.url("order/course/\(indexPath.row+1)"))
