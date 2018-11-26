@@ -26,14 +26,14 @@ class MainCVCell: UICollectionViewCell,APIService {
     @IBOutlet weak var findLetterButton: UIButton!
 
     var findLetterHandler : ((_ idx : Int, _ sender : UIButton)->Void)?
-  
-    
+    func configure(){
+      findLetterButton.layer.cornerRadius = findLetterButton.frame.height/2
+    }
     override func awakeFromNib() {
-        findLetterButton.layer.cornerRadius = findLetterButton.frame.height/2
         findLetterButton.addTarget(self, action: #selector(find(_:)), for: .touchUpInside)
         titleImgView.makeRoundOnlyTop(radius: 10)
     }
-    
+
     @objc func find(_ sender: UIButton){
 
         findLetterHandler!(sender.tag, sender)
