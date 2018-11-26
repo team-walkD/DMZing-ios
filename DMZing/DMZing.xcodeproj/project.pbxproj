@@ -20,6 +20,7 @@
 		222EECF5219F07F700FB15C6 /* CourseDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222EECF4219F07F700FB15C6 /* CourseDetailService.swift */; };
 		222EECF9219F402C00FB15C6 /* PlaceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222EECF8219F402C00FB15C6 /* PlaceService.swift */; };
 		222EED1F21A06BDF00FB15C6 /* OrderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222EED1E21A06BDF00FB15C6 /* OrderService.swift */; };
+		224EE04521AC4D3800A3A056 /* SwiftNotice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224EE04421AC4D3800A3A056 /* SwiftNotice.swift */; };
 		22F3025D2195515F00152700 /* MainMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F3025C2195515F00152700 /* MainMapViewController.swift */; };
 		22F3025F2195518B00152700 /* MainMapCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F3025E2195518B00152700 /* MainMapCollectionViewCell.swift */; };
 		3B3A85CE2198836B00D1A835 /* MypageMainVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3A85CD2198836B00D1A835 /* MypageMainVO.swift */; };
@@ -172,6 +173,7 @@
 		222EECF4219F07F700FB15C6 /* CourseDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailService.swift; sourceTree = "<group>"; };
 		222EECF8219F402C00FB15C6 /* PlaceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceService.swift; sourceTree = "<group>"; };
 		222EED1E21A06BDF00FB15C6 /* OrderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderService.swift; sourceTree = "<group>"; };
+		224EE04421AC4D3800A3A056 /* SwiftNotice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftNotice.swift; sourceTree = "<group>"; };
 		22F3025C2195515F00152700 /* MainMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapViewController.swift; sourceTree = "<group>"; };
 		22F3025E2195518B00152700 /* MainMapCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapCollectionViewCell.swift; sourceTree = "<group>"; };
 		31A78C13C32CCDE3112EE612 /* Pods-DMZing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DMZing.release.xcconfig"; path = "Target Support Files/Pods-DMZing/Pods-DMZing.release.xcconfig"; sourceTree = "<group>"; };
@@ -850,6 +852,7 @@
 		3BB04FFE217CA63F0096BF4D /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				224EE04421AC4D3800A3A056 /* SwiftNotice.swift */,
 				3BB04FFF217CA6540096BF4D /* Extensions.swift */,
 				3BB05001217CA65D0096BF4D /* GettableService.swift */,
 				3BB05003217CA6650096BF4D /* PostableService.swift */,
@@ -1311,6 +1314,7 @@
 				3B800572218B1F160003EA5C /* PhotoReviewVC.swift in Sources */,
 				3B5B55C521A69C0500DEBB26 /* MiddleChatVO.swift in Sources */,
 				3B79937D2199CFD100DBF5B2 /* WritePhotoReviewService.swift in Sources */,
+				224EE04521AC4D3800A3A056 /* SwiftNotice.swift in Sources */,
 				3BD63A202185E308007F5972 /* MainCVCell.swift in Sources */,
 				3BAF0ED3219C24C300C3CF31 /* MyCourseVO.swift in Sources */,
 			);
