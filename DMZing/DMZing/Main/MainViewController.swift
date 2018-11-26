@@ -23,7 +23,6 @@ class MainViewController: UIViewController, APIService {
     var finalOffset : CGFloat = 0
     var startOffset  : CGFloat = 0
     var currentIdx = 0
-    let userDefault = UserDefaults.standard
     
     var locationManager = CLLocationManager()
     var currentLocation : CLLocation?
@@ -107,10 +106,7 @@ class MainViewController: UIViewController, APIService {
                 //print(self.firstData)
                 self.places = (self.firstData?.places)!
                 print(self.places.count)
-                
-                self.userDefault.set(self.firstData?.id, forKey: "cid")
-                
-                
+               
             case .networkFail:
                 self.networkSimpleAlert()
             default :
@@ -128,20 +124,12 @@ class MainViewController: UIViewController, APIService {
                 self.clearAllNotice()
                 guard let firstmodel = data as? FirstDataPickCourse else {return}
                 for i in 0..<self.purchaseList.count{
-                    self.purchaseList[i].isPicked = false
+                    self.purchaseList[i].isPicked = firstmodel.id == self.purchaseList[i].id ? true : false
                 }
-                self.purchaseList[firstmodel.id-1].isPicked = true
                 self.firstData = nil
                 self.places.removeAll()
-                //print(firstmodel)
                 self.firstData = firstmodel
-                //print(self.firstData)
                 self.places = (self.firstData?.places)!
-                print(self.places.count)
-                
-                self.userDefault.set(self.firstData?.id, forKey: "cid")
-                
-                
             case .networkFail:
                 self.clearAllNotice()
                 self.networkSimpleAlert()
@@ -332,7 +320,8 @@ extension MainViewController : UICollectionViewDelegate,UICollectionViewDataSour
         
         if(collectionView == themeCollectionView){
             self.pleaseWait()
-            putCourseData(url: url("course/pick/\(indexPath.row+1)"))
+            let cId = self.purchaseList[indexPath.row].id
+            putCourseData(url: url("course/pick/\(cId)"))
             
         }
         
