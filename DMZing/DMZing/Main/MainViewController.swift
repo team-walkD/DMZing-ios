@@ -186,20 +186,7 @@ extension MainViewController : UICollectionViewDelegate,UICollectionViewDataSour
         if collectionView == self.themeCollectionView {
             let cell = self.themeCollectionView.dequeueReusableCell(withReuseIdentifier: "ThemeCollectionViewCell", for: indexPath) as! ThemeCollectionViewCell
             guard purchaseList.count > 0 else {return cell}
-            
-            var themeTitle = ""
-            switch purchaseList[indexPath.row].id {
-            case 1 :
-                themeTitle = "데이트 코스"
-            case 2 :
-                themeTitle = "역사기행 코스"
-            case 3 :
-                themeTitle = "자연탐방 코스"
-            default :
-                themeTitle = ""
-                
-            }
-            cell.titleLabel.text = themeTitle
+            cell.titleLabel.text = purchaseList[indexPath.row].title
             
             if(purchaseList[indexPath.row].isPicked){
                 cell.backView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)

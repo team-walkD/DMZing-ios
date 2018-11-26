@@ -157,13 +157,11 @@ extension MapCoverViewController {
                 self.courseImageView.kf.setImage(with: URL(string: self.gsno(courseDetailData?.imageUrl)), placeholder: UIImage())
                 self.subLabel.text = courseDetailData?.subDescription
                 self.mainLabel.text = courseDetailData?.title
-                var placeHolderImg : UIImage? = UIImage()
-                if let placeHolderURL = URL(string: self.gsno(courseDetailData?.imageUrl)){
+                if let placeHolderURL = URL(string: self.gsno(courseDetailData?.backgroundImageUrl)){
                     KingfisherManager.shared.retrieveImage(with: placeHolderURL, options: nil, progressBlock: nil, completionHandler: { (image, err, cacheType, imgURL) in
-                        placeHolderImg = image
+                        self.backImageView.kf.setImage(with: URL(string: self.gsno(courseDetailData?.backgroundGifUrl)), placeholder: image)
                     })
                 }
-                 self.backImageView.kf.setImage(with: URL(string: self.gsno(courseDetailData?.backgroundGifUrl)), placeholder: placeHolderImg)
                 self.titleLabel.text = courseDetailData?.title
                 self.contentTextView.text = courseDetailData?.mainDescription
                 self.levelLabel.text = courseDetailData?.level
