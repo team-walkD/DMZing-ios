@@ -96,9 +96,9 @@ extension MainMapViewController {
             case .networkSuccess(let data):
                 self.clearAllNotice()
                 
-                self.simpleAlert(title: "", message: """
-                데이트하기 좋은 코스를
-                구매하셨습니다!
+                self.simpleAlert(title: "", message:
+                """
+                구매가 완료되었습니다!
                 """)
                 
                 DispatchQueue.global(qos: .userInitiated).async { [weak self] in
@@ -167,8 +167,9 @@ extension MainMapViewController: UICollectionViewDelegate, UICollectionViewDataS
             self.navigationController?.pushViewController(coverVC, animated: true)
             
         } else {
-            mapAlertwithHandler(title: "", message: """
-            데이트하기 좋은 코스를
+            mapAlertwithHandler(title: "", message:
+            """
+            \(courses[indexPath.row].title)를
             구매하시겠습니까?
             """) { (okHandler) in
                 
