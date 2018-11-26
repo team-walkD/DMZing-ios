@@ -16,7 +16,7 @@ enum Direction {
 
 
 class MainViewController: UIViewController, APIService {
-
+    
     @IBOutlet weak var themeCollectionView: UICollectionView!
     @IBOutlet weak var mainCollectionView: UICollectionView!
     
@@ -59,7 +59,7 @@ class MainViewController: UIViewController, APIService {
     }
     
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -76,7 +76,7 @@ class MainViewController: UIViewController, APIService {
     override func viewWillAppear(_ animated: Bool) {
         getMainData(url: url("mission"))
         self.tabBarController?.tabBar.isHidden = false
-
+        
     }
     
     
@@ -85,7 +85,7 @@ class MainViewController: UIViewController, APIService {
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.shadowImage = UIImage()
     }
-
+    
     
     func getMainData(url : String){
         GetMissionService.shareInstance.getFirstData(url: url,completion: { [weak self] (result) in
@@ -105,7 +105,7 @@ class MainViewController: UIViewController, APIService {
                 print(self.places.count)
                 
                 self.userDefault.set(self.firstData?.id, forKey: "cid")
-            
+                
                 
             case .networkFail:
                 self.networkSimpleAlert()
@@ -136,7 +136,7 @@ class MainViewController: UIViewController, APIService {
                 print(self.places.count)
                 
                 self.userDefault.set(self.firstData?.id, forKey: "cid")
-            
+                
                 
             case .networkFail:
                 self.networkSimpleAlert()
@@ -146,7 +146,7 @@ class MainViewController: UIViewController, APIService {
             }
         })
     }
-
+    
 }
 
 
@@ -161,7 +161,7 @@ extension MainViewController : UICollectionViewDelegate,UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.themeCollectionView {
-             return purchaseList.count
+            return purchaseList.count
         } else {
             if let lastSequence = self.places.last?.sequence {
                 let letterImageUrl = self.places.last?.letterImageURL
@@ -177,12 +177,12 @@ extension MainViewController : UICollectionViewDelegate,UICollectionViewDataSour
                 }
                 
                 
-             
+                
             }else{
                 
                 return 1
             }
-        
+            
             
         }
     }
@@ -192,7 +192,7 @@ extension MainViewController : UICollectionViewDelegate,UICollectionViewDataSour
         if collectionView == self.themeCollectionView {
             let cell = self.themeCollectionView.dequeueReusableCell(withReuseIdentifier: "ThemeCollectionViewCell", for: indexPath) as! ThemeCollectionViewCell
             guard purchaseList.count > 0 else {return cell}
-           
+            
             var themeTitle = ""
             switch purchaseList[indexPath.row].id {
             case 1 :
@@ -203,9 +203,9 @@ extension MainViewController : UICollectionViewDelegate,UICollectionViewDataSour
                 themeTitle = "자연탐방 코스"
             default :
                 themeTitle = ""
-             
+                
             }
-             cell.titleLabel.text = themeTitle
+            cell.titleLabel.text = themeTitle
             
             if(purchaseList[indexPath.row].isPicked){
                 cell.backView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
@@ -217,8 +217,9 @@ extension MainViewController : UICollectionViewDelegate,UICollectionViewDataSour
         } else {
             if indexPath.row == 0{
                 let cell = self.mainCollectionView.dequeueReusableCell(withReuseIdentifier: FirstCVCell.reuseIdentifier, for: indexPath) as! FirstCVCell
+                cell.configure()
                 cell.subtitleLabel.text = firstData?.subDescription
-               cell.subtitleLabel.adjustsFontSizeToFitWidth = true
+                cell.subtitleLabel.adjustsFontSizeToFitWidth = true
                 cell.titleLabel.text = firstData?.title
                 cell.titleLabel.adjustsFontSizeToFitWidth = true
                 
@@ -229,28 +230,29 @@ extension MainViewController : UICollectionViewDelegate,UICollectionViewDataSour
                 }
                 cell.timeLabel.text = "\(firstData?.estimatedTime ?? 0)"
                 cell.peopleLabel.text = "\(firstData?.reviewCount ?? 0)"
-              
+                
                 return cell
             }else if indexPath.row > 0 && indexPath.row <= places.count{
                 let cell = self.mainCollectionView.dequeueReusableCell(withReuseIdentifier: MainCVCell.reuseIdentifier, for: indexPath) as! MainCVCell
+                cell.configure()
                 cell.titleImgView.setImgWithKF(url: places[indexPath.row-1].mainImageURL, defaultImg: UIImage())
                 cell.subtitleLabel.text = ""
                 cell.titleLabel.text = places[indexPath.row-1].title
                 cell.contentTextView.text = places[indexPath.row-1].hint
-        
+                
                 cell.findLetterButton.tag = indexPath.row-1
                 cell.findLetterHandler = touchLetterBtn
                 
                 if places[indexPath.row-1].letterImageURL != nil{
-             
+                    
                     cell.findLetterButton.setTitle("편지 보기", for: .normal )
-                  
+                    
                 }else{
                     cell.findLetterButton.setTitle("편지 찾기", for: .normal)
                 }
-            
+                
                 return cell
-
+                
             }else{
                 
                 let cell = self.mainCollectionView.dequeueReusableCell(withReuseIdentifier: LastCVCell.reuseIdentifier, for: indexPath) as! LastCVCell
@@ -272,9 +274,9 @@ extension MainViewController : UICollectionViewDelegate,UICollectionViewDataSour
     
     
     func findLetteAction(index : Int, lat : Double, long : Double){
-            let URL = url("mission")
-            let cid = self.firstData?.id ?? 0
-            let pid = places[index].id
+        let URL = url("mission")
+        let cid = self.firstData?.id ?? 0
+        let pid = places[index].id
         
         /*
          //데이트
@@ -299,34 +301,34 @@ extension MainViewController : UICollectionViewDelegate,UICollectionViewDataSour
          var arr : [location] = [(37.8895234711,126.7405308247), (37.8513232698, 126.7905662159), (37.7773633354, 126.684436368), (37.7689256453, 126.6964910575),(38.5763238583, 128.3826570629),(38.5148483857,128.4171836237), (38.4709844380, 128.4362804829), (38.2269885423, 128.4693434396), (38.0631006539,127.6638496162), (38.1007385507,127.6970121290), (38.0993652277,127.7779270055), (38.2116284404,127.8474561554)]
          */
         
-            let body: [String: Any] = [
-                "cid": cid,
-                "pid": pid,
-                "latitude": lat,
-                "longitude": long
-            ]
-            findLetterNetworking(url: URL , params: body)
+        let body: [String: Any] = [
+            "cid": cid,
+            "pid": pid,
+            "latitude": lat,
+            "longitude": long
+        ]
+        findLetterNetworking(url: URL , params: body)
     }
     
     func goToCourseDetail(){
-       let cid = self.firstData?.id ?? 0
+        let cid = self.firstData?.id ?? 0
         let mapCoverViewController = UIStoryboard(name: "Course", bundle: nil).instantiateViewController(withIdentifier: "MapCoverViewController") as! MapCoverViewController
         mapCoverViewController.cid = cid
         mapCoverViewController.sub = gsno(firstData?.subDescription)
         mapCoverViewController.main = gsno(firstData?.title)
         self.navigationController?.pushViewController(mapCoverViewController, animated: true)
     }
-
+    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if(collectionView == themeCollectionView){
             
             putCourseData(url: url("course/pick/\(indexPath.row+1)"))
-
+            
         }
         
-
+        
         
         
     }
@@ -335,9 +337,9 @@ extension MainViewController : UICollectionViewDelegate,UICollectionViewDataSour
         if collectionView == self.themeCollectionView {
             return CGSize(width: 118, height: 41)
         } else {
-           return CGSize(width: 325/375*UIScreen.main.bounds.width, height: self.mainCollectionView.frame.height)
+            return CGSize(width: 325/375*UIScreen.main.bounds.width, height: self.mainCollectionView.frame.height)
         }
-
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -410,7 +412,7 @@ extension MainViewController : CLLocationManagerDelegate{
                 self.present(letterPopupVC, animated: true, completion: nil)
             }
         } else {
-          getLocation(index: index)
+            getLocation(index: index)
         }
     }
     
@@ -457,7 +459,7 @@ extension MainViewController {
             case .networkSuccess(let data):
                 guard let data = data as? MissionVO else{return}
                 
-               
+                
                 self.currentMission = data.first
                 self.nextMission = data.last
                 self.places.remove(at: self.places.count-1)

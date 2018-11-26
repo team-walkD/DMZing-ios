@@ -27,9 +27,12 @@ class FirstCVCell: UICollectionViewCell {
     @objc func courseDetail(_ sender: UIButton){
         courseDetailHandler!()
     }
+    func configure(){
+    courseDetailButton.layer.cornerRadius = courseDetailButton.frame.height/2
+    }
     override func awakeFromNib() {
        
-      courseDetailButton.layer.cornerRadius = courseDetailButton.frame.height/2
+      
 
         courseDetailButton.addTarget(self, action: #selector(courseDetail(_:)), for: .touchUpInside)
          titleImgView.makeRoundOnlyTop(radius: 10)
