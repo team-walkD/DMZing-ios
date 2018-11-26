@@ -15,13 +15,12 @@ class MyCourseTVCell: UITableViewCell {
     
     func configure(data : MyCourseVOData){
         titleLbl.text = data.title
-        descLbl.text = data.mapName+"하기 좋은 핫스팟"
+        descLbl.text = data.mainDescription
     }
    
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
 }

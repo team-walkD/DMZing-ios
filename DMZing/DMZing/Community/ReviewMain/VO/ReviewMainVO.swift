@@ -15,18 +15,6 @@ struct ReviewMainVOData: Codable {
     let conut: Int
     let imageUrl : String
     let mapType : MapType
-    var mapName : String {
-        switch self.mapType.rawValue {
-        case 1:
-            return "데이트"
-        case 2:
-            return "역사기행"
-        case 3:
-            return "자연 탐방"
-        default:
-            return ""
-        }
-    }
     
     enum CodingKeys: String, CodingKey {
         case typeName, conut, imageUrl
