@@ -209,8 +209,10 @@ extension MainViewController : UICollectionViewDelegate,UICollectionViewDataSour
             
             if(purchaseList[indexPath.row].isPicked){
                 cell.backView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+                cell.titleLabel.textColor = UIColor.FlatColor.Blue.deepBlue
             }else{
-                cell.backView.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+                cell.backView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.62)
+                cell.titleLabel.textColor = #colorLiteral(red: 0.1413645744, green: 0.2798363268, blue: 0.3539872766, alpha: 0.62)
             }
             
             return cell
