@@ -13,7 +13,8 @@ struct FirstVO : Codable {
 
 
 struct FirstDataPickCourse: Codable {
-    let reviewCount, estimatedTime: Int
+    let reviewCount : Int
+    let estimatedTime: Double
     let lineImageUrl: String
     let id: Int
     let places: [FirstDataPickCoursePlace]
