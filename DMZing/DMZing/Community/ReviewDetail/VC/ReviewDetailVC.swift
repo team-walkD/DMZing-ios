@@ -34,7 +34,7 @@ class ReviewDetailVC: UIViewController, APIService, UIGestureRecognizerDelegate 
         let headerView = ReviewDetailHeaderView.instanceFromNib()
         headerView.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 167)
         guard let selectedMap_ = selectedMap else {return headerView}
-        headerView.titleLbl.text = "\(selectedMap_.mapName)하기 좋은 코스"
+        headerView.titleLbl.text = selectedMap_.mapName
         return headerView
     }()
     

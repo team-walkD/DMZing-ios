@@ -14,20 +14,10 @@ struct MyCourseVOData: Codable {
     let mapType: MapType
     let title: String
     let isPicked: Bool
-    var mapName : String {
-        switch self.mapType.rawValue {
-        case 1:
-            return "데이트"
-        case 2:
-            return "역사기행"
-        case 3:
-            return "자연 탐방"
-        default:
-            return ""
-        }
-    }
+    let mainDescription : String
+    
     enum CodingKeys: String, CodingKey {
-        case title, isPicked
+        case title, isPicked, mainDescription
         case mapType = "id"
     }
 }
