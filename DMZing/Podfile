@@ -9,6 +9,7 @@ pod 'SnapKit', '~>4.0.1'
 pod 'SwiftyJSON', '~>4.2.0'
 pod 'Alamofire', '~>4.7.3'
 pod 'LTScrollView'
+pod 'Firebase/Core'
   # Pods for DMZing
 
 end

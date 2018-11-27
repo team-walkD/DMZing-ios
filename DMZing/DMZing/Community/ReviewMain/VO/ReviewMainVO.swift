@@ -14,16 +14,11 @@ struct ReviewMainVOData: Codable {
     let typeName: String
     let conut: Int
     let imageUrl : String
-    let mapType : MapType
+    let courseId : Int
+    let type : String
     
     enum CodingKeys: String, CodingKey {
         case typeName, conut, imageUrl
-        case mapType = "courseId"
+        case courseId, type
     }
-}
-
-enum MapType: Int, Codable {
-    case DATE = 1
-    case HISTORY = 2
-    case ADVENTURE = 3
 }

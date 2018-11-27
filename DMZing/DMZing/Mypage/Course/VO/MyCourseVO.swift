@@ -11,14 +11,14 @@ import Foundation
 typealias MyCourseVO = [MyCourseVOData]
 
 struct MyCourseVOData: Codable {
-    let mapType: MapType
+    let cId : Int
     let title: String
     let isPicked: Bool
     let mainDescription : String
     
     enum CodingKeys: String, CodingKey {
         case title, isPicked, mainDescription
-        case mapType = "id"
+        case cId = "id"
     }
 }
 

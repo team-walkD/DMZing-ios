@@ -76,6 +76,7 @@
 		3B8364F2219461EE000BD706 /* ReviewContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8364F1219461EE000BD706 /* ReviewContentVC.swift */; };
 		3B8364F421946279000BD706 /* ReviewContentTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8364F321946279000BD706 /* ReviewContentTVCell.swift */; };
 		3B8364F7219490BF000BD706 /* ReviewContentCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8364F6219490BF000BD706 /* ReviewContentCVCell.swift */; };
+		3B870D0621AD3C8B0003FAF9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B870D0521AD3C8B0003FAF9 /* GoogleService-Info.plist */; };
 		3B872CB72180902700498F97 /* MypageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B872CB62180902700498F97 /* MypageVC.swift */; };
 		3B872CBA2180905000498F97 /* MyPageTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B872CB92180905000498F97 /* MyPageTVCell.swift */; };
 		3B872CBC2180943D00498F97 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B872CBB2180943D00498F97 /* CustomView.swift */; };
@@ -230,6 +231,7 @@
 		3B8364F1219461EE000BD706 /* ReviewContentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewContentVC.swift; sourceTree = "<group>"; };
 		3B8364F321946279000BD706 /* ReviewContentTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewContentTVCell.swift; sourceTree = "<group>"; };
 		3B8364F6219490BF000BD706 /* ReviewContentCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewContentCVCell.swift; sourceTree = "<group>"; };
+		3B870D0521AD3C8B0003FAF9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3B872CB62180902700498F97 /* MypageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageVC.swift; sourceTree = "<group>"; };
 		3B872CB92180905000498F97 /* MyPageTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageTVCell.swift; sourceTree = "<group>"; };
 		3B872CBB2180943D00498F97 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
@@ -942,6 +944,7 @@
 				CC31AC6E217C922A00A02388 /* Course */,
 				CC31AC6D217C920500A02388 /* Main */,
 				CC31AC5B217C8D3200A02388 /* AppDelegate.swift */,
+				3B870D0521AD3C8B0003FAF9 /* GoogleService-Info.plist */,
 				CC31AC62217C8D3600A02388 /* Assets.xcassets */,
 				CC31AC64217C8D3600A02388 /* LaunchScreen.storyboard */,
 				CC31AC67217C8D3600A02388 /* Info.plist */,
@@ -1137,6 +1140,7 @@
 				CC31AC66217C8D3600A02388 /* LaunchScreen.storyboard in Resources */,
 				CC31AC76217C92BD00A02388 /* Mypage.storyboard in Resources */,
 				3B800582218B21560003EA5C /* PhotoReviewCVCell.xib in Resources */,
+				3B870D0621AD3C8B0003FAF9 /* GoogleService-Info.plist in Resources */,
 				3B800593218B56BC0003EA5C /* ArticleReviewCVCell.xib in Resources */,
 				3B5B55B921A69A7300DEBB26 /* Chatbot.storyboard in Resources */,
 				CC31AC72217C929000A02388 /* Course.storyboard in Resources */,
@@ -1155,24 +1159,28 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-DMZing/Pods-DMZing-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-DMZing/Pods-DMZing-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/LTScrollView/LTScrollView.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LTScrollView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DMZing/Pods-DMZing-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DMZing/Pods-DMZing-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F5BF7C7DFFE6288E27244881 /* [CP] Check Pods Manifest.lock */ = {

@@ -8,7 +8,7 @@
 
 import UIKit
 import LTScrollView
-typealias MapInfo = (mapName : String, mapType : MapType)
+typealias MapInfo = (mapName : String, mapType : String, cId : Int)
 class ReviewDetailVC: UIViewController, APIService, UIGestureRecognizerDelegate {
     
     private let glt_iphoneX = (UIScreen.main.bounds.height == 812.0)
@@ -93,7 +93,7 @@ class ReviewDetailVC: UIViewController, APIService, UIGestureRecognizerDelegate 
     
     func selectCoursePopup(){
         guard let selectedMap_ = selectedMap else {return}
-        getSpotData(url: url("course/\(selectedMap_.mapType.rawValue)/places"))
+        getSpotData(url: url("course/\(selectedMap_.cId)/places"))
     }
     
     func setPopupUI(){
@@ -104,7 +104,7 @@ class ReviewDetailVC: UIViewController, APIService, UIGestureRecognizerDelegate 
             let reviewStoryboard = Storyboard.shared().reviewStoryboard
             if let writePhotoReviewVC = reviewStoryboard.instantiateViewController(withIdentifier:WritePhotoReviewVC.reuseIdentifier) as? WritePhotoReviewVC {
                 guard let index = alert.actions.index(of: action)  else {return}
-                writePhotoReviewVC.selectedCourse = (selectedMap_.mapType.rawValue, self.spotArr[index])
+                writePhotoReviewVC.selectedCourse = (selectedMap_.cId, self.spotArr[index])
                 self.present(writePhotoReviewVC, animated: true, completion: nil)
             }
         }
@@ -125,7 +125,7 @@ class ReviewDetailVC: UIViewController, APIService, UIGestureRecognizerDelegate 
             let writeEntryNavC = reviewStoryboard.instantiateViewController(withIdentifier:"reviewNavi") as! UINavigationController
             
             if let writeEntryVC = writeEntryNavC.topViewController as? WriteEntryVC {
-                writeEntryVC.selectedCourseId = (selectedMap_.mapType.rawValue)
+                writeEntryVC.selectedCourseId = (selectedMap_.cId)
                 self.present(writeEntryNavC, animated: true, completion: nil)
             }
         }
