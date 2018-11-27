@@ -180,8 +180,7 @@ extension MainViewController : UICollectionViewDelegate,UICollectionViewDataSour
             
         }
     }
-    
-    
+   
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == self.themeCollectionView {
             let cell = self.themeCollectionView.dequeueReusableCell(withReuseIdentifier: "ThemeCollectionViewCell", for: indexPath) as! ThemeCollectionViewCell
@@ -211,7 +210,7 @@ extension MainViewController : UICollectionViewDelegate,UICollectionViewDataSour
                 if let imageurl = firstData?.imageUrl{
                     cell.titleImgView.setImgWithKF(url: imageurl, defaultImg: UIImage())
                 }
-                cell.timeLabel.text = "\(firstData?.estimatedTime ?? 0)"
+                cell.timeLabel.text = "\(Int(firstData?.estimatedTime ?? 0))"
                 cell.peopleLabel.text = "\(firstData?.reviewCount ?? 0)"
                 
                 return cell
