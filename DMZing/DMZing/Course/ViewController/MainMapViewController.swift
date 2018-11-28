@@ -169,7 +169,7 @@ extension MainMapViewController: UICollectionViewDelegate, UICollectionViewDataS
         } else {
             mapAlertwithHandler(title: "", message:
             """
-            \(courses[indexPath.row].title)를
+            \(courses[indexPath.row].title)을
             구매하시겠습니까?
             """) { (okHandler) in
                 
