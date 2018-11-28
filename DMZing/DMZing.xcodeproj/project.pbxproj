@@ -23,6 +23,7 @@
 		224EE04521AC4D3800A3A056 /* SwiftNotice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224EE04421AC4D3800A3A056 /* SwiftNotice.swift */; };
 		22F3025D2195515F00152700 /* MainMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F3025C2195515F00152700 /* MainMapViewController.swift */; };
 		22F3025F2195518B00152700 /* MainMapCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F3025E2195518B00152700 /* MainMapCollectionViewCell.swift */; };
+		3B34E45B21AE96FB0038D1CC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B34E45A21AE96FB0038D1CC /* GoogleService-Info.plist */; };
 		3B3A85CE2198836B00D1A835 /* MypageMainVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3A85CD2198836B00D1A835 /* MypageMainVO.swift */; };
 		3B5A4EA321A2AF1400C53E78 /* MessageVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5A4EA221A2AF1400C53E78 /* MessageVO.swift */; };
 		3B5A4EA621A2CF2D00C53E78 /* LetterPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5A4EA521A2CF2D00C53E78 /* LetterPopupVC.swift */; };
@@ -76,7 +77,6 @@
 		3B8364F2219461EE000BD706 /* ReviewContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8364F1219461EE000BD706 /* ReviewContentVC.swift */; };
 		3B8364F421946279000BD706 /* ReviewContentTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8364F321946279000BD706 /* ReviewContentTVCell.swift */; };
 		3B8364F7219490BF000BD706 /* ReviewContentCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8364F6219490BF000BD706 /* ReviewContentCVCell.swift */; };
-		3B870D0621AD3C8B0003FAF9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B870D0521AD3C8B0003FAF9 /* GoogleService-Info.plist */; };
 		3B872CB72180902700498F97 /* MypageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B872CB62180902700498F97 /* MypageVC.swift */; };
 		3B872CBA2180905000498F97 /* MyPageTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B872CB92180905000498F97 /* MyPageTVCell.swift */; };
 		3B872CBC2180943D00498F97 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B872CBB2180943D00498F97 /* CustomView.swift */; };
@@ -178,6 +178,7 @@
 		22F3025C2195515F00152700 /* MainMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapViewController.swift; sourceTree = "<group>"; };
 		22F3025E2195518B00152700 /* MainMapCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapCollectionViewCell.swift; sourceTree = "<group>"; };
 		31A78C13C32CCDE3112EE612 /* Pods-DMZing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DMZing.release.xcconfig"; path = "Target Support Files/Pods-DMZing/Pods-DMZing.release.xcconfig"; sourceTree = "<group>"; };
+		3B34E45A21AE96FB0038D1CC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3B3A85CD2198836B00D1A835 /* MypageMainVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageMainVO.swift; sourceTree = "<group>"; };
 		3B5A4EA221A2AF1400C53E78 /* MessageVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageVO.swift; sourceTree = "<group>"; };
 		3B5A4EA521A2CF2D00C53E78 /* LetterPopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterPopupVC.swift; sourceTree = "<group>"; };
@@ -231,7 +232,6 @@
 		3B8364F1219461EE000BD706 /* ReviewContentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewContentVC.swift; sourceTree = "<group>"; };
 		3B8364F321946279000BD706 /* ReviewContentTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewContentTVCell.swift; sourceTree = "<group>"; };
 		3B8364F6219490BF000BD706 /* ReviewContentCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewContentCVCell.swift; sourceTree = "<group>"; };
-		3B870D0521AD3C8B0003FAF9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3B872CB62180902700498F97 /* MypageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageVC.swift; sourceTree = "<group>"; };
 		3B872CB92180905000498F97 /* MyPageTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageTVCell.swift; sourceTree = "<group>"; };
 		3B872CBB2180943D00498F97 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
@@ -944,7 +944,7 @@
 				CC31AC6E217C922A00A02388 /* Course */,
 				CC31AC6D217C920500A02388 /* Main */,
 				CC31AC5B217C8D3200A02388 /* AppDelegate.swift */,
-				3B870D0521AD3C8B0003FAF9 /* GoogleService-Info.plist */,
+				3B34E45A21AE96FB0038D1CC /* GoogleService-Info.plist */,
 				CC31AC62217C8D3600A02388 /* Assets.xcassets */,
 				CC31AC64217C8D3600A02388 /* LaunchScreen.storyboard */,
 				CC31AC67217C8D3600A02388 /* Info.plist */,
@@ -1140,7 +1140,7 @@
 				CC31AC66217C8D3600A02388 /* LaunchScreen.storyboard in Resources */,
 				CC31AC76217C92BD00A02388 /* Mypage.storyboard in Resources */,
 				3B800582218B21560003EA5C /* PhotoReviewCVCell.xib in Resources */,
-				3B870D0621AD3C8B0003FAF9 /* GoogleService-Info.plist in Resources */,
+				3B34E45B21AE96FB0038D1CC /* GoogleService-Info.plist in Resources */,
 				3B800593218B56BC0003EA5C /* ArticleReviewCVCell.xib in Resources */,
 				3B5B55B921A69A7300DEBB26 /* Chatbot.storyboard in Resources */,
 				CC31AC72217C929000A02388 /* Course.storyboard in Resources */,
