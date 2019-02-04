@@ -91,6 +91,10 @@ DMZing의 주요 기능은 다음과 같습니다.
 
 
 
+## [ WorkFlow ]
+
+![workflow](https://github.com/team-walkD/DMZing-ios/blob/master/publicData/images/workflow.png)
+
 ## [ Develop Environment ]
 
 - Language :  **Swift 4.0**
